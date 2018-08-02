@@ -1,0 +1,96 @@
+#watermark {
+    position: fixed;
+    bottom: -550px;
+    left: 0;
+    width: 1200px;
+    height: 1200px;
+    opacity: .05;
+}
+#watermark img{
+    position: absolute;
+    transform: rotate(-20deg);
+}
+address{
+    font-size: 10px;
+    text-align: right;
+}
+.header{
+    margin-top: 50px;
+}
+.title h1{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 22px;
+}
+.body-text{
+    font-size: 13px;
+}
+.footer{
+    padding-top: 20px;
+    border-top: 1px solid #424242;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+}
+.footer-image{
+    margin-top: 10px;
+}
+.strong{
+    font-weight: 600;
+}
+.text-justify{
+    text-align: justify;
+}
+.teacher-name,
+.course-name,
+.university-name{
+    font-weight: 600;
+}
+
+.lor .header{
+    margin: 20px 0 0 0;
+}
+.lor .no-margin{
+    margin: 0;
+}
+.lor .ol {
+    counter-reset: foo;
+    padding:0 0 0 0;
+}
+.lor .ol li {
+    list-style-type: none;
+    margin: 0;
+}
+.lor .ol li::before {
+    counter-increment: foo;
+    content: "1." counter(foo) " ";
+}
+.lor div{
+    margin: 0px;
+    padding: 0px;
+    line-height: 1em;
+}
+.lor h1, .lor h3{
+    text-align: center;
+    line-height: 1em;
+}
+.lor h1{
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    padding: 0px;
+}
+
+.lor h3{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    padding: 0px;
+}
+
+.lor p, .lor ol, .lor li{
+    font-size: 10px;
+    text-align: justify;
+    color: black;
+}

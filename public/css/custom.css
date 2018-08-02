@@ -1,0 +1,31 @@
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+.tooltip-inner {
+    min-width: 100px;
+    max-width: 100%;
+}
+.btn-link-download{
+    padding: 0;
+    margin: -3px 0 0 0;
+    border: none;
+    line-height: 1em;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.register-box{
+    width: 600px;
+}
+.auxilary{
+    background-color: #eeeeee;
+}
+tr.disabled{
+  background-color: #dddddd;
+}

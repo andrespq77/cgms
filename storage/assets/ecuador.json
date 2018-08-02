@@ -1,0 +1,1151 @@
+[
+  {
+    "Province SN": 1,
+    "Province": "Azuay",
+    "cantons": [
+        {
+          "Canton": "Camilo Ponce Enríquez",
+          "Capital": "Camilo Ponce Enríquez"
+        },
+        {
+          "Canton": "Chordeleg",
+          "Capital": "Chordeleg"
+        },
+        {
+          "Canton": "Cuenca",
+          "Capital": "Cuenca"
+        },
+        {
+          "Canton": "El Pan",
+          "Capital": "El Pan"
+        },
+        {
+          "Canton": "Girón",
+          "Capital": "Girón"
+        },
+        {
+          "Canton": "Guachapala",
+          "Capital": "Guachapala"
+        },
+        {
+          "Canton": "Gualaceo",
+          "Capital": "Gualaceo"
+        },
+        {
+          "Canton": "Nabón",
+          "Capital": "Nabón"
+        },
+        {
+          "Canton": "Oña",
+          "Capital": "Oña"
+        },
+        {
+          "Canton": "Paute",
+          "Capital": "Paute"
+        },
+        {
+          "Canton": "Pucará",
+          "Capital": "Pucará"
+        },
+        {
+          "Canton": "San Fernando",
+          "Capital": "San Fernando"
+        },
+        {
+          "Canton": "Santa Isabel",
+          "Capital": "Santa Isabel"
+        },
+        {
+          "Canton": "Sevilla de Oro",
+          "Capital": "Sevilla de Oro"
+        },
+        {
+          "Canton": "Sigsig",
+          "Capital": "Sigsig"
+        },
+        {
+          "Canton": "Camilo Ponce Enríquez",
+          "Capital": "Camilo Ponce Enríquez"
+        },
+        {
+          "Canton": "Chordeleg",
+          "Capital": "Chordeleg"
+        },
+        {
+          "Canton": "Cuenca",
+          "Capital": "Cuenca"
+        },
+        {
+          "Canton": "El Pan",
+          "Capital": "El Pan"
+        },
+        {
+          "Canton": "Girón",
+          "Capital": "Girón"
+        },
+        {
+          "Canton": "Guachapala",
+          "Capital": "Guachapala"
+        },
+        {
+          "Canton": "Gualaceo",
+          "Capital": "Gualaceo"
+        },
+        {
+          "Canton": "Nabón",
+          "Capital": "Nabón"
+        },
+        {
+          "Canton": "Oña",
+          "Capital": "Oña"
+        },
+        {
+          "Canton": "Paute",
+          "Capital": "Paute"
+        },
+        {
+          "Canton": "Pucará",
+          "Capital": "Pucará"
+        },
+        {
+          "Canton": "San Fernando",
+          "Capital": "San Fernando"
+        },
+        {
+          "Canton": "Santa Isabel",
+          "Capital": "Santa Isabel"
+        },
+        {
+          "Canton": "Sevilla de Oro",
+          "Capital": "Sevilla de Oro"
+        },
+        {
+          "Canton": "Sigsig",
+          "Capital": "Sigsig"
+        }
+      ]
+  },
+  {
+    "Province SN": 2,
+    "Province": "Bolívar",
+    "cantons": [
+        {
+              "Canton": "Caluma",
+            "Capital": "Caluma"
+        },
+        {
+          "Canton": "Chillanes",
+          "Capital": "Chillanes"
+        },
+        {
+          "Canton": "Chimbo",
+          "Capital": "Chimbo"
+        },
+        {
+          "Canton": "Echeandía",
+          "Capital": "Echeandía"
+        },
+        {
+          "Canton": "Guaranda",
+          "Capital": "Guaranda"
+        },
+        {
+          "Canton": "Las Naves",
+          "Capital": "Las Naves"
+        },
+        {
+          "Canton": "San Miguel",
+          "Capital": "San Miguel"
+        }
+      ]
+  },
+  {
+    "Province SN": 3,
+    "Province": "Cañar",
+    "cantons" : [
+        {
+          "Canton": "Azogues",
+          "Capital": "Azogues"   
+        },
+        {
+          "Canton": "La Troncal",
+          "Capital": "La Troncal"
+        },
+        {
+          "Canton": "Biblián",
+          "Capital": "Biblián"
+        },
+        {
+          "Canton": "Cañar",
+          "Capital": "Cañar"
+        },
+        {
+          "Canton": "Déleg",
+          "Capital": "Déleg"
+        },
+        {
+          "Canton": "El Tambo",
+          "Capital": "El Tambo"
+        },
+        {
+          "Canton": "Suscal",
+          "Capital": "Suscal"
+        }
+      ]
+  },
+
+  {
+    "Province SN": 4,
+    "Province": "Carchi",
+    "cantons" : [
+        {
+          "Canton": "Bolívar",
+          "Capital": "Bolívar"   
+        },
+        {
+          "Canton": "Espejo",
+          "Capital": "El Ángel"
+        },
+        {
+          "Canton": "Mira",
+          "Capital": "Mira"
+        },
+        {
+          "Canton": "Montúfar",
+          "Capital": "San Gabriel"
+        },
+        {
+          "Canton": "San Pedro de Huaca",
+          "Capital": "Huaca"
+        },
+        {
+          "Canton": "Tulcán",
+          "Capital": "Tulcán"
+        },
+        {
+          "Canton": "Alausí",
+          "Capital": "Alausí"
+        }
+      ]
+  },
+  {
+    "Province SN": 5,
+    "Province": "Chimborazo",
+    "cantons" : [
+        {
+            "Canton": "Chambo",
+            "Capital": "Chambo"
+        },
+          {
+          "Canton": "Chunchi",
+          "Capital": "Chunchi"
+        },
+        {
+          "Canton": "Colta",
+          "Capital": "Cajabamba (also known as Villa la Unión)"
+        },
+        {
+          "Canton": "Cumandá",
+          "Capital": "Cumandá"
+        },
+        {
+          "Canton": "Guamote",
+          "Capital": "Guamote"
+        },
+        {
+          "Canton": "Guano",
+          "Capital": "Guano"
+        },
+        {
+          "Canton": "Pallatanga",
+          "Capital": "Pallatanga"
+        },
+        {
+          "Canton": "Penipe",
+          "Capital": "Penipe"
+        },
+        {
+          "Canton": "Riobamba",
+          "Capital": "Riobamba"
+        }
+      ]
+  },
+  {
+    "Province SN": 6,
+    "Province": "Cotopaxi",
+    "cantons" : [
+        {
+            "Canton": "La Maná",
+            "Capital": "La Maná"
+        },
+          {
+          "Canton": "Latacunga",
+          "Capital": "Latacunga"
+        },
+        {
+          "Canton": "Pangua",
+          "Capital": "El Corazón"
+        },
+        {
+          "Canton": "Pujilí",
+          "Capital": "Pujilí"
+        },
+        {
+          "Canton": "Salcedo",
+          "Capital": "San Miguel"
+        },
+        {
+          "Canton": "Saquisilí",
+          "Capital": "Saquisilí"
+        },
+        {
+          "Canton": "Sigchos",
+          "Capital": "Sigchos"
+        }
+      ]
+  },
+  {
+    "Province SN": 7,
+    "Province": "El Oro",
+    "cantons": [
+        {
+            "Canton": "Arenillas",
+            "Capital": "Arenillas"
+        },
+          {
+          "Canton": "Atahualpa",
+          "Capital": "Paccha"
+        },
+        {
+          "Canton": "Balsas",
+          "Capital": "Balsas"
+        },
+        {
+          "Canton": "Chilla",
+          "Capital": "Chilla"
+        },
+        {
+          "Canton": "El Guabo",
+          "Capital": "El Guabo"
+        },
+        {
+          "Canton": "Huaquillas",
+          "Capital": "Huaquillas"
+        },
+        {
+          "Canton": "Las Lajas",
+          "Capital": "La Victoria"
+        },
+        {
+          "Canton": "Machala",
+          "Capital": "Machala"
+        },
+          {
+          "Canton": "Marcabelí",
+          "Capital": "Marcabelí"
+        },
+        {
+          "Canton": "Pasaje",
+          "Capital": "Pasaje"
+        },
+        {
+          "Canton": "Piñas",
+          "Capital": "Piñas"
+        },
+        {
+          "Canton": "Portovelo",
+          "Capital": "Portovelo"
+        },
+        {
+          "Canton": "Santa Rosa",
+          "Capital": "Santa Rosa"
+        },
+        {
+          "Canton": "Zaruma",
+          "Capital": "Zaruma"
+        },
+        {
+          "Canton": "Atacames",
+          "Capital": "Atacames"
+        }
+      ]
+  },
+  {
+    "Province SN": 8,
+    "Province": "Esmeraldas",
+    "cantons" : [
+        {
+            "Canton": "Eloy Alfaro",
+            "Capital": "Valdez"   
+        },
+          {
+          "Canton": "Esmeraldas",
+          "Capital": "Esmeraldas"
+        },
+        {
+          "Canton": "Muisne",
+          "Capital": "Muisne"
+        },
+        {
+          "Canton": "Quinindé",
+          "Capital": "Rosa Zárate (also known as Quinindé)"
+        },
+        {
+      
+          "Canton": "Río Verde",
+          "Capital": "Rio Verde"
+        },
+          {
+          "Canton": "San Lorenzo",
+          "Capital": "San Lorenzo"
+        }
+      ]
+  },
+  {
+    "Province SN": 9,
+    "Province": "Galápagos",
+    "cantons" : [
+        {
+            "Canton": "Isabela",
+            "Capital": "Puerto Villamil"   
+        },
+          {
+          "Canton": "San Cristóbal",
+          "Capital": "Puerto Baquerizo Moreno"
+        },
+        {
+          "Canton": "Santa Cruz",
+          "Capital": "Puerto Ayora"
+        }
+      ]
+  },
+  {
+    "Province SN": 10,
+    "Province": "Guayas",
+    "cantons" : [
+        {
+          "Canton": "Alfredo Baquerizo Moreno (Jujan)",
+          "Capital": "Alfredo Baquerizo Moreno (also known as Jujan)"
+        },
+        {
+          "Canton": "Balao",
+          "Capital": "Balao"
+        },
+        {
+          "Canton": "Balzar (San Jacinto de Balzar)",
+          "Capital": "Balzar"
+        },
+        {
+          "Canton": "Colimes",
+          "Capital": "Colimes"
+        },
+        {
+          "Canton": "Coronel Marcelino Maridueña",
+          "Capital": "Coronel Marcelino Maridueña"
+        },
+        {
+          "Canton": "Daule",
+          "Capital": "Daule"
+        },
+        {
+          "Canton": "Durán",
+          "Capital": "Durán"
+        },
+        {
+          "Canton": "El Empalme",
+          "Capital": "El Empalme (also known as Velasco Ibarra)"
+        },
+        {
+          "Canton": "El Triunfo",
+          "Capital": "El Triunfo"
+        },
+        {
+          "Canton": "General Antonio Elizalde (Bucay)",
+          "Capital": "General Antonio Elizalde (also known as Bucay)"
+        },
+        {
+          "Canton": "Guayaquil",
+          "Capital": "Guayaquil"
+        },
+        {
+          "Canton": "Isidro Ayora",
+          "Capital": "Isidro Ayora"
+        },
+        {
+          "Canton": "Lomas de Sargentillo",
+          "Capital": "Lomas de Sargentillo"
+        },
+        {
+          "Canton": "Milagro",
+          "Capital": "Milagro"
+        },
+        {
+          "Canton": "Naranjal",
+          "Capital": "Naranjal"
+        },
+        {
+          "Canton": "Naranjito",
+          "Capital": "Naranjito",
+          "": ""
+        },
+        {
+          "Canton": "Nobol",
+          "Capital": "Nobol (also known as Narcisa de Jesús)"
+        },
+        {
+          "Canton": "Palestina",
+          "Capital": "Palestina"
+        },
+        {
+          "Canton": "Pedro Carbo",
+          "Capital": "Pedro Carbo"
+        },
+        {
+          "Canton": "Playas (General Villamil Playas)",
+          "Capital": "Playas (also known as General Villamil Playas)"
+        },
+        {
+          "Canton": "Salitre (was Urbina Jado)",
+          "Capital": "El Salitre"
+        },
+        {
+          "Canton": "Samborondón",
+          "Capital": "Samborondón"
+        },
+        {
+          "Canton": "Santa Lucía",
+          "Capital": "Santa Lucía"
+        },
+        {
+          "Canton": "Simón Bolívar",
+          "Capital": "Simón Bolívar"
+        },
+        {
+          "Canton": "La Troncal",
+          "Capital": "La Troncal"
+        },
+        {
+          "Canton": "Yaguachi",
+          "Capital": "Yaguachi (San Jacinto de Yaguachi)"
+        }
+      ]
+  },
+  {
+    "Province SN": 11,
+    "Province": "Imbabura",
+    "cantons": [
+        {
+           "Canton": "Antonio Ante",
+          "Capital": "Atuntaqui"   
+        },
+        {
+          "Canton": "Cotacachi",
+          "Capital": "Cotacachi"
+        },
+        {
+          "Canton": "Ibarra",
+          "Capital": "Ibarra"
+        },
+        {
+          "Canton": "Otavalo",
+          "Capital": "Otavalo"
+        },
+        {
+          "Canton": "Pimampiro",
+          "Capital": "Pimampiro"
+        },
+        {
+          "Canton": "San Miguel de Urcuquí",
+          "Capital": "Urcuquí"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 12,
+    "Province": "Loja",
+    "cantons" : [
+        {
+          "Canton": "Calvas",
+          "Capital": "Cariamanga"
+        },
+        {
+          "Canton": "Catamayo",
+          "Capital": "Catamayo"
+        },
+        {
+          "Canton": "Celica",
+          "Capital": "Celica"
+        },
+        {
+          "Canton": "Chaguarpamba",
+          "Capital": "Chaguarpamba"
+        },
+        {
+          "Canton": "Espíndola",
+          "Capital": "Amaluza (Espíndola)"
+        },
+        {
+          "Canton": "Gonzanamá",
+          "Capital": "Gonzanamá"
+        },
+        {
+          "Canton": "Loja",
+          "Capital": "Loja"
+        },
+        {
+          "Canton": "Macará",
+          "Capital": "Macará"
+        },
+        {
+          "Canton": "Olmedo",
+          "Capital": "Olmedo"
+        },
+        {
+          "Canton": "Paltas",
+          "Capital": "Catacocha"
+        },
+        {
+          "Canton": "Pindal",
+          "Capital": "Pindal"
+        },
+        {
+          "Canton": "Puyango",
+          "Capital": "Alamor"
+        },
+        {
+          "Canton": "Quilanga",
+          "Capital": "Quilanga"
+        },
+        {
+          "Canton": "Saraguro",
+          "Capital": "Saraguro"
+        },
+        {
+          "Canton": "Sozoranga",
+          "Capital": "Sozoranga"
+        },
+        {
+          "Canton": "Zapotillo",
+          "Capital": "Zapotillo"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 13,
+    "Province": "Los Ríos",
+    "cantons": [
+        {
+           "Canton": "Baba",
+            "Capital": "Baba"
+        },
+          {
+          "Canton": "Babahoyo",
+          "Capital": "Babahoyo"
+        },
+        {
+          "Canton": "Buena Fé",
+          "Capital": "San Jacinto de Buena Fe"
+        },
+        {
+          "Canton": "Mocache",
+          "Capital": "Mocache"
+        },
+        {
+          "Canton": "Montalvo",
+          "Capital": "Montalvo"
+        },
+        {
+          "Canton": "Palenque",
+          "Capital": "Palenque"
+        },
+        {
+          "Canton": "Pueblo Viejo",
+          "Capital": "Puebloviejo"
+        },
+        {
+          "Canton": "Quevedo",
+          "Capital": "Quevedo"
+        },
+        {
+          "Canton": "Quinsaloma",
+          "Capital": "Quinsaloma"
+        },
+        {
+          "Canton": "Urdaneta",
+          "Capital": "Catarama"
+        },
+        {
+          "Canton": "Valencia",
+          "Capital": "Valencia"
+        },
+        {
+          "Canton": "Ventanas",
+          "Capital": "Ventanas"
+        },
+        {
+          "Canton": "Vinces",
+          "Capital": "Vinces"
+        }
+      ]
+  },
+
+  {
+    "Province SN": 14,
+    "Province": "Manabí",
+    "cantons": [
+        {
+            "Canton": "Bolívar",
+            "Capital": "Calceta"
+        },
+          {
+          "Canton": "Chone",
+          "Capital": "Chone"
+        },
+        {
+          "Canton": "El Carmen",
+          "Capital": "El Carmen"
+        },
+        {
+          "Canton": "Flavio Alfaro",
+          "Capital": "Flavio Alfaro"
+        },
+        {
+          "Canton": "Jama",
+          "Capital": "Jama"
+        },
+        {
+          "Canton": "Jaramijó",
+          "Capital": "Jaramijó"
+        },
+        {
+          "Canton": "Jipijapa",
+          "Capital": "Jipijapa"
+        },
+        {
+          "Canton": "Junín",
+          "Capital": "Junín"
+        },
+        {
+          "Canton": "Manta",
+          "Capital": "Manta"
+        },
+        {
+          "Canton": "Montecristi",
+          "Capital": "Montecristi"
+        },
+        {
+          "Canton": "Olmedo",
+          "Capital": "Olmedo"
+        },
+        {
+          "Canton": "Paján",
+          "Capital": "Paján"
+        },
+        {
+          "Canton": "Pedernales",
+          "Capital": "Pedernales"
+        },
+        {
+          "Canton": "Pichincha",
+          "Capital": "Pichincha"
+        },
+        {
+          "Canton": "Portoviejo",
+          "Capital": "Portoviejo"
+        },
+        {
+          "Canton": "Puerto López",
+          "Capital": "Puerto López"
+        },
+        {
+          "Canton": "Rocafuerte",
+          "Capital": "Rocafuerte"
+        },
+        {
+          "Canton": "San Vicente",
+          "Capital": "San Vicente"
+        },
+        {
+          "Canton": "Santa Ana",
+          "Capital": "Santa Ana"
+        },
+        {
+          "Canton": "Sucre",
+          "Capital": "Bahía de Caráquez"
+        },
+        {
+          "Canton": "Tosagua",
+          "Capital": "Tosagua"
+        },
+        {
+          "Canton": "Veinticuatro de Mayo",
+          "Capital": "Sucre"
+        }
+      ]
+  },
+
+  {
+    "Province SN": 15,
+    "Province": "Morona-Santiago",
+    "cantons": [
+        {
+            "Canton": "Gualaquiza",
+            "Capital": "Gualaquiza"   
+        },
+          {
+          "Canton": "Huamboya",
+          "Capital": "Huamboya"
+        },
+        {
+          "Canton": "Limón Indanza",
+          "Capital": "General Leonidas Plaza Gutiérrez"
+        },
+        {
+          "Canton": "Logroño",
+          "Capital": "Logroño"
+        },
+        {
+          "Canton": "Morona",
+          "Capital": "Macas"
+        },
+        {
+          "Canton": "Pablo Sexto",
+          "Capital": "Pablo Sexto"
+        },
+        {
+          "Canton": "Palora",
+          "Capital": "Palora"
+        },
+        {
+          "Canton": "San Juan Bosco",
+          "Capital": "San Juan Bosco"
+        },
+        {
+          "Canton": "Santiago de Méndez (Santiago)",
+          "Capital": "Santiago de Méndez (Santiago)"
+        },
+        {
+          "Canton": "Sucúa",
+          "Capital": "Sucúa"
+        },
+        {
+          "Canton": "Taisha",
+          "Capital": "Taisha"
+        },
+        {
+          "Canton": "Tiwintza",
+          "Capital": "Santiago"
+        }
+      ]
+  },
+
+  {
+    "Province SN": 16,
+    "Province": "Napo",
+    "cantons": [
+        {
+          "Canton": "Archidona",
+          "Capital": "Archidona"   
+        },
+        {
+          "Canton": "Carlos Julio Arosemena Tola",
+          "Capital": "Carlos Julio Arosemena Tola"
+        },
+        {
+          "Canton": "El Chaco",
+          "Capital": "El Chaco"
+        },
+        {
+          "Canton": "Quijos",
+          "Capital": "Baeza"
+        },
+        {
+          "Canton": "Tena",
+          "Capital": "Tena"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 17,
+    "Province": "Orellana",
+    "cantons": [
+        {
+           "Canton": "Aguarico",
+          "Capital": "Nueva Rocafuerte"   
+        },
+        {
+          "Canton": "Francisco de Orellana",
+          "Capital": "Puerto Francisco de Orellana (also known as Coca)"
+        },
+        {
+          "Canton": "Joya de los Sachas",
+          "Capital": "La Joya de los Sachas"
+        },
+        {
+          "Canton": "Loreto",
+          "Capital": "Loreto"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 18,
+    "Province": "Pastaza",
+    "cantons": [
+        {
+           "Canton": "Arajuno",
+          "Capital": "Arajuno"   
+        },
+        {
+          "Canton": "Mera",
+          "Capital": "Mera"
+        },
+        {
+          "Canton": "Pastaza",
+          "Capital": "Puyo"
+        },
+        {
+          "Canton": "Santa Clara",
+          "Capital": "Santa Clara"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 19,
+    "Province": "Pichincha",
+    "cantons": [
+        {
+          "Canton": "Cayambe",
+          "Capital": "Cayambe"
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Mejía",
+          "Capital": "Machachi",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Pedro Moncayo",
+          "Capital": "Tabacundo",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Pedro Vicente Maldonado",
+          "Capital": "Pedro Vicente Maldonado",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Puerto Quito",
+          "Capital": "Puerto Quito",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Quito",
+          "Capital": "Quito",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "Rumiñahui",
+          "Capital": "Sangolquí",
+          "": ""
+        },
+        {
+          "Province SN": 19,
+          "Province": "Pichincha",
+          "Canton": "San Miguel de Los Bancos",
+          "Capital": "San Miguel de los Bancos",
+          "": ""
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 20,
+    "Province": "Santa Elena",
+    "cantons": [
+        {
+            "Canton": "La Libertad",
+            "Capital": "La Libertad"
+        },
+        {
+        "Canton": "Salinas",
+        "Capital": "Salinas"
+      },
+      {
+        "Canton": "Santa Elena",
+        "Capital": "Santa Elena"
+      }
+      ]
+  },
+
+  {
+    "Province SN": 21,
+    "Province": "Santo Domingo de los Tsáchilas",
+    "cantons" : [
+        {
+          "Canton": "Santo Domingo de los Colorados (Santo Domingo)",
+          "Capital": "Santo Domingo de los Colorados"   
+        },
+        {
+        "Canton": "La Concordia",
+        "Capital": "La Concordia"
+      }
+      ]
+  },
+  {
+    "Province SN": 22,
+    "Province": "Sucumbíos",
+    "cantons": [
+        {
+            "Canton": "Cascales",
+            "Capital": "El Dorado de Cascales"
+        },
+        {
+          "Canton": "Cuyabeno",
+          "Capital": "Tarapoa"
+        },
+        {
+          "Canton": "Gonzalo Pizarro",
+          "Capital": "Lumbaqui"
+        },
+        {
+          "Canton": "Lago Agrio",
+          "Capital": "Nueva Loja (Lago Agrio)"
+        },
+        {
+          "Canton": "Putumayo",
+          "Capital": "Puerto Carmen"
+        },
+        {
+          "Canton": "Shushufindi",
+          "Capital": "Shushufindi"
+        },
+        {
+          "Canton": "Sucumbíos",
+          "Capital": "La Bonita"
+        }
+      ]
+  },
+  
+  {
+    "Province SN": 23,
+    "Province": "Tungurahua",
+    "cantons": [
+        {
+            "Canton": "Tisaleo",
+            "Capital": "Tisaleo" 
+        },
+        {
+        "Canton": "Ambato",
+        "Capital": "Ambato (San Juan de Ambato)"
+      },
+      {
+        "Canton": "Baños",
+        "Capital": "Baños de Agua Santa (Baños de Agua Santa)"
+      },
+      {
+        "Canton": "Cevallos",
+        "Capital": "Cevallos"
+      },
+      {
+        "Canton": "Mocha",
+        "Capital": "Mocha"
+      },
+      {
+        "Canton": "Patate",
+        "Capital": "Patate"
+      },
+      {
+        "Canton": "Pelileo",
+        "Capital": "Pelileo (San Pedro de Pelileo)"
+      },
+      {
+        "Canton": "Píllaro",
+        "Capital": "Píllaro (Santiago de Píllaro)"
+      }
+      ]
+  },
+  {
+    "Province SN": 23,
+    "Province": "Tungurahua",
+
+    "cantons": [
+        {
+              "Canton": "Quero",
+            "Capital": "Quero (Santiago de Quero)"
+        },
+        {
+          "Canton": "Centinela del Cóndor",
+          "Capital": "Zumbi"
+        },
+        {
+          "Canton": "Chinchipe",
+          "Capital": "Zumba"
+        },
+        {
+          "Canton": "El Pangui",
+          "Capital": "El Pangui"
+        },
+        {
+          "Canton": "Nangaritza",
+          "Capital": "Guayzimi (Nangaritza)"
+        },
+        {
+          "Canton": "Palanda",
+          "Capital": "Palanda"
+        },
+        {
+          "Canton": "Paquisha",
+          "Capital": "Paquisha"
+        },
+        {
+          "Canton": "Yacuambi",
+          "Capital": "Yacuambi"
+        },
+        {
+          "Canton": "Yantzaza",
+          "Capital": "Yantzaza"
+        },
+        {
+          "Canton": "Zamora",
+          "Capital": "Zamora"
+        }
+      ]
+  },
+  {
+    "Province SN": 25,
+    "Province": "No Province",
+    "cantons": [
+        { "Canton": "Las Golondrinas",
+          "Capital": "Las Golondrinas"
+        },
+        {
+            "Canton": "La Manga del Cura",
+            "Capital": "La Manga del Cura"
+        },
+        {
+          "Canton": "El Piedrero",
+          "Capital": "El Piedrero"
+        },
+        {
+          "Canton": "Matilde Esther",
+          "Capital": "Matilde Esther"
+        }
+      ]
+  }
+]

@@ -1,0 +1,6 @@
+data-id="{{ $id }}"
+data-university_name="{{$name}}"
+data-university_email="{{$email}}"
+data-university_website="{{$website}}"
+data-university_phone="{{$phone}}"
+data-university_note="{{$note}}"
