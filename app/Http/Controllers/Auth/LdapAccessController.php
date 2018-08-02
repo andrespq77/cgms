@@ -26,6 +26,7 @@ class LdapAccessController extends Controller
 		
 		try {
 			Adldap::connect();
+			//on local through exception
 		} catch (\Exception $e) {
 			dd('can not connect to ldap');
 		}
