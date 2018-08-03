@@ -35,10 +35,9 @@ class PortfolioController extends Controller
      */
     public function teachers(Request $request){
 
-
         $user = Auth::user();
 
-        $page           = $request->input('page') == null ? 1: $request->input('page');
+        $page = $request->input('page') == null ? 1: $request->input('page');
 
         if ($user->role == 'admin'){
 
@@ -64,7 +63,6 @@ class PortfolioController extends Controller
             $teacherRepo = new TeacherRepository();
 
             $teacher = $teacherRepo->findById($user->teacher->id);
-
 
             return view('lms.admin.teacher.profile', ['teacher'=> $teacher, 'title' =>  $title]);
 

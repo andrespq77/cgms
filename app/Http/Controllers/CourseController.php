@@ -452,6 +452,8 @@ class CourseController extends Controller
 
             if ($request->file('qqfile')->extension() == 'zip'){
 
+                dd(event(new DiplomaUploaded($path, $pathFile, $course->id)));
+
                 // extract the file in the event
                 event(new DiplomaUploaded($path, $pathFile, $course->id));
 

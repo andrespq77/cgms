@@ -66,7 +66,7 @@
                         'form_id' =>'form_upload_diploma' , 'form_class' => 'js-upload-diploma-zip'])
 
                 @slot('modal_title')
-                    {{ __('lms.message.upload_diploma_zip_file') }}
+                    {{ __('lms.messages.upload_diploma_zip_file') }}
                 @endslot
 
                 @slot('modal_body')

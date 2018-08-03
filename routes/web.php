@@ -107,6 +107,7 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
+
         Route::prefix('course')->group(function (){
 
             Route::get('/', 'CourseController@index');
