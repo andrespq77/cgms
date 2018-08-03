@@ -47,7 +47,6 @@ class ExtractDiplomaFile implements ShouldQueue
         $zip->make(storage_path('app/'.$diploma->filePath))
             ->extractTo(storage_path('app/'.$diploma->path));
 
-
 //        @todo after updating files, add a diploma Uploaded flat in course record
         if(Storage::exists($diploma->path.'/zip')) {
 
@@ -64,7 +63,9 @@ class ExtractDiplomaFile implements ShouldQueue
 
         foreach ($files as $file){
 
-            $socialId = pathinfo(basename(basename($file)), PATHINFO_FILENAME);;
+//            $socialId = pathinfo(basename(basename($file)), PATHINFO_FILENAME);;
+            $socialId = pathinfo($file, PATHINFO_FILENAME);
+
             $fullPath = storage_path('app/'.$file);
             $registrationRepo->updateDiplomaFile($diploma->courseId, $socialId, $fullPath);
             Log::info('File data', ['socialId' => $socialId, 'full path: '=> $fullPath]);

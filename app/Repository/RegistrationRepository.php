@@ -32,10 +32,11 @@
          */
         public function updateDiplomaFile($courseId, $studentSocialSecurityId, $path){
 
+
+
             $registration = Registration::where('course_id', $courseId)
                             ->where('user_social_id', $studentSocialSecurityId)
                             ->first();
-
             if ($registration){
 
                 $registration->diploma_path = $path;

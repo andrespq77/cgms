@@ -412,6 +412,7 @@ class CourseController extends Controller
      */
     public function uploadFile(Request $request) {
 
+
         $course = $this->repo->getById($request->input('course_id'));
 
         $root_path = 'course/university_'.$course->university->id.'/course_'.$request->input('course_id');
@@ -451,9 +452,7 @@ class CourseController extends Controller
             $pathFile = $cloud->putFileAs($path, $request->file('qqfile'), $filename);
 
             if ($request->file('qqfile')->extension() == 'zip'){
-
-                dd(event(new DiplomaUploaded($path, $pathFile, $course->id)));
-
+                
                 // extract the file in the event
                 event(new DiplomaUploaded($path, $pathFile, $course->id));
 
