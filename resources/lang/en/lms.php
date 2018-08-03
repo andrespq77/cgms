@@ -379,6 +379,7 @@
             'download_sample_file' => 'Download Sample File',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
             'course_request_list_modal' => 'Course Request List Modal',
-            'diploma_upload_message' => 'Diploma upload will be enabled From Grade Entry Start Date'
+            'diploma_upload_message' => 'Diploma upload will be enabled From Grade Entry Start Date',
+            'master_course_confirm_message' => 'Do you want to delete this. May be it has some course too.'
         ]
     ];

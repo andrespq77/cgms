@@ -44,7 +44,7 @@
                             <th width="100px">Code</th>
                             <th width="350px">Title</th>
                             <th width="350px">Subject</th>
-                            <th width="100px">Courses</th>
+                            <th width="100px">Child Courses</th>
                             <th width="100px">Updated By</th>
                             <th width="120px">Updated at</th>
                             <th width="150px">Action</th>
@@ -60,29 +60,32 @@
                             <td><code>{{ $course->course_code }}</code></td>
                             <td>{{ $course->name }}</td>
                             <td>{{ $course->subject->title }}</td>
-                            <td><span class="badge badge-info">{{ $course->courses->count() }}</span>&nbsp;courses</td>
+                            <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;courses</td>
                             <td>{{ $course->updatedBy->name }}</td>
                             <td>{{ $course->updated_at->diffForHumans() }}</td>
                             <td>
-                                <form action="{{ url("/admin/master-course/$course->id") }}" method="post">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="_method" value="DELETE">
+                                <form action="{{ url("/admin/master-course/$course->id") }}" method="post" id="{{$course->id}}">
+                                    @csrf
+                                    @method('DELETE')
 
                                     <div class="btn-group btn-group-xs">
                                         <a href="{{ url('/admin/master-course/'.$course->id) }}"
                                            class="btn btn-flat btn-primary">
                                             <i class="fa fa-edit"></i> {{ __('lms.elements.button.edit') }}
                                         </a>
-                                        <button type="submit" class="btn btn-warning">
-                                            <i class="fa fa-trash"></i> {{ __('lms.elements.button.delete') }}
-                                        </button>
+
+                                        @if($course->courses->count()==0)
+                                            <a type="submit" class="btn btn-flat btn-warning" onclick="if (confirm('¿Quieres borrar esto? Puede ser que tenga algún curso para niños.')) { document.getElementById({{$course->id}}).submit(); }">
+                                                <i class="fa fa-trash"></i> {{ __('lms.elements.button.delete') }}
+                                            </a>
+                                        @endif
+
                                     </div>
                                 </form>
                             </td>
                         </tr>
 
                     @endforeach
-
 
                     </tbody>
 
