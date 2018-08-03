@@ -1,7 +1,7 @@
 <div class="box box-default">
     <div class="box-header">
         <h3 class="box-title">
-            All Modalities
+            Todas las Modalidades
         </h3>
     </div>
     <div class="box-body">
@@ -9,9 +9,9 @@
 
             <thead>
             <tr>
-                <th>Sort</th>
-                <th>Title</th>
-                <th width="200px" class="text-right">Action</th>
+                <th>Ordenar</th>
+                <th>Título</th>
+                <th width="200px" class="text-right">Acción</th>
             </tr>
             </thead>
             <tbody id="modality-body">
@@ -28,8 +28,8 @@
                         <div class="btn-group bt-xs">
                             <button class="btn btn-default btn-edit btn-xs btn-flat" data-id="{{ $modality->id }}"
                                     data-title="{{ $modality->title }}" data-sort="{{ $modality->sort }}"
-                            >Edit</button>
-                            <button class="btn btn-default btn-xs btn-remove btn-flat" data-id="{{ $modality->id }}">Remove</button>
+                            >Editar</button>
+                            <button class="btn btn-default btn-xs btn-remove btn-flat" data-id="{{ $modality->id }}">Borrar</button>
                         </div>
                     </td>
                 </tr>

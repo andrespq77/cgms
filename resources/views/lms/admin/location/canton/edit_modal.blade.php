@@ -5,7 +5,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-file-o"></i> <span class="js-modal-title">Edit Canton</span></h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-file-o"></i> <span class="js-modal-title">Editar Canton</span></h4>
             </div>
             <form class="form-horizontal js-edit-canton-form" >
 
@@ -24,7 +24,7 @@
                                             class="js-edit-canton-province js-province form-control" name="province"></select>
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Canton Name</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Nombre de Canton</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Canton Name" maxlength="100">
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="js-edit-canton-district" class="col-md-2 control-label">District</label>
+                                <label for="js-edit-canton-district" class="col-md-2 control-label">Distrito</label>
                                 <div class="col-md-10">
                                     <input id="js-edit-canton-district" type="text" class="js-edit-canton-district form-control" name="district"
                                            value="" required placeholder="District" maxlength="100">
@@ -48,13 +48,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="dist_code" class="col-md-2 control-label">Code</label>
+                                <label for="dist_code" class="col-md-2 control-label">Código</label>
                                 <div class="col-md-4">
                                     <input id="dist_code" type="text" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Code" maxlength="10">
                                 </div>
 
-                                <label for="zone" class="col-md-2 control-label">Zone</label>
+                                <label for="zone" class="col-md-2 control-label">Zona</label>
                                 <div class="col-md-4">
                                     <select id="zone" class="js-edit-canton-zone form-control" name="zone">
                                         <option value="Zona 1">{{ __('lms.words.zone') }} 1</option>
@@ -80,9 +80,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="btn-edit-canton" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i> Actualizar</button>
                 </div>
             </form>
         </div>

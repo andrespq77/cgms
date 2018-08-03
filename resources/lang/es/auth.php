@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Estas Credenciales no coinciden cin nuestros registros.',
+    'failed' => 'Usuario o contraseña equivocados.',
     'throttle' => 'Demasiados intentos, Por favor, vuelva a intentar en :seconds segundos.',
 
 ];

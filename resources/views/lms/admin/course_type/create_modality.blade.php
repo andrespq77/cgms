@@ -1,7 +1,7 @@
     <div class="box box-default">
 
         <div class="box-header with-border">
-            <h3 class="box-title">Add Modality</h3>
+            <h3 class="box-title">Agragar Modalidad</h3>
         </div>
 
         <form class="form-horizontal"  action="#">
@@ -24,14 +24,13 @@
 
             <div class="box-footer">
                 {{--@isset($type)--}}
-                <a href="javascript:void(0)" class="btn btn-default btn-new-modality btn-flat btn-xs"><i class="fa fa-plus"></i> New</a>
+                <a href="javascript:void(0)" class="btn btn-default btn-new-modality btn-flat btn-xs"><i class="fa fa-plus"></i> Nuevo</a>
                 {{--@endisset--}}
 
                 <button type="button" class="btn btn-default btn-add-modality pull-right" data-type="insert"
-                ><i class="fa fa-plus"></i> Add</button>
+                ><i class="fa fa-plus"></i> Agregar</button>
             </div>
 
         </form>
 
     </div>
-

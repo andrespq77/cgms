@@ -55,7 +55,7 @@
                             <div class="js-error-block js-course_edition-block">
 
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course_edition', 'grid' => 4,
-                                        'title' => 'Course Edition'])
+                                        'title' => 'Edición'])
                                 <input id="js-edit-course-edition" type="text" class="js-edit-course-edition form-control"
                                 name="course_edition" value="" required placeholder="Edition" maxlength="100">
 
@@ -96,7 +96,7 @@
                             <div class="js-error-block js-grade-entry-start-date-block">
 
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'grade-entry-start-date',
-                                'grid' => 4, 'title' => 'Grade Entry Start Date'])
+                                'grid' => 4, 'title' => 'Fecha inicio de ingreso de notas'])
                                 <input id="js-edit-grade-entry-start-date" type="text" name="grade-entry-start-date"
                                        class="js-edit-grade-entry-start-date js-datepicker form-control"
                                        autocomplete="off" />
@@ -107,7 +107,7 @@
 
                             <div class="js-error-block js-grade-entry-end-date-block">
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'grade-entry-end-date',
-                                    'grid' => 4, 'title' => 'Grade Entry End Date'])
+                                    'grid' => 4, 'title' => 'Fecha fin de ingreso de notas'])
                                     <input id="js-edit-grade-entry-end-date" type="text" name="grade-entry-end-date"
                                            class="js-edit-grade-entry-end-date js-datepicker form-control"
                                            autocomplete="off" />
@@ -217,8 +217,8 @@
                                 'title' => __('lms.page.course.form.stage')])
                                 <select id="js-edit-course-stage" name="course_stage"
                                         class="js-edit-course-stage js-select-course-stage form-control" >
-                                    <option value="0">Draft</option>
-                                    <option value="1">Published</option>
+                                    <option value="0">Borrador</option>
+                                    <option value="1">Publicado</option>
                                 </select>
                             @endcomponent
 
@@ -226,8 +226,8 @@
                                 'title' => __('lms.page.course.form.status')])
                                 <select id="js-edit-course-status" name="course_status"
                                         class="js-edit-course-status js-select-course-status form-control" >
-                                    <option value="0">Inactive</option>
-                                    <option value="1">Active</option>
+                                    <option value="0">Inactivo</option>
+                                    <option value="1">Activo</option>
                                 </select>
                             @endcomponent
                         </div>
@@ -270,14 +270,14 @@
 
                         <div class="col-md-12 col-md-12 col-sm-12">
 
-                            <code>Upload Terms and Condition</code>
+                            <code>Subir Terminos y Condiciones</code>
                             <div id="course-terms_condition-uploader-manual-trigger"></div>
 
-                            <code>Upload Letter of Registration</code>
+                            <code>Subir carta de Registro</code>
                             <div id="course-letter_of_registration-uploader-manual-trigger"></div>
 
                             <div class="js-disclaimer-wrapper hidden">
-                            <code>Upload Disclaimer</code>
+                            <code>Subir Disclaimer</code>
                             <div id="course-disclaimer-uploader-manual-trigger"></div>
                             </div>
 
@@ -292,15 +292,15 @@
 
                         <div class="col-lg-6 col-sm-6 col-md-6 text-left">
                             <button class="btn btn-info btn-update-course-files hidden"
-                                    type="button"><i class="fa fa-cloud-upload"></i> Update Files</button>
+                                    type="button"><i class="fa fa-cloud-upload"></i> Actualizar Archivos</button>
                             <button class="btn btn-info btn-show-course-form hidden"
-                                    type="button">Show Form</button>
+                                    type="button">Mostrar Formulario</button>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6">
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <button type="button" id="btn-edit-course" data-id="" class="btn btn-primary" data-type="update">
-                                <i class="fa fa-plus"></i> Update</button>
+                                <i class="fa fa-plus"></i> Actualizar</button>
                         </div>
                     </div>
                 </div>

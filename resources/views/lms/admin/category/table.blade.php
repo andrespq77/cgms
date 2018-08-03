@@ -3,8 +3,8 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Title</th>
-        <th width="200px" class="text-right">Action</th>
+        <th>Título</th>
+        <th width="200px" class="text-right">Acción</th>
     </tr>
     </thead>
     <tbody id="{{ str_replace('admin/categories/', '', Request::path() ) }}-table">

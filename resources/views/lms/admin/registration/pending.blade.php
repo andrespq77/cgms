@@ -73,10 +73,10 @@
                                                         {{--</label>--}}
                                                     {{--</div>--}}
                                                     {{--<button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"--}}
-                                                    {{--data-id="{{ $registration->id }}">Confirm</button>--}}
+                                                    {{--data-id="{{ $registration->id }}">Confirmar</button>--}}
                                                 {{--</div>--}}
                                             {{--@else--}}
-                                                {{--<i class="fa fa-check"></i> Yes <br/>--}}
+                                                {{--<i class="fa fa-check"></i> Si <br/>--}}
                                                 {{--<small><i class="fa fa-clock-o"></i>--}}
                                                     {{--{{ date('d M, Y - h:i a', strtotime($registration->approval_time)) }}</small>--}}
                                             {{--@endif--}}

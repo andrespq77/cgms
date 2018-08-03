@@ -9,7 +9,7 @@
             <th width="200px;">{{ __('lms.page.teacher.table.university') }}</th>
             <th width="120px;">Profession</th>
             <th>{{ __('lms.page.teacher.table.location') }}</th>
-            <th width="140px">Course Info</th>
+            <th width="140px">Info del Curso</th>
             <th width="150px" class="text-right">{{ __('lms.page.teacher.table.action') }}</th>
         </tr>
     </thead>
