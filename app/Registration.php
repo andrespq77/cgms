@@ -17,7 +17,7 @@ class Registration extends Model
      * @var string
      */
     protected $table = 'registrations';
-
+    protected $guarded = [];
 
     protected $dates = [
         'diploma_download_time',
@@ -28,14 +28,14 @@ class Registration extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'reg_date', 'teacher_id', 'course_id', 'user_social_id', 'user_first_name', 'user_last_name',
-        'email', 'cell_phone', 'accept_tc', 'tc_accept_time',
-        'inspection_certificate', 'inspection_certificate_signed', 'inspection_certificate_upload_time',
-        'registry_is_generated', 'is_approved', 'certificate_path', 'diploma_path', 'diploma_download_time',
-        'mark', 'mark_approved', 'mark_approved_by', 'mark_upload_time',
-        'approval_time', 'approved_by',
-    ];
+//    protected $fillable = [
+//        'reg_date', 'teacher_id', 'course_id', 'user_social_id', 'user_first_name', 'user_last_name',
+//        'email', 'cell_phone', 'accept_tc', 'tc_accept_time',
+//        'inspection_certificate', 'inspection_certificate_signed', 'inspection_certificate_upload_time',
+//        'registry_is_generated', 'is_approved', 'certificate_path', 'diploma_path', 'diploma_download_time',
+//        'mark', 'mark_approved', 'mark_approved_by', 'mark_upload_time',
+//        'approval_time', 'approved_by',
+//    ];
 
 
     /**

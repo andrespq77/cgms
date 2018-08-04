@@ -75,7 +75,7 @@
                                         </a>
 
                                         @if($course->courses->count()==0)
-                                            <a type="submit" class="btn btn-flat btn-warning" onclick="if (confirm('¿Quieres borrar esto? Puede ser que tenga algún curso para niños.')) { document.getElementById({{$course->id}}).submit(); }">
+                                            <a type="submit" class="btn btn-flat btn-warning" onclick="if (confirm('Esta seguro que quiere eliminar?')) { document.getElementById({{$course->id}}).submit(); }">
                                                 <i class="fa fa-trash"></i> {{ __('lms.elements.button.delete') }}
                                             </a>
                                         @endif

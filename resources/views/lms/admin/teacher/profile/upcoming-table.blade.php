@@ -11,6 +11,8 @@
         <th>{{ __('lms.page.course.table.stage') }}</th>
         <th>{{ __('lms.page.course.table.status') }}</th>
         <th>{{ __('lms.page.upcoming.table.action') }}</th>
+        <th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>
+
     </tr>
     </thead>
     <tbody>
@@ -75,6 +77,11 @@
 
                 @endcan
             </td>
+
+            @foreach($course->registrations as $registration)
+                {{--todo: course have many regestrations? so--}}
+{{--                @include('lms.admin.registration.parts.table.td.certificate')--}}
+            @endforeach
         </tr>
     @endforeach
     @endisset
