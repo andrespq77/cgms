@@ -112,8 +112,7 @@ class CourseController extends Controller
 
         } elseif ($user->role == 'university'){
 
-            $course = Course::where('university_id', $user->university->id)
-                            ->get();
+            $course = Course::where('university_id', $user->university->id)->get();
         }
 
         return Datatables::of($course)

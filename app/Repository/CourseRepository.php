@@ -33,15 +33,12 @@ class CourseRepository
 
         $data = Cache::tags('COURSE_PAGINATE')->remember('COURSE_PAGINATE_'.$page, 60, function ()  {
 
-
             return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations',
                 'updatedBy'])
                     ->orderBy('updated_at', 'desc')
                     ->orderBy('stage', 'asc')
                     ->orderBy('status', 'asc')
-                    ->paginate(10);
-
-        });
+                    ->paginate(10);});
 
         return $data;
 
@@ -76,7 +73,6 @@ class CourseRepository
         /**
          * Store a teacher and return the teacher
          */
-
         $user = Auth::user();
         $course = new Course();
 
@@ -120,6 +116,7 @@ class CourseRepository
 
         $course->save();
 
+        $this->flushCache();
 
         return $course;
 
