@@ -1,7 +1,7 @@
 <table class="table table-borderless table-responsive table-hover" id="upcoming-course">
     <thead>
     <tr>
-        <th>{{ __('lms.page.upcoming.table.institution') }}</th>
+{{--        <th>{{ __('lms.page.upcoming.table.institution') }}</th>--}}
         <th>{{ __('lms.page.upcoming.table.short_name') }}</th>
         <th>{{ __('lms.page.upcoming.table.modality') }}</th>
         <th>{{ __('lms.page.course.form.quota') }}</th>
@@ -20,7 +20,7 @@
     @isset($teacher)
     @foreach($teacher->allUpcomingCourses as $course)
         <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
-            <td>{{ $course->university->name }}</td>
+{{--            <td>{{ $course->university->name }}</td>--}}
             <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a><br/>
                 <small class="text-warning">{{ $course->course_code }}</small>
             </td>
