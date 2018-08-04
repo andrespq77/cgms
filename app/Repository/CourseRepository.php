@@ -122,6 +122,25 @@ class CourseRepository
 
     }
 
+    public function search($page, $keyword){
+
+
+        $data = Cache::tags('COURSE_SEARCH')
+            ->remember('COURSE_SEARCH_PAGINATE_'.$page.'_KEYWORD_'.str_slug( $keyword,'-'), 60,
+                function () use($keyword) {
+
+                    return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations'])
+                        ->where('course_code', 'like','%' . $keyword . '%')
+                        ->orWhere('short_name','like', '%' . $keyword . '%')
+                        ->orWhere('hours','like', '%' . $keyword . '%')
+                        ->orWhere('description','like', '%' . $keyword . '%')
+                        ->paginate(10);
+
+                });
+
+        return $data;
+    }
+
     /**
      * @param $social_id
      * @param $inst_email
@@ -233,7 +252,7 @@ class CourseRepository
 
     public function flushCache(){
 
-        Cache::tags(['COURSE_FIND_BY_ID', 'COURSE_FIND_BY_CODE'])->flush();
+        Cache::tags(['COURSE_FIND_BY_ID', 'COURSE_FIND_BY_CODE','COURSE_SEARCH'])->flush();
         Cache::tags(['COURSE_PAGINATE'])->flush();
     }
 

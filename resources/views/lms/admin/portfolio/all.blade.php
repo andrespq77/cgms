@@ -119,7 +119,7 @@
                                             <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
                                             <small><i class="fa fa-clock-o"></i>
                                                 {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
-                                                {{ date('d M, Y', strtotime($registration->approval_time)) }}</small>
+                                                {{ date('d M, Y', strtotime($registration->approval_time)) }}
                                             </small>
                                         @endif
                                     </td>
