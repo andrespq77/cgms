@@ -31,9 +31,7 @@ Route::middleware(['ldapauth'])->group(function (){
 	
     Route::prefix('admin')->group(function(){
 
-
         Route::get('/unauthorized', 'HomeController@unauthorized');
-
 
         Route::prefix('teachers')->group(function (){
 
@@ -107,6 +105,9 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
+        /**
+         * Course
+         */
 
         Route::prefix('course')->group(function (){
 
@@ -121,6 +122,8 @@ Route::middleware(['ldapauth'])->group(function (){
             Route::post('/upload/inspection-form', 'CourseController@uploadInspection');
             Route::post('/upload/new-course', 'CourseController@uploadCourseList');
             Route::post('/upload/file', 'CourseController@uploadFile');
+
+            Route::get('/search', 'CourseController@getSearch');
 
             Route::get('/search/ajax', 'CourseController@getSearch');
 

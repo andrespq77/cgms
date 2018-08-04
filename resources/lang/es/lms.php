@@ -131,7 +131,8 @@
                     'institute'         => 'Universidad',
                     'modality'          => 'Modalidad',
                     'hours'             => 'Horas',
-                    'start_date'        => 'Fecha Final',
+                    'start_date'        => 'Fecha de inicio',
+                    'end_date'          => 'Fecha final',
                     'status'            => 'Estado',
                     'certificate'       => 'Certificado',
                 ]

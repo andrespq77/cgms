@@ -35,6 +35,7 @@ class PortfolioController extends Controller
      */
     public function teachers(Request $request){
 
+
         $user = Auth::user();
 
         $page = $request->input('page') == null ? 1: $request->input('page');

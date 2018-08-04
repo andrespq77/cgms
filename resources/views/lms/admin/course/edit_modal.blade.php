@@ -276,11 +276,6 @@
                             <code>Upload Letter of Registration</code>
                             <div id="course-letter_of_registration-uploader-manual-trigger"></div>
 
-                            <div class="js-disclaimer-wrapper hidden">
-                            <code>Upload Disclaimer</code>
-                            <div id="course-disclaimer-uploader-manual-trigger"></div>
-                            </div>
-
                         </div>
 
                     </div>
@@ -298,7 +293,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6">
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>
                             <button type="button" id="btn-edit-course" data-id="" class="btn btn-primary" data-type="update">
                                 <i class="fa fa-plus"></i> Update</button>
                         </div>

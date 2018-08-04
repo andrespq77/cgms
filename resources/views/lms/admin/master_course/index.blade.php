@@ -75,7 +75,11 @@
                                         </a>
 
                                         @if($course->courses->count()==0)
+<<<<<<< HEAD
                                             <a type="submit" class="btn btn-flat btn-warning" onclick="if (confirm('¿Quieres borrar esto? Puede ser que tenga algún curso para niños.')) { document.getElementById({{$course->id}}).submit(); }">
+=======
+                                            <a type="submit" class="btn btn-flat btn-warning" onclick="if (confirm('Esta seguro que quiere eliminar?')) { document.getElementById({{$course->id}}).submit(); }">
+>>>>>>> 9591064267a3035b5c20260f83256b8b3d695ef9
                                                 <i class="fa fa-trash"></i> {{ __('lms.elements.button.delete') }}
                                             </a>
                                         @endif

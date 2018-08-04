@@ -51,27 +51,25 @@ class CourseController extends Controller
      */
     public function index(Request $request){
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 9591064267a3035b5c20260f83256b8b3d695ef9
         $user = Auth::user();
+        $courses = '';
 
         if ($user->can('browse', Course::class)){
 
             $posts = $request->all();
-
             $page = isset($posts['page']) ? $posts['page'] : 1;
 
-
             if ($user->role == 'admin'){
-
                 $courses = $this->repo->paginate($page);
 
-
             } elseif ($user->role == 'university'){
-
                 $courses = $this->repo->coursesByUniversity($page, $user->university->id);
 
             }
-
 
             $title = 'Course Management - '.env('APP_NAME') ;
 
@@ -82,7 +80,27 @@ class CourseController extends Controller
 
         }
 
+    }
 
+    public function getSearch(Request $request)
+    {
+
+        $user = Auth::user();
+
+        if ($user->can('browse', Course::class)) {
+
+            $posts = $request->query();
+            $page = isset($posts['page']) ? $posts['page'] : 1;
+
+            $title = 'Course Search Result for ['.$posts['search'].'] - '.env('APP_NAME') ;
+
+            $courses = $this->repo->search($page, $posts['search']);
+
+            return view('lms.admin.course.index', ['title'=> $title, 'courses' => $courses]);
+
+        } else{
+            echo  'unauthorized';
+        }
     }
 
 
@@ -112,8 +130,7 @@ class CourseController extends Controller
 
         } elseif ($user->role == 'university'){
 
-            $course = Course::where('university_id', $user->university->id)
-                            ->get();
+            $course = Course::where('university_id', $user->university->id)->get();
         }
 
         return Datatables::of($course)
@@ -531,15 +548,6 @@ class CourseController extends Controller
             'registration' => $registration,
             'course' => $teacher->getRequestedCourse($course_id)->first()]);
 
-    }
-
-    /**
-     * @param Request $request
-     * @return array
-     */
-    public function getSearch(Request $request){
-
-        return ['request'=> $request->all()];
     }
 
 

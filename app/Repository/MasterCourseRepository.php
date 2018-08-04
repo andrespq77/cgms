@@ -134,7 +134,6 @@ class MasterCourseRepository
 
     public function flushCache(){
 
-
         Cache::tags(['MASTER_COURSE_LIST'])->flush();
     }
 
