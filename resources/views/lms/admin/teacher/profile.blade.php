@@ -28,8 +28,8 @@
                             <th>{{ __('lms.page.teacher_profile.table.hours') }}</th>
                             <th>{{ __('lms.page.teacher_profile.table.start_date') }}</th>
                             <th>{{ __('lms.page.teacher_profile.table.end_date') }}</th>
-                            <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
-                            <th>{{ __('lms.page.teacher.table.approved') }}</th>
+                            {{--<th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>--}}
+                            {{--<th>{{ __('lms.page.teacher.table.approved') }}</th>--}}
                             {{--<th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>--}}
                             <th>{{ __('lms.words.diploma') }}</th>
                         </tr>
@@ -48,18 +48,18 @@
                                 <td>{{ $registration->course->hours }}</td>
                                 <td>{{ date('d M Y', strtotime($registration->course->start_date)) }}</td>
                                 <td>{{ date('d M Y', strtotime($registration->course->end_date)) }}</td>
-                                @include('lms.admin.registration.parts.table.td.student_inspection_form')
-                                <td class="js-td-is-approved">
-                                    @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                                        <span class="label label-warning">Not approved</span>
-                                    @else
-                                        <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
-                                        <small><i class="fa fa-clock-o"></i>
-                                            {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
-                                            {{ date('d M, Y', strtotime($registration->approval_time)) }}
-                                        </small>
-                                    @endif
-                                </td>
+                                {{--@include('lms.admin.registration.parts.table.td.student_inspection_form')--}}
+                                {{--<td class="js-td-is-approved">--}}
+                                    {{--@if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)--}}
+                                        {{--<span class="label label-warning">Not approved</span>--}}
+                                    {{--@else--}}
+                                        {{--<span class="label label-success"><i class="fa fa-check"></i> Yes</span>--}}
+                                        {{--<small><i class="fa fa-clock-o"></i>--}}
+                                            {{--{{ date('h:i a', strtotime($registration->approval_time)) }}<br/>--}}
+                                            {{--{{ date('d M, Y', strtotime($registration->approval_time)) }}--}}
+                                        {{--</small>--}}
+                                    {{--@endif--}}
+                                {{--</td>--}}
                                 {{--@include('lms.admin.registration.parts.table.td.certificate')--}}
                                 @include('lms.admin.registration.parts.table.td.diploma')
                                 <td></td>

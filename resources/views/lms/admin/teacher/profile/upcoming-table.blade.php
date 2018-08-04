@@ -11,6 +11,8 @@
         <th>{{ __('lms.page.course.table.stage') }}</th>
         <th>{{ __('lms.page.course.table.status') }}</th>
         <th>{{ __('lms.page.upcoming.table.action') }}</th>
+        <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
+        <th>{{ __('lms.page.teacher.table.approved') }}</th>
         <th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>
 
     </tr>
@@ -78,7 +80,21 @@
                 @endcan
             </td>
 
+
             @foreach($course->registrations as $registration)
+                <td class="js-td-is-approved">
+                    @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
+                        <span class="label label-warning">Not approved</span>
+                    @else
+                        <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
+                        <small><i class="fa fa-clock-o"></i>
+                            {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
+                            {{ date('d M, Y', strtotime($registration->approval_time)) }}
+                        </small>
+                    @endif
+                </td>
+                @include('lms.admin.registration.parts.table.td.student_inspection_form')
+
                 @include('lms.admin.registration.parts.table.td.certificate')
                 @break
             @endforeach
