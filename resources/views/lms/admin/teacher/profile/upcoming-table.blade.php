@@ -4,11 +4,11 @@
 {{--        <th>{{ __('lms.page.upcoming.table.institution') }}</th>--}}
         <th>{{ __('lms.page.upcoming.table.short_name') }}</th>
         <th>{{ __('lms.page.upcoming.table.modality') }}</th>
-        <th>{{ __('lms.page.course.form.quota') }}</th>
+{{--        <th>{{ __('lms.page.course.form.quota') }}</th>--}}
         <th>{{ __('lms.page.upcoming.table.hours') }}</th>
         <th>{{ __('lms.page.upcoming.table.start_date') }}</th>
         <th>{{ __('lms.page.upcoming.table.end_date') }}</th>
-        <th>{{ __('lms.page.course.table.stage') }}</th>
+        {{--<th>{{ __('lms.page.course.table.stage') }}</th>--}}
         <th>{{ __('lms.page.course.table.status') }}</th>
         <th>{{ __('lms.page.upcoming.table.action') }}</th>
         <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
@@ -23,19 +23,19 @@
     @foreach($teacher->allUpcomingCourses as $course)
         <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
 {{--            <td>{{ $course->university->name }}</td>--}}
-            <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a><br/>
-                <small class="text-warning">{{ $course->course_code }}</small>
+            <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a>
+                {{--<br/><small class="text-warning">{{ $course->course_code }}</small>--}}
             </td>
             <td>{{ $course->modality->title }}</td>
-            <td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>
-                {{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>
-            </td>
+            {{--<td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>--}}
+                {{--{{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>--}}
+            {{--</td>--}}
             <td>{{ $course->hours }} hours</td>
             <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
             <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
 
-            <td><span class="label label-{{ $course->stageTitle['class'] }}">
-                                            {{ $course->stageTitle['title'] }}</span></td>
+            {{--<td><span class="label label-{{ $course->stageTitle['class'] }}">--}}
+                                            {{--{{ $course->stageTitle['title'] }}</span></td>--}}
             <td><span class="label label-{{ $course->statusTitle['class'] }}">
                                             {{ $course->statusTitle['title'] }}</span></td>
             <td>
