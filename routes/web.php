@@ -114,7 +114,7 @@ Route::middleware(['ldapauth'])->group(function (){
             Route::get('/create', 'CourseController@create');
 
             Route::post('/ajax/table', 'CourseController@getTableData');
-            Route::delete('/{id}/ajax', 'CourseController@delete');//@depricated
+//            Route::delete('/{id}/ajax', 'CourseController@delete');//@depricated
             Route::post('/ajax', 'CourseController@store');
             Route::post('/ajax/{id}', 'CourseController@update');
             Route::delete('/ajax/{id}', 'CourseController@delete');

@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Storage;
  *
  * @package App\Listeners
  */
-class ExtractDiplomaFile implements ShouldQueue
+class ExtractDiplomaFile
+//class ExtractDiplomaFile implements ShouldQueue
 
 {
     /**
