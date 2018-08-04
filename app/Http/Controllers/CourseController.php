@@ -51,16 +51,13 @@ class CourseController extends Controller
      */
     public function index(Request $request){
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> 9591064267a3035b5c20260f83256b8b3d695ef9
         $user = Auth::user();
         $courses = '';
 
         if ($user->can('browse', Course::class)){
 
             $posts = $request->all();
+
             $page = isset($posts['page']) ? $posts['page'] : 1;
 
             if ($user->role == 'admin'){
