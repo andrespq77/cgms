@@ -365,6 +365,8 @@
             'download_sample_file' => 'Descargar archivo de muestra',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
             'course_request_list_modal' => 'Course Request List Modal',
-            'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de la entrada al grado'
+            'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de la entrada al grado',
+            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso para niños.'
+
         ]
     ];
