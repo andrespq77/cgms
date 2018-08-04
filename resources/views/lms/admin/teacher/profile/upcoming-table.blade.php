@@ -79,8 +79,8 @@
             </td>
 
             @foreach($course->registrations as $registration)
-                {{--todo: course have many regestrations? so--}}
-{{--                @include('lms.admin.registration.parts.table.td.certificate')--}}
+                @include('lms.admin.registration.parts.table.td.certificate')
+                @break
             @endforeach
         </tr>
     @endforeach
