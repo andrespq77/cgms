@@ -798,46 +798,46 @@ $(document).ready(function () {
         /**
          * Disclaimer File Upload
          */
-        $('#course-disclaimer-uploader-manual-trigger').fineUploader({
-            template: 'disclaimer_upload_template-trigger',
-            multiple: false,
-            request: {
-                endpoint: app_url+'/admin/course/upload/file',
-                params: {
-                    course_id : function () {
-                        return modal.find('.js-course-id').val();
-                    },
-                    type: 'disclaimer'
-                },
-                customHeaders: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            },
-            validation: {
-                itemLimit: 1,
-                allowedExtensions:  ['pdf', 'doc', 'docx'],
-            },
-            callbacks: {
-                onSubmit: function (id, name) {
-
-                },
-                onComplete: function (id, name, response, xhr ) {
-
-
-                },
-                onStatusChange: function (id, oldStatus, newStatus) {
-
-                },
-                onCancel: function (id, name) {
-
-                }
-            },
-            autoUpload: false
-        });
-
-        $('#btn-trigger-disclaimer-upload').click(function() {
-            $('#course-disclaimer-uploader-manual-trigger').fineUploader('uploadStoredFiles');
-        });
+        // $('#course-disclaimer-uploader-manual-trigger').fineUploader({
+        //     template: 'disclaimer_upload_template-trigger',
+        //     multiple: false,
+        //     request: {
+        //         endpoint: app_url+'/admin/course/upload/file',
+        //         params: {
+        //             course_id : function () {
+        //                 return modal.find('.js-course-id').val();
+        //             },
+        //             type: 'disclaimer'
+        //         },
+        //         customHeaders: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         }
+        //     },
+        //     validation: {
+        //         itemLimit: 1,
+        //         allowedExtensions:  ['pdf', 'doc', 'docx'],
+        //     },
+        //     callbacks: {
+        //         onSubmit: function (id, name) {
+        //
+        //         },
+        //         onComplete: function (id, name, response, xhr ) {
+        //
+        //
+        //         },
+        //         onStatusChange: function (id, oldStatus, newStatus) {
+        //
+        //         },
+        //         onCancel: function (id, name) {
+        //
+        //         }
+        //     },
+        //     autoUpload: false
+        // });
+        //
+        // $('#btn-trigger-disclaimer-upload').click(function() {
+        //     $('#course-disclaimer-uploader-manual-trigger').fineUploader('uploadStoredFiles');
+        // });
 
 
         /**

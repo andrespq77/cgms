@@ -276,11 +276,6 @@
                             <code>Upload Letter of Registration</code>
                             <div id="course-letter_of_registration-uploader-manual-trigger"></div>
 
-                            <div class="js-disclaimer-wrapper hidden">
-                            <code>Upload Disclaimer</code>
-                            <div id="course-disclaimer-uploader-manual-trigger"></div>
-                            </div>
-
                         </div>
 
                     </div>
