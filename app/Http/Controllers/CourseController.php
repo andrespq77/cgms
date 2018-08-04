@@ -51,7 +51,7 @@ class CourseController extends Controller
      */
     public function index(Request $request){
 
-
+	
         $user = Auth::user();
 
         if ($user->can('browse', Course::class)){
