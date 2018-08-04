@@ -18,7 +18,7 @@
 
                             <div class="form-group">
                                 <label for="province" class="col-md-4 control-label">Birth Date</label>
-                                <div class="col-md-48>
+                                <div class="col-md-48">
                                     <input id="js-date-of-birth" type="text" class="js-edit-canton-district form-control" name="district"
                                            value="" required  maxlength="50">
                                 </div>

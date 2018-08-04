@@ -127,12 +127,63 @@
                                     <i class="fa fa-envelope-o"></i>&nbsp<b>Note</b> <span class="pull-right">
                                         User was imported by {{ $teacher->createdBy->name }} here at {{ $teacher->created_at }}</span>
                                 </li>
-                                <li class="list-group-item auxilary">
-                                    <i class="fa fa-mobile"></i>&nbsp;<b>Cell 2</b> <span class="pull-right">{{ $teacher->phone2}}</span>
-                                </li>
-                                <li class="list-group-item auxilary">
-                                    <i class="fa fa-envelope"></i>&nbsp;<b>Email 2</b> <span class="pull-right">{{ $teacher->email2}}</span>
-                                </li>
+                                {{--<li class="list-group-item auxilary">--}}
+                                    {{--<i class="fa fa-mobile"></i>&nbsp;<b>Cell 2</b> <span class="pull-right"></span>--}}
+                                {{--</li>--}}
+                                {{--<li class="list-group-item auxilary">--}}
+                                    {{--<i class="fa fa-envelope"></i>&nbsp;<b>Email 2</b> <span class="pull-right">{{ $teacher->email2}}</span>--}}
+                                {{--</li>--}}
+
+                                <form class="form-horizontal" role="form" action="{{ url('admin/profile') }}" method="post">
+
+                                    {{ csrf_field() }}
+
+                                    <div class="box-body">
+
+                                        @if(session()->has('message'))
+                                            <div class="alert alert-success">
+                                                {{ session()->get('message') }}
+                                            </div>
+                                        @endif
+
+                                        @if($errors->has('name'))
+                                            @if ($errors->any())
+                                                {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                                            @endif
+                                        @endif
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                            <label  for="inputEmail3" class="col-sm-3">
+                                                <i class="fa fa-mobile"></i>&nbsp;<b>Cell 2</b></label>
+
+                                            <div class="col-sm-9">
+                                                <div class="controls">
+                                                    <input type="text" class="form-control" value="{{ $teacher->phone2}}" name="phone2" maxlength="100" />
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                            <label for="inputEmail3" class="col-sm-3"><i class="fa fa-envelope"></i>&nbsp;<b>Email 2</b></label>
+
+                                            <div class="col-sm-9">
+                                                <div class="controls">
+                                                    <input type="email" class="form-control"  value="{{ $teacher->email2 }}" name="email2" maxlength="100"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                            <button href="#" class="btn btn-primary pull-right" >Actualizar</button>
+                                    </div>
+
+                                </form>
+
+
                             </ul>
 
                         </div>
