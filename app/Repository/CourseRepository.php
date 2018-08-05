@@ -86,6 +86,8 @@ class CourseRepository
 
         $course->start_date                         = $post['start_date'];
         $course->end_date                           = $post['end_date'];
+        $course->year                           = $post['year'];
+
         $course->grade_upload_start_date            = $post['grade_upload_start_date'];
         $course->grade_upload_end_date              = $post['grade_upload_end_date'];
 

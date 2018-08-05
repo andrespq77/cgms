@@ -336,7 +336,7 @@
                                         if (confirm('Are you sure to Finalizar you will not edit?')){
                                             toastr.success('You have successfully updated the data.', 'Message');
                                             window.setTimeout(function()
-                                            {window.location.href = '/admin/upcoming-courses'}, 5000);}">Finalizar</a>
+                                            {window.location.href = '/admin/upcoming-courses'}, 4000);}">Finalizar</a>
                                     </div>
                                 </div>
                             </div>

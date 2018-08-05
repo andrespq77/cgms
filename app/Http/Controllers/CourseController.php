@@ -177,6 +177,9 @@ class CourseController extends Controller
             $course['end_date'] =  null;
         }
 
+        $course['year'] =  $post['year'];
+
+
         if (isset($post['grade_entry_start_date'])) {
             $startDate = DateTime::createFromFormat('d/m/Y', $post['grade_entry_start_date']);
             $course['grade_upload_start_date'] = $startDate->format('Y-m-d');
@@ -250,6 +253,8 @@ class CourseController extends Controller
             } else{
                 $course->end_date =  null;
             }
+
+            $course->year =  $post['year'];
 
             if (isset($post['grade_entry_start_date'])) {
                 $startDate = DateTime::createFromFormat('d/m/Y', $post['grade_entry_start_date']);
