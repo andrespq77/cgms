@@ -429,9 +429,11 @@ $(document).ready(function () {
                     modal.find('#btn-edit-course').addClass('hidden');
                     // form.addClass('hidden');
 
-                    var row = '<tr class="success">New Course has been added please refresh the page.</tr>';
+                    var row = '<tr class="success"><td>New Course added please refresh the page.</td></tr>';
 
-                    $('#course-table tr:last').after(row);
+                    toastr.info("New Course Added successfully please reload.", "Info");
+
+                    $('#course-table tr:first').after(row);
 
                 }
 
