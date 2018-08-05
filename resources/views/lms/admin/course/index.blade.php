@@ -37,7 +37,7 @@
                         <form method="get" action="{{ url('/admin/course/search') }}">
 
                             <div class="input-group input-group-sm" style="width: 550px;">
-                                <input type="text" name="search" class="form-control pull-right"
+                                <input value="{{ app('request')->input('search') }}" type="text" name="search" class="form-control pull-right"
                                        placeholder="Search by Course Code, Short Name, Description Hours"/>
 
                                 <div class="input-group-btn">
