@@ -132,7 +132,7 @@ class CourseRepository
                     return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations'])
                         ->where('course_code', 'like','%' . $keyword . '%')
                         ->orWhere('short_name','like', '%' . $keyword . '%')
-                        ->orWhere('hours','like', '%' . $keyword . '%')
+                        ->orWhere('hours', $keyword)
                         ->orWhere('description','like', '%' . $keyword . '%')
                         ->paginate(10);
 
