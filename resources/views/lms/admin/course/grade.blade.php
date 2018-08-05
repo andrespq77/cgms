@@ -32,6 +32,11 @@
                                     <td><strong class="strong"> {{ $course->short_name }}</strong></td>
                                 </tr>
 
+                                <tr>
+                                    <td>{{ __('lms.page.course.form.description') }}</td>
+                                    <td>{{ $course->description }}</td>
+                                </tr>
+
                                 {{--<tr>--}}
                                     {{--<td>{{ __('lms.page.course.form.course_id') }}:</td>--}}
                                     {{--<td><code>{{ $course->course_code }}</code></td>--}}
@@ -68,15 +73,25 @@
                                             {{ $course->statusTitle['title'] }}</span>
                                     </td>
                                 </tr>
-                                
+
                                 <tr>
-                                    <td>{{ __('lms.page.course.form.comment') }}</td>
-                                    <td>{{ $course->comment }}</td>
+                                    <td>Approved</td>
+                                    <td>
+                                        <span class="label label-success">Approved</span>
+                                        {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
+                                    </td>
                                 </tr>
 
                                 <tr>
-                                    <td>{{ __('lms.page.course.form.description') }}</td>
-                                    <td>{{ $course->description }}</td>
+                                    <td>{{ __('lms.page.course.form.disclaimer_required') }}</td>
+                                    <td>
+                                        @if($course->has_disclaimer==1)
+                                            <span class="label label-success">Yes</span>
+                                        @else
+                                            <span class="label label-danger">No</span>
+                                        @endif
+                                        {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
+                                    </td>
                                 </tr>
 
                                 </tbody>
@@ -85,16 +100,14 @@
                         <div class=" col-md-6 col-lg-6 col-sm-12 ">
                             <table class="table table-course-information" style="font-size: 15px;">
                                 <tbody>
-
-                                    <tr>
-                                        <td>{{ __('lms.page.course.form.start_date') }}</td>
-                                        <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ __('lms.page.course.form.end_date') }}</td>
-                                        <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
-                                    </tr>
-
+                                <tr>
+                                    <td>{{ __('lms.page.course.form.start_date') }}</td>
+                                    <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ __('lms.page.course.form.end_date') }}</td>
+                                    <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
+                                </tr>
                                     {{--<tr>--}}
                                         {{--<td>Total requested</td>--}}
                                         {{--<td><code>{{ $course->requests->count() }}</code></td>--}}
@@ -108,32 +121,17 @@
                                     {{--</tr>--}}
 
                                     <tr>
-                                        <td>Approved</td>
-                                        <td>
-                                            <span class="label label-success">Approved</span>
-                                            {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>{{ __('lms.page.course.form.disclaimer_required') }}</td>
-                                        <td>
-                                            @if($course->has_disclaimer==1)
-                                            <span class="label label-success">Yes</span>
-                                            @else
-                                                <span class="label label-danger">No</span>
-                                            @endif
-                                            {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
                                         <td>Grade Add {{ __('lms.page.course.form.start_date') }}</td>
                                         <td class="text-success">{{ date('d M Y', strtotime($course->grade_upload_start_date)) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Grade Add {{ __('lms.page.course.form.end_date') }}</td>
                                         <td class="text-warning">{{ date('d M Y', strtotime($course->grade_upload_end_date)) }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>{{ __('lms.page.course.form.comment') }}</td>
+                                        <td>{{ $course->comment }}</td>
                                     </tr>
 
                                 </tbody>
