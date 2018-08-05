@@ -332,7 +332,11 @@
                                     </div>
                                     <br><br>
                                     <div class="next-layout">
-                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="if (confirm('Are you sure to Finalizar you will not edit?')) { toastr.success('You have successfully update the data', 'Message') }">Finalizar</a>
+                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="
+                                        if (confirm('Are you sure to Finalizar you will not edit?')){
+                                            toastr.success('You have successfully updated the data.', 'Message');
+                                            window.setTimeout(function()
+                                            {window.location.href = '/admin/upcoming-courses'}, 5000);}">Finalizar</a>
                                     </div>
                                 </div>
                             </div>
