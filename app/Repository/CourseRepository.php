@@ -124,7 +124,6 @@ class CourseRepository
 
     public function search($page, $keyword){
 
-
         $data = Cache::tags('COURSE_SEARCH')
             ->remember('COURSE_SEARCH_PAGINATE_'.$page.'_KEYWORD_'.str_slug( $keyword,'-'), 60,
                 function () use($keyword) {

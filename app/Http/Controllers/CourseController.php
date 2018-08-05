@@ -91,7 +91,9 @@ class CourseController extends Controller
 
             $title = 'Course Search Result for ['.$posts['search'].'] - '.env('APP_NAME') ;
 
-            $courses = $this->repo->search($page, $posts['search']);
+            $clean_string = cleanString($posts['search']);
+
+            $courses = $this->repo->search($page, $clean_string);
 
             return view('lms.admin.course.index', ['title'=> $title, 'courses' => $courses]);
 
