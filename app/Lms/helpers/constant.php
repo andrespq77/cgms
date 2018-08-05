@@ -157,6 +157,7 @@
      */
     function parseYoutubeUrl($url){
 
+        dd($url,'sd');
         if (!is_null($url)){
 
             $youtube = $url;

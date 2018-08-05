@@ -10,7 +10,6 @@
 
     <div class="row" id="page_register">
 
-
         <div class="col-lg-6 col-md-6 col-sm-12">
 
             <div class="box box-primary">
@@ -20,12 +19,9 @@
                 <!-- /.box-header -->
                 <div class="box-body">
 
-                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre corto: </strong> {{ $course->short_name }}</p>
+                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre Corto: </strong> {{ $course->short_name }}</p>
 
-                    <hr>
                     <p class=""><strong><i class="fa fa-map-marker margin-r-5"></i> Código del curso</strong> {{ $course->course_code }}</p>
-
-                    <hr>
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
                             <b>Horas</b> <a class="pull-right">{{ $course->hours }}</a>
@@ -74,7 +70,7 @@
 
         </div>
 
-        <div class="col-lg-8 col-md-12">
+        <div class="col-lg-12 col-md-12">
 
             <div class="box box-info">
 
@@ -101,16 +97,21 @@
                                     <p>{{ $course->video_text }}</p>
 
                                     @if($course->video_type == 'youtube')
-                                        @if($course->video_code !== null)
-                                        <iframe width="560" height="315"
-                                                src="https://www.youtube.com/embed/{{ parseYoutubeUrl($course->video_code) }}">
-                                        </iframe>
+                                        @if($course->video_code !== null && $code=App\Course::parseYoutubeUrl($course->video_code))
+
+                                            <div class="text-center">
+                                                <iframe width="580" height="315"
+                                                        src="https://www.youtube.com/embed/{{ App\Course::parseYoutubeUrl($course->video_code) }}">
+                                                </iframe>
+                                            </div>
+
                                         @else
                                             <div class="js-error">
                                                 <h3 class="text-warning"><strong class="text-danger">Sorry</strong>! Video code is not found.</h3>
                                             </div>
                                         @endif
                                     @endif
+                                    <br/><br/>
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
                                     </div>
@@ -122,7 +123,6 @@
                                 <h3>Descripción</h3>
                                 <div class="box-layout">
                                     <p>{{ $course->description }}</p>
-
 
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
@@ -172,8 +172,7 @@
 
                                                     @if($registration->accept_tc == 0)
                                                         &nbsp;&nbsp;
-                                                        <button type="button"
-                                                                class="btn-accept-tc btn-primary btn btn-flat">Aceptar</button>
+                                                        <button type="button" class="btn-accept-tc btn-primary btn btn-flat">Aceptar</button>
                                                     @endif
                                                 </div>
 
@@ -260,7 +259,9 @@
                                         </tbody>
                                     </table>
                                     <div class="js-data-update-message"></div>
-
+                                    <br/>
+                                    <br/>
+                                    <br/>
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
                                     </div>
