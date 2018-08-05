@@ -198,66 +198,95 @@
                                 <div class="box-layout">
                                     <p>{{ $course->data_update_brief }}</p>
 
-                                    <table class="table table-responsive table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th>Cédula</th>
-                                            <th>Nombres</th>
-                                            <th>Apellidos</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th>
-                                            <th>T&C Aceptó</th>
-                                            <th>Acción</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody id="register-update-data">
-                                        <tr>
-                                            <td>
-                                                {{ $teacher->social_id }}
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control js-tab-user-first_name"
-                                                       placeholder="First Name"
-                                                       value="{{ $registration->user_first_name }}"
-                                                       maxlength="100"/>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control js-tab-user-last_name"
-                                                       placeholder="Last Name"
-                                                       value="{{ $registration->user_last_name }}"
-                                                       maxlength="100"/>
-                                            </td>
-                                            <td>
-                                                <input type="email" class="form-control js-tab-user-email"
-                                                       placeholder="Email"
-                                                       value="{{ isset($registration->email) ? $registration->email : $teacher->inst_email }}"
-                                                       maxlength="100"/>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control js-tab-user-phone"
-                                                       placeholder="Phone"
-                                                       value="{{ isset($registration->cell_phone) ? $registration->cell_phone : $teacher->mobile }}"
-                                                       maxlength="50"/>
+                                    <div class="box-layout">
+                                        <p>{{ $course->data_update_brief }}</p>
 
-                                            </td>
-                                            <td class="js-user-data-update-tc_accept_info">
-                                                @if($registration->accept_tc == 1)
-                                                    <div class="pull-left">
-                                                        <i class="fa fa-check"></i> Aceptado el<br/>
-                                                        <small>
-                                                            {{ date('d M Y h:i a', strtotime($registration->tc_accept_time)) }}
-                                                        </small>
+                                        <div class="box-body" id="register-update-data">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+
+                                                    <div class="form-group">
+                                                        <label>Cédula</label>
+                                                        <input class="form-control" disabled
+                                                               value="{{$teacher->social_id}}" style="width: 100%;"/>
                                                     </div>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-update-user-register-data btn-info btn-sm"
-                                                        data-id="{{ $registration->id }}"
-                                                ><i class="fa fa-save"></i> Actualizar</button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+
+                                                    <div class="form-group">
+                                                        <label>Nombre</label>
+                                                        <input type="text" class="form-control js-tab-user-first_name"
+                                                               style="width: 100%;"
+                                                               placeholder="First Name"
+                                                               value="{{ $registration->user_first_name }}"
+                                                               maxlength="100"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Apellidos</label>
+
+                                                        <input type="text" class="form-control js-tab-user-last_name"
+                                                               style="width: 100%;"
+                                                               placeholder="Last Name"
+                                                               value="{{ $registration->user_last_name }}"
+                                                               maxlength="100"/>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input type="email" class="form-control js-tab-user-email"
+                                                               style="width: 100%;"
+                                                               placeholder="Email"
+                                                               value="{{ isset($registration->email) ? $registration->email : $teacher->inst_email }}"
+                                                               maxlength="100"/>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Teléfono</label>
+
+                                                        <input type="text" class="form-control js-tab-user-phone"
+                                                               style="width: 100%;"
+                                                               placeholder="Phone"
+                                                               value="{{ isset($registration->cell_phone) ? $registration->cell_phone : $teacher->mobile }}"
+                                                               maxlength="50"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>T&C Aceptó</label>
+
+                                                        <div class="js-user-data-update-tc_accept_info">
+                                                            @if($registration->accept_tc == 1)
+                                                                <div class="pull-left">
+                                                                    <i class="fa fa-check"></i> Aceptado el &nbsp;
+                                                                    &nbsp; &nbsp;
+                                                                    <small>
+                                                                        {{ date('d M Y h:i a', strtotime($registration->tc_accept_time)) }}
+                                                                    </small>
+                                                                </div>
+                                                            @endif
+
+                                                            <div class="pull-right">
+                                                                <button class="btn btn-lg btn-update-user-register-data btn-info btn-sm"
+                                                                        data-id="{{ $registration->id }}">
+                                                                    <i class="fa fa-save"></i> Actualizar
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="js-data-update-message"></div>
                                     <br/>
                                     <br/>
@@ -301,8 +330,9 @@
                                         </div>
 
                                     </div>
+                                    <br><br>
                                     <div class="next-layout">
-                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)">Finalizar</a>
+                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="if (confirm('Are you sure to Finalizar you will not edit?')) { toastr.success('You have successfully update the data', 'Message') }">Finalizar</a>
                                     </div>
                                 </div>
                             </div>
