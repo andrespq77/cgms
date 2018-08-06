@@ -41,8 +41,8 @@
                         </div>
                         <!-- /.box-body -->
                     </div>
-
-                    @include('lms.admin.teacher.profile.upcoming-table')
+{{--                    @include('lms.admin.teacher.profile.upcoming-table')--}}
+                    @include('lms.admin.teacher.profile.upcoming')
 
                 </div>
             </div>

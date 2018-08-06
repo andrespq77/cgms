@@ -7,7 +7,7 @@
 @stop
 @section('body')
     <div class="row">
-        <div class="col-md-12" class="text-center">
+        <div class="col-md-12 text-center">
             Logged successfully with student user!
         </div>
     </div>
