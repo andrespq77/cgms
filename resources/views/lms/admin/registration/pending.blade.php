@@ -153,6 +153,7 @@
                                             @endif
 
                                         </td>
+                                        <td class="new_checkbox">
                                             <div class="checkbox">
                                                 <label>
                                                     <input class="checkbox" type="checkbox"  data-id="{{$registration->id}}" id="tr-checkbox-{{$registration->id}}">
