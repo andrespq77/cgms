@@ -102,6 +102,7 @@
                                     <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.is_approved') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.by') }}</th>
+                                    <th bgcolor="#95a5a6">
                                        <div class="checkbox" >
                                         <label>
                                             <input type="checkbox" id="check_all">
@@ -152,6 +153,7 @@
                                         <td >
                                             <div class="checkbox">
                                                 <label>
+                                                    <input class="checkbox" type="checkbox"  data-id="{{$registration->id}}" id="tr-checkbox-{{$registration->id}}">
                                                 </label>
                                             </div>
                                         </td>
