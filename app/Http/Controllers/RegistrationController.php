@@ -198,7 +198,7 @@ class RegistrationController extends Controller
 
         foreach ($registrations_ids as $id) {
             $registration = $this->repo->findById($id);
-            if ($registration){
+            if ($registration && !$registration->is_approved){
                 $this->updateSingleRegestration($registration, $current_time);
                 $count++;
                 $this->repo->flushRegistrationById($id);

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     var $selectAll = $('#check_all'); // main checkbox inside table t head
     var $table = $('#pending-table'); // table selector
-    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
+    var $tdCheckbox = $table.find('tbody td.new_checkbox input:checkbox'); // checboxes inside table body
     var $tdCheckboxChecked = []; // checked checbox arr
 
     //Select or deselect all checkboxes on main checkbox change
@@ -39,6 +39,9 @@ $(document).ready(function () {
 
                 var registrations_ids_string = registrations_ids_arr.join(",");
 
+                $('#reg_loading_img').show();
+                $('#approve-all').attr('disable','disable');
+
                 $.ajax({
                     url: "/admin/registration/approve-multiple",
                     type: 'POST',
@@ -46,16 +49,20 @@ $(document).ready(function () {
                     data: 'ids='+registrations_ids_string,
                     success: function (data) {
                         if (data['status']==true) {
-                            toastr.message(data['message']);
+                            toastr.success(data['message']);
 
                         } else {
                             toastr.warning('Whoops Something went wrong!!');
                         }
+                        $('#reg_loading_img').hide();
+
+
                         window.setTimeout(function () {
                             location.reload();
-                        }, 40000);
+                        }, 5000);
                     },
                     error: function (data) {
+                        $('#reg_loading_img').hide();
                         toastr.error('Whoops Something went wrong!!');
                     }
                 });

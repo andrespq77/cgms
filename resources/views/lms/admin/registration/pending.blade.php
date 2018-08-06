@@ -73,11 +73,14 @@
                         <div class="pull-left">
                             <h3 class="box-title">{{ __('lms.page.registration.pending.index.table_header') }}</h3>
                         </div>
+
                         <div class="pull-right">
                             @if(Auth::user()->role == 'admin')
                                 <div class="">
                                     <div class="btn-group-sm">
-                                            <a class="btn btn-success btn-flat" id="approve-all"><i class="fa fa-check"></i> Approve Selected</a>
+                                        <img style="display:none; padding-left:30px" src="https://media1.tenor.com/images/8ac12962c05648c55ca85771f4a69b2d/tenor.gif?itemid=9212724" height="50px" id="reg_loading_img">
+
+                                        <a class="inline btn btn-success btn-flat " id="approve-all"><i class="fa fa-check"></i> Approve Selected</a>
                                     </div>
 
                                 </div>
@@ -103,7 +106,7 @@
                                     <th>{{ __('lms.page.registration.pending.table.is_approved') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.by') }}</th>
                                     <th bgcolor="#95a5a6">
-                                       <div class="checkbox" >
+                                        <div class="checkbox" >
                                         <label>
                                             <input type="checkbox" id="check_all">
                                         </label>
@@ -150,7 +153,6 @@
                                             @endif
 
                                         </td>
-                                        <td >
                                             <div class="checkbox">
                                                 <label>
                                                     <input class="checkbox" type="checkbox"  data-id="{{$registration->id}}" id="tr-checkbox-{{$registration->id}}">
