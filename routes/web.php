@@ -163,6 +163,7 @@ Route::middleware(['ldapauth'])->group(function (){
             // by admin
             Route::get('/', 'RegistrationController@index');
             Route::get('/pending', 'RegistrationController@getPending');
+            Route::post('/approve-multiple', 'RegistrationController@approveMultipleRecords');
             Route::post('/approve/{id}', 'RegistrationController@postApprove');
             Route::post('/{id}/update/{part}', 'RegistrationController@updateRegistration');
             Route::post('/{id}/upload/inspection', 'RegistrationController@uploadStudentInspection');

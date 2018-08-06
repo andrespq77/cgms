@@ -76,16 +76,10 @@
                         <div class="pull-right">
                             @if(Auth::user()->role == 'admin')
                                 <div class="">
-                                    <form class="form-inline" method="get" action="{{ url('/admin/registration/pending') }}">
+                                    <div class="btn-group-sm">
+                                            <a class="btn btn-success btn-flat" id="approve-all"><i class="fa fa-check"></i> Approve Selected</a>
+                                    </div>
 
-                                        <div class="btn-group-sm">
-
-                                            <button class="btn btn-success btn-flat"
-                                                    formaction="{{ url("/admin/registration/pending") }}"
-                                                    type="submit"><i class="fa fa-check"></i> Approve Selected</button>
-
-                                        </div>
-                                    </form>
                                 </div>
                                 <br/>
                             @endif
@@ -108,10 +102,9 @@
                                     <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.is_approved') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.by') }}</th>
-                                    <th>
-                                       <div class="checkbox">
+                                       <div class="checkbox" >
                                         <label>
-                                            <input type="checkbox" id="selectAll">
+                                            <input type="checkbox" id="check_all">
                                         </label>
                                        </div>
                                     </th>
@@ -156,10 +149,9 @@
                                             @endif
 
                                         </td>
-                                        <td>
+                                        <td >
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox"  id="tr-checkbox-{{$registration->id}}">
                                                 </label>
                                             </div>
                                         </td>

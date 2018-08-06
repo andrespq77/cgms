@@ -54493,22 +54493,64 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
 
-    var $selectAll = $('#selectAll'); // main checkbox inside table thead
-    var $table = $('.table'); // table selector
-    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
-    var $tdCheckboxChecked = []; // checked checbox arr
-
-    //Select or deselect all checkboxes on main checkbox change
-    $selectAll.on('click', function () {
-        $tdCheckbox.prop('checked', this.checked);
+    $('#approve-all').on('click', function (e) {
+        if ($(this).is(':checked', true)) {
+            $(".checkbox_last").prop('checked', true);
+        } else {
+            $(".checkbox_last").prop('checked', false);
+        }
     });
 
-    //Switch main checkbox state to checked when all checkboxes inside tbody tag is checked
-    $tdCheckbox.on('change', function () {
-        $tdCheckboxChecked = $table.find('tbody input:checkbox:checked'); //Collect all checked checkboxes from tbody tag
-        //if length of already checked checkboxes inside tbody tag is the same as all tbody checkboxes length, then set property of main checkbox to "true", else set to "false"
-        $selectAll.prop('checked', $tdCheckboxChecked.length == $tdCheckbox.length);
+    $('.checkbox_last').on('click', function () {
+        if ($('.checkbox:checked').length == $('.checkbox').length) {
+            $('#check_all').prop('checked', true);
+        } else {
+            $('#check_all').prop('checked', false);
+        }
     });
+
+    alert('s');
+
+    $('#approve-ssall').on('click', function (e) {
+
+        var registrations_ids_arr = [];
+
+        $(".checkbox:checked").each(function () {
+            registrations_ids_arr.push($(this).attr('data-id'));
+        });
+
+        if (registrations_ids_arr.length <= 0) {
+            toastr.error("Please select atleast one record to Approve.");
+        } else {
+
+            if (confirm('Are you sure, you want to Approve ' + registrations_ids_arr.length + ' selected Requests?')) {
+
+                var registrations_ids_string = registrations_ids_arr.join(",");
+
+                $.ajax({
+                    url: "/admin/registration/approve-multiple",
+                    type: 'POST',
+                    headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                    data: 'ids=' + registrations_ids_string,
+                    success: function success(data) {
+                        if (data['status'] == true) {
+                            toastr.message(data['message']);
+                        } else {
+                            toastr.warning('Whoops Something went wrong!!');
+                        }
+                        window.setTimeout(function () {
+                            location.reload();
+                        }, 40000);
+                    },
+                    error: function error(data) {
+                        toastr.error('Whoops Something went wrong!!');
+                    }
+                });
+            }
+        }
+    });
+
+    console.log($tdCheckboxChecked);
 
     var app_url = $('#app_url').val();
 
@@ -54527,7 +54569,7 @@ $(document).ready(function () {
 
                     $('#row-' + id).find('.js-td-is-approved').find('.checked').addClass('text-red');
 
-                    toastr.info('Please Check box to approve.');
+                    toastr.warning('Please Check Box to Approve.');
 
                     return 0;
                 }
@@ -54550,7 +54592,7 @@ $(document).ready(function () {
                     }
                 }).fail(function (jqXhr, textStatus, errorThrown) {
 
-                    toastr.error('Update approval failed!');
+                    toastr.error('Update Approval failed!');
                     console.log('jqxhr', jqXhr);
                 });
             });

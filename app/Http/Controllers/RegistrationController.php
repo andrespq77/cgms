@@ -166,14 +166,7 @@ class RegistrationController extends Controller
 
         } elseif( $part == 'approve'){
 
-            $registration->is_approved= REGISTRATION_IS_APPROVED;
-            $registration->approval_time= $current_time;
-            $registration->approved_by= Auth::user()->id;
-            $registration->status = REGISTRATION_STATUS_COMPLETE;
-
-            $registration->save();
-
-            event(new RegistrationApproved($registration));
+            $this->updateSingleRegestration($registration, $current_time);
 
         } elseif($part == 'user-data'){
 
@@ -195,6 +188,28 @@ class RegistrationController extends Controller
             'adminUser' => Auth::user()->name]);
     }
 
+
+    public function approveMultipleRecords(Request $request){
+
+        $count = 0;
+        $current_time = Carbon::now()->toDateTimeString();
+
+        $registrations_ids = explode(",",$request->ids);
+
+        foreach ($registrations_ids as $id) {
+            $registration = $this->repo->findById($id);
+            if ($registration){
+                $this->updateSingleRegestration($registration, $current_time);
+                $count++;
+                $this->repo->flushRegistrationById($id);
+            }
+
+        }
+
+        $this->repo->flushAllCache();
+
+        return response()->json(['status'=>true,'message'=>"{{$count}} Requests Approved successfully."]);
+    }
 
     /**
      * @param Request $request
@@ -321,6 +336,22 @@ class RegistrationController extends Controller
 
         }
 
+    }
+
+    /**
+     * @param $registration
+     * @param $current_time
+     */
+    private function updateSingleRegestration($registration, $current_time)
+    {
+        $registration->is_approved = REGISTRATION_IS_APPROVED;
+        $registration->approval_time = $current_time;
+        $registration->approved_by = Auth::user()->id;
+        $registration->status = REGISTRATION_STATUS_COMPLETE;
+
+        $registration->save();
+
+        event(new RegistrationApproved($registration));
     }
 
 }

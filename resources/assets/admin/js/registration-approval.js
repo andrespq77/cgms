@@ -3,8 +3,9 @@
  */
 $(document).ready(function () {
 
-    var $selectAll = $('#selectAll'); // main checkbox inside table thead
-    var $table = $('.table'); // table selector
+
+    var $selectAll = $('#check_all'); // main checkbox inside table t head
+    var $table = $('#pending-table'); // table selector
     var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
     var $tdCheckboxChecked = []; // checked checbox arr
 
@@ -21,7 +22,50 @@ $(document).ready(function () {
     });
 
 
+    $('#approve-all').on('click', function(e) {
 
+        var registrations_ids_arr = [];
+
+        $(".checkbox:checked").each(function() {
+            registrations_ids_arr.push($(this).attr('data-id'));
+        });
+
+        if(registrations_ids_arr.length <=0)
+        {
+            toastr.error("Please select atleast one record to Approve.");
+        }  else {
+
+            if(confirm('Are you sure, you want to Approve '+registrations_ids_arr.length+' selected Requests?')){
+
+                var registrations_ids_string = registrations_ids_arr.join(",");
+
+                $.ajax({
+                    url: "/admin/registration/approve-multiple",
+                    type: 'POST',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    data: 'ids='+registrations_ids_string,
+                    success: function (data) {
+                        if (data['status']==true) {
+                            toastr.message(data['message']);
+
+                        } else {
+                            toastr.warning('Whoops Something went wrong!!');
+                        }
+                        window.setTimeout(function () {
+                            location.reload();
+                        }, 40000);
+                    },
+                    error: function (data) {
+                        toastr.error('Whoops Something went wrong!!');
+                    }
+                });
+
+            }
+        }
+    });
+
+
+    console.log($tdCheckboxChecked);
 
     var app_url = $('#app_url').val();
 
