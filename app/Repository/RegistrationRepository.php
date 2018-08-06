@@ -32,8 +32,6 @@
          */
         public function updateDiplomaFile($courseId, $studentSocialSecurityId, $path){
 
-
-
             $registration = Registration::where('course_id', $courseId)
                             ->where('user_social_id', $studentSocialSecurityId)
                             ->first();
@@ -50,6 +48,17 @@
 
         }
 
+        //        $registrations = Cache::tags(['PENDING_REGISTRATION'])->remember('pending_registrations_by_page_'.$page, $minutes, function () {
+//
+//                 return Registration::with(['approvedBy', 'markApprovedBy', 'student', 'student.user',
+//                     'course', 'course.university'])
+//                     ->orderBy('is_approved', 'asc')
+//                     ->orderBy('accept_tc', 'desc')
+//                     ->orderBy('id', 'desc')
+//                     ->paginate(10);
+//
+//        });
+
         /**
          * Search Filter
          *
@@ -59,18 +68,17 @@
          * @param $page
          * @return mixed
          */
-        public function filter($search_in, $search_keyword, $registration, $page){
-
+        public function filter($search_in, $search_keyword, $registration, $page ,$type){
 
             $minutes = config('adminlte.cache_time');
+
             $user = getAuthUser();
 
             $cache_key = 'portfolio_search_in_'.$search_in. '_with_'.$search_keyword .
                 '_with_registration_'.$registration .
                 '_in_page_'.$page.'for_user_'.$user->id;
 
-            $registrations = Cache::tags(['PORTFOLIO_ADMIN'])->remember($cache_key, $minutes, function () use($search_in, $search_keyword, $registration){
-
+            $registrations = Cache::tags([$type])->remember($cache_key, $minutes, function () use($search_in, $search_keyword, $registration){
 
                 return Registration::with(['student', 'course', 'course.university', 'student.user','markApprovedBy','approvedBy'])
                     ->where(function ($query) use($search_in, $search_keyword, $registration){

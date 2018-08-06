@@ -244,6 +244,7 @@
                         'record_uploaded'   => 'Registro subido',
                         'is_approved'       => 'Aprobado',
                         'approved_by'       => 'Aprobado por',
+                        'by'                => 'por',
                         'action'            => 'Acción'
                     ]
                 ]

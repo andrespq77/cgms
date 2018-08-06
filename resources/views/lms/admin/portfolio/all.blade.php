@@ -14,16 +14,17 @@
             <div class="col-xs-6 col-lg-5">
                 <div class="input-group" style="width: 100%;">
                     <div class="input-group-btn search-panel" style="text-align: right;width: 20%">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
                             <span id="search_concept">{{  ucfirst(str_replace('_', ' ', app('request')->input('search_param')))   }}</span> <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#course_code">Código del curso</a></li>
+                            <li><a href="#all">All Fields</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#course_code">Course Code</a></li>
                             <li><a href="#course_name">Course Name</a></li>
                             <li><a href="#social_id">Social Id</a></li>
                             <li><a href="#teachers_name">Teachers Name</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#all">All Fields</a></li>
+
                         </ul>
 
                     </div>
@@ -35,10 +36,8 @@
             </div>
             <div class="col-xs-3 col-lg-2">
                 <div class="form-group" >
-                    <label for="registration">Approved Type</label>
                     <select class="form-control" id="registration" name="registration">
-                        <option
-                                disabled="">Registration</option>
+                        <option disabled="">Select Approved Type</option>
                         <option {{ app('request')->input('registration') == 1 ? 'selected' : '' }}
                                 value="1">Approved</option>
                         <option {{ app('request')->input('registration') == 0 ? 'selected' : '' }}
@@ -48,7 +47,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col-xs-2">
+
+            <div class="col-xs-3 col-lg-3">
+
                 <div class="btn-group-sm">
                     <button class="btn btn-primary btn-search btn-flat"
                             formaction="{{ url("/admin/portfolio") }}"

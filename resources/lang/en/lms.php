@@ -257,6 +257,7 @@
                         'record_uploaded'   => 'Record Uploaded',
                         'is_approved'       => 'Approved',
                         'approved_by'       => 'Approved By',
+                        'by'                => 'By',
                         'action'            => 'Action'
                     ]
                 ]

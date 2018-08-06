@@ -3,19 +3,65 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <div class="row">
-
-        <div class="col-md-3">
-            <h4 style="margin: 10px 0 0 0">
-                <label for="search-pending-approval">
-                    {{ __('lms.page.registration.pending.index.page_header') }}
-                </label>
-            </h4>
-        </div>
-    </div>
+    <h1>{{ __('lms.page.registration.pending.index.table_header') }}</h1>
 @stop
 
 @section('content')
+
+    @if(Auth::user()->role == 'admin')
+        <div class="row">
+            <form class="form-inline" method="get" action="{{ url('/admin/registration/pending') }}">
+                <div class="col-xs-6 col-lg-5">
+                    <div class="input-group" style="width: 100%;">
+                        <div class="input-group-btn search-panel" style="text-align: right;width: 20%">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">{{  ucfirst(str_replace('_', ' ', app('request')->input('search_param')))   }}</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#all">All Fields</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#course_code">Course Code</a></li>
+                                <li><a href="#course_name">Course Name</a></li>
+                                <li><a href="#social_id">Social Id</a></li>
+                            </ul>
+
+                        </div>
+
+                        <input type="hidden" name="search_param" id="search_param" style="width: 100%;"
+                               value="{{ app('request')->input('search_param') }}">
+                        <input type="text" class="form-control" name="x" placeholder="Search term..." value="{{ app('request')->input('x') }}">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-lg-2">
+                    <div class="form-group" >
+                        <select class="form-control" id="registration" name="registration">
+                            <option disabled="">Select Approved Type</option>
+                            <option {{ app('request')->input('registration') == 1 ? 'selected' : '' }}
+                                    value="1">Approved</option>
+                            <option {{ app('request')->input('registration') == 0 ? 'selected' : '' }}
+                                    value="0">Not Approved</option>
+                            <option {{ app('request')->input('registration') == 3 ? 'selected' : '' }}
+                                    value="3">All Registrations</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-3 col-lg-3">
+
+                    <div class="btn-group-sm">
+                        <button class="btn btn-primary btn-search btn-flat"
+                                formaction="{{ url("/admin/registration/pending") }}"
+                                type="submit"><i class="fa fa-search"></i> Search</button>
+                        {{--<button class="btn btn-success btn-download btn-flat"--}}
+                                {{--formaction="{{ url("/admin/portfolio/download") }}" formtarget="_blank"--}}
+                                {{--type="submit"><i class="fa fa-cloud-download"></i> Download</button>--}}
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br/>
+    @endif
 
     <div class="div" id="page_registration_pending_approval">
 
@@ -46,7 +92,7 @@
                                     <th>{{ __('lms.page.registration.pending.table.terms_condition') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.is_approved') }}</th>
-                                    <th>{{ __('lms.page.registration.pending.table.approved_by') }}</th>
+                                    <th>{{ __('lms.page.registration.pending.table.by') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
