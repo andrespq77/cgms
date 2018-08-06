@@ -54493,25 +54493,24 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
 
+    var $selectAll = $('#check_all'); // main checkbox inside table t head
+    var $table = $('#pending-table'); // table selector
+    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
+    var $tdCheckboxChecked = []; // checked checbox arr
+
+    //Select or deselect all checkboxes on main checkbox change
+    $selectAll.on('click', function () {
+        $tdCheckbox.prop('checked', this.checked);
+    });
+
+    //Switch main checkbox state to checked when all checkboxes inside tbody tag is checked
+    $tdCheckbox.on('change', function () {
+        $tdCheckboxChecked = $table.find('tbody input:checkbox:checked'); //Collect all checked checkboxes from tbody tag
+        //if length of already checked checkboxes inside tbody tag is the same as all tbody checkboxes length, then set property of main checkbox to "true", else set to "false"
+        $selectAll.prop('checked', $tdCheckboxChecked.length == $tdCheckbox.length);
+    });
+
     $('#approve-all').on('click', function (e) {
-        if ($(this).is(':checked', true)) {
-            $(".checkbox_last").prop('checked', true);
-        } else {
-            $(".checkbox_last").prop('checked', false);
-        }
-    });
-
-    $('.checkbox_last').on('click', function () {
-        if ($('.checkbox:checked').length == $('.checkbox').length) {
-            $('#check_all').prop('checked', true);
-        } else {
-            $('#check_all').prop('checked', false);
-        }
-    });
-
-    alert('s');
-
-    $('#approve-ssall').on('click', function (e) {
 
         var registrations_ids_arr = [];
 
