@@ -159,7 +159,7 @@
                 ],
                 'form'  =>[
                     'edit_title'        => 'Editar Curso',
-                    'add_title'         => 'Agregar Nuevo Curso',
+                    'add_title'         => 'Agragar Nuevo Curso',
                     'master_course'     => 'Curso Maestro',
                     'course_id'         => 'Código de Curso',
                     'course_type'       => 'Tipo de Curso',
@@ -365,7 +365,7 @@
             'institute_mail' => 'Correo Institucional',
             'zone'  => 'Zona',
             'last_updated' => 'Última actualización',
-            'add_grade'             => 'Agregar calificación',
+            'add_grade'             => 'agragar calificación',
             'by' => 'por',
         ],
         'messages' => [
