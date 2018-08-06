@@ -8,14 +8,14 @@
         </div>
         <div class="buttons">
             <div class="qq-upload-button-selector qq-upload-button">
-                <div>Seleccione archivo</div>
+                <div>Select files</div>
             </div>
             <button type="button" id="trigger-upload" class="btn btn-primary">
-                <i class="icon-upload icon-white"></i> Subir
+                <i class="icon-upload icon-white"></i> Upload
             </button>
         </div>
         <span class="qq-drop-processing-selector qq-drop-processing">
-                <span>Procesando archivo...</span>
+                <span>Processing dropped files...</span>
                 <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
             </span>
         <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
@@ -29,9 +29,9 @@
                 <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
                 <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
                 <span class="qq-upload-size-selector qq-upload-size"></span>
-                <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancelar</button>
-                <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Reintentar</button>
-                <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Eliminar</button>
+                <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
+                <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
+                <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
                 <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
             </li>
         </ul>
@@ -39,7 +39,7 @@
         <dialog class="qq-alert-dialog-selector">
             <div class="qq-dialog-message-selector"></div>
             <div class="qq-dialog-buttons">
-                <button type="button" class="qq-cancel-button-selector">Cerrar</button>
+                <button type="button" class="qq-cancel-button-selector">Close</button>
             </div>
         </dialog>
 
@@ -47,7 +47,7 @@
             <div class="qq-dialog-message-selector"></div>
             <div class="qq-dialog-buttons">
                 <button type="button" class="qq-cancel-button-selector">No</button>
-                <button type="button" class="qq-ok-button-selector">Si</button>
+                <button type="button" class="qq-ok-button-selector">Yes</button>
             </div>
         </dialog>
 
@@ -55,7 +55,7 @@
             <div class="qq-dialog-message-selector"></div>
             <input type="text">
             <div class="qq-dialog-buttons">
-                <button type="button" class="qq-cancel-button-selector">Cancelar</button>
+                <button type="button" class="qq-cancel-button-selector">Cancel</button>
                 <button type="button" class="qq-ok-button-selector">Ok</button>
             </div>
         </dialog>

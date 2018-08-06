@@ -26,7 +26,7 @@
             <td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>
                 {{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>
             </td>
-            <td>{{ $course->hours }} horas</td>
+            <td>{{ $course->hours }} hours</td>
             <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
             <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
 
@@ -47,7 +47,7 @@
 
                                     <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
                                         {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Registrarse</button>
+                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
                                     </form>
 
                                 @else
@@ -62,15 +62,15 @@
 
 
                             @else
-                                <span class="label label-danger">Pasó Fecha inicial</span>
+                                <span class="label label-danger">Start Date Passed</span>
                             @endif
 
                         @else
-                            <span class="label label-danger">Cupo completo</span>
+                            <span class="label label-danger">All positions filled</span>
                         @endif
 
                     @else
-                        <span class="label label-default">Curso inactivo</span>
+                        <span class="label label-default">Inactive Course</span>
                     @endif
 
                 @endcan

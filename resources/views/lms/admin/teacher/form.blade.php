@@ -61,7 +61,7 @@
 
                             <div class="col-sm-12 col-lg-6 col-md-6">
                                 <div class="form-group js-error-block js-social_id-block">
-                                    <label for="teacher-social-id" class="col-md-3 control-label">Cédula</label>
+                                    <label for="teacher-social-id" class="col-md-3 control-label">Social Id</label>
                                     <div class="col-md-9">
                                         <input id="teacher-social-id" type="text" class="form-control" name="social_id"
                                                value="{{ isset($teacher) ? $teacher->social_id : '' }}"
@@ -107,7 +107,7 @@
                                 <div class="form-group js-error-block has-warning">
                                     <div class="col-md-9 col-md-offset-3">
                                         <span class="help-block"> <i class="fa fa-caret-left"></i>
-                                            Este email será usado como dirección Email para ingresar.</span>
+                                            This email will be used as login email address.</span>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
 
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-telephone-block">
-                                    <label for="teacher-telephone" class="col-md-3 control-label">Teléfono</label>
+                                    <label for="teacher-telephone" class="col-md-3 control-label">Telephone</label>
                                     <div class="col-md-9">
                                         <input id="teacher-telephone" type="text" class=" form-control" name="telephone"
                                                value="{{ isset($teacher) ? $teacher->telephone : '' }}"
@@ -132,7 +132,7 @@
 
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-mobile-block">
-                                    <label for="teacher-mobile" class="col-md-3 control-label">Celular</label>
+                                    <label for="teacher-mobile" class="col-md-3 control-label">Mobile</label>
                                     <div class="col-md-9">
                                         <input id="teacher-mobile" type="text" class=" form-control" name="mobile"
                                                value="{{ isset($teacher) ? $teacher->mobile : '' }}"
@@ -164,18 +164,18 @@
                             <div class="col-lg-5 col-sm-12">
 
                                 <div class="form-group js-error-block js-gender-block">
-                                    <label class="col-md-3 control-label" for="Gender">Género</label>
+                                    <label class="col-md-3 control-label" for="Gender">Gender</label>
                                     <div class="col-md-9">
                                         <label class="radio-inline" for="Gender-0">
                                             <input type="radio" name="gender" id="Gender-0" value="m"
                                                     {{ isset($teacher) ? $teacher->gender == 'M' ? 'checked' : '' : '' }}>
-                                            Masculino
+                                            Male
                                         </label>
                                         <label class="radio-inline" for="Gender-1">
                                             <input type="radio" name="gender" id="Gender-1" value="f"
                                                     {{ isset($teacher) ? $teacher->gender == 'F' ? 'checked' : '' : '' }}
                                             >
-                                            Femenino
+                                            Female
                                         </label>
                                         <div class="help-block"></div>
                                     </div>
@@ -184,7 +184,7 @@
                             <div class="col-lg-7 col-sm-12">
 
                                 <div class="form-group js-error-block js-date_of_birth-block">
-                                    <label for="teacher-dob" class="col-md-3 control-label">Fecha de Nacimiento</label>
+                                    <label for="teacher-dob" class="col-md-3 control-label">Date of Birth</label>
                                     <div class="col-md-9">
                                         <input id="teacher-dob" type="text" class="js-datepicker form-control" name="date_of_birth"
                                                value="{{ isset($teacher) ? date('d/m/Y', strtotime($teacher->date_of_birth)) : '' }}"
@@ -413,7 +413,7 @@
                             <div class="col-lg-6 col-sm-12 col-md-12">
 
                                 <div class="form-group js-error-block js-province-block">
-                                    <label for="province" class="col-md-3 control-label">Provincia</label>
+                                    <label for="province" class="col-md-3 control-label">Province</label>
                                     <div class="col-md-9">
                                         <input type="hidden" class="js-edit-province"
                                                value="{{ isset($teacher) ? $teacher->province : '' }}">
@@ -426,7 +426,7 @@
                             <div class="col-lg-6 col-sm-12 col-md-12">
 
                                 <div class="form-group js-error-block js-canton-block">
-                                    <label for="canton" class="col-md-3 control-label">Cantón</label>
+                                    <label for="canton" class="col-md-3 control-label">Canton</label>
                                     <div class="col-md-9">
                                         <select id="canton" class="form-control js-canton" name="canton"></select>
                                         <div class="help-block"></div>
@@ -483,7 +483,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-district-block">
-                                    <label for="district" class="col-md-3 control-label">Distrito</label>
+                                    <label for="district" class="col-md-3 control-label">District</label>
                                     <div class="col-md-9">
                                         <input id="district" type="text" class="form-control" name="district"
                                                value="{{ isset($teacher) ? $teacher->district : '' }}"
@@ -495,7 +495,7 @@
                             <div class="col-lg-6 col-sm-12">
 
                                 <div class="form-group js-error-block js-dist_code-block">
-                                    <label for="dist_code" class="col-md-3 control-label">Código de Distrito</label>
+                                    <label for="dist_code" class="col-md-3 control-label">District Code</label>
                                     <div class="col-md-9">
                                         <input id="dist_code" type="text" class="form-control" name="dist_code"
                                                value="{{ isset($teacher) ? $teacher->district_code : '' }}"
@@ -517,7 +517,7 @@
 
                 <div class="box box-info">
 
-                    <div class="box-header"><h3 class="box-title">Otra info</h3></div>
+                    <div class="box-header"><h3 class="box-title">Other info</h3></div>
 
                     <div class="box-body">
 
@@ -614,7 +614,7 @@
                     <button type="button" class="btn btn-submit-teacher btn-block btn-info"
                             data-type="{{ isset($teacher) ? 'update' : 'insert' }}"
                             data-id="{{ isset($teacher) ? $teacher->id : '' }}"
-                            ><i class="fa fa-upload"></i> Enviar</button>
+                            ><i class="fa fa-upload"></i> Submit</button>
                 </div>
             </div>
             <div class="col-lg-8">

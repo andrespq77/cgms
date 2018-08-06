@@ -43,7 +43,7 @@
                 </div>
 				<div class="row">
                     <div class="col-xs-12">
-                        <a class="text-right" href="{{ url('students/login') }}">Ingresar con usuario Active Directory</a>
+                        <a class="text-right" href="{{ url('students/login') }}">Login with Active Directory User</a>
                     </div>
                 </div>
                 <div class="row">

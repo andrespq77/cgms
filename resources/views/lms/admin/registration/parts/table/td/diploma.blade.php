@@ -6,14 +6,14 @@
             {{ csrf_field() }}
             <button type="submit" class="btn btn-link btn-link-download" rel="tooltip"
                     title="{{ basename($registration->diploma) }}"
-            ><i class="fa fa-cloud-download"></i> Descargar</button>
+            ><i class="fa fa-cloud-download"></i> Download</button>
         </form>
 
     @endif
 
     @isset($registration->diploma_download_time)
         <small>
-            <span>Ultima Descarga </span><br/>
+            <span>Last download  </span><br/>
             <span class="text-info">
                 {{ date('d M Y', strtotime($registration->diploma_download_time)) }}<br/>
                 {{ date('h:i a', strtotime($registration->diploma_download_time)) }}

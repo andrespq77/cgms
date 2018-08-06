@@ -5,7 +5,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-file-o"></i> <span class="js-modal-title">Crear Usuario</span></h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-file-o"></i> <span class="js-modal-title">Create Modal User</span></h4>
             </div>
             <form class="form-horizontal js-edit-canton-form" >
 
@@ -17,8 +17,8 @@
 
 
                             <div class="form-group">
-                                <label for="province" class="col-md-4 control-label">Fecha de Nacimiento</label>
-                                <div class="col-md-48">
+                                <label for="province" class="col-md-4 control-label">Birth Date</label>
+                                <div class="col-md-48>
                                     <input id="js-date-of-birth" type="text" class="js-edit-canton-district form-control" name="district"
                                            value="" required  maxlength="50">
                                 </div>

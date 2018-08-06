@@ -3,7 +3,7 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1> <i class="fa fa-unlock"></i>Perfil</h1>
+    <h1> <i class="fa fa-unlock"></i>Profile</h1>
 
 @stop
 
@@ -19,7 +19,7 @@
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <div class="box-title">Actualizar Cuenta</div>
+                        <div class="box-title">Update Account</div>
                     </div>
                     <div class="box-body">
 
@@ -36,7 +36,7 @@
                         @endif
 
                         <div class="control-group">
-                            <label for="new_password" class="control-label">Nombre de usuario de ingreso</label>
+                            <label for="new_password" class="control-label">Login User Name</label>
                             <div class="controls">
                                 <input type="text" class="form-control" value="{{ Auth::user()->name }}"
                                        name="name" maxlength="100" />
@@ -53,8 +53,8 @@
 
                     </div>
                     <div class="box-footer text-right">
-                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                        <button href="#" class="btn btn-primary" >Actualizar</button>
+                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button href="#" class="btn btn-primary" >Update</button>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@
                 <div class="box box-danger">
 
                     <div class="box-header">
-                        <div class="box-title">Cambiar Email</div>
+                        <div class="box-title">Change Email</div>
                     </div>
                     <div class="box-body">
 
@@ -95,8 +95,8 @@
 
                     </div>
                     <div class="box-footer text-right">
-                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                        <button href="#" class="btn btn-primary" >Cambiar</button>
+                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button href="#" class="btn btn-primary" >Change</button>
                     </div>
                 </div>
 

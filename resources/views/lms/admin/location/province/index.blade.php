@@ -15,17 +15,17 @@
                 <div class="box-header"><h3 class="box-title">{{ __('lms.location.province.index.table_header') }}</h3></div>
                 <div class="box-body">
                     <div class="alert alert-warning">
-                        <p><strong>Lo siento</strong>, Aun no esta listo</p>
+                        <p><strong>Sorry</strong>, Not done yet</p>
                     </div>
 
                     <table class="table table-bordered hidden" id="users-table">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Cantones</th>
+                                <th>Name</th>
+                                <th>Cantons</th>
 
-                                <th>Acción</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                     </table>

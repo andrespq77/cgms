@@ -3,25 +3,25 @@
     <div class="box-body">
         {{ csrf_field() }}
 
-        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Título'])
+        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Title'])
             <input type="text" class="form-control" id="title"
                    value="" placeholder="title" name="title">
         @endcomponent
 
-        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Tipo'])
+        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Type'])
             <select class="form-control" id="select-type" name="type">
             </select>
         @endcomponent
 
 
-        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Etiqueta'])
+        @component('lms.admin.components.bootstrap.form-group', ['name' => 'Label'])
             <select class="form-control" id="select-label" name="label">
-                <option disabled="">Seleccione Opción</option>
+                <option disabled="">Select Option</option>
             </select>
         @endcomponent
 
         @component('lms.admin.components.bootstrap.form-group', ['name' => ''])
-            <button type="submit" class="btn btn-info btn-save-type pull-right"><i class="fa fa-save"></i> Grabar</button>
+            <button type="submit" class="btn btn-info btn-save-type pull-right"><i class="fa fa-save"></i> Save</button>
         @endcomponent
 
     </div>

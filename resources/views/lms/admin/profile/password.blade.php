@@ -3,7 +3,7 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1> <i class="fa fa-unlock"></i>Cambiar contraseña</h1>
+    <h1> <i class="fa fa-unlock"></i>Change Password</h1>
 
 @stop
 
@@ -19,7 +19,7 @@
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <div class="box-title"> Cambiar contraseña</div>
+                        <div class="box-title"> Change Password</div>
                     </div>
                     <div class="box-body">
 
@@ -34,14 +34,14 @@
                         @endif
 
                         <div class="control-group">
-                            <label for="new_password" class="control-label">Nueva contraseña</label>
+                            <label for="new_password" class="control-label">New Password</label>
                             <div class="controls">
                                 <input type="password" class="form-control"  name="password" maxlength="30">
                             </div>
                         </div>
 
                         <div class="control-group">
-                            <label for="confirm_password" class="control-label">Confirma contraseña</label>
+                            <label for="confirm_password" class="control-label">Confirm Password</label>
                             <div class="controls">
                                 <input type="password" class="form-control" name="password_confirmation" maxlength="30">
                             </div>
@@ -49,8 +49,8 @@
 
                     </div>
                     <div class="box-footer text-right">
-                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                        <button href="#" class="btn btn-primary" id="password_modal_save">Cambiar contraseña</button>
+                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button href="#" class="btn btn-primary" id="password_modal_save">Change Password</button>
                     </div>
                 </div>
 

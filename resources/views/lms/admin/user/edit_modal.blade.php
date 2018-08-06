@@ -47,7 +47,7 @@
                                 <div class="col-md-9 col-lg-9">
                                     <select id="js-edit-user-role" class="js-edit-user-role form-control" placeholder="{{ __('lms.page.user.table.role') }}" >
                                         <option value="admin">Admin</option>
-                                        <option value="void">Vacio</option>
+                                        <option value="void">Void</option>
                                     </select>
                                 </div>
                             </div>
@@ -56,8 +56,8 @@
                                        class="col-md-3 col-lg-3 control-label">{{ __('lms.page.user.table.status') }}</label>
                                 <div class="col-md-9 col-lg-9">
                                     <select id="js-edit-user-status" class="js-edit-user-status form-control" placeholder="{{ __('lms.page.user.table.status') }}" >
-                                        <option value="active">Activo</option>
-                                        <option value="inactive">Inactivo</option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
                                     </select>
                                 </div>
                             </div>
@@ -72,9 +72,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" id="btn-edit-user" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Actualizar</button>
+                        <i class="fa fa-plus"></i> Update</button>
                 </div>
             </form>
         </div>

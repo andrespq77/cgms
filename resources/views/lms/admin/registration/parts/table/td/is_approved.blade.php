@@ -6,14 +6,14 @@
                                 <div class="checked">
                                         <label>
                                                 <input type="checkbox"
-                                                       class="js-approve-check-{{ $registration->id }}" /> Aprobar
+                                                       class="js-approve-check-{{ $registration->id }}" /> Approve
                                         </label>
                                 </div>
                                 <button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"
-                                        data-id="{{ $registration->id }}">Confirmar</button>
+                                        data-id="{{ $registration->id }}">Confirm</button>
                         </div>
                 @else
-                        <span class="label label-warning">Reprobado</span>
+                        <span class="label label-warning">Not approved</span>
                 @endif
         @else
                 <span class="label label-success"><i class="fa fa-check"></i> Yes</span>

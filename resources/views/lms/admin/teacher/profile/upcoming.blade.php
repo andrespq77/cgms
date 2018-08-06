@@ -3,7 +3,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Solicitudes pendientes</h3>
+                <h3 class="box-title">Inspection Requests</h3>
 
                 <div class="box-tools">
                 </div>

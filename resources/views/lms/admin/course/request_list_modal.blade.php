@@ -21,7 +21,7 @@
                             <i class="fa fa-info-circle text-danger"></i>
                             <a class="text-danger" href="{{ url('/sample/course_request_list.xlsx') }}" target="_blank">
                                 {{ __('lms.messages.download_sample_file') }}</a>&nbsp
-                            {{--<code>.csv, .xls, .xlsx son soportados.</code>--}}
+                            {{--<code>.csv, .xls, .xlsx are supported.</code>--}}
                         </div>
 
                     </div>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>

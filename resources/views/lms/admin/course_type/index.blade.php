@@ -22,7 +22,7 @@
             @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => 'table-responsive' ])
 
                 @slot('box_title')
-                    Todas las Modalidades
+                    All Course Type
                 @endslot
 
                 @slot('box_tools')
@@ -34,13 +34,13 @@
                     <thead>
                         <tr>
                             <th width="20px">ID</th>
-                            <th width="30px">Conteo</th>
-                            <th width="350px">Título</th>
-                            {{--<th width="350px">Modalidad</th>--}}
-                            <th width="100px">Estado</th>
-                            <th width="100px">Actualizado por</th>
-                            <th width="120px">Actualizado el</th>
-                            <th width="150px">Acción</th>
+                            <th width="30px">Sort</th>
+                            <th width="350px">Title</th>
+                            {{--<th width="350px">Modality</th>--}}
+                            <th width=100px">Is Active</th>
+                            <th width="100px">Updated By</th>
+                            <th width="120px">Updated at</th>
+                            <th width="150px">Action</th>
                         </tr>
                     </thead>
 
@@ -54,9 +54,9 @@
                             <td>{{ $type->title }}</td>
                             <td>
                                 @if($type->is_active == 1)
-                                    <span class="label label-success">Activo</span>
+                                    <span class="label label-success">Active</span>
                                     @else
-                                    <span class="label label-default">Inactivo</span>
+                                    <span class="label label-default">Inactive</span>
                                 @endif
 
                             </td>
@@ -69,8 +69,8 @@
 
                                     <div class="btn-group btn-group-xs">
                                         <a href="{{ url('/admin/course-modality/'.$type->id) }}"
-                                           class="btn btn-flat btn-primary"><i class="fa fa-edit"></i> Editar</a>
-                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Eliminar</button>
+                                           class="btn btn-flat btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Delete</button>
                                     </div>
                                 </form>
                             </td>

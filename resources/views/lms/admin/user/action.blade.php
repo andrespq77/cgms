@@ -1,6 +1,6 @@
 <div class="btn-group btn-group-xs">
     <button class="btn btn-change-user-password-action btn-default"  data-id="{{ $id }}">
-        <i class="fa fa-exchange"></i> Reiniciar Contraseña</button>
+        <i class="fa fa-exchange"></i> Reset Password</button>
     <button class="btn btn-edit-user btn-primary btn-edit" id="user_edit_{{ $id }}" data-id="{{ $id }}"
             @include('lms.admin.user.data-attributes')
     ><i class="fa fa-edit"></i> {{ __('lms.elements.button.edit') }}</button>

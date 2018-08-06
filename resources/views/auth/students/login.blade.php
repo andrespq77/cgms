@@ -11,12 +11,12 @@
 @section('body')
     <div class="login-box">
         <div class="login-logo" style="margin-bottom: 1px;">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">SGA <b>Docentes</b></a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">CGMS <b>Students</b></a>
             <img src="{{ url('/images/ministerio_de_education_logo.jpg') }}" width="360" align="{{ config('adminlte.title') }}"/>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Ingrear con usuarios Active Directory</p>
+            <p class="login-box-msg">Login with Active Directory User</p>
             <form action="{{ url('students/login') }}" method="post">
                 {!! csrf_field() !!}
 
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <a class="text-right" href="{{ url('login') }}">Ingresar como Admin o Universidades</a>
+                        <a class="text-right" href="{{ url('login') }}">Login with Admin or Universities</a>
                     </div>
                 </div>
                 <div class="row">

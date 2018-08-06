@@ -19,11 +19,11 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#course_code">Código del curso</a></li>
-                            <li><a href="#course_name">Nombre del Curso</a></li>
-                            <li><a href="#social_id">Cédula</a></li>
-                            <li><a href="#teachers_name">Nombre del Docente</a></li>
+                            <li><a href="#course_name">Course Name</a></li>
+                            <li><a href="#social_id">Social Id</a></li>
+                            <li><a href="#teachers_name">Teachers Name</a></li>
                             <li class="divider"></li>
-                            <li><a href="#all">Todos los campos</a></li>
+                            <li><a href="#all">All Fields</a></li>
                         </ul>
 
                     </div>
@@ -35,16 +35,16 @@
             </div>
             <div class="col-xs-3 col-lg-2">
                 <div class="form-group" >
-                    <label for="registration">Tipo de aprobación</label>
+                    <label for="registration">Approved Type</label>
                     <select class="form-control" id="registration" name="registration">
                         <option
-                                disabled="">Registrado</option>
+                                disabled="">Registration</option>
                         <option {{ app('request')->input('registration') == 1 ? 'selected' : '' }}
-                                value="1">Aprobado</option>
+                                value="1">Approved</option>
                         <option {{ app('request')->input('registration') == 0 ? 'selected' : '' }}
-                                value="0">Reprobado</option>
+                                value="0">Not Approved</option>
                         <option {{ app('request')->input('registration') == 3 ? 'selected' : '' }}
-                                value="3">Todos los registrados</option>
+                                value="3">All Registrations</option>
                     </select>
                 </div>
             </div>
@@ -52,10 +52,10 @@
                 <div class="btn-group-sm">
                     <button class="btn btn-primary btn-search btn-flat"
                             formaction="{{ url("/admin/portfolio") }}"
-                            type="submit"><i class="fa fa-search"></i> Buscar</button>
+                            type="submit"><i class="fa fa-search"></i> Search</button>
                     <button class="btn btn-success btn-download btn-flat"
                             formaction="{{ url("/admin/portfolio/download") }}" formtarget="_blank"
-                            type="submit"><i class="fa fa-cloud-download"></i> Descargar</button>
+                            type="submit"><i class="fa fa-cloud-download"></i> Download</button>
 
                 </div>
             </div>
@@ -85,8 +85,8 @@
                                 <th width="18%">{{ __('lms.page.teacher.table.name') }}</th>
                                 <th>{{ __('lms.page.teacher.table.course_type') }}</th>
                                 <th>{{ __('lms.page.teacher.table.course_name') }}</th>
-                                <th>Nota</th>
-                                <th>Estado</th>
+                                <th>Grade</th>
+                                <th>Grade Approved</th>
                                 <th>{{ __('lms.page.teacher.table.university') }}</th>
                                 <th>{{ __('lms.page.teacher.table.start_date') }}</th>
                                 <th>{{ __('lms.page.teacher.table.end_date') }}</th>
@@ -114,9 +114,9 @@
                                     @include('lms.admin.registration.parts.table.td.student_inspection_form')
                                     <td class="js-td-is-approved">
                                         @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                                            <span class="label label-warning">reprobada</span>
+                                            <span class="label label-warning">Not approved</span>
                                         @else
-                                            <span class="label label-success"><i class="fa fa-check"></i> si</span>
+                                            <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
                                             <small><i class="fa fa-clock-o"></i>
                                                 {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
                                                 {{ date('d M, Y', strtotime($registration->approval_time)) }}</small>
@@ -137,6 +137,7 @@
                     {{ $registrations->appends(request()->query())->links() }}
                 </div>
             </div>
+
 
         </div>
     </div>

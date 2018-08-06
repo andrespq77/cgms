@@ -32,7 +32,7 @@
     @component('lms.admin.components.bootstrap.modal.modal',
         [
             'modal_id' => 'modal-edit-category',
-            'modal_title' => 'Editar título de Categoria',
+            'modal_title' => 'Edit Category Title',
 
         ])
 
@@ -49,7 +49,7 @@
 
         @slot('footer_action_button')
             <button type="button" class="btn btn-primary btn-edit-category-title"
-            data-id="">Grabar</button>
+            data-id="">Save</button>
         @endslot
 
     @endcomponent
