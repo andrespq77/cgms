@@ -10,6 +10,7 @@
 
     <div class="row" id="page_register">
 
+
         <div class="col-lg-6 col-md-6 col-sm-12">
 
             <div class="box box-primary">
@@ -19,9 +20,12 @@
                 <!-- /.box-header -->
                 <div class="box-body">
 
-                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre Corto: </strong> {{ $course->short_name }}</p>
+                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre corto: </strong> {{ $course->short_name }}</p>
 
+                    <hr>
                     <p class=""><strong><i class="fa fa-map-marker margin-r-5"></i> Código del curso</strong> {{ $course->course_code }}</p>
+
+                    <hr>
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
                             <b>Horas</b> <a class="pull-right">{{ $course->hours }}</a>
@@ -70,7 +74,7 @@
 
         </div>
 
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-8 col-md-12">
 
             <div class="box box-info">
 
@@ -97,21 +101,16 @@
                                     <p>{{ $course->video_text }}</p>
 
                                     @if($course->video_type == 'youtube')
-                                        @if($course->video_code !== null && $code=App\Course::parseYoutubeUrl($course->video_code))
-
-                                            <div class="text-center">
-                                                <iframe width="580" height="315"
-                                                        src="https://www.youtube.com/embed/{{ App\Course::parseYoutubeUrl($course->video_code) }}">
-                                                </iframe>
-                                            </div>
-
+                                        @if($course->video_code !== null)
+                                        <iframe width="560" height="315"
+                                                src="https://www.youtube.com/embed/{{ parseYoutubeUrl($course->video_code) }}">
+                                        </iframe>
                                         @else
                                             <div class="js-error">
                                                 <h3 class="text-warning"><strong class="text-danger">Sorry</strong>! Video code is not found.</h3>
                                             </div>
                                         @endif
                                     @endif
-                                    <br/><br/>
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
                                     </div>
@@ -123,6 +122,7 @@
                                 <h3>Descripción</h3>
                                 <div class="box-layout">
                                     <p>{{ $course->description }}</p>
+
 
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
@@ -172,7 +172,8 @@
 
                                                     @if($registration->accept_tc == 0)
                                                         &nbsp;&nbsp;
-                                                        <button type="button" class="btn-accept-tc btn-primary btn btn-flat">Aceptar</button>
+                                                        <button type="button"
+                                                                class="btn-accept-tc btn-primary btn btn-flat">Aceptar</button>
                                                     @endif
                                                 </div>
 
@@ -198,99 +199,68 @@
                                 <div class="box-layout">
                                     <p>{{ $course->data_update_brief }}</p>
 
-                                    <div class="box-layout">
-                                        <p>{{ $course->data_update_brief }}</p>
+                                    <table class="table table-responsive table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Cédula</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Email</th>
+                                            <th>Teléfono</th>
+                                            <th>T&C Aceptó</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="register-update-data">
+                                        <tr>
+                                            <td>
+                                                {{ $teacher->social_id }}
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control js-tab-user-first_name"
+                                                       placeholder="First Name"
+                                                       value="{{ $registration->user_first_name }}"
+                                                       maxlength="100"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control js-tab-user-last_name"
+                                                       placeholder="Last Name"
+                                                       value="{{ $registration->user_last_name }}"
+                                                       maxlength="100"/>
+                                            </td>
+                                            <td>
+                                                <input type="email" class="form-control js-tab-user-email"
+                                                       placeholder="Email"
+                                                       value="{{ isset($registration->email) ? $registration->email : $teacher->inst_email }}"
+                                                       maxlength="100"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control js-tab-user-phone"
+                                                       placeholder="Phone"
+                                                       value="{{ isset($registration->cell_phone) ? $registration->cell_phone : $teacher->mobile }}"
+                                                       maxlength="50"/>
 
-                                        <div class="box-body" id="register-update-data">
-
-                                            <div class="row">
-                                                <div class="col-md-6">
-
-                                                    <div class="form-group">
-                                                        <label>Cédula</label>
-                                                        <input class="form-control" disabled
-                                                               value="{{$teacher->social_id}}" style="width: 100%;"/>
+                                            </td>
+                                            <td class="js-user-data-update-tc_accept_info">
+                                                @if($registration->accept_tc == 1)
+                                                    <div class="pull-left">
+                                                        <i class="fa fa-check"></i> Aceptado el<br/>
+                                                        <small>
+                                                            {{ date('d M Y h:i a', strtotime($registration->tc_accept_time)) }}
+                                                        </small>
                                                     </div>
-
-                                                    <div class="form-group">
-                                                        <label>Nombre</label>
-                                                        <input type="text" class="form-control js-tab-user-first_name"
-                                                               style="width: 100%;"
-                                                               placeholder="First Name"
-                                                               value="{{ $registration->user_first_name }}"
-                                                               maxlength="100"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Apellidos</label>
-
-                                                        <input type="text" class="form-control js-tab-user-last_name"
-                                                               style="width: 100%;"
-                                                               placeholder="Last Name"
-                                                               value="{{ $registration->user_last_name }}"
-                                                               maxlength="100"/>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input type="email" class="form-control js-tab-user-email"
-                                                               style="width: 100%;"
-                                                               placeholder="Email"
-                                                               value="{{ isset($registration->email) ? $registration->email : $teacher->inst_email }}"
-                                                               maxlength="100"/>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row">
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Teléfono</label>
-
-                                                        <input type="text" class="form-control js-tab-user-phone"
-                                                               style="width: 100%;"
-                                                               placeholder="Phone"
-                                                               value="{{ isset($registration->cell_phone) ? $registration->cell_phone : $teacher->mobile }}"
-                                                               maxlength="50"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>T&C Aceptó</label>
-
-                                                        <div class="js-user-data-update-tc_accept_info">
-                                                            @if($registration->accept_tc == 1)
-                                                                <div class="pull-left">
-                                                                    <i class="fa fa-check"></i> Aceptado el &nbsp;
-                                                                    &nbsp; &nbsp;
-                                                                    <small>
-                                                                        {{ date('d M Y h:i a', strtotime($registration->tc_accept_time)) }}
-                                                                    </small>
-                                                                </div>
-                                                            @endif
-
-                                                            <div class="pull-right">
-                                                                <button class="btn btn-lg btn-update-user-register-data btn-info btn-sm"
-                                                                        data-id="{{ $registration->id }}">
-                                                                    <i class="fa fa-save"></i> Actualizar
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-update-user-register-data btn-info btn-sm"
+                                                        data-id="{{ $registration->id }}"
+                                                ><i class="fa fa-save"></i> Actualizar</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                     <div class="js-data-update-message"></div>
-                                    <br/>
-                                    <br/>
-                                    <br/>
+
                                     <div class="next-layout">
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)">Siguiente</a>
                                     </div>
@@ -330,13 +300,8 @@
                                         </div>
 
                                     </div>
-                                    <br><br>
                                     <div class="next-layout">
-                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="
-                                        if (confirm('Are you sure to Finalizar you will not edit?')){
-                                            toastr.success('You have successfully updated the data.', 'Message');
-                                            window.setTimeout(function()
-                                            {window.location.href = '/admin/upcoming-courses'}, 4000);}">Finalizar</a>
+                                        <a class="btn btn-default btn-flat next" href="javascript:void(0)">Finalizar</a>
                                     </div>
                                 </div>
                             </div>

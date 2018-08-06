@@ -3,24 +3,7 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <div class="row">
-        <div class="col-lg-6">
-            <h2 class="no-padding no-margin">{{ __('lms.page.course.index.page_header') }}</h2>
-        </div>
-        <div class="col-lg-6">
-            <div class="pull-right">
-                <div class="btn-group">
-                    <button class="btn btn-sm btn-info" id="btn-upload-course-request">
-                        <i class="fa fa-upload"></i> {{ __('lms.elements.button.upload_course_request') }}</button>
-                    <button class="btn btn-sm btn-success" id="btn-new-course-upload">
-                        <i class="fa fa-cloud-upload"></i> {{ __('lms.elements.button.new_course_upload') }}</button>
-                    <button class="btn btn-sm btn-primary" id="btn-create-course">
-                        <i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <h1>{{ __('lms.page.course.index.page_header') }}</h1>
 @stop
 
 @section('content')
@@ -33,26 +16,21 @@
                     <div class="pull-left">
                         <h3 class="box-title">{{ __('lms.page.course.index.table_header') }}</h3>
                     </div>
-                    <div class="box-tools">
-                        <form method="get" action="{{ url('/admin/course/search') }}">
-
-                            <div class="input-group input-group-sm" style="width: 550px;">
-                                <input value="{{ app('request')->input('search') }}" type="text" name="search" class="form-control pull-right"
-                                       placeholder="Search by Course Code, Short Name, Description Hours"/>
-
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-default">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-info" id="btn-upload-course-request">
+                                <i class="fa fa-upload"></i> {{ __('lms.elements.button.upload_course_request') }}</button>
+                            <button class="btn btn-sm btn-success" id="btn-new-course-upload">
+                                <i class="fa fa-cloud-upload"></i> {{ __('lms.elements.button.new_course_upload') }}</button>
+                            <button class="btn btn-sm btn-primary" id="btn-create-course">
+                                <i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</button>
+                        </div>
                     </div>
                 </div>
-
                 <div class="box-body no-padding">
+
                     @include('lms.admin.course.templates.table')
+
                 </div>
 
                 <div class="box-footer no-padding">

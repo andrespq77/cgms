@@ -17,6 +17,7 @@
 
                     <div class="js-course-form">
 
+
                         @component('lms.admin.components.form-group', [   'name' => 'master-course', 'grid' => 10,
                             'title' => __('lms.page.course.form.master_course')])
                             <select id="js-edit-course-master-course" style="width: 100%"
@@ -73,7 +74,7 @@
 
                         <div class="form-group">
 
-                            @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-start_date', 'grid' => 2,
+                            @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-start_date', 'grid' => 4,
                                         'title' => __('lms.page.course.form.start_date')])
                                 <input id="js-edit-course-start_date" type="text" autocomplete="off"
                                        class="js-edit-course-start_date js-datepicker form-control" name="Start Date"
@@ -81,18 +82,11 @@
 
                             @endcomponent
 
-                            @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-end_date', 'grid' => 2,
+                            @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-end_date', 'grid' => 4,
                                 'title' => __('lms.page.course.form.end_date')])
                                     <input id="js-edit-course-end_date" type="text" autocomplete="off"
                                            class="js-edit-course-end_date js-datepicker form-control" name="end_date"
                                            placeholder={{ __('lms.page.course.form.end_date') }}/>
-                            @endcomponent
-
-                            @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-year', 'grid' => 2,
-                                'title' => __('lms.page.course.form.year')])
-                                <input id="js-edit-course-year" type="number" min="1" max="32767"
-                                       class="js-edit-course-year form-control" name="year"
-                                       placeholder={{ __('lms.page.course.form.year') }}>
                             @endcomponent
 
                         </div>
@@ -282,14 +276,11 @@
                             <code>Subir carta de Registro</code>
                             <div id="course-letter_of_registration-uploader-manual-trigger"></div>
 
-<<<<<<< HEAD
                             <div class="js-disclaimer-wrapper hidden">
                             <code>Subir Disclaimer</code>
                             <div id="course-disclaimer-uploader-manual-trigger"></div>
                             </div>
 
-=======
->>>>>>> dev
                         </div>
 
                     </div>
@@ -307,11 +298,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6">
 
-<<<<<<< HEAD
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-=======
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>
->>>>>>> dev
                             <button type="button" id="btn-edit-course" data-id="" class="btn btn-primary" data-type="update">
                                 <i class="fa fa-plus"></i> Actualizar</button>
                         </div>

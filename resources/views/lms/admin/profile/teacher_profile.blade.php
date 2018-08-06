@@ -63,7 +63,6 @@
         </div>
     </div>
 
-
     @if(Auth::user()->role !== 'teacher')
     <div class="row">
         <div class="col-lg-4">

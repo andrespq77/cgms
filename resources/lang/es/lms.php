@@ -109,17 +109,9 @@
                     'hours'             => 'Horas',
                     'start_date'        => 'Fecha Inicial',
                     'end_date'          => 'Fecha Final',
-<<<<<<< HEAD
                     'approved'          => 'Aprobado',
                     'certificate'       => 'Certificado de inscripción',
                     'diploma'           => 'Certificado',
-=======
-                    'year'              => 'Año',
-                    'approved'          => 'Aprovado',
-                    'certificate'       => 'Certificado',
-                    'diploma'           => 'Diploma',
-
->>>>>>> dev
                     'action'            => 'Acción',
                 ],
                 'form' => [
@@ -139,8 +131,7 @@
                     'institute'         => 'Institución Educativa',
                     'modality'          => 'Modalidad',
                     'hours'             => 'Horas',
-                    'start_date'        => 'Fecha de inicio',
-                    'end_date'          => 'Fecha final',
+                    'start_date'        => 'Fecha Final',
                     'status'            => 'Estado',
                     'certificate'       => 'Certificado de registro',
                 ]
@@ -159,7 +150,6 @@
                     'hours'             => 'Horas',
                     'start_date'        => 'Fecha Inicial',
                     'end_date'          => 'Fecha Final',
-                    'Year'              => 'Año',
                     'quota'             => 'Cuota',
                     'comment'           => 'Commentario',
                     'stage'             => 'Etapa',
@@ -386,12 +376,6 @@
             'download_sample_file' => 'Descargar archivo de muestra',
             'upload_diploma_zip_file' => 'Subir Archivo Zip de Certificados',
             'course_request_list_modal' => 'Course Request List Modal',
-<<<<<<< HEAD
             'diploma_upload_message' => 'La carga del certificado se habilitará desde la fecha de inicio de la entrada al grado'
-=======
-            'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de la entrada al grado',
-            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso para niños.'
-
->>>>>>> dev
         ]
     ];

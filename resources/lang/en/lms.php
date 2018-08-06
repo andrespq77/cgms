@@ -151,7 +151,6 @@
                     'hours'             => 'Hours',
                     'start_date'        => 'Start Date',
                     'end_date'          => 'End Date',
-                    'year'              => 'Year',
                     'quota'             => 'Quota',
                     'comment'           => 'Comment',
                     'state'             => 'State',
@@ -171,7 +170,6 @@
                     'hours'             => 'Hours',
                     'start_date'        => 'Start date',
                     'end_date'          => 'End date',
-                    'year'              => 'Year',
                     'quota'             => 'Quota',
                     'comment'           => 'Comment',
                     'description'       => 'Description',
@@ -381,7 +379,6 @@
             'download_sample_file' => 'Download Sample File',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
             'course_request_list_modal' => 'Course Request List Modal',
-            'diploma_upload_message' => 'Diploma upload will be enabled From Grade Entry Start Date',
-            'master_course_confirm_message' => 'Do you want to delete this. May be it has some course too.'
+            'diploma_upload_message' => 'Diploma upload will be enabled From Grade Entry Start Date'
         ]
     ];

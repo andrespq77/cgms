@@ -25,9 +25,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('/admin/vendor/toastr/css/toastr.css') }}">
-
-
 
 
 @if(config('adminlte.plugins.datatables'))
@@ -51,8 +48,5 @@
 <input id="app_url" type="hidden" value="{{ env('APP_URL') }}"/>
 <script type="text/javascript" src="{{ url(mix('/admin/js/app.js')) }}"></script>
 
-<script src="{{asset('/vendor/adminlte/vendor/jquery/dist/jquery.js')}}"></script>
-<script src="{{asset('/admin/vendor/toastr/js/toastr.min.js')}}"></script>
-@include('layouts.partials.toaster-js')
 </body>
 </html>

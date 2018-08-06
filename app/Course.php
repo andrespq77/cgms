@@ -138,16 +138,4 @@ class Course extends Model
         'grade_upload_end_date',
     ];
 
-    public static function parseYoutubeUrl($url)  {
-
-        $pattern ='/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i';
-
-        // Checks if it matches a pattern and returns the value
-        if (preg_match($pattern, $url, $results)) {
-            return $results[6];
-        }
-        // if no match return false.
-        return false;
-    }
-
-    }
+}

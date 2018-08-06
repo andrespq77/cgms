@@ -106,14 +106,12 @@ class MasterCourseRepository
      */
     public function delete($id){
 
-        $master_course = $this->findById($id);
+        $course = $this->findById($id);
         $this->flushCache();
 
-        if($master_course->courses->count()==0){
-            return $master_course->delete();
-        }
-        else
-            return false;
+        return $course->delete();
+
+
     }
 
     /**
@@ -133,6 +131,7 @@ class MasterCourseRepository
     }
 
     public function flushCache(){
+
 
         Cache::tags(['MASTER_COURSE_LIST'])->flush();
     }
