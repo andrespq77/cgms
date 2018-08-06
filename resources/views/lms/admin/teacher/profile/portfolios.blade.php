@@ -21,10 +21,10 @@
                             <th>{{ __('lms.page.upcoming.table.hours') }}</th>
                             <th>{{ __('lms.page.upcoming.table.start_date') }}</th>
                             <th>{{ __('lms.page.upcoming.table.end_date') }}</th>
-                            <th>{{ __('lms.page.teacher_profile.status') }}</th>
+                            <th>{{ __('lms.page.teacher_profile.table.status') }}</th>
                             <th>{{ __('lms.words.grade') }}</th>
                             <th>Estado</th>
-                            <th>{{ __('lms.page.teacher_profile.certificate') }}</th>
+                            <th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>
                             <th>{{ __('lms.words.diploma') }}</th>
 
 

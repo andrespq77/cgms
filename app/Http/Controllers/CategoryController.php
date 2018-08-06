@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         $category['type'] = $all->where('type', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Category', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> 'Categoria', 'category' => $category]);
 
     }
 
@@ -72,7 +72,7 @@ class CategoryController extends Controller
         $category['type'] = $all->where('type', true);
         $category['labels'] = $all->where('label', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Label', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> 'Etiqueta', 'category' => $category]);
     }
 
 
@@ -124,7 +124,7 @@ class CategoryController extends Controller
         $category['labels'] = $all->where('label', true);
         $category['sub_labels'] = $all->where('sub_label', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Sub Label', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> 'Sub Etiqueta', 'category' => $category]);
 
     }
 
@@ -179,7 +179,7 @@ class CategoryController extends Controller
         $category['sub_labels'] = $all->where('sub_label', true);
         $category['knowledges'] = $all->where('knowledge', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Area of Knowledge', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> 'Area de Conocimiento', 'category' => $category]);
 
     }
 
@@ -235,7 +235,7 @@ class CategoryController extends Controller
         $category['knowledges'] = $all->where('knowledge', true);
         $category['subjects'] = $all->where('subject', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Subject', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> 'Tema', 'category' => $category]);
 
     }
 

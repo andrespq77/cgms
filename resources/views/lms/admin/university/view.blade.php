@@ -49,11 +49,11 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Created By</td>
+                                        <td>Creado por</td>
                                         <td>{{ $university->createdBy->name }} el {{ date('d M Y - h:i a', strtotime($university->created_at)) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Actulizado por</td>
+                                        <td>Actualizado por</td>
                                         <td>{{ $university->updatedBy->name }} el {{ date('d M Y - h:i a', strtotime($university->updated_at)) }}</td>
 
                                     </tr>

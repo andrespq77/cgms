@@ -38,7 +38,7 @@
                             <th width="350px">Título</th>
                             {{--<th width="350px">Modalidad</th>--}}
                             <th width=100px">Is Active</th>
-                            <th width="100px">Actulizado por</th>
+                            <th width="100px">Actualizado por</th>
                             <th width="120px">Actualizado hace</th>
                             <th width="150px">Acción</th>
                         </tr>

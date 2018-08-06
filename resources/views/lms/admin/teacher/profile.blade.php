@@ -124,8 +124,8 @@
                                     <b>Grupo Étnico</b> <span class="pull-right">{{ $teacher->ethnic_group }}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope-o"></i>&nbsp<b>Note</b> <span class="pull-right">
-                                        Ussuario fue importado por {{ $teacher->createdBy->name }} el {{ $teacher->created_at }}</span>
+                                    <i class="fa fa-envelope-o"></i>&nbsp<b>Nota</b> <span class="pull-right">
+                                        Usuario fue importado por {{ $teacher->createdBy->name }} el {{ $teacher->created_at }}</span>
                                 </li>
                                 {{--<li class="list-group-item auxilary">--}}
                                     {{--<i class="fa fa-mobile"></i>&nbsp;<b>Cell 2</b> <span class="pull-right"></span>--}}
@@ -213,8 +213,8 @@
                     </p>
 
                     <hr>
-                    <strong><i class="fa fa-bolt margin-r-5"></i> Rason</strong>
-                    <p class="text-muted">Reason Type: {{ $teacher->reason_type }}<br/>
+                    <strong><i class="fa fa-bolt margin-r-5"></i> Razón</strong>
+                    <p class="text-muted">Tipo de razón: {{ $teacher->reason_type }}<br/>
                         Acción: {{ $teacher->action_type }}<br/>
                         Descripción: {{ $teacher->action_description }}<br/>
                         Specialidad: {{ $teacher->speciality }}<br/>
