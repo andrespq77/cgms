@@ -3,12 +3,12 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1>Master course</h1>
+    <h1>Cursos Maestros</h1>
     @component('lms.admin.components.bootstrap.breadcrumb')
-        <li class=""><i class="fa fa-book"></i> Course</li>
-        <li class="active"><i class="fa fa-list"></i> Master Course</li>
+        <li class=""><i class="fa fa-book"></i> Curso</li>
+        <li class="active"><i class="fa fa-list"></i> Cursos Maestros</li>
         <li class="">
-            <a href="{{ url('/admin/master-course/create') }}"><i class="fa fa-plus"></i> create</a>
+            <a href="{{ url('/admin/master-course/create') }}"><i class="fa fa-plus"></i> Crear</a>
         </li>
     @endcomponent
 @stop
@@ -22,7 +22,7 @@
             @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => 'table-responsive' ])
 
                 @slot('box_title')
-                    All Master Course
+                    Todos los Cursos Maestros
                 @endslot
 
                 @slot('box_tools')
@@ -41,13 +41,13 @@
                     <thead>
                         <tr>
                             <th width="20px">ID</th>
-                            <th width="100px">Code</th>
-                            <th width="350px">Title</th>
-                            <th width="350px">Subject</th>
-                            <th width="100px">Child Courses</th>
-                            <th width="100px">Updated By</th>
-                            <th width="120px">Updated at</th>
-                            <th width="150px">Action</th>
+                            <th width="100px">Código</th>
+                            <th width="350px">Título</th>
+                            <th width="350px">Tema</th>
+                            <th width="100px">Cursos hijos</th>
+                            <th width="100px">Actulizado por</th>
+                            <th width="120px">Actualizado hace</th>
+                            <th width="150px">Acción</th>
                         </tr>
                     </thead>
 
@@ -60,7 +60,7 @@
                             <td><code>{{ $course->course_code }}</code></td>
                             <td>{{ $course->name }}</td>
                             <td>{{ $course->subject->title }}</td>
-                            <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;courses</td>
+                            <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;cursos</td>
                             <td>{{ $course->updatedBy->name }}</td>
                             <td>{{ $course->updated_at->diffForHumans() }}</td>
                             <td>

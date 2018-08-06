@@ -38,7 +38,7 @@
 
                             <div class="input-group input-group-sm" style="width: 550px;">
                                 <input value="{{ app('request')->input('search') }}" type="text" name="search" class="form-control pull-right"
-                                       placeholder="Search by Course Code, Short Name, Description Hours"/>
+                                       placeholder="Buscar por el código del curso, nombre corto, descripción, horas"/>
 
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-default">

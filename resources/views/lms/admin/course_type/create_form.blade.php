@@ -1,7 +1,7 @@
     <div class="box box-info">
 
         <div class="box-header with-border">
-            <h3 class="box-title">Course Modality Information</h3>
+            <h3 class="box-title">Información de la modalidad de curso</h3>
         </div>
 
         @if(isset($type))
@@ -13,14 +13,14 @@
             <div class="box-body">
                 {{ csrf_field() }}
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'title'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Título'])
                     <input type="text" class="form-control" id="title"
                            value="{{ isset($type) ? $type->title : ''  }}"
                            placeholder="title" name="title">
                 @endcomponent
 
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'sort'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Orden'])
                     <input type="number" class="form-control" id="sort"
                            value="{{ isset($type) ? $type->sort : '0'  }}"
                            placeholder="sort" name="sort">
@@ -32,7 +32,7 @@
 
                     <div class="checkbox">
                         <label><input name="is_active" value="1"
-                            type="checkbox" {{ isset($type) ? $type->is_active == 1 ?  'CHECKED' : ''  : '' }}>&nbsp;Is active</label>
+                            type="checkbox" {{ isset($type) ? $type->is_active == 1 ?  'CHECKED' : ''  : '' }}>&nbsp;Esta activo</label>
                     </div>
                 @endcomponent
 
@@ -41,10 +41,10 @@
             <div class="box-footer">
                 @isset($type)
                 <a href="{{ url("/admin/course-modality/create") }}" class="btn btn-default btn-flat btn-sm">
-                    <i class="fas fa-plus"></i> Add New</a>
+                    <i class="fas fa-plus"></i> Agregar Nuevo</a>
                 @endisset
 
-                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Save</button>
+                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Grabar</button>
             </div>
 
         </form>

@@ -75,9 +75,9 @@
                                 </tr>
 
                                 <tr>
-                                    <td>Approved</td>
+                                    <td>Aprovado</td>
                                     <td>
-                                        <span class="label label-success">Approved</span>
+                                        <span class="label label-success">Aprobados</span>
                                         {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
                                     </td>
                                 </tr>
@@ -86,7 +86,7 @@
                                     <td>{{ __('lms.page.course.form.disclaimer_required') }}</td>
                                     <td>
                                         @if($course->has_disclaimer==1)
-                                            <span class="label label-success">Yes</span>
+                                            <span class="label label-success">Si</span>
                                         @else
                                             <span class="label label-danger">No</span>
                                         @endif
@@ -109,23 +109,23 @@
                                     <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
                                 </tr>
                                     {{--<tr>--}}
-                                        {{--<td>Total requested</td>--}}
+                                        {{--<td>Total Solicitudes</td>--}}
                                         {{--<td><code>{{ $course->requests->count() }}</code></td>--}}
                                     {{--</tr>--}}
 
                                     {{--<tr>--}}
-                                        {{--<td>Total Registered</td>--}}
+                                        {{--<td>Total Registrados</td>--}}
                                         {{--<td>--}}
-                                            {{--<span class="label label-info"> Registered</span> <span class="badge badge-info">{{ $course->registrations->count() }}</span>--}}
+                                            {{--<span class="label label-info"> Registrados</span> <span class="badge badge-info">{{ $course->registrations->count() }}</span>--}}
                                         {{--</td>--}}
                                     {{--</tr>--}}
 
                                     <tr>
-                                        <td>Grade Add {{ __('lms.page.course.form.start_date') }}</td>
+                                        <td>Ingreso Notas {{ __('lms.page.course.form.start_date') }}</td>
                                         <td class="text-success">{{ date('d M Y', strtotime($course->grade_upload_start_date)) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Grade Add {{ __('lms.page.course.form.end_date') }}</td>
+                                        <td>Ingreso Notas {{ __('lms.page.course.form.end_date') }}</td>
                                         <td class="text-warning">{{ date('d M Y', strtotime($course->grade_upload_end_date)) }}</td>
                                     </tr>
 
@@ -151,7 +151,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="pull-left">
-                        <h3 class="box-title">Registrations</h3>
+                        <h3 class="box-title">Registros</h3>
                     </div>
                     <div class="pull-right">
                         <form action="{{ url('/admin/course/'.$course->id.'/download-grade-template') }}" method="post"
@@ -163,12 +163,12 @@
                                data-placement="top" title="Instruction" data-toggle="popover"><i class="fa fa-info"></i>
                             </a>
                             <button class="btn btn-sm btn-warning" id="btn-create-university" type="submit">
-                                <i class="fa fa-cloud-download"></i> Download Grade Template</button>
+                                <i class="fa fa-cloud-download"></i> Descargar Plantilla de notas</button>
 
                             @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($course->grade_upload_start_date),
                                                         Carbon\Carbon::parse($course->grade_upload_end_date)))
                                 <button class="btn btn-info btn-upload-grade btn-sm btn-flat" type="button"
-                                    data-id="{{ $course->id }}"><i class="fa fa-cloud-upload"></i> Upload Grade
+                                    data-id="{{ $course->id }}"><i class="fa fa-cloud-upload"></i> Subir Notas
                                 </button>
                             @endif
 
@@ -182,13 +182,13 @@
                     <table class="table table-responsive table-bordered">
                         <thead>
                             <tr>
-                                <th>Social Id</th>
-                                <th>Name</th>
-                                <th>Institute</th>
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Institución</th>
                                 <th>Email</th>
-                                <th>Grade</th>
-                                <th>Grade Approved</th>
-                                <th>Diploma</th>
+                                <th>Nota</th>
+                                <th>Estado</th>
+                                <th>Certificado</th>
                             </tr>
                         </thead>
 
@@ -223,7 +223,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus"></i>
-                        <span class="js-modal-title-add">Add Grade</span>
+                        <span class="js-modal-title-add">Agregar Notas</span>
                     </h4>
                 </div>
                 <form class="form-horizontal" >
@@ -238,7 +238,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 
                     </div>
                 </form>
@@ -256,14 +256,14 @@
             </div>
             <div class="buttons">
                 <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Select files</div>
+                    <div>Escoja el archivo</div>
                 </div>
                 <button type="button" id="btn-upload-course-mark-list" class="btn btn-primary">
-                    <i class="icon-upload icon-white"></i> Upload
+                    <i class="icon-upload icon-white"></i> Subir
                 </button>
             </div>
             <span class="qq-drop-processing-selector qq-drop-processing">
-                <span>Processing dropped files...</span>
+                <span>Procesando archivos...</span>
                 <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
             </span>
             <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
@@ -274,12 +274,12 @@
                     <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
                     <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
                     <span class="qq-upload-file-selector qq-upload-file"></span>
-                    <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
+                    <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Editar nombre de archivo"></span>
                     <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
                     <span class="qq-upload-size-selector qq-upload-size"></span>
-                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
-                    <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
-                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancelar</button>
+                    <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Reintentar</button>
+                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Eliminar</button>
                     <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
                 </li>
             </ul>
@@ -287,7 +287,7 @@
             <dialog class="qq-alert-dialog-selector">
                 <div class="qq-dialog-message-selector"></div>
                 <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Close</button>
+                    <button type="button" class="qq-cancel-button-selector">Cerrar</button>
                 </div>
             </dialog>
 
@@ -295,7 +295,7 @@
                 <div class="qq-dialog-message-selector"></div>
                 <div class="qq-dialog-buttons">
                     <button type="button" class="qq-cancel-button-selector">No</button>
-                    <button type="button" class="qq-ok-button-selector">Yes</button>
+                    <button type="button" class="qq-ok-button-selector">Si</button>
                 </div>
             </dialog>
 
@@ -303,7 +303,7 @@
                 <div class="qq-dialog-message-selector"></div>
                 <input type="text">
                 <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                    <button type="button" class="qq-cancel-button-selector">Cancelar</button>
                     <button type="button" class="qq-ok-button-selector">Ok</button>
                 </div>
             </dialog>

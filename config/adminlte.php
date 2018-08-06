@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'title' => 'Course Grade Management System',
+    'title' => 'Sistema de Gestión de Alumnos',
 
-    'title_prefix' => 'CGMS',
+    'title_prefix' => 'SGA',
 
     'title_postfix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => 'CGMS <b>Admin</b>',
+    'logo' => 'SGA <b>Admin</b>',
 
-    'logo_mini' => '<b>CG</b>MS',
+    'logo_mini' => '<b>SGA</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green',
 
     /*
     |--------------------------------------------------------------------------
@@ -147,32 +147,32 @@ return [
             'can'           => 'admin-only',
             'submenu'       => [
                 [
-                    'text'      => 'Master Course',
+                    'text'      => 'Curso Maestro',
                     'url'           => 'admin/master-course',
                     'can'           => 'admin-only',
                 ],
                 [
-                    'text'      => 'Category',
+                    'text'      => 'Categoria',
                     'can'           => 'admin-only',
                     'submenu'   => [
                         [
-                            'text'  => 'Type',
+                            'text'  => 'Tipo',
                             'url'   => 'admin/categories/type',
                         ],
                         [
-                            'text'  => 'Label',
+                            'text'  => 'Etiqueta',
                             'url'   => 'admin/categories/label',
                         ],
                         [
-                            'text'  => 'Sub Label',
+                            'text'  => 'Sub Etiqueta',
                             'url'   => 'admin/categories/sublabel',
                         ],
                         [
-                            'text'  => 'Area of Knowledge',
+                            'text'  => 'Area de conocimiento',
                             'url'   => 'admin/categories/knowledge',
                         ],
                         [
-                            'text'  => 'Subject',
+                            'text'  => 'Tema',
                             'url'   => 'admin/categories/subject',
                         ]
 
@@ -184,7 +184,7 @@ return [
                     'can'           => 'admin-only',
                 ],
                 [
-                    'text'      => 'Course Modality',
+                    'text'      => 'Modalidad',
                     'url'           => 'admin/course-modality',
                     'can'           => 'admin-only',
                 ],
@@ -248,7 +248,7 @@ return [
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'Cambiar Contraseña',
             'url'  => '/admin/profile/change-password', //admin/settings
             'icon' => 'lock',
         ],

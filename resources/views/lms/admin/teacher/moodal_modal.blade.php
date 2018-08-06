@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="js-edit-canton-name" class="col-md-4 control-label">Social Id</label>
+                                <label for="js-edit-canton-name" class="col-md-4 control-label">Cédula</label>
                                 <div class="col-md-8">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Canton Name" maxlength="100">
@@ -72,14 +72,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="js-teacher-password" class="col-md-4 control-label">Password</label>
+                                <label for="js-teacher-password" class="col-md-4 control-label">Contraseña</label>
                                 <div class="col-md-8">
                                     <input id="js-teacher-password" type="password" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Password" maxlength="10">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password_confirm" class="col-md-4 control-label">Confirm Password</label>
+                                <label for="password_confirm" class="col-md-4 control-label">Confirmar Contraseña</label>
                                 <div class="col-md-8">
                                     <input id="js-teacher-password_confirm" type="password" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Confirm Password" maxlength="10">
@@ -96,9 +96,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="btn-edit-canton" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-upload"></i> Create</button>
+                        <i class="fa fa-upload"></i> Crear</button>
                 </div>
             </form>
         </div>

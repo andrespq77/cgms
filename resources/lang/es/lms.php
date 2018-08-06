@@ -12,8 +12,8 @@
             'main_nav'          => 'NAVEGACIÓN PRINCIPAL',
             'account_settings'  => 'CONFIGURACIONES DE LA CUENTA',
             'teachers'          => [
-                'title'         => 'Maestros',
-                'all'            => 'Lista de Maestros',
+                'title'         => 'Docentes',
+                'all'            => 'Lista de Docentes',
                 'portfolio'     => 'Portafolio del Docente',
                 'registration_inspection'  => 'Inspección de Registro',
             ],
@@ -93,9 +93,9 @@
                 'table' => [
                     'id'                => 'Id',
                     'security_id'       => 'Cédula',
-                    'name'              => 'Name',
+                    'name'              => 'Nombre',
                     'email'             => 'Email',
-                    'moodle_id'          => 'Id Moodle',
+                    'moodle_id'          => 'Id de Moodle',
                     'university'        => 'Universidad',
                     'function'          => 'Funcción',
                     'location'          => 'Dirección',
@@ -110,32 +110,32 @@
                     'end_date'          => 'Fecha Final',
                     'year'              => 'Año',
                     'approved'          => 'Aprovado',
-                    'certificate'       => 'Certificado',
-                    'diploma'           => 'Diploma',
+                    'certificate'       => 'Cert. de registro',
+                    'diploma'           => 'Certificado',
 
                     'action'            => 'Acción',
                 ],
                 'form' => [
-                    'edit_title'        => 'Editar profesor',
-                    'add_title'         => 'Agregar nuevo maestro',
+                    'edit_title'        => 'Editar Docente',
+                    'add_title'         => 'Agregar nuevo Docente',
                 ]
 
             ],
             'teacher_profile' => [
                 'index' => [
-                    'page_header'=> 'Perfil del profesor',
-                    'table_header' => 'Perfil del profesor'
+                    'page_header'=> 'Perfil del Docente',
+                    'table_header' => 'Perfil del Docente'
                 ],
                 'table' => [
                     'course_type'       => 'Tipo de Curso',
                     'course_name'       => 'Nombre de Curso',
-                    'institute'         => 'Universidad',
+                    'institute'         => 'Institución Educativa',
                     'modality'          => 'Modalidad',
                     'hours'             => 'Horas',
                     'start_date'        => 'Fecha de inicio',
                     'end_date'          => 'Fecha final',
                     'status'            => 'Estado',
-                    'certificate'       => 'Certificado',
+                    'certificate'       => 'Cert. de registro',
                 ]
             ],
             'course' => [
@@ -158,7 +158,7 @@
                     'action'            => 'Editor'
                 ],
                 'form'  =>[
-                    'edit_title'        => 'Editar Cursp',
+                    'edit_title'        => 'Editar Curso',
                     'add_title'         => 'Agragar Nuevo Curso',
                     'course_id'         => 'Código de Curso',
                     'course_type'       => 'Tipo de Curso',
@@ -176,8 +176,8 @@
                     'video_type'        => 'Tipo de Video',
                     'video_embed'       => 'Código Embebido',
                     'data_update'       => 'Pestaña informativa de Subida de datos',
-                    'registrations'     => 'Registrations',
-                    'inspection_file_message' => 'Despues de crear el curso, usted puede subit el archivo de inspección.'
+                    'registrations'     => 'Registros',
+                    'inspection_file_message' => 'Despues de crear el curso, usted puede subir los archivos de T&C y carta de Registro.'
                 ],
             ],
             'upcoming' => [
@@ -322,7 +322,7 @@
                 'close'     => 'Cerrar',
                 'import'    =>  'Importar',
                 'upload'    =>  'Subir',
-                'upload_diploma' => 'Diploma',
+                'upload_diploma' => 'Certificado',
                 'upload_course_request' => 'Cargar solicitud de curso', // in course list page
                 'new_course_upload' => 'Cargar un nuevo curso' // in course list page
             ],
@@ -344,20 +344,20 @@
             'date_end' => 'Fecha final',
             'date_join' => 'Fecha de Ingreso',
             'personal_info' => 'Información personal',
-            'university_info' => 'Información universitaria',
+            'university_info' => 'Información Institucional',
             'date_of_birth' => 'Fecha de nacimiento',
             'gender' => 'Género',
             'mobile' => 'Móvil',
             'email' => 'Email',
             'telephone' => 'Teléfono',
-            'social_id' => 'Social Id',
+            'social_id' => 'Cédula',
             'course'    => 'Curso',
-            'course_modality' => 'Course Modality',
-            'diploma' => 'Diploma',
-            'grade' => 'Grado',
+            'course_modality' => 'Modalidaddel curso',
+            'diploma' => 'Certificado',
+            'grade' => 'Nota',
             'zone'  => 'Zona',
             'last_updated' => 'Última actualización',
-            'add_grade'             => 'Add Grade',
+            'add_grade'             => 'Ingresar Nota',
             'by' => 'por',
         ],
         'messages' => [
@@ -366,10 +366,10 @@
             'proceed_to_the_course' => 'Proceda al curso',
             'upload_new_course' => 'Cargar un nuevo curso',
             'download_sample_file' => 'Descargar archivo de muestra',
-            'upload_diploma_zip_file' => 'Upload Diploma Zip File',
-            'course_request_list_modal' => 'Course Request List Modal',
-            'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de la entrada al grado',
-            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso para niños.'
+            'upload_diploma_zip_file' => 'Subir archivo ZIP de Certificados',
+            'course_request_list_modal' => 'Modal de lista de solicitudes de curso',
+            'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de entrada de notas',
+            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso hijo.'
 
         ]
     ];

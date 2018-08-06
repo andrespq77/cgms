@@ -71,7 +71,7 @@
                             <div class="js-login-section">
                             <hr/>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-lg-3 control-label"><i class="fa fa-info-circle"></i>&nbsp;Note</label>
+                                    <label class="col-md-3 col-lg-3 control-label"><i class="fa fa-info-circle"></i>&nbsp;Nota</label>
                                     <code class="col-md-9 col-lg-9"
                                             >{{ __('lms.page.university.form.login_message') }}</code>
                                 </div>
@@ -95,7 +95,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="js-edit-university-login_password"
-                                       class="col-md-3 col-lg-3 control-label">Password</label>
+                                       class="col-md-3 col-lg-3 control-label">Contraseña</label>
                                 <div class="col-md-9 col-lg-9">
                                     <input id="js-edit-university-login_password" type="password" maxlength="100"
                                            class="js-edit-university-login_password form-control" placeholder="">
@@ -103,7 +103,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="js-edit-university-login_confirm_password"
-                                       class="col-md-3 col-lg-3 control-label">Confirm Password</label>
+                                       class="col-md-3 col-lg-3 control-label">Confirmar Contraseña</label>
                                 <div class="col-md-9 col-lg-9">
                                     <input id="js-edit-university-login_confirm_password" type="password" maxlength="100"
                                            class="js-edit-university-login_confirm_password form-control" placeholder="">
@@ -121,9 +121,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="btn-edit-university" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i> Actualizar</button>
                 </div>
             </form>
         </div>

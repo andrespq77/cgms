@@ -6,7 +6,7 @@
             {{ csrf_field() }}
             <button type="submit" class="btn btn-link btn-link-download" rel="tooltip"
                     title="{{ basename($registration->diploma) }}"
-            ><i class="fa fa-cloud-download"></i> Download</button>
+            ><i class="fa fa-cloud-download"></i> Descargar</button>
         </form>
 
     @endif

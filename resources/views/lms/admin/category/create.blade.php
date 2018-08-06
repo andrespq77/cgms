@@ -32,14 +32,14 @@
     @component('lms.admin.components.bootstrap.modal.modal',
         [
             'modal_id' => 'modal-edit-category',
-            'modal_title' => 'Edit Category Title',
+            'modal_title' => 'Editar Título de Categoría',
 
         ])
 
         @slot('modal_body')
 
 
-            @component('lms.admin.components.bootstrap.form-group', ['name' => 'Title'])
+            @component('lms.admin.components.bootstrap.form-group', ['name' => 'Título'])
                 <input type="text" class="form-control" id="js-input-edit-category-title"
                        value="" placeholder="title" name="title">
             @endcomponent
@@ -49,7 +49,7 @@
 
         @slot('footer_action_button')
             <button type="button" class="btn btn-primary btn-edit-category-title"
-            data-id="">Save</button>
+            data-id="">Grabar</button>
         @endslot
 
     @endcomponent

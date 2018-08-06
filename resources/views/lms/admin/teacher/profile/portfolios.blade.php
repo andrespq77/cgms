@@ -3,7 +3,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Portfolio</h3>
+                <h3 class="box-title">Portafolio</h3>
 
                 <div class="box-tools">
                 </div>
@@ -23,7 +23,7 @@
                             <th>{{ __('lms.page.upcoming.table.end_date') }}</th>
                             <th>{{ __('lms.page.teacher_profile.status') }}</th>
                             <th>{{ __('lms.words.grade') }}</th>
-                            <th>Grade Approved</th>
+                            <th>Estado</th>
                             <th>{{ __('lms.page.teacher_profile.certificate') }}</th>
                             <th>{{ __('lms.words.diploma') }}</th>
 
@@ -47,11 +47,11 @@
                                 <td>{{ date('d M Y', strtotime($registration->course->end_date)) }}</td>
                                 <td>
                                     @if($registration->is_approved == REGISTRATION_IS_APPROVED)
-                                        <i class="fa fa-check-square-o"></i> Approved<br/>
-                                        <small>by {{ $registration->approvedBy->name }} at <br/>
+                                        <i class="fa fa-check-square-o"></i> Aprobado<br/>
+                                        <small>by {{ $registration->approvedBy->name }} el <br/>
                                             {{ date('d m Y - h:i a', strtotime($registration->approval_time)) }}</small>
                                     @else
-                                     <i class="fa fa-times"></i> Not Approved
+                                     <i class="fa fa-times"></i> Reprobado
 
                                     @endif
                                 </td>

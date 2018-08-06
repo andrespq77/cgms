@@ -4,17 +4,17 @@
 
 
 @section('content_header')
-    <h1>{{ $title }} <small>Create new Course Type </small></h1>
+    <h1>{{ $title }} <small>Crear nueva modalidad </small></h1>
     @component('lms.admin.components.bootstrap.breadcrumb')
-        <li class=""><i class="fa fa-book"></i> Course</li>
+        <li class=""><i class="fa fa-book"></i> Curso</li>
 
         <li class="">
-            <a href="{{ url('/admin/course-type') }}"><i class="fa fa-plus"></i> Course Type</a>
+            <a href="{{ url('/admin/course-type') }}"><i class="fa fa-plus"></i> Modalidad</a>
         </li>
         @if(isset($type))
-        <li class="active"><i class="fa fa-pencil"></i> Edit</li>
+        <li class="active"><i class="fa fa-pencil"></i> Editar</li>
         @else
-            <li class="active"><i class="fa fa-plus"></i> create</li>
+            <li class="active"><i class="fa fa-plus"></i> Crear</li>
         @endif
     @endcomponent
 @stop

@@ -20,13 +20,13 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">First Name</label>
+                                <label for="province" class="col-md-2 control-label">Nombre</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="First Name" maxlength="100">
+                                           value="" required placeholder="Nombre" maxlength="100">
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Last Name</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Apellido</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Last" maxlength="100">
@@ -34,25 +34,25 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Gender</label>
+                                <label for="province" class="col-md-2 control-label">Género</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Gender" maxlength="100">
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Date of Birth</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Fecha de nacimiento</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Date of Birth" maxlength="100">
+                                           value="" required placeholder="Fecha de nacimiento" maxlength="100">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Social Id</label>
+                                <label for="province" class="col-md-2 control-label">Cédula</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Social Id" maxlength="100">
+                                           value="" required placeholder="Cédula" maxlength="100">
                                 </div>
 
                                 <label for="js-edit-canton-name" class="col-md-2 control-label">CC</label>
@@ -68,21 +68,21 @@
                                     <input id="js-edit-canton-name" type="email" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Email" maxlength="100">
                                 </div>
-                                <label for="province" class="col-md-2 control-label">Institute Email</label>
+                                <label for="province" class="col-md-2 control-label">Email institucional</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="email" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Institute Email" maxlength="100">
+                                           value="" required placeholder="Email institucional" maxlength="100">
                                 </div>
                             </div>
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Telephone</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Teléfono</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Telephone" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Mobile</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Celular</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Mobile" maxlength="100">
@@ -91,12 +91,12 @@
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">University</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Institución Educativa</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="University" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Fecha de ingreso</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Join Date" maxlength="100">
@@ -105,12 +105,12 @@
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">University</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Institución Educativa</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="University" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Fecha de ingreso</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Join Date" maxlength="100">
@@ -120,13 +120,13 @@
 
 
                             <div class="form-group">
-                                <label for="dist_code" class="col-md-2 control-label">Code</label>
+                                <label for="dist_code" class="col-md-2 control-label">Código</label>
                                 <div class="col-md-4">
                                     <input id="dist_code" type="text" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Code" maxlength="10">
                                 </div>
 
-                                <label for="zone" class="col-md-2 control-label">Zone</label>
+                                <label for="zone" class="col-md-2 control-label">Zona</label>
                                 <div class="col-md-4">
 
                                 </div>
@@ -144,9 +144,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="btn-store-teacher" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i> Actualizar</button>
                 </div>
             </form>
         </div>

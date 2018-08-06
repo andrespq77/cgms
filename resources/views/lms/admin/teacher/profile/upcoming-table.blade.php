@@ -30,7 +30,7 @@
             {{--<td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>--}}
                 {{--{{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>--}}
             {{--</td>--}}
-            <td>{{ $course->hours }} hours</td>
+            <td>{{ $course->hours }} horas</td>
             <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
             <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
 
@@ -51,7 +51,7 @@
 
                                     <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
                                         {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
+                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Registrar</button>
                                     </form>
 
                                 @else
@@ -66,15 +66,15 @@
 
 
                             @else
-                                <span class="label label-danger">Start Date Passed</span>
+                                <span class="label label-danger">Pasó fecha inicial</span>
                             @endif
 
                         @else
-                            <span class="label label-danger">All positions filled</span>
+                            <span class="label label-danger">Vacantes llenas</span>
                         @endif
 
                     @else
-                        <span class="label label-default">Inactive Course</span>
+                        <span class="label label-default">Curso Inactivo</span>
                     @endif
 
                 @endcan
@@ -84,9 +84,9 @@
             @foreach($course->registrations as $registration)
                 <td class="js-td-is-approved">
                     @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                        <span class="label label-warning">Not approved</span>
+                        <span class="label label-warning">Reprobado</span>
                     @else
-                        <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
+                        <span class="label label-success"><i class="fa fa-check"></i> Si</span>
                         <small><i class="fa fa-clock-o"></i>
                             {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
                             {{ date('d M, Y', strtotime($registration->approval_time)) }}

@@ -69,11 +69,11 @@
                                                     {{--<div class="checked">--}}
                                                         {{--<label>--}}
                                                             {{--<input type="checkbox"--}}
-                                                                   {{--class="js-approve-check-{{ $registration->id }}" /> Approve--}}
+                                                                   {{--class="js-approve-check-{{ $registration->id }}" /> Aprobar--}}
                                                         {{--</label>--}}
                                                     {{--</div>--}}
                                                     {{--<button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"--}}
-                                                    {{--data-id="{{ $registration->id }}">Confirm</button>--}}
+                                                    {{--data-id="{{ $registration->id }}">Confirmar</button>--}}
                                                 {{--</div>--}}
                                             {{--@else--}}
                                                 {{--<i class="fa fa-check"></i> Yes <br/>--}}

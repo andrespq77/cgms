@@ -3,7 +3,7 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1>Course Modality</h1>
+    <h1>Modalidad de curso</h1>
     @component('lms.admin.components.bootstrap.breadcrumb')
         <li class=""><i class="fa fa-book"></i> {{ __('lms.words.course') }}</li>
         <li class="active"><i class="fa fa-list"></i> {{ __('lms.words.course_modality') }}</li>
@@ -22,7 +22,7 @@
             @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => 'table-responsive' ])
 
                 @slot('box_title')
-                    All Course Type
+                    Todas las modalidades
                 @endslot
 
                 @slot('box_tools')
@@ -34,13 +34,13 @@
                     <thead>
                         <tr>
                             <th width="20px">ID</th>
-                            <th width="30px">Sort</th>
-                            <th width="350px">Title</th>
-                            {{--<th width="350px">Modality</th>--}}
+                            <th width="30px">Conteo</th>
+                            <th width="350px">Título</th>
+                            {{--<th width="350px">Modalidad</th>--}}
                             <th width=100px">Is Active</th>
-                            <th width="100px">Updated By</th>
-                            <th width="120px">Updated at</th>
-                            <th width="150px">Action</th>
+                            <th width="100px">Actulizado por</th>
+                            <th width="120px">Actualizado hace</th>
+                            <th width="150px">Acción</th>
                         </tr>
                     </thead>
 
@@ -54,9 +54,9 @@
                             <td>{{ $type->title }}</td>
                             <td>
                                 @if($type->is_active == 1)
-                                    <span class="label label-success">Active</span>
+                                    <span class="label label-success">Activo</span>
                                     @else
-                                    <span class="label label-default">Inactive</span>
+                                    <span class="label label-default">Inactivo</span>
                                 @endif
 
                             </td>
@@ -69,8 +69,8 @@
 
                                     <div class="btn-group btn-group-xs">
                                         <a href="{{ url('/admin/course-modality/'.$type->id) }}"
-                                           class="btn btn-flat btn-primary"><i class="fa fa-edit"></i> Edit</a>
-                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Delete</button>
+                                           class="btn btn-flat btn-primary"><i class="fa fa-edit"></i> Editar</a>
+                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Eliminar</button>
                                     </div>
                                 </form>
                             </td>

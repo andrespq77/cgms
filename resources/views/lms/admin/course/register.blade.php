@@ -60,7 +60,7 @@
 
                     <hr>
 
-                    <strong><i class="fa fa-pencil margin-r-5"></i> Universidad</strong>
+                    <strong><i class="fa fa-pencil margin-r-5"></i> Institución Educativa</strong>
 
                     <p>{{ $teacher->work_area }}, {{ $teacher->university_name }}</p>
 
@@ -216,7 +216,7 @@
                                                         <label>Nombre</label>
                                                         <input type="text" class="form-control js-tab-user-first_name"
                                                                style="width: 100%;"
-                                                               placeholder="First Name"
+                                                               placeholder="Nombre"
                                                                value="{{ $registration->user_first_name }}"
                                                                maxlength="100"/>
                                                     </div>
@@ -228,7 +228,7 @@
 
                                                         <input type="text" class="form-control js-tab-user-last_name"
                                                                style="width: 100%;"
-                                                               placeholder="Last Name"
+                                                               placeholder="Apellido"
                                                                value="{{ $registration->user_last_name }}"
                                                                maxlength="100"/>
                                                     </div>
@@ -342,9 +342,9 @@
                             </div>
                             {{--<div class="tab-pane" id="step6">--}}
                                 {{--<div class="box-layout">--}}
-                                    {{--<p>This is the last step. You're done.</p>--}}
+                                    {{--<p>Este es el paso final. Usted finalizó.</p>--}}
                                     {{--<div class="next-layout">--}}
-                                        {{--<a class="btn btn-success first" href="javascript:void(0)">Start over</a>--}}
+                                        {{--<a class="btn btn-success first" href="javascript:void(0)">Volver a empezar</a>--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
 
