@@ -135,7 +135,7 @@ return [
                 ],
                 [
                     'text'      => 'lms.menu.teachers.registration_inspection',
-                    'url'           => 'admin/registration/pending',
+                    'url'           => 'admin/registration/pending?search_param=all&registration=3',
                     'can'           => 'admin-only',
                     'icon'          => 'check-square'
                 ],
