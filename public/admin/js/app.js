@@ -54493,6 +54493,23 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
 
+    var $selectAll = $('#selectAll'); // main checkbox inside table thead
+    var $table = $('.table'); // table selector
+    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
+    var $tdCheckboxChecked = []; // checked checbox arr
+
+    //Select or deselect all checkboxes on main checkbox change
+    $selectAll.on('click', function () {
+        $tdCheckbox.prop('checked', this.checked);
+    });
+
+    //Switch main checkbox state to checked when all checkboxes inside tbody tag is checked
+    $tdCheckbox.on('change', function () {
+        $tdCheckboxChecked = $table.find('tbody input:checkbox:checked'); //Collect all checked checkboxes from tbody tag
+        //if length of already checked checkboxes inside tbody tag is the same as all tbody checkboxes length, then set property of main checkbox to "true", else set to "false"
+        $selectAll.prop('checked', $tdCheckboxChecked.length == $tdCheckbox.length);
+    });
+
     var app_url = $('#app_url').val();
 
     searchCourses();
@@ -54510,7 +54527,7 @@ $(document).ready(function () {
 
                     $('#row-' + id).find('.js-td-is-approved').find('.checked').addClass('text-red');
 
-                    alert('Please check to approve');
+                    toastr.info('Please Check box to approve.');
 
                     return 0;
                 }
@@ -54533,7 +54550,7 @@ $(document).ready(function () {
                     }
                 }).fail(function (jqXhr, textStatus, errorThrown) {
 
-                    alert('Update approval failed!');
+                    toastr.error('Update approval failed!');
                     console.log('jqxhr', jqXhr);
                 });
             });

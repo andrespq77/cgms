@@ -74,6 +74,21 @@
                             <h3 class="box-title">{{ __('lms.page.registration.pending.index.table_header') }}</h3>
                         </div>
                         <div class="pull-right">
+                            @if(Auth::user()->role == 'admin')
+                                <div class="">
+                                    <form class="form-inline" method="get" action="{{ url('/admin/registration/pending') }}">
+
+                                        <div class="btn-group-sm">
+
+                                            <button class="btn btn-success btn-flat"
+                                                    formaction="{{ url("/admin/registration/pending") }}"
+                                                    type="submit"><i class="fa fa-check"></i> Approve Selected</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <br/>
+                            @endif
                         </div>
                     </div>
                     <div class="box-body">
@@ -93,6 +108,13 @@
                                     <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.is_approved') }}</th>
                                     <th>{{ __('lms.page.registration.pending.table.by') }}</th>
+                                    <th>
+                                       <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="selectAll">
+                                        </label>
+                                       </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -109,30 +131,37 @@
                                         @include('lms.admin.registration.parts.table.td.terms_condition')
                                         @include('lms.admin.registration.parts.table.td.student_inspection_form')
                                         @include('lms.admin.registration.parts.table.td.is_approved')
-                                        {{--<td class="js-td-is-approved">--}}
-                                            {{--@if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)--}}
-                                                {{--<div class="form-group">--}}
-                                                    {{--<div class="checked">--}}
-                                                        {{--<label>--}}
-                                                            {{--<input type="checkbox"--}}
-                                                                   {{--class="js-approve-check-{{ $registration->id }}" /> Approve--}}
-                                                        {{--</label>--}}
+                                            {{--<td class="js-td-is-approved">--}}
+                                                {{--@if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)--}}
+                                                    {{--<div class="form-group">--}}
+                                                        {{--<div class="checked">--}}
+                                                            {{--<label>--}}
+                                                                {{--<input type="checkbox"--}}
+                                                                       {{--class="js-approve-check-{{ $registration->id }}" /> Approve--}}
+                                                            {{--</label>--}}
+                                                        {{--</div>--}}
+                                                        {{--<button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"--}}
+                                                        {{--data-id="{{ $registration->id }}">Confirm</button>--}}
                                                     {{--</div>--}}
-                                                    {{--<button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"--}}
-                                                    {{--data-id="{{ $registration->id }}">Confirm</button>--}}
-                                                {{--</div>--}}
-                                            {{--@else--}}
-                                                {{--<i class="fa fa-check"></i> Yes <br/>--}}
-                                                {{--<small><i class="fa fa-clock-o"></i>--}}
-                                                    {{--{{ date('d M, Y - h:i a', strtotime($registration->approval_time)) }}</small>--}}
-                                            {{--@endif--}}
-                                        {{--</td>--}}
+                                                {{--@else--}}
+                                                    {{--<i class="fa fa-check"></i> Yes <br/>--}}
+                                                    {{--<small><i class="fa fa-clock-o"></i>--}}
+                                                        {{--{{ date('d M, Y - h:i a', strtotime($registration->approval_time)) }}</small>--}}
+                                                {{--@endif--}}
+                                            {{--</td>--}}
                                         <td class="js-td-approved-by">
 
                                             @if ($registration->is_approved == REGISTRATION_IS_APPROVED)
                                                 <span>{{ $registration->approvedBy->name }}</span>
                                             @endif
 
+                                        </td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"  id="tr-checkbox-{{$registration->id}}">
+                                                </label>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -150,7 +179,5 @@
             </div>
         </div>
 
-
     </div>
-
 @stop
