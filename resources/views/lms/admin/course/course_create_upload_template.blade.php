@@ -41,7 +41,11 @@
         <dialog class="qq-alert-dialog-selector">
             <div class="qq-dialog-message-selector"></div>
             <div class="qq-dialog-buttons">
+<<<<<<< HEAD
                 <button type="button" class="qq-cancel-button-selector">Cerrar</button>
+=======
+                <button type="button" class="qq-cancel-button-selector">Finish</button>
+>>>>>>> dev
             </div>
         </dialog>
 

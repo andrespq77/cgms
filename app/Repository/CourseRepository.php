@@ -33,15 +33,12 @@ class CourseRepository
 
         $data = Cache::tags('COURSE_PAGINATE')->remember('COURSE_PAGINATE_'.$page, 60, function ()  {
 
-
             return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations',
                 'updatedBy'])
                     ->orderBy('updated_at', 'desc')
                     ->orderBy('stage', 'asc')
                     ->orderBy('status', 'asc')
-                    ->paginate(10);
-
-        });
+                    ->paginate(10);});
 
         return $data;
 
@@ -76,7 +73,6 @@ class CourseRepository
         /**
          * Store a teacher and return the teacher
          */
-
         $user = Auth::user();
         $course = new Course();
 
@@ -90,6 +86,8 @@ class CourseRepository
 
         $course->start_date                         = $post['start_date'];
         $course->end_date                           = $post['end_date'];
+        $course->year                           = $post['year'];
+
         $course->grade_upload_start_date            = $post['grade_upload_start_date'];
         $course->grade_upload_end_date              = $post['grade_upload_end_date'];
 
@@ -120,9 +118,28 @@ class CourseRepository
 
         $course->save();
 
+        $this->flushCache();
 
         return $course;
 
+    }
+
+    public function search($page, $keyword){
+
+        $data = Cache::tags('COURSE_SEARCH')
+            ->remember('COURSE_SEARCH_PAGINATE_'.$page.'_KEYWORD_'.str_slug( $keyword,'-'), 60,
+                function () use($keyword) {
+
+                    return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations'])
+                        ->where('course_code', 'like','%' . $keyword . '%')
+                        ->orWhere('short_name','like', '%' . $keyword . '%')
+                        ->orWhere('hours', $keyword)
+                        ->orWhere('description','like', '%' . $keyword . '%')
+                        ->paginate(10);
+
+                });
+
+        return $data;
     }
 
     /**
@@ -236,7 +253,7 @@ class CourseRepository
 
     public function flushCache(){
 
-        Cache::tags(['COURSE_FIND_BY_ID', 'COURSE_FIND_BY_CODE'])->flush();
+        Cache::tags(['COURSE_FIND_BY_ID', 'COURSE_FIND_BY_CODE','COURSE_SEARCH'])->flush();
         Cache::tags(['COURSE_PAGINATE'])->flush();
     }
 
