@@ -141,29 +141,21 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
-        ////Modality shouldn't be available to edit nor create to any user
-        /// Skipped..................................................
         /**
          * Course Modality --old=type
          */
-<<<<<<< HEAD
         Route::prefix('course-modality')->group(function (){
 
 <<<<<<< HEAD
-=======
-//        Route::prefix('course-modality')->group(function (){
-//
->>>>>>> parent of a2a6213... Merge branch 'dev' into traslate
 //            Route::get('/create', 'CourseTypeController@create');
-//            Route::get('/list', 'CourseTypeController@getList');
+            Route::get('/list', 'CourseTypeController@getList');
 //            Route::get('/', 'CourseTypeController@index');
 //            Route::get('/{id}', 'CourseTypeController@show');
-//
-//
+
+
 //            Route::post('/', 'CourseTypeController@insert');
 //            Route::post('/{id}', 'CourseTypeController@update');
 //            Route::delete('/{id}', 'CourseTypeController@delete');
-<<<<<<< HEAD
 =======
             Route::get('/create', 'CourseTypeController@create');
             Route::get('/list', 'CourseTypeController@getList');
@@ -177,10 +169,6 @@ Route::middleware(['ldapauth'])->group(function (){
 >>>>>>> parent of ec00ed8... Merge remote-tracking branch 'origin/dev' into traslate
 
         });
-=======
-//
-//        });
->>>>>>> parent of a2a6213... Merge branch 'dev' into traslate
 
         Route::prefix('registration')->group(function(){
 
