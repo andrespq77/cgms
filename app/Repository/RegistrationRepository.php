@@ -288,19 +288,15 @@
 
         }
 
-        /**
-         *
-         */
+
         public function flushPortfolioTeacherCache(){
 
             Cache::tags(['PORTFOLIO_TEACHER'])->flush();
-
         }
 
         public function flushPortfolioAdmin(){
 
             Cache::tags(['PORTFOLIO_ADMIN'])->flush();
-
         }
 
         public function flushAllCache(){
