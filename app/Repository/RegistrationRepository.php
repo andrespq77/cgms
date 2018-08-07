@@ -73,6 +73,8 @@
             $minutes = config('adminlte.cache_time');
 
             $user = getAuthUser();
+            $this->flushAllCache();
+
 
             $cache_key = 'portfolio_search_in_'.$search_in. '_with_'.$search_keyword .
                 '_with_registration_'.$registration .
@@ -82,13 +84,6 @@
 
                 return Registration::with(['student', 'course', 'course.university', 'student.user','markApprovedBy','approvedBy'])
                     ->where(function ($query) use($search_in, $search_keyword, $registration){
-
-                        // if not all == 3 , then search registration with id
-                        if($registration !== 3){
-                            if ($registration == 1 || $registration == 0){
-                                $query->where('is_approved', $registration);
-                            }
-                        }
 
                         if ($search_in == 'teachers_name'){
                             // teacher name search
@@ -115,7 +110,7 @@
                                 $cQuery->where('course_code',  $search_keyword );
                             });
 
-                        } elseif ($search_in == 'all'){
+                        } elseif ($search_keyword && $search_in == 'all'){
 
                             $query->whereHas('student', function ($bQuery) use ($search_keyword){
                                 $bQuery->where('first_name', 'LIKE', '%' . $search_keyword . '%')
@@ -123,19 +118,24 @@
                                     ->orWhere('social_id', $search_keyword);
                             });
 
-                            $query->whereHas('course', function ($cQuery) use ($search_keyword){
-                                $cQuery->where('short_name', 'LIKE', '%' . $search_keyword . '%')
+                            $query->orWhereHas('course', function ($gQuery) use ($search_keyword){
+                                $gQuery->where('short_name', 'LIKE', '%' . $search_keyword . '%')
                                     ->orWhere('course_code',  $search_keyword );
                             });
 
                         }
-
-                    })
+                        // if not all == 3 , then search registration with id
+                        if($registration !== 3){
+                            if ($registration == 1 || $registration == 0){
+                                $query->where('is_approved',$registration);
+                            }
+                        }
+                    }
+                    )
 
 
                     ->orderBy('updated_at', 'desc')
                     ->paginate(10);
-
             });
 
 
