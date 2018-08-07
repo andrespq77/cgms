@@ -54446,10 +54446,12 @@ $(document).ready(function () {
                 onSubmit: function onSubmit(id, name) {},
                 onComplete: function onComplete(id, name, response, xhr) {
                     if (response.success == true) {
-                        toastr.message('Succesfully added new courses.');
+                        toastr.success('Succesfully added new courses from file.');
                     } else if (response.error) {
                         toastr.error('Duplicate Entry found in the file.');
                     }
+
+                    console.log(response);
                 },
                 onStatusChange: function onStatusChange(id, oldStatus, newStatus) {},
                 onCancel: function onCancel(id, name) {}

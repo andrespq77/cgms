@@ -176,6 +176,7 @@
                     'video_type'        => 'Tipo de Video',
                     'video_embed'       => 'Código Embebido',
                     'data_update'       => 'Pestaña informativa de Subida de datos',
+                    'data_update_instructions'       => 'Instrucciones',
                     'registrations'     => 'Registrations',
                     'inspection_file_message' => 'Despues de crear el curso, usted puede subit el archivo de inspección.'
                 ],

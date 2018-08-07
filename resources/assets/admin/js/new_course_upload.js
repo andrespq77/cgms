@@ -40,7 +40,7 @@ $(document).ready(function () {
                 },
                 onComplete: function (id, name, response, xhr ) {
                     if(response.success==true){
-                        toastr.message('Succesfully added new courses.');
+                        toastr.success('Succesfully added new courses from file.');
                     }
                     else if(response.error){
                         toastr.error('Duplicate Entry found in the file.');

@@ -186,6 +186,7 @@
                     'status'            => 'Status',
                     'disclaimer_required' => 'Disclaimer Required',
                     'data_update'       => 'Data Update Tab Info',
+                    'data_update_instructions'       => 'Instructions',
                     'registrations'     => 'Registrations',
                     'inspection_file_message' => 'After creating the course, you can upload inspection file.'
 
