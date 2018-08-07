@@ -32,6 +32,8 @@
          */
         public function updateDiplomaFile($courseId, $studentSocialSecurityId, $path){
 
+
+
             $registration = Registration::where('course_id', $courseId)
                             ->where('user_social_id', $studentSocialSecurityId)
                             ->first();
@@ -48,17 +50,6 @@
 
         }
 
-        //        $registrations = Cache::tags(['PENDING_REGISTRATION'])->remember('pending_registrations_by_page_'.$page, $minutes, function () {
-//
-//                 return Registration::with(['approvedBy', 'markApprovedBy', 'student', 'student.user',
-//                     'course', 'course.university'])
-//                     ->orderBy('is_approved', 'asc')
-//                     ->orderBy('accept_tc', 'desc')
-//                     ->orderBy('id', 'desc')
-//                     ->paginate(10);
-//
-//        });
-
         /**
          * Search Filter
          *
@@ -68,22 +59,28 @@
          * @param $page
          * @return mixed
          */
-        public function filter($search_in, $search_keyword, $registration, $page ,$type){
+        public function filter($search_in, $search_keyword, $registration, $page){
+
 
             $minutes = config('adminlte.cache_time');
-
             $user = getAuthUser();
-            $this->flushAllCache();
-
 
             $cache_key = 'portfolio_search_in_'.$search_in. '_with_'.$search_keyword .
                 '_with_registration_'.$registration .
                 '_in_page_'.$page.'for_user_'.$user->id;
 
-            $registrations = Cache::tags([$type])->remember($cache_key, $minutes, function () use($search_in, $search_keyword, $registration){
+            $registrations = Cache::tags(['PORTFOLIO_ADMIN'])->remember($cache_key, $minutes, function () use($search_in, $search_keyword, $registration){
+
 
                 return Registration::with(['student', 'course', 'course.university', 'student.user','markApprovedBy','approvedBy'])
                     ->where(function ($query) use($search_in, $search_keyword, $registration){
+
+                        // if not all == 3 , then search registration with id
+                        if($registration !== 3){
+                            if ($registration == 1 || $registration == 0){
+                                $query->where('is_approved', $registration);
+                            }
+                        }
 
                         if ($search_in == 'teachers_name'){
                             // teacher name search
@@ -110,32 +107,26 @@
                                 $cQuery->where('course_code',  $search_keyword );
                             });
 
-                        } elseif ($search_keyword && $search_in == 'all'){
+                        } elseif ($search_in == 'all'){
 
-                            $query->whereHas('student', function ($bQuery) use ($search_keyword){
-                                $bQuery->where('first_name', 'LIKE', '%' . $search_keyword . '%')
+                            $query->whereHas('student', function ($cQuery) use ($search_keyword){
+                                $cQuery->where('first_name', 'LIKE', '%' . $search_keyword . '%')
                                     ->orWhere('last_name', 'LIKE', '%'.$search_keyword.'%')
                                     ->orWhere('social_id', $search_keyword);
                             });
 
-                            $query->orWhereHas('course', function ($gQuery) use ($search_keyword){
-                                $gQuery->where('short_name', 'LIKE', '%' . $search_keyword . '%')
+                            $query->orWhereHas('course', function ($cQuery) use ($search_keyword){
+
+                                $cQuery->where('short_name', 'LIKE', '%' . $search_keyword . '%')
                                     ->orWhere('course_code',  $search_keyword );
                             });
 
                         }
-                        // if not all == 3 , then search registration with id
-                        if($registration !== 3){
-                            if ($registration == 1 || $registration == 0){
-                                $query->where('is_approved',$registration);
-                            }
-                        }
-                    }
-                    )
 
-
+                    })
                     ->orderBy('updated_at', 'desc')
                     ->paginate(10);
+
             });
 
 
@@ -289,15 +280,19 @@
 
         }
 
-
+        /**
+         *
+         */
         public function flushPortfolioTeacherCache(){
 
             Cache::tags(['PORTFOLIO_TEACHER'])->flush();
+
         }
 
         public function flushPortfolioAdmin(){
 
             Cache::tags(['PORTFOLIO_ADMIN'])->flush();
+
         }
 
         public function flushAllCache(){

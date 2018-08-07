@@ -211,12 +211,11 @@
                                           placeholder="{{ __('lms.page.course.form.terms_condition') }}" ></textarea>
                         @endcomponent
 
-                            {{--//Instructions Text Area using old with new name--}}
                         @component('lms.admin.components.form-group', [   'name' => 'course_data_update', 'grid' => 10,
-                            'title' => __('lms.page.course.form.data_update_instructions')])
+                            'title' => __('lms.page.course.form.data_update')])
                                 <textarea id="js-edit-course-data_update"
                                           class="js-edit-course-data_update form-control" name="course_data_update"
-                                          placeholder="{{ __('lms.page.course.form.data_update_instructions') }}" ></textarea>
+                                          placeholder="{{ __('lms.page.course.form.data_update') }}" ></textarea>
                         @endcomponent
 
                         <div class="form-group">

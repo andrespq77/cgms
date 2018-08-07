@@ -135,7 +135,7 @@ return [
                 ],
                 [
                     'text'      => 'lms.menu.teachers.registration_inspection',
-                    'url'           => 'admin/registration/pending?search_param=all&registration=3',
+                    'url'           => 'admin/registration/pending',
                     'can'           => 'admin-only',
                     'icon'          => 'check-square'
                 ],
@@ -183,20 +183,11 @@ return [
                     'url'           => 'admin/course',
                     'can'           => 'admin-only',
                 ],
-<<<<<<< HEAD
                 [
                     'text'      => 'Modalidad',
                     'url'           => 'admin/course-modality',
                     'can'           => 'admin-only',
                 ],
-=======
-
-//                [
-//                    'text'      => 'Course Modality',
-//                    'url'           => 'admin/course-modality',
-//                    'can'           => 'admin-only',
-//                ],
->>>>>>> origin/dev
             ],
 
         ],

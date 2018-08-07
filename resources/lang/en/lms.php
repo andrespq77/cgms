@@ -186,7 +186,6 @@
                     'status'            => 'Status',
                     'disclaimer_required' => 'Disclaimer Required',
                     'data_update'       => 'Data Update Tab Info',
-                    'data_update_instructions'       => 'Instructions',
                     'registrations'     => 'Registrations',
                     'inspection_file_message' => 'After creating the course, you can upload inspection file.'
 
@@ -258,7 +257,6 @@
                         'record_uploaded'   => 'Record Uploaded',
                         'is_approved'       => 'Approved',
                         'approved_by'       => 'Approved By',
-                        'by'                => 'By',
                         'action'            => 'Action'
                     ]
                 ]

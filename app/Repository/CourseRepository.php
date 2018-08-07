@@ -86,7 +86,7 @@ class CourseRepository
 
         $course->start_date                         = $post['start_date'];
         $course->end_date                           = $post['end_date'];
-        $course->year                               = $post['year'];
+        $course->year                           = $post['year'];
 
         $course->grade_upload_start_date            = $post['grade_upload_start_date'];
         $course->grade_upload_end_date              = $post['grade_upload_end_date'];
@@ -133,8 +133,7 @@ class CourseRepository
                     return Course::with(['masterCourse', 'requests', 'university', 'registrations', 'approvedRegistrations'])
                         ->where('course_code', 'like','%' . $keyword . '%')
                         ->orWhere('short_name','like', '%' . $keyword . '%')
-
-                        ->orWhere('hours',(int) filter_var($keyword, FILTER_SANITIZE_NUMBER_INT))
+                        ->orWhere('hours', $keyword)
                         ->orWhere('description','like', '%' . $keyword . '%')
                         ->paginate(10);
 

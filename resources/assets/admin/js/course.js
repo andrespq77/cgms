@@ -450,7 +450,7 @@ $(document).ready(function () {
                     });
 
                 } else{
-                    toastr.error(errorThrown, "Error");
+                    toastr.danger(errorThrown, "Error");
 
                     // alert('Error: '+errorThrown);
                     console.log('errors ', xhr.responseJSON);

@@ -31,7 +31,7 @@ Route::middleware(['ldapauth'])->group(function (){
 	
     Route::prefix('admin')->group(function(){
 
-        Route::get('/unauthorized', 'HomeController@unauthorized')->name('insert-category');
+        Route::get('/unauthorized', 'HomeController@unauthorized');
 
         Route::prefix('teachers')->group(function (){
 
@@ -146,6 +146,7 @@ Route::middleware(['ldapauth'])->group(function (){
          */
         Route::prefix('course-modality')->group(function (){
 
+<<<<<<< HEAD
 //            Route::get('/create', 'CourseTypeController@create');
             Route::get('/list', 'CourseTypeController@getList');
 //            Route::get('/', 'CourseTypeController@index');
@@ -155,6 +156,17 @@ Route::middleware(['ldapauth'])->group(function (){
 //            Route::post('/', 'CourseTypeController@insert');
 //            Route::post('/{id}', 'CourseTypeController@update');
 //            Route::delete('/{id}', 'CourseTypeController@delete');
+=======
+            Route::get('/create', 'CourseTypeController@create');
+            Route::get('/list', 'CourseTypeController@getList');
+            Route::get('/', 'CourseTypeController@index');
+            Route::get('/{id}', 'CourseTypeController@show');
+
+
+            Route::post('/', 'CourseTypeController@insert');
+            Route::post('/{id}', 'CourseTypeController@update');
+            Route::delete('/{id}', 'CourseTypeController@delete');
+>>>>>>> parent of ec00ed8... Merge remote-tracking branch 'origin/dev' into traslate
 
         });
 
@@ -163,7 +175,6 @@ Route::middleware(['ldapauth'])->group(function (){
             // by admin
             Route::get('/', 'RegistrationController@index');
             Route::get('/pending', 'RegistrationController@getPending');
-            Route::post('/approve-multiple', 'RegistrationController@approveMultipleRecords');
             Route::post('/approve/{id}', 'RegistrationController@postApprove');
             Route::post('/{id}/update/{part}', 'RegistrationController@updateRegistration');
             Route::post('/{id}/upload/inspection', 'RegistrationController@uploadStudentInspection');

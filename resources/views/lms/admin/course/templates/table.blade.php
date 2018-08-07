@@ -5,7 +5,7 @@
             <th>{{ __('lms.page.course.form.university') }}</th>
             <th>{{ __('lms.page.course.table.short_name') }}</th>
             <th>{{ __('lms.page.course.table.modality') }}</th>
-            <th>{{ __('lms.page.course.form.registrations') }}</th>
+            <th>{{ __('lms.page.course.form.quota') }}</th>
             <th>{{ __('lms.page.course.table.hours') }}</th>
             <th>{{ __('lms.page.course.table.start_date') }}</th>
             <th>{{ __('lms.page.course.table.end_date') }}</th>
@@ -35,7 +35,7 @@
                     <small class="text-info">{{ $course->edition }}</small>
                 </td>
                 <td>{{ isset($course->modality->title) ? $course->modality->title : '' }}</td>
-                <td>
+                <td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>
                     {{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>
                 </td>
                 <td>{{ $course->hours }}</td>

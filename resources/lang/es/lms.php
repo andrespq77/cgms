@@ -178,14 +178,8 @@
                     'video_type'        => 'Tipo de Video',
                     'video_embed'       => 'Código Embebido',
                     'data_update'       => 'Pestaña informativa de Subida de datos',
-<<<<<<< HEAD
                     'registrations'     => 'Registros',
                     'inspection_file_message' => 'Despues de crear el curso, usted puede subir los archivos de T&C y carta de Registro.'
-=======
-                    'data_update_instructions'       => 'Instrucciones',
-                    'registrations'     => 'Registrations',
-                    'inspection_file_message' => 'Despues de crear el curso, usted puede subit el archivo de inspección.'
->>>>>>> origin/dev
                 ],
             ],
             'upcoming' => [
@@ -252,7 +246,6 @@
                         'record_uploaded'   => 'Registro subido',
                         'is_approved'       => 'Aprobado',
                         'approved_by'       => 'Aprobado por',
-                        'by'                => 'por',
                         'action'            => 'Acción'
                     ]
                 ]

@@ -123,13 +123,9 @@ class MasterCourseRepository
     public function findById($id){
 
         $course = MasterCourse::find($id);
-        return $course;
-    }
 
-    public function findByCodeName($nameCOde){
-
-        $course = MasterCourse::where('name', $nameCOde)->first();
         return $course;
+
     }
 
     public function flushById($id){

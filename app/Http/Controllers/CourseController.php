@@ -91,7 +91,9 @@ class CourseController extends Controller
 
             $title = 'Course Search Result for ['.$posts['search'].'] - '.env('APP_NAME') ;
 
-            $courses = $this->repo->search($page, $posts['search']);
+            $clean_string = cleanString($posts['search']);
+
+            $courses = $this->repo->search($page, $clean_string);
 
             return view('lms.admin.course.index', ['title'=> $title, 'courses' => $courses]);
 
@@ -175,7 +177,7 @@ class CourseController extends Controller
             $course['end_date'] =  null;
         }
 
-        $course['year'] =  isset($post['year']) ? $post['year'] : null;
+        $course['year'] =  $post['year'];
 
 
         if (isset($post['grade_entry_start_date'])) {
@@ -252,8 +254,7 @@ class CourseController extends Controller
                 $course->end_date =  null;
             }
 
-            $course->year =  isset($post['year']) ? $post['year'] : null;
-
+            $course->year =  $post['year'];
 
             if (isset($post['grade_entry_start_date'])) {
                 $startDate = DateTime::createFromFormat('d/m/Y', $post['grade_entry_start_date']);
@@ -345,10 +346,9 @@ class CourseController extends Controller
             Excel::load($path, function ($reader) use(&$rows, $courseRepository, $uniRepo){
 
                 foreach ($reader->toArray() as $row) {
-                    $master_code = isset($row['master_course_code']) ? $row['master_course_code'] : null;
-                    $master_course = $this->masterCourseRepo->findByCodeName($master_code);
 
-                    if(is_null($master_course)) continue;
+
+                    $master_course = $this->masterCourseRepo->findbyCode($row['master_course_code']);
 
                     $course['master_course_id']             = $master_course->id;
 
@@ -360,8 +360,6 @@ class CourseController extends Controller
 
                     $course['start_date']                   = isset($row['start_date']) ? $row['start_date']: null;
                     $course['end_date']                     = isset($row['end_date']) ? $row['end_date'] : null;
-                    $course['year']                         = isset($row['year']) ? $row['year'] : null;
-
                     $course['grade_upload_start_date']      = isset($row['grade_add_start_date']) ? $row['grade_add_start_date']: null;
                     $course['grade_upload_end_date']        = isset($row['grade_add_end_date']) ? $row['grade_add_end_date']: null;
 

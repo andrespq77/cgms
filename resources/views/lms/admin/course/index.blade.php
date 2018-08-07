@@ -8,7 +8,6 @@
             <h2 class="no-padding no-margin">{{ __('lms.page.course.index.page_header') }}</h2>
         </div>
         <div class="col-lg-6">
-            @if(Auth::user()->role == 'admin')
             <div class="pull-right">
                 <div class="btn-group">
                     <button class="btn btn-sm btn-info" id="btn-upload-course-request">
@@ -19,7 +18,6 @@
                         <i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</button>
                 </div>
             </div>
-            @endif
         </div>
     </div>
 

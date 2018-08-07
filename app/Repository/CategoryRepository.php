@@ -92,9 +92,10 @@ class CategoryRepository
      */
     public function update($post, $id){
 
-        $category = Category::find($id);
 
-        $category->title  = $post['title'];
+        $category = $this->findById($id);
+
+        $category->title          = $post['title'];
         $category->updated_by = Auth::user()->id;
         $category->save();
 

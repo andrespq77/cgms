@@ -3,6 +3,8 @@
  */
 $(document).ready(function () {
 
+
+
     var categoryPage = $('#page_category');
     var masterCourse = $('#master-course');
     var jsTitle = $('.js-title');
@@ -213,8 +215,8 @@ $(document).ready(function () {
 
         var optionLoading = '<option value="loading">Loading...</option>';
 
-        insertType();
 
+        insertType();
         function insertType() {
 
             $('.btn-save-type').click(function () {
@@ -257,7 +259,6 @@ $(document).ready(function () {
         changeKnowledge();
 
         showEditModal();
-
         function showEditModal() {
 
             categoryPage.on('click', '.btn-edit-title', function () {
@@ -284,10 +285,8 @@ $(document).ready(function () {
                     },
                     url: app_url+'/admin/categories/'+id,
                 }).done(function (response, textStatus, xhr) {
-                    $('#modal-edit-category').modal('hide');
 
-                    toastr.success('Type Updated successfully.');
-                    window.setTimeout(function(){location.reload()}, 4000);
+                    location.reload();
 
                 }).fail(function (errors, textStatus, errorThrown) {
 

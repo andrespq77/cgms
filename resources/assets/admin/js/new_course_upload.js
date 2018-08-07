@@ -36,20 +36,11 @@ $(document).ready(function () {
             callbacks: {
                 onSubmit: function (id, name) {
 
-
                 },
                 onComplete: function (id, name, response, xhr ) {
-                    if(response.success==true){
-                        toastr.success('Succesfully added new courses from file.');
-                    }
-                    else if(response.error){
-                        toastr.error('Duplicate Entry found in the file.');
-                    }
 
-                    console.log(response);
                 },
                 onStatusChange: function (id, oldStatus, newStatus) {
-
 
                 },
                 onCancel: function (id, name) {

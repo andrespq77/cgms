@@ -316,6 +316,7 @@ class CategoryController extends Controller
 
 
         $posts = $request->all();
+
         $result = $this->repo->update($posts, $id);
 
         return response()->json(['data', $result]);
