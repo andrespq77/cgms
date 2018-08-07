@@ -183,11 +183,12 @@ return [
                     'url'           => 'admin/course',
                     'can'           => 'admin-only',
                 ],
-                [
-                    'text'      => 'Course Modality',
-                    'url'           => 'admin/course-modality',
-                    'can'           => 'admin-only',
-                ],
+
+//                [
+//                    'text'      => 'Course Modality',
+//                    'url'           => 'admin/course-modality',
+//                    'can'           => 'admin-only',
+//                ],
             ],
 
         ],
