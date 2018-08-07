@@ -347,8 +347,9 @@ class CourseController extends Controller
 
                 foreach ($reader->toArray() as $row) {
 
+                    $master_course = $this->masterCourseRepo->findByCodeName($row['master_course_code']);
 
-                    $master_course = $this->masterCourseRepo->findbyCode($row['master_course_code']);
+                    if(is_null($master_course)) continue;
 
                     $course['master_course_id']             = $master_course->id;
 
