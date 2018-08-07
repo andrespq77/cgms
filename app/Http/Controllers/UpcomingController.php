@@ -121,7 +121,7 @@ class UpcomingController extends Controller
      */
     private function getCourseId($course_code) {
 
-        $course = $this->courseRepo->findByCourseCode($course_code);
+        $course =  Course::where('course_code', $course_code)->first();
 
         return $course->id;
 

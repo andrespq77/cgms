@@ -181,7 +181,6 @@ Route::middleware(['ldapauth'])->group(function (){
          */
         Route::prefix('users')->group(function() {
 
-
             Route::get('/',             'UserController@index');
             Route::post('/table/ajax',  'UserController@getTableData');
             Route::post('/ajax',        'UserController@store');
