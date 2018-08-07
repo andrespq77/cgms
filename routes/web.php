@@ -141,24 +141,22 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
-        ////Modality shouldn't be available to edit nor create to any user
-        /// Skipped..................................................
         /**
          * Course Modality --old=type
          */
-//        Route::prefix('course-modality')->group(function (){
-//
+        Route::prefix('course-modality')->group(function (){
+
 //            Route::get('/create', 'CourseTypeController@create');
-//            Route::get('/list', 'CourseTypeController@getList');
+            Route::get('/list', 'CourseTypeController@getList');
 //            Route::get('/', 'CourseTypeController@index');
 //            Route::get('/{id}', 'CourseTypeController@show');
-//
-//
+
+
 //            Route::post('/', 'CourseTypeController@insert');
 //            Route::post('/{id}', 'CourseTypeController@update');
 //            Route::delete('/{id}', 'CourseTypeController@delete');
-//
-//        });
+
+        });
 
         Route::prefix('registration')->group(function(){
 
