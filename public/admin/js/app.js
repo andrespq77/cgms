@@ -53298,7 +53298,7 @@ $(document).ready(function () {
                         });
                     });
                 } else {
-                    toastr.danger(errorThrown, "Error");
+                    toastr.error(errorThrown, "Error");
 
                     // alert('Error: '+errorThrown);
                     console.log('errors ', xhr.responseJSON);
