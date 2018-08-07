@@ -134,7 +134,7 @@ class CourseRepository
                         ->where('course_code', 'like','%' . $keyword . '%')
                         ->orWhere('short_name','like', '%' . $keyword . '%')
 
-                        ->orWhere('hours','like', '%' . (int) filter_var($keyword, FILTER_SANITIZE_NUMBER_INT) . '%')
+                        ->orWhere('hours',(int) filter_var($keyword, FILTER_SANITIZE_NUMBER_INT))
                         ->orWhere('description','like', '%' . $keyword . '%')
                         ->paginate(10);
 
