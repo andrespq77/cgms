@@ -659,9 +659,10 @@ $(document).ready(function () {
 
         var requestListModal = $('#request-list-modal');
         /**
-         * Course Request List Upload for course & teachers
+         * #page_course removed Course Request List Upload for course & teachers
          */
-        $('#page_course #btn-upload-course-request').click(function () {
+
+        $('#btn-upload-course-request').click(function () {
 
             requestListModal.modal('show');
 

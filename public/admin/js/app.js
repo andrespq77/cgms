@@ -53298,7 +53298,7 @@ $(document).ready(function () {
                         });
                     });
                 } else {
-                    toastr.error(errorThrown, "Error");
+                    toastr.danger(errorThrown, "Error");
 
                     // alert('Error: '+errorThrown);
                     console.log('errors ', xhr.responseJSON);
@@ -53521,7 +53521,8 @@ $(document).ready(function () {
         /**
          * Course Request List Upload for course & teachers
          */
-        $('#page_course #btn-upload-course-request').click(function () {
+
+        $('#btn-upload-course-request').click(function () {
 
             requestListModal.modal('show');
         });
