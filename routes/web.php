@@ -31,7 +31,7 @@ Route::middleware(['ldapauth'])->group(function (){
 	
     Route::prefix('admin')->group(function(){
 
-        Route::get('/unauthorized', 'HomeController@unauthorized');
+        Route::get('/unauthorized', 'HomeController@unauthorized')->name('insert-category');
 
         Route::prefix('teachers')->group(function (){
 

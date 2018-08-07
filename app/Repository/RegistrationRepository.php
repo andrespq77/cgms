@@ -117,14 +117,13 @@
 
                         } elseif ($search_in == 'all'){
 
-                            $query->whereHas('student', function ($cQuery) use ($search_keyword){
-                                $cQuery->where('first_name', 'LIKE', '%' . $search_keyword . '%')
+                            $query->whereHas('student', function ($bQuery) use ($search_keyword){
+                                $bQuery->where('first_name', 'LIKE', '%' . $search_keyword . '%')
                                     ->orWhere('last_name', 'LIKE', '%'.$search_keyword.'%')
                                     ->orWhere('social_id', $search_keyword);
                             });
 
-                            $query->orWhereHas('course', function ($cQuery) use ($search_keyword){
-
+                            $query->whereHas('course', function ($cQuery) use ($search_keyword){
                                 $cQuery->where('short_name', 'LIKE', '%' . $search_keyword . '%')
                                     ->orWhere('course_code',  $search_keyword );
                             });

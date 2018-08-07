@@ -52720,8 +52720,12 @@ $(document).ready(function () {
                     },
                     url: app_url + '/admin/categories/' + id
                 }).done(function (response, textStatus, xhr) {
+                    $('#modal-edit-category').modal('hide');
 
-                    location.reload();
+                    toastr.success('Type Updated successfully.');
+                    window.setTimeout(function () {
+                        location.reload();
+                    }, 4000);
                 }).fail(function (errors, textStatus, errorThrown) {}).always(function () {});
             });
         };
@@ -52762,7 +52766,6 @@ $(document).ready(function () {
 
         insertType();
 
-
         if (jsTitle.text() !== 'type') {
             loadType();
         }
@@ -52776,7 +52779,6 @@ $(document).ready(function () {
         changeKnowledge();
 
         showEditModal();
-
 
         updateTitle();
 

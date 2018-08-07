@@ -2,7 +2,6 @@
 
 @include('lms.admin.parts.title')
 
-
 @section('content_header')
     <h1>{{ $title }}</h1>
 @stop
@@ -10,9 +9,9 @@
 @section('content')
 
     <div class="row" id="page_category">
-        <div class="col-lg-6 col-md-8 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
 
-            @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => 'table-responsive' ])
+            @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => '' ])
 
                 @slot('box_title')
                     <span class="js-title">{{ str_replace('admin/categories/', '', Request::path() ) }}</span>
@@ -38,9 +37,8 @@
 
         @slot('modal_body')
 
-
             @component('lms.admin.components.bootstrap.form-group', ['name' => 'Title'])
-                <input type="text" class="form-control" id="js-input-edit-category-title"
+                <input required type="text" class="form-control" id="js-input-edit-category-title"
                        value="" placeholder="title" name="title">
             @endcomponent
 
