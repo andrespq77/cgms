@@ -84,14 +84,14 @@
                         <div class="panel box box-danger">
                             <div class="box-header with-border">
                                 <h4 class="box-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                                        Haga clic aquí para ver
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="true">
+                                        Leer instrunctions antes de Registrarse
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                            <div id="collapseTwo" class="panel-collapse" aria-expanded="true" >
                                 <div class="box-body">
-                                    
+
                                     {!! nl2br(str_replace(" ", " &nbsp;", $course->data_update_brief))!!}
 
                                 </div>
