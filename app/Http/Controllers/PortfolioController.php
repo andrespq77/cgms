@@ -43,13 +43,13 @@ class PortfolioController extends Controller
 
             $title = 'Teacher Portfolio - '.env('APP_NAME') ;
 
-            $this->repo->flushPortfolioAdmin();
 
             $search_in      = $request->input('search_param');
             $search_keyword = $request->input('x');
             $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
 
             $this->repo->flushPortfolioAdmin();
+
             $registrations = $this->repo->filter($search_in, $search_keyword, $registration, $page,'PORTFOLIO_ADMIN');
 
             return view('lms.admin.portfolio.all', ['title'=> $title,

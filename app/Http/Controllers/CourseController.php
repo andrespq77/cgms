@@ -90,7 +90,7 @@ class CourseController extends Controller
             $page = isset($posts['page']) ? $posts['page'] : 1;
 
             $title = 'Course Search Result for ['.$posts['search'].'] - '.env('APP_NAME') ;
-            
+
             $courses = $this->repo->search($page, $posts['search']);
 
             return view('lms.admin.course.index', ['title'=> $title, 'courses' => $courses]);
