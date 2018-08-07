@@ -19,9 +19,11 @@
                 <!-- /.box-header -->
                 <div class="box-body">
 
-                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre Corto: </strong> {{ $course->short_name }}</p>
+                    <p class=""><strong><i class="fa fa-man margin-r-5"></i> Nombre Corto:
+                        </strong> {{ $course->short_name }}</p>
 
-                    <p class=""><strong><i class="fa fa-map-marker margin-r-5"></i> Código del curso</strong> {{ $course->course_code }}</p>
+                    <p class=""><strong><i class="fa fa-map-marker margin-r-5"></i> Código del
+                            curso</strong> {{ $course->course_code }}</p>
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
                             <b>Horas</b> <a class="pull-right">{{ $course->hours }}</a>
@@ -70,12 +72,41 @@
 
         </div>
 
-        <div class="col-lg-12 col-md-12">
 
-            <div class="box box-info">
-
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{ __('lms.page.course.form.data_update_instructions')}}</h3>
+                </div>
+                <!-- /.box-header -->
                 <div class="box-body">
+                    <div class="box-group" id="accordion">
+                        <div class="panel box box-danger">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="true">
+                                        Leer instrunctions antes de Registrarse
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse" aria-expanded="true" >
+                                <div class="box-body">
 
+                                    {!! nl2br(str_replace(" ", " &nbsp;", $course->data_update_brief))!!}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+
+        <div class="col-lg-12 col-md-12">
+            <div class="box box-info">
+                <div class="box-body">
                     <div class="" id="myWizard">
                         <div class="navbar">
                             <div class="navbar-inner">
@@ -107,7 +138,8 @@
 
                                         @else
                                             <div class="js-error">
-                                                <h3 class="text-warning"><strong class="text-danger">Sorry</strong>! Video code is not found.</h3>
+                                                <h3 class="text-warning"><strong class="text-danger">Sorry</strong>!
+                                                    Video code is not found.</h3>
                                             </div>
                                         @endif
                                     @endif
@@ -147,7 +179,8 @@
                                             </div>
                                         @else
                                             <div class="js-error">
-                                                <h3 class="text-warning"><strong class="text-danger" >Sorry</strong>! Terms and Condition not found.</h3>
+                                                <h3 class="text-warning"><strong class="text-danger">Sorry</strong>!
+                                                    Terms and Condition not found.</h3>
                                             </div>
                                         @endif
 
@@ -172,7 +205,9 @@
 
                                                     @if($registration->accept_tc == 0)
                                                         &nbsp;&nbsp;
-                                                        <button type="button" class="btn-accept-tc btn-primary btn btn-flat">Aceptar</button>
+                                                        <button type="button"
+                                                                class="btn-accept-tc btn-primary btn btn-flat">Aceptar
+                                                        </button>
                                                     @endif
                                                 </div>
 
@@ -196,10 +231,10 @@
                             <div class="tab-pane" id="step4">
                                 <h3>Actualización de Datos</h3>
                                 <div class="box-layout">
-                                    <p>{{ $course->data_update_brief }}</p>
+{{--                                    <p>{{ $course->data_update_brief }}</p>--}}
 
                                     <div class="box-layout">
-                                        <p>{{ $course->data_update_brief }}</p>
+{{--                                        <p>{{ $course->data_update_brief }}</p>--}}
 
                                         <div class="box-body" id="register-update-data">
 
@@ -303,8 +338,11 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             @if(strlen($registration->inspection_certificate) > 2)
-                                                <p>File <code>{{ basename($registration->inspection_certificate)  }}</code>
-                                                    uploaded at: {{ date('d M Y: h:i a', strtotime($registration->inspection_certificate_upload_time)) }}</p>
+                                                <p>File
+                                                    <code>{{ basename($registration->inspection_certificate)  }}</code>
+                                                    uploaded
+                                                    at: {{ date('d M Y: h:i a', strtotime($registration->inspection_certificate_upload_time)) }}
+                                                </p>
                                             @endif
                                         </div>
                                     </div>
@@ -341,12 +379,21 @@
                                 </div>
                             </div>
                             {{--<div class="tab-pane" id="step6">--}}
+<<<<<<< HEAD
                                 {{--<div class="box-layout">--}}
                                     {{--<p>Este es el paso final. Usted finalizó.</p>--}}
                                     {{--<div class="next-layout">--}}
                                         {{--<a class="btn btn-success first" href="javascript:void(0)">Volver a empezar</a>--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
+=======
+                            {{--<div class="box-layout">--}}
+                            {{--<p>This is the last step. You're done.</p>--}}
+                            {{--<div class="next-layout">--}}
+                            {{--<a class="btn btn-success first" href="javascript:void(0)">Start over</a>--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
+>>>>>>> origin/dev
 
                             {{--</div>--}}
                         </div>
@@ -368,7 +415,7 @@
 
     <style type="text/css">
 
-        #myWizard .navbar{
+        #myWizard .navbar {
             border: 1px solid #ccc;
             border-bottom: none;
             margin-bottom: 0;
@@ -377,23 +424,26 @@
             -moz-border-radius: 0;
             min-height: 0;
         }
-        #myWizard h3{
+
+        #myWizard h3 {
             margin-top: 10px;
         }
-        #myWizard .tab-content{
-            padding:10px 20px;
+
+        #myWizard .tab-content {
+            padding: 10px 20px;
             border: 1px solid #CCCCCC;
             min-height: 300px;
             position: inherit;
         }
 
-        .box-layout{
+        .box-layout {
             border: 1px solid #000000;
-            padding:20px;
+            padding: 20px;
             min-height: 220px;
             position: relative;
         }
-        #myWizard .next-layout{
+
+        #myWizard .next-layout {
             position: absolute;
             bottom: 10px;
             width: 100%;

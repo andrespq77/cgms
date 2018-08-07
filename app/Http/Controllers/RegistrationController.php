@@ -41,7 +41,6 @@ class RegistrationController extends Controller
 
     }
 
-
     /**
      * @TODO move to a repository and clear cache accordingly
      *
@@ -51,21 +50,30 @@ class RegistrationController extends Controller
     public function getPending(Request $request){
 
         $title = 'Pending Registration Management - '.env('APP_NAME') ;
+        $this->repo->flushPendingRegistrationCache();
+
+        $search_in      = $request->input('search_param');
+        $search_keyword = $request->input('x');
+        $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
+
+        $this->repo->flushPendingRegistrationCache();
 
         $posts = $request->all();
-        $minutes = config('adminlte.cache_time');
+//        $minutes = config('adminlte.cache_time');
         $page = isset( $posts['page'] ) ? $posts['page'] : 1 ;
 
-        $registrations = Cache::tags(['PENDING_REGISTRATION'])->remember('pending_registrations_by_page_'.$page, $minutes, function () {
+        $registrations = $this->repo->filter($search_in, $search_keyword, $registration, $page, 'PENDING_REGISTRATION');
 
-                 return Registration::with(['approvedBy', 'markApprovedBy', 'student', 'student.user',
-                     'course', 'course.university'])
-                     ->orderBy('is_approved', 'asc')
-                     ->orderBy('accept_tc', 'desc')
-                     ->orderBy('id', 'desc')
-                     ->paginate(10);
-
-        });
+//        $registrations = Cache::tags(['PENDING_REGISTRATION'])->remember('pending_registrations_by_page_'.$page, $minutes, function () {
+//
+//                 return Registration::with(['approvedBy', 'markApprovedBy', 'student', 'student.user',
+//                     'course', 'course.university'])
+//                     ->orderBy('is_approved', 'asc')
+//                     ->orderBy('accept_tc', 'desc')
+//                     ->orderBy('id', 'desc')
+//                     ->paginate(10);
+//
+//        });
 
         return view('lms.admin.registration.pending',
             ['title'=> $title, 'registrations' => $registrations]);
@@ -158,14 +166,7 @@ class RegistrationController extends Controller
 
         } elseif( $part == 'approve'){
 
-            $registration->is_approved= REGISTRATION_IS_APPROVED;
-            $registration->approval_time= $current_time;
-            $registration->approved_by= Auth::user()->id;
-            $registration->status = REGISTRATION_STATUS_COMPLETE;
-
-            $registration->save();
-
-            event(new RegistrationApproved($registration));
+            $this->updateSingleRegestration($registration, $current_time);
 
         } elseif($part == 'user-data'){
 
@@ -187,6 +188,28 @@ class RegistrationController extends Controller
             'adminUser' => Auth::user()->name]);
     }
 
+
+    public function approveMultipleRecords(Request $request){
+
+        $count = 0;
+        $current_time = Carbon::now()->toDateTimeString();
+
+        $registrations_ids = explode(",",$request->ids);
+
+        foreach ($registrations_ids as $id) {
+            $registration = $this->repo->findById($id);
+            if ($registration && !$registration->is_approved){
+                $this->updateSingleRegestration($registration, $current_time);
+                $count++;
+                $this->repo->flushRegistrationById($id);
+            }
+
+        }
+
+        $this->repo->flushAllCache();
+
+        return response()->json(['status'=>true,'message'=>"{{$count}} Requests Approved successfully."]);
+    }
 
     /**
      * @param Request $request
@@ -313,6 +336,22 @@ class RegistrationController extends Controller
 
         }
 
+    }
+
+    /**
+     * @param $registration
+     * @param $current_time
+     */
+    private function updateSingleRegestration($registration, $current_time)
+    {
+        $registration->is_approved = REGISTRATION_IS_APPROVED;
+        $registration->approval_time = $current_time;
+        $registration->approved_by = Auth::user()->id;
+        $registration->status = REGISTRATION_STATUS_COMPLETE;
+
+        $registration->save();
+
+        event(new RegistrationApproved($registration));
     }
 
 }

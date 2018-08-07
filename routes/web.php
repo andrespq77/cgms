@@ -31,7 +31,7 @@ Route::middleware(['ldapauth'])->group(function (){
 	
     Route::prefix('admin')->group(function(){
 
-        Route::get('/unauthorized', 'HomeController@unauthorized');
+        Route::get('/unauthorized', 'HomeController@unauthorized')->name('insert-category');
 
         Route::prefix('teachers')->group(function (){
 
@@ -141,28 +141,31 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
+        ////Modality shouldn't be available to edit nor create to any user
+        /// Skipped..................................................
         /**
          * Course Modality --old=type
          */
-        Route::prefix('course-modality')->group(function (){
-
-            Route::get('/create', 'CourseTypeController@create');
-            Route::get('/list', 'CourseTypeController@getList');
-            Route::get('/', 'CourseTypeController@index');
-            Route::get('/{id}', 'CourseTypeController@show');
-
-
-            Route::post('/', 'CourseTypeController@insert');
-            Route::post('/{id}', 'CourseTypeController@update');
-            Route::delete('/{id}', 'CourseTypeController@delete');
-
-        });
+//        Route::prefix('course-modality')->group(function (){
+//
+//            Route::get('/create', 'CourseTypeController@create');
+//            Route::get('/list', 'CourseTypeController@getList');
+//            Route::get('/', 'CourseTypeController@index');
+//            Route::get('/{id}', 'CourseTypeController@show');
+//
+//
+//            Route::post('/', 'CourseTypeController@insert');
+//            Route::post('/{id}', 'CourseTypeController@update');
+//            Route::delete('/{id}', 'CourseTypeController@delete');
+//
+//        });
 
         Route::prefix('registration')->group(function(){
 
             // by admin
             Route::get('/', 'RegistrationController@index');
             Route::get('/pending', 'RegistrationController@getPending');
+            Route::post('/approve-multiple', 'RegistrationController@approveMultipleRecords');
             Route::post('/approve/{id}', 'RegistrationController@postApprove');
             Route::post('/{id}/update/{part}', 'RegistrationController@updateRegistration');
             Route::post('/{id}/upload/inspection', 'RegistrationController@uploadStudentInspection');

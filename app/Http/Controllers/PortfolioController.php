@@ -35,7 +35,6 @@ class PortfolioController extends Controller
      */
     public function teachers(Request $request){
 
-
         $user = Auth::user();
 
         $page = $request->input('page') == null ? 1: $request->input('page');
@@ -44,13 +43,14 @@ class PortfolioController extends Controller
 
             $title = 'Teacher Portfolio - '.env('APP_NAME') ;
 
-            $this->repo->flushPortfolioAdmin();
+
             $search_in      = $request->input('search_param');
             $search_keyword = $request->input('x');
             $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
 
             $this->repo->flushPortfolioAdmin();
-            $registrations = $this->repo->filter($search_in, $search_keyword, $registration, $page);
+
+            $registrations = $this->repo->filter($search_in, $search_keyword, $registration, $page,'PORTFOLIO_ADMIN');
 
             return view('lms.admin.portfolio.all', ['title'=> $title,
                                                     'registrations' => $registrations]);
@@ -81,8 +81,8 @@ class PortfolioController extends Controller
         $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
 
 
-        $teacher_repo = new TeacherRepository();
-        $registrations = $teacher_repo->downloadPortfolio($search_in, $search_keyword, $registration);
+//        $teacher_repo = new TeacherRepository();
+        $registrations = $this->repo->downloadPortfolio($search_in, $search_keyword, $registration);
 
         $header = [
             'Id',

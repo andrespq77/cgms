@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class CourseTypeController extends Controller
 {
+
+    ////Modality shouldn't be available to edit nor create to any user
+    /// Skipped..................................................
     private  $repo ;
 
     public function __construct()
