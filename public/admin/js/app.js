@@ -54444,7 +54444,13 @@ $(document).ready(function () {
             },
             callbacks: {
                 onSubmit: function onSubmit(id, name) {},
-                onComplete: function onComplete(id, name, response, xhr) {},
+                onComplete: function onComplete(id, name, response, xhr) {
+                    if (response.success == true) {
+                        toastr.message('Succesfully added new courses.');
+                    } else if (response.error) {
+                        toastr.error('Duplicate Entry found in the file.');
+                    }
+                },
                 onStatusChange: function onStatusChange(id, oldStatus, newStatus) {},
                 onCancel: function onCancel(id, name) {}
             },
