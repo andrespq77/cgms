@@ -53,7 +53,7 @@
                 <div class="btn-group-sm">
                     <button class="btn btn-primary btn-search btn-flat"
                             formaction="{{ url("/admin/portfolio") }}"
-                            type="submit"><i class="fa fa-search"></i> Search</button>
+                            type="submit"><i class="fa fa-search"></i> Filtrar</button>
                     <button class="btn btn-success btn-download btn-flat"
                             formaction="{{ url("/admin/portfolio/download") }}" formtarget="_blank"
                             type="submit"><i class="fa fa-cloud-download"></i> Download</button>

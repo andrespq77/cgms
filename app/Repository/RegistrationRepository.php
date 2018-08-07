@@ -132,7 +132,7 @@
 
                     })
 
-                    
+
                     ->orderBy('updated_at', 'desc')
                     ->paginate(10);
 
