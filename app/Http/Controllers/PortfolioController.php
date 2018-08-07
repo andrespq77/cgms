@@ -81,8 +81,8 @@ class PortfolioController extends Controller
         $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
 
 
-        $teacher_repo = new TeacherRepository();
-        $registrations = $teacher_repo->downloadPortfolio($search_in, $search_keyword, $registration);
+//        $teacher_repo = new TeacherRepository();
+        $registrations = $this->repo->downloadPortfolio($search_in, $search_keyword, $registration);
 
         $header = [
             'Id',
