@@ -26,7 +26,7 @@
             <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a>
                 {{--<br/><small class="text-warning">{{ $course->course_code }}</small>--}}
             </td>
-            <td>{{ $course->modality->title }}</td>
+            <td>{{ @$course->modality->title }}</td>
             {{--<td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>--}}
                 {{--{{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>--}}
             {{--</td>--}}

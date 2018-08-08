@@ -373,8 +373,8 @@
                                         <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="
                                         if (confirm('Are you sure to Finalizar you will not edit?')){
                                             toastr.success('You have successfully updated the data.', 'Message');
-                                            window.setTimeout(function()
-                                            {window.location.href = '/admin/upcoming-courses'}, 4000);}">Finalizar</a>
+//                                            window.setTimeout(function(){location.reload()}, 4000);
+                                        }">Finalizar</a>
                                     </div>
                                 </div>
                             </div>
