@@ -52947,6 +52947,7 @@ $(document).ready(function () {
                         $.each(response.master_course, function (key, value) {
                             masterCourse.append('<option value="' + value.id + '">' + value.name + '</option>');
                         });
+
                         masterCourse.attr('disabled', false);
                     }
                 }).fail(function (jqXhr, textStatus, errorThrown) {
@@ -53298,7 +53299,7 @@ $(document).ready(function () {
                         });
                     });
                 } else {
-                    toastr.danger(errorThrown, "Error");
+                    toastr.error(errorThrown, "Error");
 
                     // alert('Error: '+errorThrown);
                     console.log('errors ', xhr.responseJSON);
@@ -53519,7 +53520,7 @@ $(document).ready(function () {
 
         var requestListModal = $('#request-list-modal');
         /**
-         * Course Request List Upload for course & teachers
+         * #page_course removed Course Request List Upload for course & teachers
          */
 
         $('#btn-upload-course-request').click(function () {

@@ -51,6 +51,7 @@ class CourseController extends Controller
      */
     public function index(Request $request){
 
+        $this->repo->flushCache();
         $user = Auth::user();
         $courses = '';
 

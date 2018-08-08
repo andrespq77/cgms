@@ -39,6 +39,7 @@ $(document).ready(function () {
                             $.each(response.master_course, function (key, value) {
                                 masterCourse.append('<option value="'+value.id+'">'+value.name+'</option>');
                             });
+
                             masterCourse.attr('disabled', false);
 
                         }
