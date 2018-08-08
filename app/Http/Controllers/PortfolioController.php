@@ -62,7 +62,7 @@ class PortfolioController extends Controller
             $this->repo->flushPortfolioTeacherCache();
 
             $teacherRepo = new TeacherRepository();
-
+            $teacherRepo->flushCache();
             $teacher = $teacherRepo->findById($user->teacher->id);
 
             return view('lms.admin.teacher.profile', ['teacher'=> $teacher, 'title' =>  $title]);

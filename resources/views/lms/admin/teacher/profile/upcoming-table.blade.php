@@ -21,6 +21,7 @@
 
     @isset($teacher)
     @foreach($teacher->allUpcomingCourses as $course)
+        @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
         <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
 {{--            <td>{{ $course->university->name }}</td>--}}
             <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a>
@@ -99,6 +100,7 @@
                 @break
             @endforeach
         </tr>
+        @endif
     @endforeach
     @endisset
     </tbody>
