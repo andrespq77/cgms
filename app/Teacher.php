@@ -101,5 +101,11 @@ class Teacher extends Model
 
     }
 
+    public function courseRegistration($course){
+
+        return $this->registrations->where('course_id' ,$course->id);
+
+    }
+
 
 }

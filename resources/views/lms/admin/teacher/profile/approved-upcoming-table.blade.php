@@ -82,11 +82,10 @@
                     @endcan
                 </td>
 
-
-                @foreach($course->registrations as $registration)
+                 @foreach($teacher->courseRegistration($course) as $registration)
                     <td class="js-td-is-approved">
                         @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                            <span class="label label-warning">Not approved</span>
+                            <span class="label label-warning">Pending</span>
                         @else
                             <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
                             <small><i class="fa fa-clock-o"></i>

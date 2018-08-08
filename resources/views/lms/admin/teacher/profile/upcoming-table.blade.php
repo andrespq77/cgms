@@ -22,7 +22,8 @@
     @isset($teacher)
     @foreach($teacher->allUpcomingCourses as $course)
         @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
-        <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
+
+            <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
 {{--            <td>{{ $course->university->name }}</td>--}}
             <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a>
                 {{--<br/><small class="text-warning">{{ $course->course_code }}</small>--}}
@@ -31,6 +32,7 @@
             {{--<td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>--}}
                 {{--{{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>--}}
             {{--</td>--}}
+
             <td>{{ $course->hours }} hours</td>
             <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
             <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
@@ -81,11 +83,10 @@
                 @endcan
             </td>
 
-
-            @foreach($course->registrations as $registration)
+            @foreach($teacher->courseRegistration($course) as $registration)
                 <td class="js-td-is-approved">
                     @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                        <span class="label label-warning">Not approved</span>
+                        <span class="label label-warning">Pending</span>
                     @else
                         <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
                         <small><i class="fa fa-clock-o"></i>

@@ -706,7 +706,7 @@ class CourseController extends Controller
                 $registration->student->first_name,
                 isset($registration->tc_accept_time) ? $registration->tc_accept_time : 'not accepted',
                 isset($registration->inspection_certificate_upload_time) ? $registration->inspection_certificate_upload_time : 'not uploaded',
-                isset($registration->approval_time) ? $registration->approval_time : 'not approved',
+                isset($registration->approval_time) ? $registration->approval_time : 'Pending',
                 isset($registration->approved_by) ? $registration->approvedBy->name : '',
                 '0',
                 1
