@@ -93,7 +93,8 @@ class MasterCourseController extends Controller
 
         $course = $this->repo->findById($id);
 
-        return view('lms.admin.master_course.create', ['master' => $course, 'title'=> 'Edit Course']);
+        $tittle = __('lms.page.course.form.edit_title');
+        return view('lms.admin.master_course.create', ['master' => $course, 'title'=> $tittle]);
 
 
     }
