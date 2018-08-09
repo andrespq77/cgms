@@ -257,6 +257,7 @@ $(document).ready(function () {
          * Show Edit Modal
          */
         showEditModal();
+
         function showEditModal() {
 
             $('#course-table').on('click','.btn-edit-course', function () {
@@ -298,8 +299,22 @@ $(document).ready(function () {
 
                 };
 
-                modal.find('.js-edit-course-code').val(data.course_code);
+                var selected_master_course_id =  modal.find('.js-select-master-course option[value="'+data.master_course_id+'"]').text();
+                $('#select2-js-edit-course-master-course-container').html(selected_master_course_id);
+
+                var selected_course_type_id =  modal.find('.js-edit-course-type option[value="'+data.course_type+'"]').text();
+                $('#select2-js-edit-course-type-container').html(selected_course_type_id);
+
+                var selected_university_id =  modal.find('.js-edit-course-university option[value="'+data.university_id+'"]').text();
+                $('#select2-js-edit-course-university-container').html(selected_university_id);
+
+
+                modal.find('.js-select-master-course option[value="'+data.master_course_id+'"]').attr('selected', true),
+                modal.find('.js-edit-course-type option[value="'+data.course_type+'"]').attr('selected', true);
                 modal.find('.js-edit-course-university option[value="'+data.university_id+'"]').attr('selected', true);
+
+
+                modal.find('.js-edit-course-code').val(data.course_code);
                 modal.find('.js-edit-course-short_name').val(data.short_name);
                 modal.find('.js-edit-course-description').val(data.description);
                 modal.find('.js-edit-course-comment').val(data.comment);
@@ -314,8 +329,7 @@ $(document).ready(function () {
                 modal.find('.js-edit-course-terms_condition').val(data.terms_condition);
                 modal.find('.js-edit-course-data_update').val(data.data_update);
 
-                modal.find('.js-edit-course-type option[value="'+data.course_type+'"]').attr('selected', true);
-                modal.find('.js-select-master-course option[value="'+data.master_course_id+'"]').attr('selected', true),
+
                 modal.find('.js-edit-course-edition').val(data.course_edition),
                 modal.find('.js-edit-grade-entry-start-date').val(data.grade_entry_start_date),
                 modal.find('.js-edit-grade-entry-end-date').val(data.grade_entry_end_date),
