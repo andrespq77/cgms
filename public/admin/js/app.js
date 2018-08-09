@@ -52511,6 +52511,7 @@ $(document).ready(function () {
 /* WEBPACK VAR INJECTION */(function($) {/**
  * Created by ariful.haque on 09/05/2018.
  */
+
 $(document).ready(function () {
 
     var categoryPage = $('#page_category');
@@ -52537,8 +52538,8 @@ $(document).ready(function () {
         $('#select-type').on('change', function () {
 
             var jsLabelsTable = $('#label-table');
+            var value = $("#select-type").val();
 
-            console.log('label table ', jsLabelsTable);
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
@@ -52547,7 +52548,7 @@ $(document).ready(function () {
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/label/' + this.value
+                url: app_url + '/admin/categories/label/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'sublabel' || jsTitle.text() === 'knowledge' || jsTitle.text() === 'subject' || masterCourse.length > 0) {
@@ -52569,20 +52570,17 @@ $(document).ready(function () {
     }
     function changeLabels() {
 
-        /**
-         * Get sublabel list
-         */
-
         $('#select-label').on('change', function () {
 
             var jsLabelsTable = $('#sublabel-table');
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
+            var value = $("#select-label").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/sublabel/' + this.value
+                url: app_url + '/admin/categories/sublabel/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'sublabel') {
@@ -52605,13 +52603,11 @@ $(document).ready(function () {
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
-            /**
-             * Get Knowledge List
-             */
+            var value = $("#select-sublabel").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/knowledge/' + this.value
+                url: app_url + '/admin/categories/knowledge/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'knowledge') {
@@ -52637,13 +52633,11 @@ $(document).ready(function () {
                 clearTable(jsLabelsTable);
             }
 
-            /**
-             * Get Subject List
-             */
+            var value = $("#select-knowledge").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/subject/' + this.value
+                url: app_url + '/admin/categories/subject/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'subject') {
@@ -52794,7 +52788,7 @@ $(document).ready(function () {
         var jsKnowledgeLabel = $('#select-knowledge');
         var jsSelectSubject = $('#select-subject');
 
-        loadType();
+        // loadType();
         changeTypes();
         changeLabels();
         changeSubLabel();

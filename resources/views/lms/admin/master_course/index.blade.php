@@ -59,7 +59,7 @@
                             <td><small class="text-muted">{{ $course->id }}</small></td>
                             <td><code>{{ $course->course_code }}</code></td>
                             <td>{{ $course->name }}</td>
-                            <td>{{ $course->subject->title }}</td>
+                            <td>{{ @$course->subject->title }}</td>
                             <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;courses</td>
                             <td>{{ $course->updatedBy->name }}</td>
                             <td>{{ $course->updated_at->diffForHumans() }}</td>

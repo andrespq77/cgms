@@ -63,7 +63,13 @@ class MasterCourseRepository
 
         $course->name = $data['name'];
         $course->course_code = $data['course_code'];
-        $course->subject_id = $data['subject'];
+
+        $course->type_id = @$data['type'];
+        $course->label_id = @$data['label'];
+        $course->sub_label_id = @$data['sublabel'];
+        $course->knowledge_id = @$data['knowledge'];
+        $course->subject_id = @$data['subject'];
+     
 
         $course->created_by = $user->id;
         $course->updated_by = $user->id;
@@ -71,7 +77,6 @@ class MasterCourseRepository
         $course->save();
 
         $this->flushCache();
-
 
         return $course;
 
@@ -90,6 +95,13 @@ class MasterCourseRepository
 
         $course->name = $data['name'];
         $course->course_code = $data['course_code'];
+
+        $course->type_id = @$data['type'];
+        $course->label_id = @$data['label'];
+        $course->sub_label_id = @$data['sublabel'];
+        $course->knowledge_id = @$data['knowledge'];
+        $course->subject_id = @$data['subject'];
+
         $course->updated_by = $user->id;
         $course->save();
 
