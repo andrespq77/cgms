@@ -41,7 +41,6 @@ class UpcomingController extends Controller
 
             $title = 'Upcoming Course List - '.env('APP_NAME') ;
 
-
             return view('lms.admin.teacher.upcoming', ['title'=> $title,
                 'teacher' => $user->teacher]);
         } else {

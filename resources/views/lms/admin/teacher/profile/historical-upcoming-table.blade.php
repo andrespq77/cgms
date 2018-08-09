@@ -40,6 +40,7 @@
                 {{--{{ $course->stageTitle['title'] }}</span></td>--}}
                 <td><span class="label label-{{ $course->statusTitle['class'] }}">
                                             {{ $course->statusTitle['title'] }}</span></td>
+
                 <td>
                     @can('register', $course)
 
@@ -49,12 +50,11 @@
 
                                 @if( Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) )
 
+
                                     @if($course->has_disclaimer == 1)
 
-                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
-                                        </form>
+
+
 
                                     @else
 

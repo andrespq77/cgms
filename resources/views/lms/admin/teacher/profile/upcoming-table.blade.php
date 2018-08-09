@@ -11,9 +11,9 @@
         {{--<th>{{ __('lms.page.course.table.stage') }}</th>--}}
         <th>{{ __('lms.page.course.table.status') }}</th>
         <th>{{ __('lms.page.upcoming.table.action') }}</th>
-        <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
-        <th>{{ __('lms.page.teacher.table.approved') }}</th>
-        <th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>
+        {{--<th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>--}}
+        {{--<th>{{ __('lms.page.teacher.table.approved') }}</th>--}}
+        {{--<th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>--}}
 
     </tr>
     </thead>
@@ -21,6 +21,8 @@
 
     @isset($teacher)
     @foreach($teacher->allUpcomingCourses as $course)
+        @foreach($teacher->courseRegistration($course) as $registration)@endforeach
+
         @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
 
             <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
@@ -51,11 +53,20 @@
                             @if( Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) )
 
                                 @if($course->has_disclaimer == 1)
+                                    @if(isset($registration->is_approved) && $registration->is_approved)
 
-                                    <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
-                                    </form>
+                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-link"><i class="fa fa-pencil"></i> Edit </button>
+                                        </form>
+
+                                    @else
+
+                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
+                                        </form>
+                                    @endif
 
                                 @else
 
@@ -83,23 +94,23 @@
                 @endcan
             </td>
 
-            @foreach($teacher->courseRegistration($course) as $registration)
-                <td class="js-td-is-approved">
-                    @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                        <span class="label label-warning">Pending</span>
-                    @else
-                        <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
-                        <small><i class="fa fa-clock-o"></i>
-                            {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
-                            {{ date('d M, Y', strtotime($registration->approval_time)) }}
-                        </small>
-                    @endif
-                </td>
-                @include('lms.admin.registration.parts.table.td.student_inspection_form')
+            {{--@foreach($teacher->courseRegistration($course) as $registration)--}}
+                {{--<td class="js-td-is-approved">--}}
+                    {{--@if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)--}}
+                        {{--<span class="label label-warning">Pending</span>--}}
+                    {{--@else--}}
+                        {{--<span class="label label-success"><i class="fa fa-check"></i> Yes</span>--}}
+                        {{--<small><i class="fa fa-clock-o"></i>--}}
+                            {{--{{ date('h:i a', strtotime($registration->approval_time)) }}<br/>--}}
+                            {{--{{ date('d M, Y', strtotime($registration->approval_time)) }}--}}
+                        {{--</small>--}}
+                    {{--@endif--}}
+                {{--</td>--}}
+                {{--@include('lms.admin.registration.parts.table.td.student_inspection_form')--}}
 
-                @include('lms.admin.registration.parts.table.td.certificate')
-                @break
-            @endforeach
+                {{--@include('lms.admin.registration.parts.table.td.certificate')--}}
+                {{--@break--}}
+            {{--@endforeach--}}
         </tr>
         @endif
     @endforeach

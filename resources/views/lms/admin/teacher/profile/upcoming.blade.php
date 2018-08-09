@@ -17,7 +17,7 @@
                 <h3 class="box-title">Historic Inspection Requests</h3>
             </div>
             <div class="box-body no-padding">
-                @include('lms.admin.teacher.profile.approved-upcoming-table')
+                @include('lms.admin.teacher.profile.historical-upcoming-table')
             </div>
         </div>
 
