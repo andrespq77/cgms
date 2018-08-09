@@ -17,6 +17,7 @@ class CourseRequest extends Model
      * @var string
      */
     protected $table = 'course_requests';
+    protected $guarded = [];
 
 
     /**
@@ -24,9 +25,9 @@ class CourseRequest extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'course_id', 'course_code', 'teacher_id' ,'social_id', 'created_by', 'status',
-    ];
+//    protected $fillable = [
+//        'course_id', 'course_code', 'teacher_id' ,'social_id', 'created_by', 'status',
+//    ];
 
 
     /**

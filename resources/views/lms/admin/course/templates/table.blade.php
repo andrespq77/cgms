@@ -42,6 +42,7 @@
                 <td>{{ date('d M, Y', strtotime($course->start_date)) }}</td>
                 <td>{{ date('d M, Y', strtotime($course->end_date)) }}</td>
                 <td><span class="badge">{{ $course->quota }}</span></td>
+
                 <td><span class="label label-{{ $course->stageTitle['class'] }}">
                                             {{ $course->stageTitle['title'] }}</span></td>
                 <td><span class="label label-{{ $course->statusTitle['class'] }}">

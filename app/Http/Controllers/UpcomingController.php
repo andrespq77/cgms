@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\CourseRequest;
 use App\Repository\CourseRepository;
 use App\Repository\MasterCourseRepository;
 use App\Teacher;
@@ -78,8 +79,8 @@ class UpcomingController extends Controller
                         $teacher['created_by']      = Auth::user()->id;
                         $teacher['status']          = $row['status'];
 
+                        $row = CourseRequest::updateOrCreate($teacher,['course_code' => $teacher['course_code'], 'teacher_id'=>$teacher['teacher_id']]);
 
-                        array_push($rows, $teacher);
                     }
 
                 }
@@ -87,7 +88,7 @@ class UpcomingController extends Controller
             });
 
             // batch insert
-            DB::table('course_requests')->insert($rows);
+//            DB::table('course_requests')->insert($rows);
 
             // @todo after adding all items into an array, add the array to database in batch
             return response()->json(['rows' => $rows, 'success' => true] );
