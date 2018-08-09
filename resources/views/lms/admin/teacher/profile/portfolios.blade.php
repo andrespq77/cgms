@@ -51,7 +51,7 @@
                                         <small>by {{ $registration->approvedBy->name }} el <br/>
                                             {{ date('d m Y - h:i a', strtotime($registration->approval_time)) }}</small>
                                     @else
-                                     <i class="fa fa-times"></i> Reprobado
+                                     <i class="fa fa-times"></i> Pending
 
                                     @endif
                                 </td>

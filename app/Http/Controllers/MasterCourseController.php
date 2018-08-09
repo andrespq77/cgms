@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Repository\CategoryRepository;
 use App\Repository\MasterCourseRepository;
 use Illuminate\Http\Request;
 
@@ -13,10 +15,12 @@ use Illuminate\Http\Request;
 class MasterCourseController extends Controller
 {
     private  $repo ;
+    private  $categoryRepo ;
 
     public function __construct()
     {
         $this->repo = new MasterCourseRepository();
+        $this->categoryRepo = new CategoryRepository();
     }
 
     public function index(Request $request){
@@ -44,7 +48,16 @@ class MasterCourseController extends Controller
      */
     public function create(){
 
-        return view('lms.admin.master_course.create', [ 'title'=> 'Master Course']);
+
+        $all = $this->categoryRepo->getAll();
+
+        $category['type'] = $all->where('type', true);
+        $category['labels'] = $all->where('label', true);
+        $category['sub_labels'] = $all->where('sub_label', true);
+        $category['knowledge'] = $all->where('knowledge', true);
+        $category['subject'] = $all->where('subject', true);
+
+        return view('lms.admin.master_course.create', ['category'=>$category ,'title'=> 'Master Course']);
 
     }
 
@@ -92,8 +105,16 @@ class MasterCourseController extends Controller
     public function show($id){
 
         $course = $this->repo->findById($id);
+        $all = $this->categoryRepo->getAll();
 
-        return view('lms.admin.master_course.create', ['master' => $course, 'title'=> 'Edit Course']);
+        $category['type'] = $all->where('type', true);
+        $category['labels'] = $all->where('label', true);
+        $category['sub_labels'] = $all->where('sub_label', true);
+        $category['knowledge'] = $all->where('knowledge', true);
+        $category['subject'] = $all->where('subject', true);
+
+        $tittle = __('lms.page.course.form.edit_title');
+        return view('lms.admin.master_course.create', ['master' => $course, 'category' => $category,'title'=> $tittle]);
 
 
     }

@@ -68,11 +68,13 @@ class CategoryController extends Controller
     public function label(){
 
         $all = $this->repo->getAll();
+        $tittle = __('lms.page.category.label.index.page_header');
 
         $category['type'] = $all->where('type', true);
         $category['labels'] = $all->where('label', true);
 
-        return view('lms.admin.category.create', [ 'title'=> 'Etiqueta', 'category' => $category]);
+        return view('lms.admin.category.create', [ 'title'=> $tittle, 'category' => $category]);
+
     }
 
 

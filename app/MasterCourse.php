@@ -12,25 +12,30 @@ class MasterCourse extends Model
      * @var string
      */
     protected $table = 'master_courses';
-
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'subject_id', 'course_code','created_by', 'updated_by'
-    ];
+    protected $guarded = [];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function courses(){
-
         return $this->hasMany('App\Course', 'master_course_id', 'id');
+    }
 
+    public function type(){
+        return $this->belongsTo('App\Category', 'type_id', 'id');
+    }
+
+    public function label(){
+        return $this->belongsTo('App\Category', 'label_id', 'id');
+    }
+
+    public function subLabel(){
+        return $this->belongsTo('App\Category', 'sub_label_id', 'id');
+    }
+
+    public function knowledge(){
+        return $this->belongsTo('App\Category', 'knowledge_id', 'id');
     }
 
     public function subject(){

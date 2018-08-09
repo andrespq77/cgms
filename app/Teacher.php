@@ -59,10 +59,19 @@ class Teacher extends Model
 
         return $this->belongsToMany(Course::class, 'course_requests',
             'teacher_id', 'course_id')
-            ->where('course_requests.status', 1)
+//            ->where('course_requests.status', 1)
             ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
             ->as('allUpcomingCourses')
             ->withTimestamps();
+
+    }
+
+    public function pendingUpcomingCourses(){
+
+    }
+
+    public function approvedUpcomingCourses(){
+
 
     }
 
@@ -74,9 +83,7 @@ class Teacher extends Model
     public function getRequestedCourse($course_id){
 
         return $this->belongsToMany(Course::class, 'course_requests',
-            'teacher_id',
-            'course_id'
-            )
+            'teacher_id','course_id')
             ->where('course_id', $course_id)
             ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
             ->as('getRequestedCourse')
@@ -91,6 +98,12 @@ class Teacher extends Model
     public function registrations(){
 
         return $this->hasMany(Registration::class, 'teacher_id', 'id');
+
+    }
+
+    public function courseRegistration($course){
+
+        return $this->registrations->where('course_id' ,$course->id);
 
     }
 

@@ -52511,6 +52511,7 @@ $(document).ready(function () {
 /* WEBPACK VAR INJECTION */(function($) {/**
  * Created by ariful.haque on 09/05/2018.
  */
+
 $(document).ready(function () {
 
     var categoryPage = $('#page_category');
@@ -52537,8 +52538,8 @@ $(document).ready(function () {
         $('#select-type').on('change', function () {
 
             var jsLabelsTable = $('#label-table');
+            var value = $("#select-type").val();
 
-            console.log('label table ', jsLabelsTable);
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
@@ -52547,7 +52548,7 @@ $(document).ready(function () {
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/label/' + this.value
+                url: app_url + '/admin/categories/label/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'sublabel' || jsTitle.text() === 'knowledge' || jsTitle.text() === 'subject' || masterCourse.length > 0) {
@@ -52569,20 +52570,17 @@ $(document).ready(function () {
     }
     function changeLabels() {
 
-        /**
-         * Get sublabel list
-         */
-
         $('#select-label').on('change', function () {
 
             var jsLabelsTable = $('#sublabel-table');
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
+            var value = $("#select-label").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/sublabel/' + this.value
+                url: app_url + '/admin/categories/sublabel/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'sublabel') {
@@ -52605,13 +52603,11 @@ $(document).ready(function () {
             if (jsLabelsTable.length > 0) {
                 clearTable(jsLabelsTable);
             }
-            /**
-             * Get Knowledge List
-             */
+            var value = $("#select-sublabel").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/knowledge/' + this.value
+                url: app_url + '/admin/categories/knowledge/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'knowledge') {
@@ -52637,13 +52633,11 @@ $(document).ready(function () {
                 clearTable(jsLabelsTable);
             }
 
-            /**
-             * Get Subject List
-             */
+            var value = $("#select-knowledge").val();
 
             $.ajax({
                 method: 'get',
-                url: app_url + '/admin/categories/subject/' + this.value
+                url: app_url + '/admin/categories/subject/' + value
             }).done(function (response, textStatus, xhr) {
 
                 if (jsTitle.text() === 'subject') {
@@ -52792,7 +52786,7 @@ $(document).ready(function () {
         var jsKnowledgeLabel = $('#select-knowledge');
         var jsSelectSubject = $('#select-subject');
 
-        loadType();
+        // loadType();
         changeTypes();
         changeLabels();
         changeSubLabel();
@@ -52945,6 +52939,7 @@ $(document).ready(function () {
                         $.each(response.master_course, function (key, value) {
                             masterCourse.append('<option value="' + value.id + '">' + value.name + '</option>');
                         });
+
                         masterCourse.attr('disabled', false);
                     }
                 }).fail(function (jqXhr, textStatus, errorThrown) {
@@ -53178,8 +53173,19 @@ $(document).ready(function () {
 
                 };
 
-                modal.find('.js-edit-course-code').val(data.course_code);
+                var selected_master_course_id = modal.find('.js-select-master-course option[value="' + data.master_course_id + '"]').text();
+                $('#select2-js-edit-course-master-course-container').html(selected_master_course_id);
+
+                var selected_course_type_id = modal.find('.js-edit-course-type option[value="' + data.course_type + '"]').text();
+                $('#select2-js-edit-course-type-container').html(selected_course_type_id);
+
+                var selected_university_id = modal.find('.js-edit-course-university option[value="' + data.university_id + '"]').text();
+                $('#select2-js-edit-course-university-container').html(selected_university_id);
+
+                modal.find('.js-select-master-course option[value="' + data.master_course_id + '"]').attr('selected', true), modal.find('.js-edit-course-type option[value="' + data.course_type + '"]').attr('selected', true);
                 modal.find('.js-edit-course-university option[value="' + data.university_id + '"]').attr('selected', true);
+
+                modal.find('.js-edit-course-code').val(data.course_code);
                 modal.find('.js-edit-course-short_name').val(data.short_name);
                 modal.find('.js-edit-course-description').val(data.description);
                 modal.find('.js-edit-course-comment').val(data.comment);
@@ -53194,8 +53200,7 @@ $(document).ready(function () {
                 modal.find('.js-edit-course-terms_condition').val(data.terms_condition);
                 modal.find('.js-edit-course-data_update').val(data.data_update);
 
-                modal.find('.js-edit-course-type option[value="' + data.course_type + '"]').attr('selected', true);
-                modal.find('.js-select-master-course option[value="' + data.master_course_id + '"]').attr('selected', true), modal.find('.js-edit-course-edition').val(data.course_edition), modal.find('.js-edit-grade-entry-start-date').val(data.grade_entry_start_date), modal.find('.js-edit-grade-entry-end-date').val(data.grade_entry_end_date), modal.find('.js-select-course-stage option[value="' + data.course_stage + '"]').attr('selected', true), modal.find('.js-select-course-status option[value="' + data.course_status + '"]').attr('selected', true), modal.find('.js-select-disclaimer_required option[value="' + data.is_disclaimer + '"]').attr('selected', true), modal.find('.js-edit-course-cost').val(data.cost), modal.find('.js-edit-course-finance_type').val(data.finance_type), modal.find('.js-course-id').val(data.id);
+                modal.find('.js-edit-course-edition').val(data.course_edition), modal.find('.js-edit-grade-entry-start-date').val(data.grade_entry_start_date), modal.find('.js-edit-grade-entry-end-date').val(data.grade_entry_end_date), modal.find('.js-select-course-stage option[value="' + data.course_stage + '"]').attr('selected', true), modal.find('.js-select-course-status option[value="' + data.course_status + '"]').attr('selected', true), modal.find('.js-select-disclaimer_required option[value="' + data.is_disclaimer + '"]').attr('selected', true), modal.find('.js-edit-course-cost').val(data.cost), modal.find('.js-edit-course-finance_type').val(data.finance_type), modal.find('.js-course-id').val(data.id);
 
                 modal.find('.btn-update-course-files').removeClass('hidden');
                 modal.find('.btn-show-course-form').addClass('hidden');
@@ -53451,7 +53456,6 @@ $(document).ready(function () {
         clickCreateUpdate();
         showEditModal();
 
-
         modal.on('hidden.bs.modal', function () {
 
             modal.find('input').val('');
@@ -53517,9 +53521,10 @@ $(document).ready(function () {
 
         var requestListModal = $('#request-list-modal');
         /**
-         * Course Request List Upload for course & teachers
+         * #page_course removed Course Request List Upload for course & teachers
          */
-        $('#page_course #btn-upload-course-request').click(function () {
+
+        $('#btn-upload-course-request').click(function () {
 
             requestListModal.modal('show');
         });

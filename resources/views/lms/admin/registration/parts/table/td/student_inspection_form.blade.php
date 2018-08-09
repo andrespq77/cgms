@@ -1,4 +1,5 @@
-<td>    @if($registration->inspection_certificate_signed == REGISTRATION_INSPECTION_CERTIFICATE_SIGNED)
+<td>
+    @if($registration->inspection_certificate_signed == REGISTRATION_INSPECTION_CERTIFICATE_SIGNED)
     <form method="post" target="_blank"
           action="{{ url("/admin/registration/$registration->id/download/student-inspection-form") }}">
     {{ csrf_field() }}

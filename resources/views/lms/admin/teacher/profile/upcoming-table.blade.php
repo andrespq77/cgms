@@ -11,9 +11,9 @@
         {{--<th>{{ __('lms.page.course.table.stage') }}</th>--}}
         <th>{{ __('lms.page.course.table.status') }}</th>
         <th>{{ __('lms.page.upcoming.table.action') }}</th>
-        <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
-        <th>{{ __('lms.page.teacher.table.approved') }}</th>
-        <th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>
+        {{--<th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>--}}
+        {{--<th>{{ __('lms.page.teacher.table.approved') }}</th>--}}
+        {{--<th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>--}}
 
     </tr>
     </thead>
@@ -21,16 +21,22 @@
 
     @isset($teacher)
     @foreach($teacher->allUpcomingCourses as $course)
-        <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
+        @foreach($teacher->courseRegistration($course) as $registration)@endforeach
+
+        @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
+
+            <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
 {{--            <td>{{ $course->university->name }}</td>--}}
             <td><a href="{{ url("/admin/course/$course->id/show") }}">{{ $course->short_name }}</a>
                 {{--<br/><small class="text-warning">{{ $course->course_code }}</small>--}}
             </td>
-            <td>{{ $course->modality->title }}</td>
+            <td>{{ @$course->modality->title }}</td>
             {{--<td>{{ __('lms.page.course.form.quota') }} <small> <span class="badge">{{ $course->quota }}</span></small><br/>--}}
                 {{--{{ __('lms.page.course.form.registrations') }} <small><span class="badge">{{ $course->registrations->count() }}</span></small>--}}
             {{--</td>--}}
+
             <td>{{ $course->hours }} horas</td>
+
             <td>{{ date('d M Y', strtotime($course->start_date)) }}</td>
             <td>{{ date('d M Y', strtotime($course->end_date)) }}</td>
 
@@ -48,12 +54,26 @@
                             @if( Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) )
 
                                 @if($course->has_disclaimer == 1)
+                                    @if(isset($registration->is_approved) && $registration->is_approved)
+
+                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-link"><i class="fa fa-pencil"></i> Edit </button>
+                                        </form>
+
+                                    @else
+
 
                                     <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Registrar</button>
                                     </form>
 
+                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Register</button>
+                                        </form>
+                                    @endif
                                 @else
 
                                     <button type="button" class="btn btn-flat btn-xs btn-info btn-proceed-to-the-course"
@@ -80,6 +100,7 @@
                 @endcan
             </td>
 
+<<<<<<< HEAD
 
             @foreach($course->registrations as $registration)
                 <td class="js-td-is-approved">
@@ -99,6 +120,7 @@
                 @break
             @endforeach
         </tr>
+        @endif
     @endforeach
     @endisset
     </tbody>

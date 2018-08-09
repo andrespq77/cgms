@@ -3,18 +3,23 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Inspección de solicitudes</h3>
-
-                <div class="box-tools">
-                </div>
+                <h3 class="box-title">Pending Inspection Requests</h3>
             </div>
-            <!-- /.box-header -->
             <div class="box-body no-padding">
-
                 @include('lms.admin.teacher.profile.upcoming-table')
-
             </div>
-            <!-- /.box-body -->
         </div>
+
+        <br><br>
+
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Historic Inspection Requests</h3>
+            </div>
+            <div class="box-body no-padding">
+                @include('lms.admin.teacher.profile.historical-upcoming-table')
+            </div>
+        </div>
+
     </div>
 </div>

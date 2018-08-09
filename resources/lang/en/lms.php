@@ -322,8 +322,33 @@
                     'status'            => 'Status',
                 ]
 
-            ]
+            ],
+            'category' => [
+                'label' => [
+                    'index' => [
+                        'name'=> 'Label',
+                        'page_header'=> 'Category Label Management',
+                        'table_header' => 'All Label List'
+                    ],
+                    'table' => [
+                        'id'                => 'Id',
+                        'title'             => 'Title',
+                        'action'            => 'Action',
+                        'edit'            => 'Edit',
+                        'remove'            => 'Remove',
 
+                    ],
+
+                    'form'  =>[
+                        'edit_title'        => 'Edit Category Title',
+                        'add_title'         => 'Add Category Title',
+                        'remove_title'      => 'Remove Category Title',
+                        'title'             => 'Title',
+                    ]
+
+                ]
+
+                ]
 
         ],
         'elements' => [

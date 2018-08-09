@@ -311,6 +311,32 @@
                     'status'            => 'Estado',
                 ]
 
+            ],
+            'category' => [
+                'label' => [
+                    'index' => [
+                        'name'=> 'Label spanish',
+                        'page_header'=> 'Category Label Management spanish',
+                        'table_header' => 'All Label List spanish'
+                    ],
+                    'table' => [
+                        'id'                => 'Id spanish',
+                        'title'             => 'Title spanish',
+                        'action'            => 'Action spanish',
+                        'edit'            => 'Edit spanish',
+                        'remove'            => 'Remove spanish',
+
+                    ],
+
+                    'form'  =>[
+                        'edit_title'        => 'Edit Category Title spanish',
+                        'add_title'         => 'Add Category Title spanish',
+                        'remove_title'      => 'Remove Category Title spanish',
+                        'title'             => 'Title spanish',
+                    ]
+
+                ]
+
             ]
 
 

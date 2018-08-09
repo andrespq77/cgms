@@ -249,6 +249,7 @@
             $pdf->loadView('lms.admin.registration.pdf.certificate', ['registration' => $registration]);
             $pdf->save(storage_path($root_path . $certificate_filename));
 
+            //saving opdf here
             $registration->registry_is_generated = true;
             $registration->certificate_path = storage_path($root_path . $certificate_filename);
             $registration->save();
