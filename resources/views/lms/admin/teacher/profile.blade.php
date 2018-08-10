@@ -20,18 +20,21 @@
 
                     <table class="table table-borderless table-responsive table-hover" id="teacher-table">
                         <thead>
+
                         <tr>
-                            <th>{{ __('lms.page.teacher_profile.table.institute') }}</th>
-                            <th>{{ __('lms.page.teacher_profile.table.course_name') }}</th>
-                            <th>{{ __('lms.words.grade') }}</th>
-                            <th>{{ __('lms.messages.grade_approved_by') }}</th>
-                            <th>{{ __('lms.page.teacher_profile.table.hours') }}</th>
-                            <th>{{ __('lms.page.teacher_profile.table.start_date') }}</th>
-                            <th>{{ __('lms.page.teacher_profile.table.end_date') }}</th>
-                            {{--<th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>--}}
-                            {{--<th>{{ __('lms.page.teacher.table.approved') }}</th>--}}
-                            {{--<th>{{ __('lms.page.teacher_profile.table.certificate') }}</th>--}}
-                            <th>{{ __('lms.words.diploma') }}</th>
+                            <th>{{ __('lms.page.teacher.table.course_type') }}</th>
+                            <th>{{ __('lms.page.teacher.table.course_name') }}</th>
+                            <th>{{ __('lms.page.teacher.table.university') }}</th>
+                            <th>{{ __('lms.page.teacher.table.province') }}</th>
+                            <th>{{ __('lms.page.teacher.table.edition') }}</th>
+                            <th>{{ __('lms.page.course.table.modality') }}</th>
+                            <th>{{ __('lms.page.course.table.hours') }}</th>
+                            <th>{{ __('lms.page.teacher.table.start_date') }}</th>
+                            <th>{{ __('lms.page.teacher.table.end_date') }}</th>
+                            <th>{{ __('lms.page.course.table.year') }}</th>
+                            <th>{{ __('lms.page.teacher.table.approved') }}</th>
+                            <th>{{ __('lms.page.teacher.table.diploma') }}</th>
+
                         </tr>
                         </thead>
 
@@ -39,31 +42,33 @@
                         @foreach($teacher->registrations->sortByDesc('approval_time') as $registration)
 
                             <tr class="{{ $registration->course->status == 0 ? 'disabled' : '' }}">
-                                <td>{{ $registration->course->university->name }}</td>
-                                <td>
-                                    <a href="{{ url("/admin/course/".$registration->course->id."/show") }}">
-                                        {{ $registration->course->short_name }}</a>
-                                </td>
+                                <td>{{ @$registration->course->masterCourse->type->title }}</td>
 
-                                @include('lms.admin.registration.parts.table.td.mark_approved')
-                                <td>{{ $registration->course->hours }}</td>
+                                <td>{{ $registration->course->short_name }}<br/>
+                                    <small class="text-warning">{{ $registration->course->course_code }}</small></td>
+                                <td>{{ $registration->course->university->name }}</td>
+                                <td>{{ $registration->student->province }}</td>
+                                <td>{{ $registration->course->edition}}</td>
+                                <td>{{ isset($registration->course->modality->title) ? $registration->course->modality->title : '' }}</td>
+
+                                <td>{{ $registration->course->hours}}</td>
                                 <td>{{ date('d M Y', strtotime($registration->course->start_date)) }}</td>
                                 <td>{{ date('d M Y', strtotime($registration->course->end_date)) }}</td>
-                                {{--@include('lms.admin.registration.parts.table.td.student_inspection_form')--}}
-                                {{--<td class="js-td-is-approved">--}}
-                                    {{--@if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)--}}
-                                        {{--<span class="label label-warning">Not approved</span>--}}
-                                    {{--@else--}}
-                                        {{--<span class="label label-success"><i class="fa fa-check"></i> Yes</span>--}}
-                                        {{--<small><i class="fa fa-clock-o"></i>--}}
-                                            {{--{{ date('h:i a', strtotime($registration->approval_time)) }}<br/>--}}
-                                            {{--{{ date('d M, Y', strtotime($registration->approval_time)) }}--}}
-                                        {{--</small>--}}
-                                    {{--@endif--}}
-                                {{--</td>--}}
-                                {{--@include('lms.admin.registration.parts.table.td.certificate')--}}
+                                <td>{{ $registration->course->year}}</td>
+
+                                <td class="js-td-is-approved">
+                                    @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
+                                        <span class="label label-warning">Pending</span>
+                                    @else
+                                        <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
+                                        <small><i class="fa fa-clock-o"></i>
+                                            {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
+                                            {{ date('d M, Y', strtotime($registration->approval_time)) }}
+                                        </small>
+                                    @endif
+                                </td>
+
                                 @include('lms.admin.registration.parts.table.td.diploma')
-                                <td></td>
                             </tr>
 
                         @endforeach

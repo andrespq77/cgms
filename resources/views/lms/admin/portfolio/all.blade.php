@@ -88,7 +88,7 @@
                                 <th>{{ __('lms.page.teacher.table.course_name') }}</th>
                                 <th>{{ __('lms.page.teacher.table.university') }}</th>
                                 <th>{{ __('lms.page.teacher.table.province') }}</th>
-                                <th>Edition</th>
+                                <th>{{ __('lms.page.teacher.table.edition') }}</th>
                                 <th>{{ __('lms.page.course.table.modality') }}</th>
                                 <th>{{ __('lms.page.course.table.hours') }}</th>
                                 <th>{{ __('lms.page.teacher.table.start_date') }}</th>
@@ -107,12 +107,12 @@
                         <tbody>
                             @foreach($registrations as $registration)
                                 <tr>
-                                    {{--<td>{{ $registration->id }}</td>--}}
+
                                     <td>{{ $registration->student->social_id }}</td>
                                     <td>{{ $registration->user_first_name}} &nbsp;
                                     <small>{{ $registration->user_last_name !== $registration->user_first_name ? $registration->user_last_name : '' }}</small>
                                     </td>
-{{--                                    <td>{{ $registration->course->course_type }}</td>--}}
+                                    <td>{{ @$registration->course->masterCourse->type->title }}</td>
                                     <td>{{ $registration->course->short_name }}<br/>
                                         <small class="text-warning">{{ $registration->course->course_code }}</small></td>
                                     <td>{{ $registration->course->university->name }}</td>
