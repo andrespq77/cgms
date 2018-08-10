@@ -8,6 +8,14 @@
 
 @section('content')
 
+
+    <a class="btn btn-default btn-flat next" href="javascript:void(0)" onclick="
+            if (confirm('Are you sure to Finalizar you will not edit?')){
+            toastr.success('Data updated successfully, You cannot edit it after that.', 'Message');
+            window.setTimeout(function(){
+            window.location.href = '{{ env("APP_URL") }}/sv/admin/upcoming-courses'}, 4000);
+            }">
+        Testing...</a>
     <div class="row">
         <div class="col-ls-12 col-md-12 col-sm-12">
             <div class="box">
