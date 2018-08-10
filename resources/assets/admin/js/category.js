@@ -4,8 +4,6 @@
 
 $(document).ready(function () {
 
-
-
     var categoryPage = $('#page_category');
     var masterCourse = $('#master-course');
     var jsTitle = $('.js-title');
@@ -208,7 +206,6 @@ $(document).ready(function () {
         var jsKnowledgeLabel = $('#select-knowledge');
 
         var optionLoading = '<option value="loading">Loading...</option>';
-
 
         insertType();
         function insertType() {

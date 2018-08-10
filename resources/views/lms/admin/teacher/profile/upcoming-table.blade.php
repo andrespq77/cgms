@@ -100,7 +100,6 @@
                 @endcan
             </td>
 
-<<<<<<< HEAD
 
             @foreach($course->registrations as $registration)
                 <td class="js-td-is-approved">

@@ -14,17 +14,12 @@
             <div class="box-body">
                 {{ csrf_field() }}
 
-<<<<<<< HEAD
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Tipo'])
-                    <select class="form-control" id="select-type" name="type"></select>
-=======
                 @component('lms.admin.components.bootstrap.form-group', ['name' => 'Type'])
                     <select class="form-control" id="select-type" name="type">
                     @foreach($category['type'] as $type)
                         <option value="{{$type->id}}" {{@$master->type_id==$type->id ? 'selected' : ''}}>{{$type->title}}</option>
                     @endforeach
                     </select>
->>>>>>> c9e290c9c761d6f530b045854768db9a4a62d74e
                 @endcomponent
 
 
@@ -68,24 +63,14 @@
 
                 @component('lms.admin.components.bootstrap.form-group', ['name' => 'Código del curso'])
                     <input type="text" class="form-control" id="code" maxlength="20"
-<<<<<<< HEAD
                            value="{{ isset($master) ? $master->course_code : ''  }}"
                            placeholder="Código del curso" name="course_code">
-=======
-                           value="{{ isset($master) ? @$master->course_code : ''  }}"
-                           placeholder="Course Code" name="course_code">
->>>>>>> c9e290c9c761d6f530b045854768db9a4a62d74e
                 @endcomponent
 
                 @component('lms.admin.components.bootstrap.form-group', ['name' => 'Título del Curso'])
                     <input type="text" class="form-control" id="title" maxlength="250"
-<<<<<<< HEAD
                            value="{{ isset($master) ? $master->name : ''  }}"
                            placeholder="Título del Curso" name="name">
-=======
-                           value="{{ isset($master) ? @$master->name : ''  }}"
-                           placeholder="Course Title" name="name">
->>>>>>> c9e290c9c761d6f530b045854768db9a4a62d74e
                 @endcomponent
 
 
