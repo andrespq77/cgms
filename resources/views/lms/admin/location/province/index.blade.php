@@ -22,10 +22,10 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Name</th>
+                                <th>{{ __('lms.form.name') }}</th>
                                 <th>Cantons</th>
 
-                                <th>Action</th>
+                                <th>{{ __('lms.form.action') }}</th>
                             </tr>
                         </thead>
                     </table>

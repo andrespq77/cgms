@@ -182,8 +182,8 @@
                     <table class="table table-responsive table-bordered">
                         <thead>
                             <tr>
-                                <th>Social Id</th>
-                                <th>Name</th>
+                                <th>{{ __('lms.words.social_id') }}</th>
+                                <th>{{ __('lms.form.name') }}</th>
                                 <th>Institute</th>
                                 <th>Email</th>
                                 <th>Grade</th>
@@ -238,7 +238,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
 
                     </div>
                 </form>
@@ -287,7 +287,7 @@
             <dialog class="qq-alert-dialog-selector">
                 <div class="qq-dialog-message-selector"></div>
                 <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Close</button>
+                    <button type="button" class="qq-cancel-button-selector">{{ __('lms.elements.button.close') }}</button>
                 </div>
             </dialog>
 

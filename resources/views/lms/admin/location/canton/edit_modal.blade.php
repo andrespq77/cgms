@@ -18,7 +18,7 @@
                             <input type="hidden" name="id" class="js-jotform-id" value=""/>
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Province</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.location.province.index.page_header') }}</label>
                                 <div class="col-md-4">
                                     <select id="province"  style="width: 100%"
                                             class="js-edit-canton-province js-province form-control" name="province"></select>
@@ -40,10 +40,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="js-edit-canton-district" class="col-md-2 control-label">District</label>
+                                <label for="js-edit-canton-district" class="col-md-2 control-label">{{ __('lms.page.teacher.table.district') }}</label>
                                 <div class="col-md-10">
                                     <input id="js-edit-canton-district" type="text" class="js-edit-canton-district form-control" name="district"
-                                           value="" required placeholder="District" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.page.teacher.table.district') }}" maxlength="100">
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-canton" data-id="" class="btn btn-primary" data-type="update">
                         <i class="fa fa-plus"></i> Update</button>
                 </div>

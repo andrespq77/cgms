@@ -12,9 +12,9 @@
             <a href="{{ url('/admin/course-modality') }}"><i class="fa fa-plus"></i> Course Modality</a>
         </li>
         @if(isset($type))
-        <li class="active"><i class="fa fa-pencil"></i> Edit</li>
+        <li class="active"><i class="fa fa-pencil"></i> {{ __('lms.elements.button.edit') }}</li>
         @else
-            <li class="active"><i class="fa fa-plus"></i> create</li>
+            <li class="active"><i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</li>
         @endif
     @endcomponent
 @stop

@@ -251,7 +251,7 @@
                                                         <label>Nombre</label>
                                                         <input type="text" class="form-control js-tab-user-first_name"
                                                                style="width: 100%;"
-                                                               placeholder="First Name"
+                                                               placeholder="{{ __('lms.form.first_name') }}"
                                                                value="{{ $registration->user_first_name }}"
                                                                maxlength="100"/>
                                                     </div>
@@ -263,7 +263,7 @@
 
                                                         <input type="text" class="form-control js-tab-user-last_name"
                                                                style="width: 100%;"
-                                                               placeholder="Last Name"
+                                                               placeholder="{{ __('lms.form.last_name') }}"
                                                                value="{{ $registration->user_last_name }}"
                                                                maxlength="100"/>
                                                     </div>

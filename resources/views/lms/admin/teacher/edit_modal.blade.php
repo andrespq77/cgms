@@ -20,13 +20,13 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">First Name</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.form.first_name') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="First Name" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.form.first_name') }}" maxlength="100">
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Last Name</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.form.last_name') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Last" maxlength="100">
@@ -40,19 +40,19 @@
                                            value="" required placeholder="Gender" maxlength="100">
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Date of Birth</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.date_of_birth') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Date of Birth" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.date_of_birth') }}" maxlength="100">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Social Id</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.words.social_id') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Social Id" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.social_id') }}" maxlength="100">
                                 </div>
 
                                 <label for="js-edit-canton-name" class="col-md-2 control-label">CC</label>
@@ -68,33 +68,33 @@
                                     <input id="js-edit-canton-name" type="email" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Email" maxlength="100">
                                 </div>
-                                <label for="province" class="col-md-2 control-label">Institute Email</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.words.institute_email') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="email" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Institute Email" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.institute_email') }}" maxlength="100">
                                 </div>
                             </div>
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Telephone</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.telephone') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Telephone" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.telephone') }}" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Mobile</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.mobile') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Mobile" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.mobile') }}" maxlength="100">
                                 </div>
                             </div>
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">University</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.university') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="University" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.university') }}" maxlength="100">
                                 </div>
                                 <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
                                 <div class="col-md-4">
@@ -105,10 +105,10 @@
 
                             <div class="form-group">
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">University</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.university') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="University" maxlength="100">
+                                           value="" required placeholder="{{ __('lms.words.university') }}" maxlength="100">
                                 </div>
                                 <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
                                 <div class="col-md-4">
@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-store-teacher" data-id="" class="btn btn-primary" data-type="update">
                         <i class="fa fa-plus"></i> Update</button>
                 </div>

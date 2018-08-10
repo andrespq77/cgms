@@ -14,7 +14,7 @@
             <div class="box-body">
                 {{ csrf_field() }}
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Type'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.type') ])
                     <select class="form-control" id="select-type" name="type">
                     @foreach($category['type'] as $type)
                         <option value="{{$type->id}}" {{@$master->type_id==$type->id ? 'selected' : ''}}>{{$type->title}}</option>
@@ -23,7 +23,7 @@
                 @endcomponent
 
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Label'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.label') ])
                     <select class="form-control" id="select-label" name="label">
                         <option disabled="">Select Option</option>
                         @foreach($category['labels'] as $label)
@@ -32,7 +32,7 @@
                     </select>
                 @endcomponent
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Sub Label'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.sublabel') ])
                     <select class="form-control" id="select-sublabel" name="sublabel">
                         <option disabled="">Select Option</option>
                         @foreach($category['sub_labels'] as $sublabel)
@@ -42,7 +42,7 @@
                 @endcomponent
 
 
-                @component('lms.admin.components.bootstrap.form-group', ['name' => 'Knowledge'])
+                @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.knowledge') ])
                     <select class="form-control" id="select-knowledge" name="knowledge">
                         <option disabled="">Select Option</option>
                         @foreach($category['knowledge'] as $knowledge)
@@ -83,7 +83,7 @@
                     </a>
                 @endisset
 
-                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> Save</button>
+                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i> {{ __('lms.elements.button.save') }}</button>
             </div>
 
         </form>

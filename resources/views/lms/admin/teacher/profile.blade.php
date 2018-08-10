@@ -233,7 +233,7 @@
 
                     <hr>
 
-                    <strong><i class="fa fa-map-marker margin-r-5"></i> District</strong>
+                    <strong><i class="fa fa-map-marker margin-r-5"></i> {{ __('lms.page.teacher.table.district') }}</strong>
 
                     <p class="text-muted">{{ $teacher->district }} [{{ $teacher->district_code }}]. Zone: {{ $teacher->zone }}</p>
 

@@ -22,10 +22,10 @@
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('social_id') ? 'has-error' : '' }}">
-                    <label for="js-edit-social-id" class="col-sm-3 control-label">Social Id</label>
+                    <label for="js-edit-social-id" class="col-sm-3 control-label">{{ __('lms.words.social_id') }}</label>
                     <div class="col-sm-9">
                         <input id="js-edit-social-id" type="text" class="form-control" name="social_id"
-                               required placeholder="Social ID" maxlength="100" value="{{ old('social_id') }}">
+                               required placeholder="{{ __('lms.words.social_id') }}" maxlength="100" value="{{ old('social_id') }}">
                         <span class="fa fa-id-badge form-control-feedback"></span>
                         @if ($errors->has('social_id'))
                             <span class="help-block">

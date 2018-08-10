@@ -20,7 +20,7 @@
                             <input type="hidden" name="id" class="js-jotform-id" value=""/>
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Province</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.location.province.index.page_header') }}</label>
                                 <div class="col-md-4">
                                     <select id="province" class="js-edit-canton-province js-select-province form-control" name="province">
                                     </select>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-parroquia" data-id="" class="btn btn-primary" data-type="update">
                         <i class="fa fa-plus"></i> Update</button>
                 </div>

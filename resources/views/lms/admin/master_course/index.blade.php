@@ -8,7 +8,7 @@
         <li class=""><i class="fa fa-book"></i> Course</li>
         <li class="active"><i class="fa fa-list"></i> Master Course</li>
         <li class="">
-            <a href="{{ url('/admin/master-course/create') }}"><i class="fa fa-plus"></i> create</a>
+            <a href="{{ url('/admin/master-course/create') }}"><i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</a>
         </li>
     @endcomponent
 @stop
@@ -42,12 +42,12 @@
                         <tr>
                             <th width="20px">ID</th>
                             <th width="100px">Code</th>
-                            <th width="350px">Title</th>
+                            <th width="350px">{{ __('lms.form.title') }}</th>
                             <th width="350px">Subject</th>
                             <th width="100px">Child Courses</th>
                             <th width="100px">Updated By</th>
                             <th width="120px">Updated at</th>
-                            <th width="150px">Action</th>
+                            <th width="150px">{{ __('lms.form.action') }}</th>
                         </tr>
                     </thead>
 

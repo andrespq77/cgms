@@ -22,7 +22,7 @@
                                 <li class="divider"></li>
                                 <li><a href="#course_code">Course Code</a></li>
                                 <li><a href="#course_name">Course Name</a></li>
-                                <li><a href="#social_id">Social Id</a></li>
+                                <li><a href="#social_id">{{ __('lms.words.social_id') }}</a></li>
                             </ul>
 
                         </div>

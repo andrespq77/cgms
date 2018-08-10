@@ -36,7 +36,7 @@
                                     <div class="col-md-9">
                                         <input id="teacher-first-name" type="text" class="form-control" name="first_name"
                                                value="{{ isset($teacher) ? $teacher->first_name : '' }}"
-                                               placeholder="First Name" maxlength="100">
+                                               placeholder="{{ __('lms.form.first_name') }}" maxlength="100">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <div class="col-md-9">
                                         <input id="teacher-last-name" type="text" class="form-control" name="last_name"
                                                value="{{ isset($teacher) ? $teacher->last_name : '' }}"
-                                               placeholder="Last Name" maxlength="100">
+                                               placeholder="{{ __('lms.form.last_name') }}" maxlength="100">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -61,11 +61,11 @@
 
                             <div class="col-sm-12 col-lg-6 col-md-6">
                                 <div class="form-group js-error-block js-social_id-block">
-                                    <label for="teacher-social-id" class="col-md-3 control-label">Social Id</label>
+                                    <label for="teacher-social-id" class="col-md-3 control-label">{{ __('lms.words.social_id') }}</label>
                                     <div class="col-md-9">
                                         <input id="teacher-social-id" type="text" class="form-control" name="social_id"
                                                value="{{ isset($teacher) ? $teacher->social_id : '' }}"
-                                               placeholder="Social Id" maxlength="100"
+                                               placeholder="{{ __('lms.words.social_id') }}" maxlength="100"
                                                 {{ isset($teacher) ? 'disabled': '' }}>
                                         <div class="help-block"></div>
                                     </div>
@@ -107,7 +107,7 @@
                                 <div class="form-group js-error-block has-warning">
                                     <div class="col-md-9 col-md-offset-3">
                                         <span class="help-block"> <i class="fa fa-caret-left"></i>
-                                            This email will be used as login email address.</span>
+                                            {{ __('lms.messages.email_used_login') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -119,11 +119,11 @@
 
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-telephone-block">
-                                    <label for="teacher-telephone" class="col-md-3 control-label">Telephone</label>
+                                    <label for="teacher-telephone" class="col-md-3 control-label">{{ __('lms.words.telephone') }}</label>
                                     <div class="col-md-9">
                                         <input id="teacher-telephone" type="text" class=" form-control" name="telephone"
                                                value="{{ isset($teacher) ? $teacher->telephone : '' }}"
-                                               placeholder="Telephone" maxlength="100">
+                                               placeholder="{{ __('lms.words.telephone') }}" maxlength="100">
                                         <div class="help-block"></div>
 
                                     </div>
@@ -132,11 +132,11 @@
 
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-mobile-block">
-                                    <label for="teacher-mobile" class="col-md-3 control-label">Mobile</label>
+                                    <label for="teacher-mobile" class="col-md-3 control-label">{{ __('lms.words.mobile') }}</label>
                                     <div class="col-md-9">
                                         <input id="teacher-mobile" type="text" class=" form-control" name="mobile"
                                                value="{{ isset($teacher) ? $teacher->mobile : '' }}"
-                                               placeholder="Mobile" maxlength="100">
+                                               placeholder="{{ __('lms.words.mobile') }}" maxlength="100">
                                         <div class="help-block"></div>
 
                                     </div>
@@ -164,18 +164,18 @@
                             <div class="col-lg-5 col-sm-12">
 
                                 <div class="form-group js-error-block js-gender-block">
-                                    <label class="col-md-3 control-label" for="Gender">Gender</label>
+                                    <label class="col-md-3 control-label" for="Gender">{{ __('lms.words.gender') }}</label>
                                     <div class="col-md-9">
                                         <label class="radio-inline" for="Gender-0">
                                             <input type="radio" name="gender" id="Gender-0" value="m"
                                                     {{ isset($teacher) ? $teacher->gender == 'M' ? 'checked' : '' : '' }}>
-                                            Male
+                                            {{ __('lms.words.male') }}
                                         </label>
                                         <label class="radio-inline" for="Gender-1">
                                             <input type="radio" name="gender" id="Gender-1" value="f"
                                                     {{ isset($teacher) ? $teacher->gender == 'F' ? 'checked' : '' : '' }}
                                             >
-                                            Female
+                                            {{ __('lms.words.female') }}
                                         </label>
                                         <div class="help-block"></div>
                                     </div>
@@ -184,11 +184,11 @@
                             <div class="col-lg-7 col-sm-12">
 
                                 <div class="form-group js-error-block js-date_of_birth-block">
-                                    <label for="teacher-dob" class="col-md-3 control-label">Date of Birth</label>
+                                    <label for="teacher-dob" class="col-md-3 control-label">{{ __('lms.words.date_of_birth') }}</label>
                                     <div class="col-md-9">
                                         <input id="teacher-dob" type="text" class="js-datepicker form-control" name="date_of_birth"
                                                value="{{ isset($teacher) ? date('d/m/Y', strtotime($teacher->date_of_birth)) : '' }}"
-                                               placeholder="Date of Birth" maxlength="20">
+                                               placeholder="{{ __('lms.words.date_of_birth') }}" maxlength="20">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -322,11 +322,11 @@
 
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group js-error-block js-inst_email-block">
-                                <label for="teacher-inst-email" class="col-md-3 control-label">{{ __('lms.words.institute_mail') }}</label>
+                                <label for="teacher-inst-email" class="col-md-3 control-label">{{ __('lms.words.institute_email') }}</label>
                                 <div class="col-md-9">
                                     <input id="teacher-inst-email" type="email" class="form-control" name="inst_email"
                                            value="{{ isset($teacher) ? $teacher->inst_email : '' }}"
-                                           placeholder={{ __('lms.words.institute_mail') }} maxlength="100"
+                                           placeholder="{{ __('lms.words.institute_email') }}" maxlength="100"
                                             {{ isset($teacher) ? 'disabled': '' }}>
                                     <div class="help-block"></div>
                                 </div>
@@ -372,11 +372,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="row">
-
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group js-error-block js-work_hours-block">
                                 <label for="work_hours" class="col-md-3 control-label">{{ __('lms.words.work_hours') }}</label>
@@ -388,21 +385,14 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
+          </div>
         </div>
-
-        </div>
-
 
         <div class="row">
-
             <div class="col-lg-6">
-
                 <div class="box box-info">
 
                     <div class="box-header"><h3 class="box-title">{{ __('lms.words.location_info') }}</h3></div>
@@ -413,7 +403,7 @@
                             <div class="col-lg-6 col-sm-12 col-md-12">
 
                                 <div class="form-group js-error-block js-province-block">
-                                    <label for="province" class="col-md-3 control-label">Province</label>
+                                    <label for="province" class="col-md-3 control-label">{{ __('lms.location.province.index.page_header') }}</label>
                                     <div class="col-md-9">
                                         <input type="hidden" class="js-edit-province"
                                                value="{{ isset($teacher) ? $teacher->province : '' }}">
@@ -483,11 +473,11 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <div class="form-group js-error-block js-district-block">
-                                    <label for="district" class="col-md-3 control-label">District</label>
+                                    <label for="district" class="col-md-3 control-label">{{ __('lms.page.teacher.table.district') }}</label>
                                     <div class="col-md-9">
                                         <input id="district" type="text" class="form-control" name="district"
                                                value="{{ isset($teacher) ? $teacher->district : '' }}"
-                                               placeholder="District" maxlength="50">
+                                               placeholder="{{ __('lms.page.teacher.table.district') }}" maxlength="50">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -495,11 +485,11 @@
                             <div class="col-lg-6 col-sm-12">
 
                                 <div class="form-group js-error-block js-dist_code-block">
-                                    <label for="dist_code" class="col-md-3 control-label">District Code</label>
+                                    <label for="dist_code" class="col-md-3 control-label">{{ __('lms.page.teacher.table.district_code') }}</label>
                                     <div class="col-md-9">
                                         <input id="dist_code" type="text" class="form-control" name="dist_code"
                                                value="{{ isset($teacher) ? $teacher->district_code : '' }}"
-                                               placeholder="District Code" maxlength="10">
+                                               placeholder="{{ __('lms.page.teacher.table.district_code') }}" maxlength="10">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -539,11 +529,11 @@
                             <div class="col-lg-6 col-sm-12">
 
                                 <div class="form-group js-error-block js-action_type-block">
-                                    <label for="speciality" class="col-md-3 control-label">{{ __('lms.words.action_speciality') }}</label>
+                                    <label for="speciality" class="col-md-3 control-label">{{ __('lms.words.speciality') }}</label>
                                     <div class="col-md-9">
                                         <input id="speciality" type="text" class="form-control" name="speciality"
                                                value="{{ isset($teacher) ? $teacher->speciality : '' }}"
-                                               placeholder="{{ __('lms.words.action_speciality') }}" maxlength="50">
+                                               placeholder="{{ __('lms.words.speciality') }}" maxlength="50">
                                         <div class="help-block"></div>
                                     </div>
                                 </div>

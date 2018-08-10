@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="js-edit-canton-name" class="col-md-4 control-label">Social Id</label>
+                                <label for="js-edit-canton-name" class="col-md-4 control-label">{{ __('lms.words.social_id') }}</label>
                                 <div class="col-md-8">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Canton Name" maxlength="100">
@@ -96,9 +96,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-canton" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-upload"></i> Create</button>
+                        <i class="fa fa-upload"></i> {{ __('lms.elements.button.create') }}</button>
                 </div>
             </form>
         </div>

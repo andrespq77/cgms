@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'title' => 'Course Grade Management System',
+    'title' => 'Sistema de Gestión Académica',
 
-    'title_prefix' => 'CGMS',
+    'title_prefix' => 'SGA',
 
     'title_postfix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => 'CGMS <b>Admin</b>',
+    'logo' => 'SGA <b>Admin</b>',
 
-    'logo_mini' => '<b>CG</b>MS',
+    'logo_mini' => '<b>SGA</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green',
 
     /*
     |--------------------------------------------------------------------------
@@ -147,32 +147,32 @@ return [
             'can'           => 'admin-only',
             'submenu'       => [
                 [
-                    'text'      => 'Master Course',
+                    'text'      => 'lms.menu.master_course',
                     'url'           => 'admin/master-course',
                     'can'           => 'admin-only',
                 ],
                 [
-                    'text'      => 'Category',
+                    'text'      => 'lms.menu.category.title',
                     'can'           => 'admin-only',
                     'submenu'   => [
                         [
-                            'text'  => 'Type',
+                            'text'  => 'lms.menu.category.type',
                             'url'   => 'admin/categories/type',
                         ],
                         [
-                            'text'  => 'Label',
+                            'text'  => 'lms.menu.category.label',
                             'url'   => 'admin/categories/label',
                         ],
                         [
-                            'text'  => 'Sub Label',
+                            'text'  => 'lms.menu.category.sublabel',
                             'url'   => 'admin/categories/sublabel',
                         ],
                         [
-                            'text'  => 'Area of Knowledge',
+                            'text'  => 'lms.menu.category.knowledge',
                             'url'   => 'admin/categories/knowledge',
                         ],
                         [
-                            'text'  => 'Subject',
+                            'text'  => 'lms.menu.category.subject',
                             'url'   => 'admin/categories/subject',
                         ]
 
@@ -249,7 +249,7 @@ return [
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'lms.messages.change_pword',
             'url'  => '/admin/profile/change-password', //admin/settings
             'icon' => 'lock',
         ],

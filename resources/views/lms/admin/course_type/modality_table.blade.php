@@ -10,8 +10,8 @@
             <thead>
             <tr>
                 <th>Sort</th>
-                <th>Title</th>
-                <th width="200px" class="text-right">Action</th>
+                <th>{{ __('lms.form.title') }}</th>
+                <th width="200px" class="text-right">{{ __('lms.form.action') }}</th>
             </tr>
             </thead>
             <tbody id="modality-body">
@@ -28,8 +28,8 @@
                         <div class="btn-group bt-xs">
                             <button class="btn btn-default btn-edit btn-xs btn-flat" data-id="{{ $modality->id }}"
                                     data-title="{{ $modality->title }}" data-sort="{{ $modality->sort }}"
-                            >Edit</button>
-                            <button class="btn btn-default btn-xs btn-remove btn-flat" data-id="{{ $modality->id }}">Remove</button>
+                            >{{ __('lms.elements.button.edit') }}</button>
+                            <button class="btn btn-default btn-xs btn-remove btn-flat" data-id="{{ $modality->id }}"> {{ __('lms.elements.button.remove') }}</button>
                         </div>
                     </td>
                 </tr>

@@ -12,8 +12,8 @@
             'main_nav'          => 'NAVEGACIÓN PRINCIPAL',
             'account_settings'  => 'CONFIGURACIONES DE LA CUENTA',
             'teachers'          => [
-                'title'         => 'Maestros',
-                'all'            => 'Lista de Maestros',
+                'title'         => 'Docentes',
+                'all'            => 'Lista de Docentes',
                 'portfolio'     => 'Portafolio del Docente',
                 'registration_inspection'  => 'Inspección de Registro',
             ],
@@ -28,8 +28,9 @@
                 'my_portfolio'  => 'Mi Portafolio',
                 'my_requests'  => 'Solicitudes de Registro'
             ],
-            'university'        => 'Universidad',
+            'university'        => 'Institución Superior',
             'profile'           => 'Mi perfil',
+			'master_course'     => 'Curso Maestro',
             'settings'          => [
                 'title' => 'Ajustes',
                 'user_management' => 'Gestión de usuarios',
@@ -39,6 +40,14 @@
                     'canton'    => 'Cantón',
                     'parroquia'    => 'Parroquia',
                 ],
+            ],
+            'category'          => [
+                                'title' => 'Categorias',
+                                'type' => 'Tipo',
+                                'label' => 'Etiqueta',
+                                'sublabel' => 'Sub etiqueta',
+                                'knowledge' => 'Área de conocimiento',
+                                'subject' => 'Materia'
             ]
         ],
         'location' => [
@@ -93,16 +102,17 @@
                 'table' => [
                     'id'                => 'Id',
                     'security_id'       => 'Cédula',
-                    'name'              => 'Name',
+                    'name'              => 'Nombre',
                     'email'             => 'Email',
                     'moodle_id'          => 'Id Moodle',
-                    'university'        => 'Universidad',
+                    'university'        => 'Institución Educativa',
                     'function'          => 'Funcción',
                     'location'          => 'Dirección',
                     'province'          => 'Provincia',
-                    'edition'          => 'Edition',
+                    'edition'           => 'Edición',
                     'canton'            => 'Cantón',
                     'district'          => 'Distrito',
+					'district_code'     => 'Código Distrito',
                     'course_type'       => 'Tipo de Curso',
                     'course_name'       => 'Nombre de Curso',
                     'modality'          => 'modalidad',
@@ -112,20 +122,20 @@
                     'year'              => 'Año',
                     'approved'          => 'Aprovado',
                     'certificate'       => 'Certificado',
-                    'diploma'           => 'Diploma',
+                    'diploma'           => 'Certificado',
 
                     'action'            => 'Acción',
                 ],
                 'form' => [
-                    'edit_title'        => 'Editar profesor',
-                    'add_title'         => 'Agregar nuevo maestro',
+                    'edit_title'        => 'Editar Docente',
+                    'add_title'         => 'Agregar nuevo Docente',
                 ]
 
             ],
             'teacher_profile' => [
                 'index' => [
-                    'page_header'=> 'Perfil del profesor',
-                    'table_header' => 'Perfil del profesor'
+                    'page_header'=> 'Perfil del Docente',
+                    'table_header' => 'Perfil del Docente'
                 ],
                 'table' => [
                     'course_type'       => 'Tipo de Curso',
@@ -170,7 +180,7 @@
                     'start_date'        => 'Fecha Inicial',
                     'end_date'          => 'Fecha Final',
                     'quota'             => 'Cuota',
-                    'comment'           => 'Commentario',
+                    'comment'           => 'Comentario',
                     'description'       => 'Descripción',
                     'terms_condition'   => 'Términos y Condiciones',
                     'video'             => 'Informción de Video',
@@ -314,23 +324,30 @@
 
             ],
             'category' => [
+              'titles'=> [
+                'type'      => 'Tipo',
+                'label'     => 'Etiqueta',
+                'sublabel'  => 'Sub Etiqueta',
+                'knowledge' => 'Conocimiento',
+                'subject'   => 'Materia'
+              ],
                 'label' => [
                     'index' => [
-                        'name'=> 'Label spanish',
-                        'page_header'=> 'Category Label Management spanish',
-                        'table_header' => 'All Label List spanish'
+                        'name'=> 'Etiqueta',
+                        'page_header'=> 'Administración de Categoría Etiqueta',
+                        'table_header' => 'Lista de todas las etiquetas'
                     ],
                     'table' => [
-                        'id'                => 'Id spanish',
-                        'title'             => 'Title spanish',
-                        'action'            => 'Action spanish',
-                        'edit'            => 'Edit spanish',
-                        'remove'            => 'Remove spanish',
+                        'id'                => 'Id',
+                        'title'             => 'Título',
+                        'action'            => 'Acción',
+                        'edit'            => 'Editar',
+                        'remove'            => 'Borrar',
 
                     ],
 
                     'form'  =>[
-                        'edit_title'        => 'Edit Category Title spanish',
+                        'edit_title'        => 'Editar título de Categoría',
                         'add_title'         => 'Add Category Title spanish',
                         'remove_title'      => 'Remove Category Title spanish',
                         'title'             => 'Title spanish',
@@ -348,6 +365,7 @@
                 'create'    => 'Crear',
                 'delete'    => 'Eiminar',
                 'remove'    => 'Borrar',
+                'save'      => 'Grabar',
                 'close'     => 'Cerrar',
                 'import'    =>  'Importar',
                 'upload'    =>  'Subir',
@@ -367,7 +385,7 @@
             'function'=> 'Función',
             'category'=> 'Categoría',
             'work_hours' => 'Horas laborales',
-            'work_area' => 'Área de trabajo',
+            'work_area' => 'Régimen Laboral',
             'institute_email' => 'Email del instituto',
             'work_details' => 'Detalles del trabajo',
             'date_end' => 'Fecha final',
@@ -379,26 +397,42 @@
             'mobile' => 'Móvil',
             'email' => 'Email',
             'telephone' => 'Teléfono',
-            'social_id' => 'Social Id',
+            'social_id' => 'Cédula',
             'course'    => 'Curso',
             'course_modality' => 'Course Modality',
-            'diploma' => 'Diploma',
+            'diploma' => 'Certificado',
             'grade' => 'Grado',
             'zone'  => 'Zona',
             'last_updated' => 'Última actualización',
             'add_grade'             => 'Add Grade',
             'by' => 'por',
+            'university' => 'Institución Superior',
+            'male' => 'Masculino',
+            'female' => 'Femenino',
+            'teacher' => 'Docente'
+        ],
+        'form' => [
+          'name' => 'Nombre',
+          'first_name' => 'Nombre',
+          'last_name' => 'Apellido',
+          'title' => 'Título',
+          'action' => 'Acción'
         ],
         'messages' => [
             'create_course' => 'Crear curso',
+            'change_pword' => 'Cambiar Contraseña',
+            'logged_in' => 'Usted Ingreso!',
             'grade_approved_by' => 'Grado aprobado por',
+            'email_used_login' => 'Este Email será usado como Email de ingreso.',
             'proceed_to_the_course' => 'Proceda al curso',
             'upload_new_course' => 'Cargar un nuevo curso',
             'download_sample_file' => 'Descargar archivo de muestra',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
             'course_request_list_modal' => 'Course Request List Modal',
             'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de la entrada al grado',
-            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso para niños.'
-
+            'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso hijo.',
+            'm_ad_user_login' => 'Ingresar con usuario Active Directory',
+            'm_au_user_login' => 'Ingresar con usuario Admin o Universidad',
+            'search_teacher' => 'Buscar por nombre, cédula, Email, AMIE o teléfono'
         ]
     ];

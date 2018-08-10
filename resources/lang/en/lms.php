@@ -30,6 +30,7 @@
             ],
             'university'        => 'University',
             'profile'           => 'My Profile',
+			'master_course'     => 'Master Course',
             'settings'          => [
                                 'title' => 'Settings',
                                 'user_management' => 'User Management',
@@ -39,6 +40,14 @@
                                     'canton'    => 'Canton',
                                     'parroquia'    => 'PARROQUIA',
                                 ],
+            ],
+            'category'          => [
+                                'title' => 'Category',
+                                'type' => 'Type',
+                                'label' => 'Label',
+                                'sublabel' => 'Sublabel',
+                                'knowledge' => 'Area of Knowledge',
+                                'subject' => 'Subject'
             ]
         ],
         'location' => [
@@ -103,6 +112,7 @@
                     'edition'          => 'Edition',
                     'canton'            => 'Canton',
                     'district'          => 'District',
+					'district_code'     => 'District code',
                     'course_type'       => 'Course Type',
                     'course_name'       => 'Course Name',
                     'modality'          => 'modality',
@@ -327,6 +337,13 @@
 
             ],
             'category' => [
+                'titles'=> [
+                  'type'      => 'Type',
+                  'label'     => 'Label',
+                  'sublabel'  => 'Sub Label',
+                  'knowledge' => 'Knowledge',
+                  'subject'   => 'Subject'
+                ],
                 'label' => [
                     'index' => [
                         'name'=> 'Label',
@@ -360,6 +377,7 @@
                 'create'    => 'Create',
                 'delete'    => 'Delete',
                 'remove'    => 'Remove',
+                'save'      => 'Save',
                 'close'     => 'Close',
                 'import'    =>  'Import',
                 'upload'    =>  'Upload',
@@ -400,16 +418,33 @@
             'last_updated'          => 'Last updated',
             'add_grade'             => 'Add Grade',
             'by'                    => 'by',
+            'university' => 'University',
+            'male' => 'Male',
+            'female' => 'Female',
+            'teacher' => 'teacher'
+        ],
+        'form' => [
+          'name' => ' Nombre',
+          'first_name' => 'First Name',
+          'last_name' => 'Last Name',
+          'title' => 'Title',
+          'action' => 'Action'
         ],
         'messages' => [
             'create_course' => 'Create Course',
+			      'change_pword' => 'Change Password',
+            'logged_in' => 'You are logged in!',
             'grade_approved_by' => 'Grade Approved By',
+			      'email_used_login' => 'This email will be used as login email address.',
             'proceed_to_the_course' => 'Proceed to the course',
             'upload_new_course' => 'Upload New Course',
             'download_sample_file' => 'Download Sample File',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
             'course_request_list_modal' => 'Course Request List Modal',
             'diploma_upload_message' => 'Diploma upload will be enabled From Grade Entry Start Date',
-            'master_course_confirm_message' => 'Do you want to delete this. May be it has some course too.'
+            'master_course_confirm_message' => 'Do you want to delete this. May be it has some course too.',
+            'm_ad_user_login' => 'Login with Active Directory User',
+            'm_au_user_login' => 'Login with Admin or Universities',
+            'search_teacher' => 'Search by Name, SocialID, Email, AMIE or Phone'
         ]
     ];

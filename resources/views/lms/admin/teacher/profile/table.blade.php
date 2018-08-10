@@ -19,7 +19,7 @@
             <tr>
                 <td><small class="text-muted">{{ $teacher->id }}</small></td>
                 <td><code>{{ $teacher->social_id }}</code></td>
-                <td><i class="fa fa-{{$teacher->gender=='F' ? 'male' : 'female'}}"></i>
+                <td><i class="fa fa-{{$teacher->gender=='F' ? __('lms.words.male') : __('lms.words.female') }}"></i>
                     <a href="{{ url('/admin/teachers/profile/'.$teacher->id) }}">
                     {{ $teacher->first_name}}&nbsp;{{ $teacher->first_name!==$teacher->last_name ? $teacher->last_name : '' }}
                     </a>

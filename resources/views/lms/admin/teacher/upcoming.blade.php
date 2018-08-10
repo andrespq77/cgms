@@ -33,7 +33,7 @@
 
                             <hr>
 
-                            <strong><i class="fa fa-map-marker margin-r-5"></i> Social Id</strong>
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> {{ __('lms.words.social_id') }}</strong>
 
                             <p class="">{{ Auth::user()->id }}</p>
 

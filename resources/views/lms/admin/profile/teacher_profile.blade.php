@@ -98,7 +98,7 @@
 
                     </div>
                     <div class="box-footer text-right">
-                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{ __('lms.elements.button.close') }}</button>
                         <button href="#" class="btn btn-primary" >Change</button>
                     </div>
                 </div>
