@@ -34,6 +34,7 @@
                             <th>{{ __('lms.words.diploma') }}</th>
                         </tr>
                         </thead>
+
                         <tbody>
                         @foreach($teacher->registrations->sortByDesc('approval_time') as $registration)
 

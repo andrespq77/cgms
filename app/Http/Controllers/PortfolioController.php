@@ -43,7 +43,6 @@ class PortfolioController extends Controller
 
             $title = 'Teacher Portfolio - '.env('APP_NAME') ;
 
-
             $search_in      = $request->input('search_param');
             $search_keyword = $request->input('x');
             $registration   = $request->input('registration') == null ? 3 : $request->input('registration');
