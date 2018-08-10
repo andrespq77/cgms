@@ -100,6 +100,7 @@
                     'function'          => 'Funcción',
                     'location'          => 'Dirección',
                     'province'          => 'Provincia',
+                    'edition'          => 'Edition',
                     'canton'            => 'Cantón',
                     'district'          => 'Distrito',
                     'course_type'       => 'Tipo de Curso',

@@ -84,7 +84,7 @@
                                 {{--<th>Id</th>--}}
                                 <th>{{ __('lms.page.teacher.table.security_id') }}</th>
                                 <th width="18%">{{ __('lms.page.teacher.table.name') }}</th>
-{{--                                <th>{{ __('lms.page.teacher.table.course_type') }}</th>--}}
+                                <th>{{ __('lms.page.teacher.table.course_type') }}</th>
                                 <th>{{ __('lms.page.teacher.table.course_name') }}</th>
                                 <th>{{ __('lms.page.teacher.table.university') }}</th>
                                 <th>{{ __('lms.page.teacher.table.province') }}</th>
