@@ -62,23 +62,27 @@ class LdapAccessController extends Controller
                 // the user doesn't exist in the local database, so we have to create one
 
                 $ldap_user = Adldap::search()->where('samaccountname', '=', $username)->first();
+                dd($ldap_user);
+                if(is_null($ldap_user)){
 
-                $user = new \App\User();
-                $user->username = $username;
-                $user->password = bcrypt($password);
-                $user->name = $ldap_user->cn;
-                $user->username = $ldap_user->username;
-                $user->email = $ldap_user->email;
-                $user->save();
+                    $user = new \App\User();
+                    $user->username = $username;
+                    $user->password = bcrypt($password);
+                    $user->name = $ldap_user->cn;
+                    $user->username = $ldap_user->username;
+                    $user->email = $ldap_user->email;
+                    $user->save();
 
-                $teacher = new \App\Teacher();
-                $teacher->first_name = $ldap_user->cn;
-                $teacher->last_name = $ldap_user->c;
-                $teacher->user_id = $user->id;
-                $teacher->social_id = $ldap_user->usnchanged;
-                $teacher->created_by = 1;
-                $teacher->updated_by = 1;
-                $teacher->save();
+                    $teacher = new \App\Teacher();
+                    $teacher->first_name = $ldap_user->cn;
+                    $teacher->last_name = $ldap_user->c;
+                    $teacher->user_id = $user->id;
+                    $teacher->social_id = $ldap_user->usnchanged;
+                    $teacher->created_by = 1;
+                    $teacher->updated_by = 1;
+                    $teacher->save();
+
+                }
 
             }
 
