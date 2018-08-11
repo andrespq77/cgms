@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
              UsersTableSeeder::class,
              ProvinceTableSeeder::class,
              UniversityTableSeeder::class,
-             CategoryTableSeeder::class
+             CategoryTableSeeder::class,
+             CoursetypeTableSeeder::class
          ]);
     }
 }

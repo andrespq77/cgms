@@ -30,7 +30,7 @@ class AddEmail2InTeachersTable extends Migration
     {
         Schema::table('teachers', function($table) {
             $table->dropColumn('email2');
-            $table->dropColumn('email2');
+            $table->dropColumn('phone2');
 
         });
     }

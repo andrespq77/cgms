@@ -12,11 +12,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
         $user = new User();
         $user->name = 'Admin';
-        $user->email = env('SYSTEM_ADMIN_EMAIL');
-        $user->password = bcrypt(env('SYSTEM_ADMIN_PASSWORD'));
+        $user->email = config('app.system_admin_email');
+        $user->password = bcrypt(config('app.system_admin_password'));
         $user->role = USER_ROLE_ADMIN;
         $user->status = USER_STATUS_ACTIVE;
         $user->creation_type = USER_CREATION_TYPE_IMPORT;

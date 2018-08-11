@@ -2,6 +2,10 @@
 
 return [
 
+    'system_admin_email' => env('SYSTEM_ADMIN_EMAIL', 'admin@admni.com'),
+    'system_admin_password' => env('SYSTEM_ADMIN_PASSWORD', '123456'),
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -219,7 +223,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Zipper' => Chumper\Zipper\Zipper::class,
-	'Adldap' => Adldap\Laravel\Facades\Adldap::class
+	    'Adldap' => Adldap\Laravel\Facades\Adldap::class
 
     ],
 
