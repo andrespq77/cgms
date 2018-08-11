@@ -43,16 +43,16 @@ class LdapAccessController extends Controller
 		//$user = Adldap::search()->users()->find($credentials[$this->username()]);
 		//dd($user);
 
-        if(Adldap::auth()->attempt($userdn, $password, $bindAsUser = true)) {
+        if(Adldap::auth()->attempt($userdn, $password)) {
             // the user exists in the LDAP server, with the provided password
-            dd('user exist...');
+
             $user = \App\User::where($this->username(), $username) -> first();
             if (!$user) {
                 // the user doesn't exist in the local database, so we have to create one
 
-                $user = new \App\User();
-                $user->username = $username;
-                $user->password = '';
+//                $user = new \App\User();
+//                $user->username = $username;
+//                $user->password = '';
 
                 // you can skip this if there are no extra attributes to read from the LDAP server
                 // or you can move it below this if(!$user) block if you want to keep the user always
@@ -67,13 +67,11 @@ class LdapAccessController extends Controller
             // pass false as second parameter if you want to force the session to expire when the user closes the browser.
             // have a look at the section 'session lifetime' in `config/session.php` for more options.
             $this->guard()->login($user, true);
-            return true;
-        }
 
+            $request->session()->put('logged', $username);
 
-        if(Adldap::auth()->attempt($username, $password)) {
-			$request->session()->put('logged', $username);
-			return redirect('/students');
+            return redirect('/students');
+
         }
 
 
@@ -89,7 +87,7 @@ class LdapAccessController extends Controller
             return false;
         }
         // if you want to see the list of available attributes in your specific LDAP server:
-        // var_dump($ldapuser->attributes); exit;
+         dd($ldapuser->attributes); exit;
 
         // needed if any attribute is not directly accessible via a method call.
         // attributes in \Adldap\Models\User are protected, so we will need
