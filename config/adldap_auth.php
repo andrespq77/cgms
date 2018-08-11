@@ -86,7 +86,7 @@ return [
 
         // Only allows users with a uid to authenticate.
         // Uncomment if you're using OpenLDAP.
-         Adldap\Laravel\Scopes\UidScope::class,
+//         Adldap\Laravel\Scopes\UidScope::class,
 
     ],
 
@@ -120,7 +120,8 @@ return [
 
         'ldap' => [
 
-            'ldap' => 'samaccountname', // was just 'userprincipalname'
+            'ldap' => env('ADLDAP_USER_ATTRIBUTE', 'userprincipalname'), // was just 'userprincipalname'
+            'eloquent' => 'username', // was 'email'
 
         ],
 
