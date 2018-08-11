@@ -56,10 +56,10 @@ class LdapAccessController extends Controller
 
 
         $provider = \Adldap::getDefaultProvider();
-        $provider->auth()->bind($username, $password);
+        $provider->auth()->bind($userdn, $password);
 //        $provider->auth()->attempt($username, $password, true);
 
-        if($provider->auth()->attempt($username, $password, true)) {
+        if($provider->auth()->attempt($userdn, $password, true)) {
             // the user exists in the LDAP server, with the provided password
 
             $user = \App\User::where($this->username(), $username)->first();
