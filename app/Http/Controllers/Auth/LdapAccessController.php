@@ -86,13 +86,15 @@ class LdapAccessController extends Controller
 
     protected function retrieveSyncAttributes($username) {
 
+//        Remember that you have these users available in the testing LDAP server: riemann, gauss, euler, euclid, einstein, newton, galieleo and tesla. The password is password for all of them.
+        
         $ldapuser = Adldap::search()->where(env('ADLDAP_USER_ATTRIBUTE'), '=', $username)->first();
         if ( !$ldapuser ) {
             // log error
             return false;
         }
         // if you want to see the list of available attributes in your specific LDAP server:
-         dd($ldapuser->attributes); exit;
+        // dd($ldapuser->attributes); exit;
 
         // needed if any attribute is not directly accessible via a method call.
         // attributes in \Adldap\Models\User are protected, so we will need
