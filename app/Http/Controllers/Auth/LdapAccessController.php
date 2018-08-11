@@ -47,7 +47,6 @@ class LdapAccessController extends Controller
 
 //		$user = Adldap::search()->users()->find($credentials[$this->username()]);
 		$users = Adldap::search()->get();
-		dd(count($users));
 		foreach ($users as $user){
             dd($user);
         }
