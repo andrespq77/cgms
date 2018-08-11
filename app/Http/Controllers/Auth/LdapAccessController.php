@@ -62,7 +62,7 @@ class LdapAccessController extends Controller
                 // the user doesn't exist in the local database, so we have to create one
 
                 $ldap_user = Adldap::search()->where('samaccountname', '=', $username)->first();
-                dd($ldap_user);
+                
                 if(is_null($ldap_user)){
 
                     $user = new \App\User();
