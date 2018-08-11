@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "2.1.x-dev",
         "predis/predis": "^1.1",
-        "yajra/laravel-datatables": "^1.0"
+        "yajra/laravel-datatables": "^1.0",
+        "doctrine/dbal": "^2.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

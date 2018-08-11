@@ -72,7 +72,7 @@ return [
             |
             */
 
-            'schema' => Adldap\Schemas\ActiveDirectory::class,
+            'schema' => Adldap\Schemas\OpenLDAP::class, // was Adldap\Schemas\ActiveDirectory::class
 
             /*
             |--------------------------------------------------------------------------
@@ -215,7 +215,7 @@ return [
                 |
                 */
 
-                'follow_referrals' => false,
+                'follow_referrals' => true,
 
                 /*
                 |--------------------------------------------------------------------------

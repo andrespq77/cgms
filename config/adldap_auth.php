@@ -120,9 +120,7 @@ return [
 
         'ldap' => [
 
-            'discover' => 'userprincipalname',
-
-            'authenticate' => 'distinguishedname',
+            'ldap' => env('ADLDAP_USER_ATTRIBUTE', 'userprincipalname'), // was just 'userprincipalname'
 
         ],
 
@@ -256,7 +254,7 @@ return [
     */
 
     'sync_attributes' => [
-
+        // 'field_in_local_db' => 'attribute_in_ldap_server',
         'username' => 'uid',
 
         'name' => 'cn',

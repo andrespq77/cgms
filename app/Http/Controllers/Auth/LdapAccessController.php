@@ -22,37 +22,41 @@ class LdapAccessController extends Controller
         return config('adldap_auth.usernames.eloquent');
     }
 
+
+    protected function validateLogin(Request $request) {
+        $this->validate($request, [
+            $this->username() => 'required|string|regex:/^\w+$/',
+            'password' => 'required|string',
+        ]);
+    }
+
     public function login(Request $request) {
-		
+
 		try {
 			Adldap::connect();
-			//on local through exception
+
 		} catch (\Exception $e) {
-			dd('can not connect to ldap');
-		}
+            session()->flash('app_error', 'Can\'t contact to LDAP server.');
+            return back();
+        }
 		
 		$credentials = $request->only($this->username(), 'password');
         $username = $credentials[$this->username()];
         $password = $credentials['password'];
 
+		$user = Adldap::search()->users()->find($credentials[$this->username()]);
 
-
-		$user_format = env('ADLDAP_USER_FORMAT', 'cn=%s,'.env('ADLDAP_BASEDN', ''));
-        $userdn = sprintf($user_format, $username);
-		
-		//$user = Adldap::search()->users()->find($credentials[$this->username()]);
-		//dd($user);
-
-        if(Adldap::auth()->attempt($userdn, $password)) {
+        if(Adldap::auth()->attempt($username, $password, $bindAsUser = true)) {
             // the user exists in the LDAP server, with the provided password
 
             $user = \App\User::where($this->username(), $username) -> first();
+
             if (!$user) {
                 // the user doesn't exist in the local database, so we have to create one
 
-//                $user = new \App\User();
-//                $user->username = $username;
-//                $user->password = '';
+                $user = new \App\User();
+                $user->username = $username;
+                $user->password = '';
 
                 // you can skip this if there are no extra attributes to read from the LDAP server
                 // or you can move it below this if(!$user) block if you want to keep the user always
@@ -74,6 +78,7 @@ class LdapAccessController extends Controller
 
         }
 
+        session()->flash('app_error', 'Credentials are invalid please try again');
 
         return redirect(url('/students/login'));
     }
