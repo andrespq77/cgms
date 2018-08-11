@@ -82,11 +82,11 @@ return [
 
         // Only allows users with a user principal name to authenticate.
         // Remove this if you're using OpenLDAP.
-        Adldap\Laravel\Scopes\UpnScope::class,
+//        Adldap\Laravel\Scopes\UpnScope::class,
 
         // Only allows users with a uid to authenticate.
         // Uncomment if you're using OpenLDAP.
-        // Adldap\Laravel\Scopes\UidScope::class,
+         Adldap\Laravel\Scopes\UidScope::class,
 
     ],
 
@@ -120,7 +120,7 @@ return [
 
         'ldap' => [
 
-            'ldap' => env('ADLDAP_USER_ATTRIBUTE', 'userprincipalname'), // was just 'userprincipalname'
+            'ldap' => 'samaccountname', // was just 'userprincipalname'
 
         ],
 
