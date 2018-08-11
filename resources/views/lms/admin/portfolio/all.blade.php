@@ -39,7 +39,7 @@
                     <select class="form-control" id="registration" name="registration">
                         <option disabled="">Select Approved Type</option>
                         <option {{ app('request')->input('registration') == 1 ? 'selected' : '' }}
-                                value="1">Approved</option>
+                                value="1">{{ __('lms.page.teacher.table.approved') }}</option>
                         <option {{ app('request')->input('registration') == 0 ? 'selected' : '' }}
                                 value="0">Not Approved</option>
                         <option {{ app('request')->input('registration') == 3 ? 'selected' : '' }}

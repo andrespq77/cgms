@@ -54,9 +54,9 @@
                             <div class="js-error-block js-course_edition-block">
 
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course_edition', 'grid' => 4,
-                                        'title' => 'Course Edition'])
+                                        'title' => __('lms.page.teacher.table.edition') ])
                                 <input id="js-edit-course-edition" type="text" class="js-edit-course-edition form-control"
-                                name="course_edition" value="" required placeholder="Edition" maxlength="100">
+                                name="course_edition" value="" required placeholder="{{ __('lms.page.teacher.table.edition') }}" maxlength="100">
 
                                     <div class="help-block"></div>
                                 @endcomponent
@@ -68,7 +68,7 @@
                                 'title' => __('lms.page.course.form.short_name')])
                                 <input id="js-edit-course-short_name" type="text"   maxlength="100" value=""
                                        class="js-edit-course-short_name form-control" name="short_name"
-                                       placeholder={{ __('lms.page.course.form.short_name') }}/>
+                                       placeholder="{{ __('lms.page.course.form.short_name') }}"/>
                         @endcomponent
 
                         <div class="form-group">
@@ -77,7 +77,7 @@
                                         'title' => __('lms.page.course.form.start_date')])
                                 <input id="js-edit-course-start_date" type="text" autocomplete="off"
                                        class="js-edit-course-start_date js-datepicker form-control" name="Start Date"
-                                       placeholder={{ __('lms.page.course.form.start_date') }}/>
+                                       placeholder="{{ __('lms.page.course.form.start_date') }}"/>
 
                             @endcomponent
 
@@ -85,14 +85,14 @@
                                 'title' => __('lms.page.course.form.end_date')])
                                     <input id="js-edit-course-end_date" type="text" autocomplete="off"
                                            class="js-edit-course-end_date js-datepicker form-control" name="end_date"
-                                           placeholder={{ __('lms.page.course.form.end_date') }}/>
+                                           placeholder="{{ __('lms.page.course.form.end_date') }}"/>
                             @endcomponent
 
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'course-year', 'grid' => 2,
                                 'title' => __('lms.page.course.form.year')])
                                 <input id="js-edit-course-year" type="number" min="1" max="32767"
                                        class="js-edit-course-year form-control" name="year"
-                                       placeholder={{ __('lms.page.course.form.year') }}>
+                                       placeholder="{{ __('lms.page.course.form.year') }}"/>
                             @endcomponent
 
                         </div>
@@ -102,7 +102,7 @@
                             <div class="js-error-block js-grade-entry-start-date-block">
 
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'grade-entry-start-date',
-                                'grid' => 4, 'title' => 'Grade Entry Start Date'])
+                                'grid' => 4, 'title' => __('lms.page.course.table.grade_entry_start_date')])
                                 <input id="js-edit-grade-entry-start-date" type="text" name="grade-entry-start-date"
                                        class="js-edit-grade-entry-start-date js-datepicker form-control"
                                        autocomplete="off" />
@@ -113,7 +113,7 @@
 
                             <div class="js-error-block js-grade-entry-end-date-block">
                             @component('lms.admin.components.bootstrap.group_block', [   'name' => 'grade-entry-end-date',
-                                    'grid' => 4, 'title' => 'Grade Entry End Date'])
+                                    'grid' => 4, 'title' => __('lms.page.course.table.grade_entry_end_date')])
                                     <input id="js-edit-grade-entry-end-date" type="text" name="grade-entry-end-date"
                                            class="js-edit-grade-entry-end-date js-datepicker form-control"
                                            autocomplete="off" />
@@ -130,7 +130,7 @@
                                 'title' => __('lms.page.course.form.hours')])
                                 <input id="js-edit-course-hours" type="number"
                                        class="js-edit-course-hours form-control" name="hours"
-                                       value="" required placeholder={{ __('lms.page.course.form.hours') }} />
+                                       value="" required placeholder="{{ __('lms.page.course.form.hours') }}" />
                                     <div class="help-block"></div>
 
                                 @endcomponent
@@ -141,7 +141,7 @@
                                 'title' => __('lms.page.course.form.quota')])
                                     <input id="js-edit-course-quota" type="number"
                                            class="js-edit-course-quota form-control" name="quota"
-                                           value="" required placeholder={{ __('lms.page.course.form.quota') }} />
+                                           value="" required placeholder="{{ __('lms.page.course.form.quota') }}" />
                                     <div class="help-block"></div>
                                 @endcomponent
                             </div>
@@ -152,7 +152,7 @@
                             'title' => __('lms.page.course.form.comment')])
                                 <input id="js-edit-course-comment" type="text"
                                        class="js-edit-course-comment form-control" name="course_comment"
-                                       value="" required placeholder={{ __('lms.page.course.form.comment') }} />
+                                       value="" required placeholder="{{ __('lms.page.course.form.comment') }}" />
                         @endcomponent
 
                         @component('lms.admin.components.form-group', [   'name' => 'course_description', 'grid' => 10,
@@ -197,8 +197,8 @@
                                 'title' => __('lms.page.course.form.disclaimer_required')])
                                 <select id="js-edit-course-disclaimer_required" name="disclaimer_required" style="width: 100%"
                                         class="js-edit-course-disclaimer_required js-select-disclaimer_required form-control" >
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
+                                    <option value="1">{{ __('lms.words.yes') }}</option>
+                                    <option value="0">{{ __('lms.words.no') }}</option>
                                 </select>
                             @endcomponent
 
@@ -224,8 +224,8 @@
                                 'title' => __('lms.page.course.form.stage')])
                                 <select id="js-edit-course-stage" name="course_stage"
                                         class="js-edit-course-stage js-select-course-stage form-control" >
-                                    <option value="0">Draft</option>
-                                    <option value="1">Published</option>
+                                    <option value="0">{{ __('lms.words.draft') }}</option>
+                                    <option value="1">{{ __('lms.words.published') }}</option>
                                 </select>
                             @endcomponent
 
@@ -233,8 +233,8 @@
                                 'title' => __('lms.page.course.form.status')])
                                 <select id="js-edit-course-status" name="course_status"
                                         class="js-edit-course-status js-select-course-status form-control" >
-                                    <option value="0">Inactive</option>
-                                    <option value="1">Active</option>
+                                    <option value="0">{{ __('lms.form.inactive') }}</option>
+                                    <option value="1">{{ __('lms.form.active') }}</option>
                                 </select>
                             @endcomponent
                         </div>
@@ -277,10 +277,10 @@
 
                         <div class="col-md-12 col-md-12 col-sm-12">
 
-                            <code>Upload Terms and Condition</code>
+                            <code>{{ __('lms.messages.upload_terms_cond') }}</code>
                             <div id="course-terms_condition-uploader-manual-trigger"></div>
 
-                            <code>Upload Letter of Registration</code>
+                            <code>{{ __('lms.messages.upload_lette_regi') }}</code>
                             <div id="course-letter_of_registration-uploader-manual-trigger"></div>
 
                         </div>
@@ -294,15 +294,15 @@
 
                         <div class="col-lg-6 col-sm-6 col-md-6 text-left">
                             <button class="btn btn-info btn-update-course-files hidden"
-                                    type="button"><i class="fa fa-cloud-upload"></i> Update Files</button>
+                                    type="button"><i class="fa fa-cloud-upload"></i> {{ __('lms.upload_form.update_files') }}</button>
                             <button class="btn btn-info btn-show-course-form hidden"
-                                    type="button">Show Form</button>
+                                    type="button">{{ __('lms.upload_form.show_form') }}</button>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6">
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.finish') }}</button>
                             <button type="button" id="btn-edit-course" data-id="" class="btn btn-primary" data-type="update">
-                                <i class="fa fa-plus"></i> Update</button>
+                                <i class="fa fa-plus"></i> {{ __('lms.elements.button.update') }}</button>
                         </div>
                     </div>
                 </div>

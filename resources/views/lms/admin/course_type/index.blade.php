@@ -54,9 +54,9 @@
                             <td>{{ $type->title }}</td>
                             <td>
                                 @if($type->is_active == 1)
-                                    <span class="label label-success">Active</span>
+                                    <span class="label label-success">{{ __('lms.form.active') }}</span>
                                     @else
-                                    <span class="label label-default">Inactive</span>
+                                    <span class="label label-default">{{ __('lms.form.inactive') }}</span>
                                 @endif
 
                             </td>

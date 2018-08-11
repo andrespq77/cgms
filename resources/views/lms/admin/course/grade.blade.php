@@ -50,7 +50,7 @@
 
                                 <tr>
                                     <td>{{ __('lms.page.course.form.hours') }}</td>
-                                    <td>{{ $course->hours }} hours</td>
+                                    <td>{{ $course->hours }} {{ __('lms.page.course.form.hours') }}</td>
                                 </tr>
 
                                 {{--<tr>--}}
@@ -75,9 +75,9 @@
                                 </tr>
 
                                 <tr>
-                                    <td>Approved</td>
+                                    <td>{{ __('lms.page.teacher.table.approved') }}</td>
                                     <td>
-                                        <span class="label label-success">Approved</span>
+                                        <span class="label label-success">{{ __('lms.words.approved') }}</span>
                                         {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
                                     </td>
                                 </tr>
@@ -86,9 +86,9 @@
                                     <td>{{ __('lms.page.course.form.disclaimer_required') }}</td>
                                     <td>
                                         @if($course->has_disclaimer==1)
-                                            <span class="label label-success">Yes</span>
+                                            <span class="label label-success">{{ __('lms.words.yes') }}</span>
                                         @else
-                                            <span class="label label-danger">No</span>
+                                            <span class="label label-danger">{{ __('lms.words.no') }}</span>
                                         @endif
                                         {{--<span class="badge badge-success">{{ $course->approvedRegistrations->count() }}</span>--}}
                                     </td>
@@ -121,11 +121,11 @@
                                     {{--</tr>--}}
 
                                     <tr>
-                                        <td>Grade Add {{ __('lms.page.course.form.start_date') }}</td>
+                                        <td>{{ __('lms.page.course.table.grade_entry_end_date') }}</td>
                                         <td class="text-success">{{ date('d M Y', strtotime($course->grade_upload_start_date)) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Grade Add {{ __('lms.page.course.form.end_date') }}</td>
+                                        <td>{{ __('lms.page.course.table.grade_entry_end_date') }}</td>
                                         <td class="text-warning">{{ date('d M Y', strtotime($course->grade_upload_end_date)) }}</td>
                                     </tr>
 
@@ -151,7 +151,7 @@
             <div class="box">
                 <div class="box-header">
                     <div class="pull-left">
-                        <h3 class="box-title">Registrations</h3>
+                        <h3 class="box-title">{{ __('lms.page.course.form.registrations') }}</h3>
                     </div>
                     <div class="pull-right">
                         <form action="{{ url('/admin/course/'.$course->id.'/download-grade-template') }}" method="post"
@@ -163,12 +163,12 @@
                                data-placement="top" title="Instruction" data-toggle="popover"><i class="fa fa-info"></i>
                             </a>
                             <button class="btn btn-sm btn-warning" id="btn-create-university" type="submit">
-                                <i class="fa fa-cloud-download"></i> Download Grade Template</button>
+                                <i class="fa fa-cloud-download"></i> {{ __('lms.messages.download_grade_template') }}</button>
 
                             @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($course->grade_upload_start_date),
                                                         Carbon\Carbon::parse($course->grade_upload_end_date)))
                                 <button class="btn btn-info btn-upload-grade btn-sm btn-flat" type="button"
-                                    data-id="{{ $course->id }}"><i class="fa fa-cloud-upload"></i> Upload Grade
+                                    data-id="{{ $course->id }}"><i class="fa fa-cloud-upload"></i> {{ __('lms.elements.button.upload') }} {{ __('lms.words.grade') }}
                                 </button>
                             @endif
 
@@ -184,11 +184,11 @@
                             <tr>
                                 <th>{{ __('lms.words.social_id') }}</th>
                                 <th>{{ __('lms.form.name') }}</th>
-                                <th>Institute</th>
+                                <th>{{ __('lms.page.course.form.university') }}</th>
                                 <th>Email</th>
-                                <th>Grade</th>
-                                <th>Grade Approved</th>
-                                <th>Diploma</th>
+                                <th>{{ __('lms.words.grade') }}</th>
+                                <th>{{ __('lms.words.grade') }} {{ __('lms.words.approved') }}</th>
+                                <th>{{ __('lms.page.teacher.table.diploma') }}</th>
                             </tr>
                         </thead>
 
@@ -223,7 +223,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus"></i>
-                        <span class="js-modal-title-add">Add Grade</span>
+                        <span class="js-modal-title-add">{{ __('lms.elements.button.add') }} {{ __('lms.words.grade') }}</span>
                     </h4>
                 </div>
                 <form class="form-horizontal" >
@@ -256,14 +256,14 @@
             </div>
             <div class="buttons">
                 <div class="qq-upload-button-selector qq-upload-button">
-                    <div>Select files</div>
+                    <div>{{ __('lms.upload_form.select_files') }}</div>
                 </div>
                 <button type="button" id="btn-upload-course-mark-list" class="btn btn-primary">
-                    <i class="icon-upload icon-white"></i> Upload
+                    <i class="icon-upload icon-white"></i> {{ __('lms.elements.button.upload') }}
                 </button>
             </div>
             <span class="qq-drop-processing-selector qq-drop-processing">
-                <span>Processing dropped files...</span>
+                <span>{{ __('lms.upload_form.proc_drop_files') }}</span>
                 <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
             </span>
             <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
@@ -277,9 +277,9 @@
                     <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
                     <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
                     <span class="qq-upload-size-selector qq-upload-size"></span>
-                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
-                    <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
-                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">{{ __('lms.elements.button.cancel') }}</button>
+                    <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">{{ __('lms.elements.button.retry') }}</button>
+                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">{{ __('lms.elements.button.delete') }}</button>
                     <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
                 </li>
             </ul>
@@ -294,8 +294,8 @@
             <dialog class="qq-confirm-dialog-selector">
                 <div class="qq-dialog-message-selector"></div>
                 <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">No</button>
-                    <button type="button" class="qq-ok-button-selector">Yes</button>
+                    <button type="button" class="qq-cancel-button-selector">{{ __('lms.words.no') }}</button>
+                    <button type="button" class="qq-ok-button-selector">{{ __('lms.words.yes') }}</button>
                 </div>
             </dialog>
 
@@ -303,7 +303,7 @@
                 <div class="qq-dialog-message-selector"></div>
                 <input type="text">
                 <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                    <button type="button" class="qq-cancel-button-selector">{{ __('lms.elements.button.cancel') }}</button>
                     <button type="button" class="qq-ok-button-selector">Ok</button>
                 </div>
             </dialog>

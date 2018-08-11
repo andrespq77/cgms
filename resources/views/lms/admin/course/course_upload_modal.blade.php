@@ -21,7 +21,7 @@
                             <i class="fa fa-info-circle text-danger"></i>
                             <a class="text-danger" href="{{ url('/sample/upload_new_course.xlsx') }}" target="_blank">
                                 {{ __('lms.messages.download_sample_file') }}</a>&nbsp;
-                            {{--<code>.csv, .xls, .xlsx are supported.</code>--}}
+                            {{--<code>{{ __('lms.upload_form.file_type') }}</code>--}}
                         </div>
 
                     </div>

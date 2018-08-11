@@ -85,7 +85,7 @@
                             <div class="box-header with-border">
                                 <h4 class="box-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="true">
-                                        Leer instrunctions antes de Registrarse
+                                        Leer instruncciones antes de Registrarse
                                     </a>
                                 </h4>
                             </div>

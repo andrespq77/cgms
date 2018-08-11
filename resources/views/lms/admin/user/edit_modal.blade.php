@@ -56,8 +56,8 @@
                                        class="col-md-3 col-lg-3 control-label">{{ __('lms.page.user.table.status') }}</label>
                                 <div class="col-md-9 col-lg-9">
                                     <select id="js-edit-user-status" class="js-edit-user-status form-control" placeholder="{{ __('lms.page.user.table.status') }}" >
-                                        <option value="active">Active</option>
-                                        <option value="inactive">Inactive</option>
+                                        <option value="active">{{ __('lms.form.active') }}</option>
+                                        <option value="inactive">{{ __('lms.form.inactive') }}</option>
                                     </select>
                                 </div>
                             </div>

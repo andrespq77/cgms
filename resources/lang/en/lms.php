@@ -112,7 +112,7 @@
                     'edition'          => 'Edition',
                     'canton'            => 'Canton',
                     'district'          => 'District',
-					'district_code'     => 'District code',
+                    'district_code'     => 'District code',
                     'course_type'       => 'Course Type',
                     'course_name'       => 'Course Name',
                     'modality'          => 'modality',
@@ -162,10 +162,13 @@
                     'hours'             => 'Hours',
                     'start_date'        => 'Start Date',
                     'end_date'          => 'End Date',
+                    'grade_entry_start_date'  => 'Grade entry Start Date',
+                    'grade_entry_end_date'    => 'Grade entry End Date',
                     'year'              => 'Year',
                     'quota'             => 'Quota',
                     'comment'           => 'Comment',
                     'state'             => 'State',
+                    'edition'           => 'Edition',
                     'upload_rating'     => 'Upload Rating',
                     'action'            => 'Editor',
                     'stage'             => 'Stage',
@@ -373,14 +376,18 @@
         ],
         'elements' => [
             'button' => [
+                'add'      => 'Add',
                 'edit'      => 'Edit',
                 'create'    => 'Create',
                 'delete'    => 'Delete',
                 'remove'    => 'Remove',
                 'save'      => 'Save',
                 'close'     => 'Close',
+                'cancel'    => 'Cancel',
+                'retry'     => 'Retry',
                 'import'    =>  'Import',
                 'upload'    =>  'Upload',
+                'finish'    =>  'Finish',
                 'upload_diploma' => 'Diploma',
                 'upload_course_request' => 'Upload Course Request', // in course list page
                 'new_course_upload' => 'Upload New Course' // in course list page
@@ -421,20 +428,37 @@
             'university' => 'University',
             'male' => 'Male',
             'female' => 'Female',
-            'teacher' => 'teacher'
+            'teacher' => 'teacher',
+            'draft' => 'draft',
+            'published' => 'published',
+            'no' => 'No',
+            'yes' => 'Yes',
+            'approved' => 'Approved'
         ],
         'form' => [
           'name' => ' Nombre',
           'first_name' => 'First Name',
           'last_name' => 'Last Name',
           'title' => 'Title',
-          'action' => 'Action'
+          'action' => 'Action',
+          'active' => 'Active',
+          'inactive' => 'Inactive'
+        ],
+        'upload_form' => [
+          'select_files' => 'Select files',
+          'drop_files' => 'Drop files here',
+          'proc_drop_files' => 'Processing dropped files...',
+          'file_type' => '.csv, .xls, .xlsx are supported.',
+          'update_files' => ' Update Files',
+          'show_form' => 'Show Form',
         ],
         'messages' => [
             'create_course' => 'Create Course',
 			      'change_pword' => 'Change Password',
             'logged_in' => 'You are logged in!',
             'grade_approved_by' => 'Grade Approved By',
+            'upload_terms_cond' => 'Upload terms & Conditions',
+            'upload_lette_regi' => 'Upload Letter of Registration',
 			      'email_used_login' => 'This email will be used as login email address.',
             'proceed_to_the_course' => 'Proceed to the course',
             'upload_new_course' => 'Upload New Course',
@@ -445,6 +469,9 @@
             'master_course_confirm_message' => 'Do you want to delete this. May be it has some course too.',
             'm_ad_user_login' => 'Login with Active Directory User',
             'm_au_user_login' => 'Login with Admin or Universities',
-            'search_teacher' => 'Search by Name, SocialID, Email, AMIE or Phone'
+            'download_grade_template' => 'Download Grade Template',
+            'error_title' => 'Error Notice',
+            'error_body' => 'Sorry, you are not authorized to see that page.',
+            'search_teacher' => 'Search by Name, SocialID, Email, AMIE or Phone',
         ]
     ];
