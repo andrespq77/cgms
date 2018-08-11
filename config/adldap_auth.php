@@ -253,13 +253,20 @@ return [
     |
     */
 
+//    Name, Family Name, and Social Id,
+
     'sync_attributes' => [
         // 'field_in_local_db' => 'attribute_in_ldap_server',
-        'username' => 'uid',
 
         'name' => 'cn',
+        'username' => 'samaccountname',
+        'email' => 'userprincipalname',
 
-        'phone' => 'telephonenumber',
+
+        'first_name' => 'cn',
+        'last_name' => 'c',
+        'social_id' => 'usnchanged',
+
     ],
 
     /*
