@@ -45,12 +45,17 @@ class LdapAccessController extends Controller
         $username = $credentials[$this->username()];
         $password = $credentials['password'];
 
-		$user = Adldap::search()->users()->find($credentials[$this->username()]);
+//		$user = Adldap::search()->users()->find($credentials[$this->username()]);
+		$users = Adldap::search()->get();
+		foreach ($users as $user){
+            dd($user);
+        }
+
 
         if(Adldap::auth()->attempt($username, $password, $bindAsUser = true)) {
             // the user exists in the LDAP server, with the provided password
 
-            $user = \App\User::where($this->username(), $username) -> first();
+            $user = \App\User::where($this->username(), $username)->first();
 
             if (!$user) {
                 // the user doesn't exist in the local database, so we have to create one
@@ -67,7 +72,7 @@ class LdapAccessController extends Controller
                     $user->$field = $value !== null ? $value : '';
                 }
             }
-            
+
             Auth::login($user);
 
             $request->session()->put('logged', $username);
