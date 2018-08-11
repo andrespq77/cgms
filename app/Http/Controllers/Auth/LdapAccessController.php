@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers\Auth;
+use Illuminate\Contracts\Auth\Guard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,11 +67,8 @@ class LdapAccessController extends Controller
                     $user->$field = $value !== null ? $value : '';
                 }
             }
-
-            // by logging the user we create the session, so there is no need to login again (in the configured time).
-            // pass false as second parameter if you want to force the session to expire when the user closes the browser.
-            // have a look at the section 'session lifetime' in `config/session.php` for more options.
-            $this->guard()->login($user, true);
+            
+            Auth::login($user);
 
             $request->session()->put('logged', $username);
 
