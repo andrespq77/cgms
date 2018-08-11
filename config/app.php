@@ -2,7 +2,7 @@
 
 return [
 
-    'system_admin_email' => env('SYSTEM_ADMIN_EMAIL', 'admin@admni.com'),
+    'system_admin_email' => env('SYSTEM_ADMIN_EMAIL', 'admin@admin.com'),
     'system_admin_password' => env('SYSTEM_ADMIN_PASSWORD', '123456'),
 
 
