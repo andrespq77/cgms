@@ -66,7 +66,6 @@ class TeacherController extends Controller
     public function getSearch(Request $request)
     {
 
-
         $user = Auth::user();
 
         if ($user->can('browse', Teacher::class)) {

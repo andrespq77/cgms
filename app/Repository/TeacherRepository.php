@@ -134,7 +134,6 @@ class TeacherRepository
         event(new TeacherCreated($newTeacher, $creation_type, $creation_type));
 
 
-
         return $newTeacher;
 
     }
@@ -205,6 +204,17 @@ class TeacherRepository
             return true;
         }
 
+        return false;
+
+    }
+
+    public function isTeacherExistWithSocialId($social_id){
+
+        $teacher = Teacher::where(['social_id' => $social_id])->count();
+
+        if ($teacher > 0){
+            return true;
+        }
         return false;
 
     }
@@ -345,6 +355,14 @@ class TeacherRepository
     public function flushCache(){
 
         Cache::tags(['FIND_BY_ID', 'PORTFOLIO_BY_ID', 'TEACHER_PAGINATE', 'TEACHER_SEARCH'])->flush();
+    }
+
+
+    public function findTeacherUserWithSocialId($social_id){
+
+        $teacher = Teacher::where('social_id', $social_id)->first();
+
+        return $teacher->user;
     }
 
 

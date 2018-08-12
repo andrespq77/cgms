@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers\Auth;
+use App\Repository\TeacherRepository;
 use Illuminate\Contracts\Auth\Guard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +16,14 @@ use Adldap\Laravel\Facades\Adldap;
 
 class LdapAccessController extends Controller
 {
+
+    private $repo = null;
+
+    public function __construct()
+    {
+        $this->repo = new TeacherRepository();
+    }
+
     public function index() {
         return view('auth.students.login');
     }
@@ -35,7 +44,7 @@ class LdapAccessController extends Controller
             $password = $credentials['password'];
 
             $ldap_user = isValidLdapCreds($username ,$password);
-            
+
             if($ldap_user) {
                 // the user exists in the LDAP server, with the provided password
 
@@ -46,29 +55,42 @@ class LdapAccessController extends Controller
                 $last_name = isset($ldap_user[0]['sn'][0]) ? $ldap_user[0]['sn'][0] : $username;
                 $social_id = isset($ldap_user[0]['usnchanged'][0]) ? $ldap_user[0]['usnchanged'][0] : $username;
 
-                $user = new \App\User();
-                $user->username = $username;
-                $user->password = bcrypt($password);
-                $user->name = $name;
-                $user->role = 3;
-                $user->username = $username;
-                $user->email = $email;
-                $user->save();
+                $userTeacherExist = $this->repo->isTeacherExistWithSocialId($social_id);
 
-                $teacher = new \App\Teacher();
-                $teacher->first_name = $first_name;
-                $teacher->last_name = $last_name;
-                $teacher->user_id = $user->id;
-                $teacher->social_id = $social_id;
-                $teacher->created_by = 1;
-                $teacher->updated_by = 1;
-                $teacher->save();
+                if($userTeacherExist){
 
-//              Auth::login($user);
+                    $user = $this->repo->findTeacherUserWithSocialId($social_id);
+                }
+
+                else
+                {
+                    $user = new \App\User();
+                    $user->username = $username;
+                    $user->password = bcrypt($password);
+                    $user->name = $name;
+                    $user->role = 3;
+                    $user->username = $username;
+                    $user->email = $email;
+                    $user->save();
+
+                    $teacher = new \App\Teacher();
+                    $teacher->first_name = $first_name;
+                    $teacher->last_name = $last_name;
+                    $teacher->user_id = $user->id;
+                    $teacher->social_id = $social_id;
+                    $teacher->created_by = 1;
+                    $teacher->updated_by = 1;
+                    $teacher->save();
+
+                }
+
+
+              Auth::login($user);
 
                 $request->session()->put('logged', $username);
+                session()->flash('app_message', 'Successfully logged in from the LDAP');
 
-                return redirect('/students');
+                return redirect('/admin/portfolio');
 
             }
 
