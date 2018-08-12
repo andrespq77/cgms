@@ -28,67 +28,62 @@ class LdapAccessController extends Controller
 
     public function login(Request $request) {
 
-		try {
+        try {
 
-		} catch (\Exception $e) {
-            session()->flash('app_error', 'Can\'t contact to LDAP server.');
-            return back();
-        }
-		
-		$credentials = $request->only('username', 'password');
-        $username = $credentials['username'];
-        $password = $credentials['password'];
+            $credentials = $request->only('username', 'password');
+            $username = $credentials['username'];
+            $password = $credentials['password'];
 
-        $ldap_user_moodle = isValidLdapCreds($username ,$password);
+            $ldap_user = isValidLdapCreds($username ,$password);
+            
+            if($ldap_user) {
+                // the user exists in the LDAP server, with the provided password
 
-        dd($ldap_user_moodle);
+                $name = isset($ldap_user[0]['cn'][0]) ? $ldap_user[0]['cn'][0] : $username;
+                $email = isset($ldap_user[0]['userprincipalname'][0]) ? $ldap_user[0]['userprincipalname'][0] : $username ;
 
-        if($ldap_user_moodle) {
-            // the user exists in the LDAP server, with the provided password
+                $first_name = isset($ldap_user[0]['givenname'][0]) ? $ldap_user[0]['givenname'][0] : $username;
+                $last_name = isset($ldap_user[0]['sn'][0]) ? $ldap_user[0]['sn'][0] : $username;
+                $social_id = isset($ldap_user[0]['usnchanged'][0]) ? $ldap_user[0]['usnchanged'][0] : $username;
 
-            $user = \App\User::where('username', $username)->first();
+                $user = new \App\User();
+                $user->username = $username;
+                $user->password = bcrypt($password);
+                $user->name = $name;
+                $user->role = 3;
+                $user->username = $username;
+                $user->email = $email;
+                $user->save();
 
-            if (!$user) {
+                $teacher = new \App\Teacher();
+                $teacher->first_name = $first_name;
+                $teacher->last_name = $last_name;
+                $teacher->user_id = $user->id;
+                $teacher->social_id = $social_id;
+                $teacher->created_by = 1;
+                $teacher->updated_by = 1;
+                $teacher->save();
 
-                $ldap_user = Adldap::search()->where('samaccountname', '=', $username)->first();
+//              Auth::login($user);
 
-                if(!is_null($ldap_user)){
+                $request->session()->put('logged', $username);
 
-                    $user = new \App\User();
-                    $user->username = $username;
-                    $user->password = bcrypt($password);
-                    $user->name = $ldap_user->cn;
-                    $user->username = $ldap_user->username;
-                    $user->email = $ldap_user->email;
-                    $user->save();
-
-                    $teacher = new \App\Teacher();
-                    $teacher->first_name = $ldap_user->cn;
-                    $teacher->last_name = $ldap_user->c;
-                    $teacher->user_id = $user->id;
-                    $teacher->social_id = $ldap_user->usnchanged;
-                    $teacher->created_by = 1;
-                    $teacher->updated_by = 1;
-                    $teacher->save();
-
-
-                    Auth::login($user);
-
-                }
+                return redirect('/students');
 
             }
 
 
-            $request->session()->put('logged', $username);
+            session()->flash('app_error', 'Credentials are invalid please try again');
 
-            return redirect('/students');
+            return redirect(url('/students/login'));
 
+
+        } catch (\Exception $e) {
+            session()->flash('app_error', 'Can\'t contact to LDAP server.');
+            return back();
         }
 
 
-        session()->flash('app_error', 'Credentials are invalid please try again');
-
-        return redirect(url('/students/login'));
     }
 
 }
