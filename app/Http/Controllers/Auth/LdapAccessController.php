@@ -20,7 +20,7 @@ class LdapAccessController extends Controller
     }
 	
 	public function username() {
-        return config('adldap_auth.usernames.eloquent');
+        return 'username';
     }
 
 
