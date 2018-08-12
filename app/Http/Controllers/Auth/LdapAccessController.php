@@ -54,7 +54,7 @@ class LdapAccessController extends Controller
         $user_format = env('ADLDAP_USER_FORMAT', 'cn=%s,'.env('ADLDAP_BASEDN', ''));
         $userdn = sprintf($user_format, $username);
         
-        if(Adldap::auth()->attempt($userdn, $password, $bindAsUser = true)) {
+        if(Adldap::auth()->attempt($username, $password, $bindAsUser = true)) {
             // the user exists in the LDAP server, with the provided password
 
             $user = \App\User::where($this->username(), $username)->first();
