@@ -18,15 +18,10 @@ class LdapAccessController extends Controller
     public function index() {
         return view('auth.students.login');
     }
-	
-	public function username() {
-        return 'username';
-    }
-
 
     protected function validateLogin(Request $request) {
         $this->validate($request, [
-            $this->username() => 'required|string|regex:/^\w+$/',
+            'username' => 'required|string|regex:/^\w+$/',
             'password' => 'required|string',
         ]);
     }
@@ -35,33 +30,25 @@ class LdapAccessController extends Controller
 
 		try {
 
-			Adldap::connect();
-
 		} catch (\Exception $e) {
             session()->flash('app_error', 'Can\'t contact to LDAP server.');
             return back();
         }
 		
-		$credentials = $request->only($this->username(), 'password');
-        $username = $credentials[$this->username()];
+		$credentials = $request->only('username', 'password');
+        $username = $credentials['username'];
         $password = $credentials['password'];
 
+        $ldap_user_moodle = isValidLdapCreds($username ,$password);
 
-//        $user = Adldap::search()->users()->find('Mariana Intriago')->first();
-//        $search = Adldap::search()->where('samaccountname', '=', 'maria.intriago')->first();
-//		  $user = Adldap::search()->users()->find($credentials[$this->username()]);
+        dd($ldap_user_moodle);
 
-        $user_format = env('ADLDAP_USER_FORMAT', 'cn=%s,'.env('ADLDAP_BASEDN', ''));
-        $userdn = sprintf($user_format, $username);
-        
-        if(Adldap::auth()->attempt($username, $password)) {
+        if($ldap_user_moodle) {
             // the user exists in the LDAP server, with the provided password
 
-            $user = \App\User::where($this->username(), $username)->first();
+            $user = \App\User::where('username', $username)->first();
 
             if (!$user) {
-
-                // the user doesn't exist in the local database, so we have to create one
 
                 $ldap_user = Adldap::search()->where('samaccountname', '=', $username)->first();
 
@@ -97,6 +84,7 @@ class LdapAccessController extends Controller
             return redirect('/students');
 
         }
+
 
         session()->flash('app_error', 'Credentials are invalid please try again');
 

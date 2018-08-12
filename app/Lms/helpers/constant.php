@@ -180,3 +180,39 @@
 
         return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
     }
+
+
+    function isValidLdapCreds($username, $password) {
+
+        $ldap_user = null;
+
+        try {
+
+            $user = $username;
+            $pword = $password;
+
+            $ldap_password = $pword;
+            $ldap_dn = 'educacion' . '\\' . $user;
+            $ldap_con = ldap_connect("ldap://10.200.6.103");
+
+            ldap_set_option($ldap_con, LDAP_OPT_PROTOCOL_VERSION, 3);
+
+            if(ldap_bind($ldap_con, $ldap_dn, $ldap_password)) {
+
+                $filter = "(samaccountname=$user)";
+                $result =ldap_search($ldap_con,"OU=Docentes,OU=Usuarios,dc=educacion,dc=local",$filter);
+
+                $ldap_user = ldap_get_entries($ldap_con, $result);
+
+
+            } else {
+                $ldap_user = null;
+            }
+
+        } catch (\Exception $e) {
+            $ldap_user = null;
+        }
+
+        return $ldap_user;
+
+}
