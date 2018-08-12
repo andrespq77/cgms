@@ -33,6 +33,15 @@ class LdapAccessController extends Controller
 
     public function login(Request $request) {
 
+        try {
+
+			Adldap::connect();
+
+        } catch (\Exception $e) {
+            session()->flash('app_error', 'Can\'t contact to LDAP server.');
+            return back();
+        }
+
         $credentials = $request->only('username', 'password');
         $username = $credentials['username'];
         $password = $credentials['password'];
