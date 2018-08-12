@@ -131,8 +131,7 @@ class TeacherRepository
 
         $this->flushCache();
 //        add user of the teacher
-        event(new TeacherCreated($newTeacher, $creation_type, $creation_type));
-
+        event(new TeacherCreated($newTeacher, $creation_type));
 
         return $newTeacher;
 

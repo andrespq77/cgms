@@ -87,6 +87,26 @@ class ProfileController extends Controller
 
         if ($user->role == 'teacher'){
 
+            if($request->social_id){
+
+                $teacher = $user->teacher;
+                $repo = new TeacherRepository();
+                $teacher_exist =  $repo->isTeacherExistWithSocialId($request->social_id);
+                if($teacher_exist){
+                    session()->flash('app_error', ' Teacher social Id already exist.');
+                    return back();
+                }
+                else
+                {
+
+                    $teacher->update(['social_id' => $request->social_id]);
+
+                    session()->flash('app_message', ' Teacher social Id updated successfully');
+                    return back();
+
+                }
+            }
+
             $v = $this->validate($request, [
                 'phone2' => 'required|max:100|min:3|string',
                 'email2' => 'required|email|max:100|min:3|string'
@@ -105,7 +125,7 @@ class ProfileController extends Controller
 
                 $teacherRepo->flushCacheById($user->teacher->id);
 
-                return redirect()->back()->with('message', 'Updated');
+                return redirect()->back()->with('message', 'Data Updated');
 
                 // update password
             }
@@ -125,7 +145,7 @@ class ProfileController extends Controller
                 $user->name = $posts['name'];
                 $user->save();
 
-                return redirect()->back()->with('message', 'Updated');
+                return redirect()->back()->with('message', 'Data Updated');
 
                 // update password
             }

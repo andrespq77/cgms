@@ -7,12 +7,14 @@
  */
 
 namespace App\Http\Controllers\Auth;
+
 use App\Repository\TeacherRepository;
 use Illuminate\Contracts\Auth\Guard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Adldap\Laravel\Facades\Adldap;
+use Illuminate\Support\Facades\Mail;
 
 class LdapAccessController extends Controller
 {
@@ -24,18 +26,21 @@ class LdapAccessController extends Controller
         $this->repo = new TeacherRepository();
     }
 
-    public function index() {
+    public function index()
+    {
         return view('auth.students.login');
     }
 
-    protected function validateLogin(Request $request) {
+    protected function validateLogin(Request $request)
+    {
         $this->validate($request, [
             'username' => 'required|string|regex:/^\w+$/',
             'password' => 'required|string',
         ]);
     }
 
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
 
         try {
 
@@ -43,27 +48,28 @@ class LdapAccessController extends Controller
             $username = $credentials['username'];
             $password = $credentials['password'];
 
-            $ldap_user = isValidLdapCreds($username ,$password);
+            $ldap_user = isValidLdapCreds($username, $password);
 
-            if($ldap_user) {
+            if ($ldap_user) {
                 // the user exists in the LDAP server, with the provided password
 
                 $name = isset($ldap_user[0]['cn'][0]) ? $ldap_user[0]['cn'][0] : $username;
-                $email = isset($ldap_user[0]['userprincipalname'][0]) ? $ldap_user[0]['userprincipalname'][0] : $username ;
+                $email = isset($ldap_user[0]['userprincipalname'][0]) ? $ldap_user[0]['userprincipalname'][0] : $username;
 
                 $first_name = isset($ldap_user[0]['givenname'][0]) ? $ldap_user[0]['givenname'][0] : $username;
                 $last_name = isset($ldap_user[0]['sn'][0]) ? $ldap_user[0]['sn'][0] : $username;
                 $social_id = isset($ldap_user[0]['usnchanged'][0]) ? $ldap_user[0]['usnchanged'][0] : $username;
 
-                $userTeacherExist = $this->repo->isTeacherExistWithSocialId($social_id);
-
-                if($userTeacherExist){
-
-                    $user = $this->repo->findTeacherUserWithSocialId($social_id);
+                if (!isset($ldap_user[0]['usnchanged'][0])) {
+                    $this->sendMissingSocialIdEmail($name, $email);
                 }
 
-                else
-                {
+                $userTeacherExist = $this->repo->isTeacherExistWithSocialId($social_id);
+
+                if ($userTeacherExist) {
+
+                    $user = $this->repo->findTeacherUserWithSocialId($social_id);
+                } else {
                     $user = new \App\User();
                     $user->username = $username;
                     $user->password = bcrypt($password);
@@ -78,6 +84,7 @@ class LdapAccessController extends Controller
                     $teacher->last_name = $last_name;
                     $teacher->user_id = $user->id;
                     $teacher->social_id = $social_id;
+                    $teacher->username = $username;
                     $teacher->created_by = 1;
                     $teacher->updated_by = 1;
                     $teacher->save();
@@ -85,7 +92,7 @@ class LdapAccessController extends Controller
                 }
 
 
-              Auth::login($user);
+                Auth::login($user);
 
                 $request->session()->put('logged', $username);
                 session()->flash('app_message', 'Successfully logged in from the LDAP');
@@ -105,6 +112,27 @@ class LdapAccessController extends Controller
             return back();
         }
 
+
+    }
+
+    /**
+     * @param $name
+     * @param $email
+     */
+    private function sendMissingSocialIdEmail($name, $email)
+    {
+        try {
+
+            $text = $name . ' con el correo ' . $email . ' no tenía cédula cuando ingresó al SGA';
+
+            Mail::raw($text, function ($message) {
+                $message->subject('Usuario sin Cédula');
+                $message->to(env('SYSTEM_ADMIN_EMAIL'));
+            });
+
+        } catch (\Exception $e) {}
+
+        return true;
 
     }
 

@@ -12,6 +12,7 @@ class Teacher extends Model
      * @var string
      */
     protected $table = 'teachers';
+    protected $appends = ['missing_social_id'];
 
 
     /**
@@ -31,6 +32,10 @@ class Teacher extends Model
     ];
 
 
+    public function getMissingSocialIdAttribute(){
+
+        return ($this->attributes['social_id'] == $this->attributes['username']);
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    
+
     <div class="row">
         <div class="col-ls-12 col-md-12 col-sm-12">
             <div class="box">
@@ -81,6 +81,12 @@
         </div>
     </div>
 
+    @if($teacher->missing_social_id)
+        <div class="callout callout-danger">
+            <h4>Please update your social Id to continue...!</h4>
+        </div>
+    @endif
+
     <div class="row" id="page_teacher_profile">
 
         <div class="col-lg-7 col-md-7 col-sm-12">
@@ -104,6 +110,26 @@
                                 <li class="list-group-item">
                                     <i class="fa fa-id-card"></i> <b>Socail ID</b> <span class="pull-right">{{ $teacher->social_id}}</span>
                                 </li>
+
+                                @if($teacher->missing_social_id)
+                                <form class="form-horizontal" role="form" action="{{ url('admin/profile') }}" method="post">
+
+                                    {{ csrf_field() }}
+
+                                    <div class="box-body">
+
+                                        <div class="input-group input-group-sm has-error">
+                                            <input required type="text" class="form-control" value="{{ $teacher->social_id}}" name="social_id" maxlength="10" />
+
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-danger btn-flat">Actualizar!</button>
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                                @endif
                                 <li class="list-group-item">
                                     <i class="fa fa-qrcode"></i>&nbsp;<b>AMIE</b> <span class="pull-right">{{ $teacher->amie}}</span>
                                 </li>
@@ -133,12 +159,6 @@
                                     <i class="fa fa-envelope-o"></i>&nbsp<b>Note</b> <span class="pull-right">
                                         User was imported by {{ $teacher->createdBy->name }} here at {{ $teacher->created_at }}</span>
                                 </li>
-                                {{--<li class="list-group-item auxilary">--}}
-                                    {{--<i class="fa fa-mobile"></i>&nbsp;<b>Cell 2</b> <span class="pull-right"></span>--}}
-                                {{--</li>--}}
-                                {{--<li class="list-group-item auxilary">--}}
-                                    {{--<i class="fa fa-envelope"></i>&nbsp;<b>Email 2</b> <span class="pull-right">{{ $teacher->email2}}</span>--}}
-                                {{--</li>--}}
 
                                 <form class="form-horizontal" role="form" action="{{ url('admin/profile') }}" method="post">
 
@@ -188,7 +208,6 @@
                                     </div>
 
                                 </form>
-
 
                             </ul>
 
