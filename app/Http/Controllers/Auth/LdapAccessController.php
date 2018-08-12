@@ -11,7 +11,7 @@ use Illuminate\Contracts\Auth\Guard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-//use Adldap\Laravel\Facades\Adldap;
+use Adldap\Laravel\Facades\Adldap;
 
 class LdapAccessController extends Controller
 {
@@ -32,6 +32,19 @@ class LdapAccessController extends Controller
     }
 
     public function login(Request $request) {
+
+        $credentials = $request->only('username', 'password');
+        $username = $credentials['username'];
+        $password = $credentials['password'];
+
+        $user_format = env('ADLDAP_USER_FORMAT', 'cn=%s,'.env('ADLDAP_BASEDN', ''));
+        $userdn = sprintf($user_format, $username);
+
+        $ldapuser = Adldap::search()->where(env('ADLDAP_USER_ATTRIBUTE'), '=', $username)->first();
+
+
+        dd($ldapuser ,Adldap::auth()->attempt($userdn, $password, $bindAsUser = true));
+
 
 		try {
 

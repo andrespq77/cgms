@@ -160,6 +160,8 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Chumper\Zipper\ZipperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
+//        Adldap\Laravel\AdldapServiceProvider::class,
+//        Adldap\Laravel\AdldapAuthServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -221,7 +223,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Zipper' => Chumper\Zipper\Zipper::class,
-	    'Adldap' => Adldap\Laravel\Facades\Adldap::class
+        'Adldap' => Adldap\Laravel\Facades\Adldap::class,
 
     ],
 
