@@ -84,11 +84,13 @@ class LdapAccessController extends Controller
                     $teacher->updated_by = 1;
                     $teacher->save();
 
+
+                    Auth::login($user);
+
                 }
 
             }
 
-            Auth::login($user);
 
             $request->session()->put('logged', $username);
 
