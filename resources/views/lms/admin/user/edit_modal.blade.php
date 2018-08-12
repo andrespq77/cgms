@@ -47,7 +47,7 @@
                                 <div class="col-md-9 col-lg-9">
                                     <select id="js-edit-user-role" class="js-edit-user-role form-control" placeholder="{{ __('lms.page.user.table.role') }}" >
                                         <option value="admin">Admin</option>
-                                        <option value="void">Void</option>
+                                        <option value="void">Vacio</option>
                                     </select>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-user" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i>{{ __('lms.elements.button.update') }}</button>
                 </div>
             </form>
         </div>

@@ -416,7 +416,7 @@
                             <div class="col-lg-6 col-sm-12 col-md-12">
 
                                 <div class="form-group js-error-block js-canton-block">
-                                    <label for="canton" class="col-md-3 control-label">Canton</label>
+                                    <label for="canton" class="col-md-3 control-label">Cantón</label>
                                     <div class="col-md-9">
                                         <select id="canton" class="form-control js-canton" name="canton"></select>
                                         <div class="help-block"></div>
@@ -507,7 +507,7 @@
 
                 <div class="box box-info">
 
-                    <div class="box-header"><h3 class="box-title">Other info</h3></div>
+                    <div class="box-header"><h3 class="box-title">Otra info</h3></div>
 
                     <div class="box-body">
 
@@ -604,7 +604,7 @@
                     <button type="button" class="btn btn-submit-teacher btn-block btn-info"
                             data-type="{{ isset($teacher) ? 'update' : 'insert' }}"
                             data-id="{{ isset($teacher) ? $teacher->id : '' }}"
-                            ><i class="fa fa-upload"></i> Submit</button>
+                            ><i class="fa fa-upload"></i> Enviar</button>
                 </div>
             </div>
             <div class="col-lg-8">

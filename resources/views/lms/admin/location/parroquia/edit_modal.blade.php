@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
                     <i class="fa fa-file-o"></i>
-                    <span class="js-modal-title">Edit Parroquia</span></h4>
+                    <span class="js-modal-title">Editar Parroquia</span></h4>
             </div>
             <form class="form-horizontal js-edit-parroquia-form" >
 
@@ -52,7 +52,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-parroquia" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i>{{ __('lms.elements.button.update') }}</button>
                 </div>
             </form>
         </div>

@@ -68,15 +68,15 @@
 
 
                                 @else
-                                    <span class="label label-danger">Start Date Passed</span>
+                                    <span class="label label-danger">Fecha Inicial Pasó</span>
                                 @endif
 
                             @else
-                                <span class="label label-danger">All positions filled</span>
+                                <span class="label label-danger">Cupos Llenos</span>
                             @endif
 
                         @else
-                            <span class="label label-default">Inactive Course</span>
+                            <span class="label label-default">Curso Inactivo</span>
                         @endif
 
                     @endcan
@@ -85,9 +85,9 @@
                  @foreach($teacher->courseRegistration($course) as $registration)
                     <td class="js-td-is-approved">
                         @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                            <span class="label label-warning">Pending</span>
+                            <span class="label label-warning">{{ __('lms.words.pending') }}</span>
                         @else
-                            <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
+                            <span class="label label-success"><i class="fa fa-check"></i> {{ __('lms.words.yes') }}</span>
                             <small><i class="fa fa-clock-o"></i>
                                 {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
                                 {{ date('d M, Y', strtotime($registration->approval_time)) }}

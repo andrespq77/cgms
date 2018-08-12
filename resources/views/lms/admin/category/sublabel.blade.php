@@ -16,7 +16,7 @@
 
         @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.label') ])
             <select class="form-control" id="select-label" name="label">
-                <option disabled="">Select Option</option>
+                <option disabled="">{{ __('lms.form.select_option') }}</option>
             </select>
         @endcomponent
 

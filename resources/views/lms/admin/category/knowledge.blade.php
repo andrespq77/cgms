@@ -15,13 +15,13 @@
 
         @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.label') ])
             <select class="form-control" id="select-label" name="label">
-                <option disabled="">Select Option</option>
+                <option disabled="">{{ __('lms.form.select_option') }}</option>
             </select>
         @endcomponent
 
         @component('lms.admin.components.bootstrap.form-group', ['name' => __('lms.page.category.titles.sublabel') ])
             <select class="form-control" id="select-sublabel" name="sublabel">
-                <option disabled="">Select Option</option>
+                <option disabled="">{{ __('lms.form.select_option') }}</option>
             </select>
         @endcomponent
 

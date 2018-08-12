@@ -49,12 +49,12 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Created By</td>
-                                        <td>{{ $university->createdBy->name }} at {{ date('d M Y - h:i a', strtotime($university->created_at)) }}</td>
+                                        <td>Creado por</td>
+                                        <td>{{ $university->createdBy->name }} el {{ date('d M Y - h:i a', strtotime($university->created_at)) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Updated by</td>
-                                        <td>{{ $university->updatedBy->name }} at {{ date('d M Y - h:i a', strtotime($university->updated_at)) }}</td>
+                                        <td>{{ __('lms.form.updated_by') }}</td>
+                                        <td>{{ $university->updatedBy->name }} el {{ date('d M Y - h:i a', strtotime($university->updated_at)) }}</td>
 
                                     </tr>
 

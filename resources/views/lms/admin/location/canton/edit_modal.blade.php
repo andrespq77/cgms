@@ -24,7 +24,7 @@
                                             class="js-edit-canton-province js-province form-control" name="province"></select>
                                 </div>
 
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Canton Name</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.location.canton.table.canton_name') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Canton Name" maxlength="100">
@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="js-edit-canton-capital" class="col-md-2 control-label">Capital</label>
+                                <label for="js-edit-canton-capital" class="col-md-2 control-label">{{ __('lms.location.canton.table.canton_capital') }}</label>
                                 <div class="col-md-10">
                                     <input id="js-edit-canton-capital" type="text" class="js-edit-canton-capital form-control" name="capital"
                                            value="" required placeholder="Capital" maxlength="100">
@@ -48,13 +48,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="dist_code" class="col-md-2 control-label">Code</label>
+                                <label for="dist_code" class="col-md-2 control-label">{{ __('lms.location.canton.table.district_code') }}</label>
                                 <div class="col-md-4">
                                     <input id="dist_code" type="text" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Code" maxlength="10">
                                 </div>
 
-                                <label for="zone" class="col-md-2 control-label">Zone</label>
+                                <label for="zone" class="col-md-2 control-label">{{ __('lms.location.canton.table.zone') }}</label>
                                 <div class="col-md-4">
                                     <select id="zone" class="js-edit-canton-zone form-control" name="zone">
                                         <option value="Zona 1">{{ __('lms.words.zone') }} 1</option>
@@ -82,7 +82,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-canton" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i>{{ __('lms.elements.button.update') }}</button>
                 </div>
             </form>
         </div>

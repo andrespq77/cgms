@@ -6,17 +6,17 @@
                                 <div class="checked">
                                         <label>
                                                 <input type="checkbox"
-                                                       class="js-approve-check-{{ $registration->id }}" /> Approve
+                                                       class="js-approve-check-{{ $registration->id }}" /> Aprobar
                                         </label>
                                 </div>
                                 <button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"
-                                        data-id="{{ $registration->id }}">Confirm</button>
+                                        data-id="{{ $registration->id }}">Confirmar</button>
                         </div>
                 @else
-                        <span class="label label-warning">Not approved</span>
+                        <span class="label label-warning">{{ __('lms.words.not_approved') }}</span>
                 @endif
         @else
-                <span class="label label-success"><i class="fa fa-check"></i> Yes</span>
+                <span class="label label-success"><i class="fa fa-check"></i> {{ __('lms.words.yes') }}</span>
                 <small><i class="fa fa-clock-o"></i>
                         {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
                         {{ date('d M, Y', strtotime($registration->approval_time)) }}

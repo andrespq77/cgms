@@ -5,11 +5,11 @@
             <th width="100px">{{ __('lms.page.teacher.table.security_id') }}</th>
             <th width="18%">{{ __('lms.page.teacher.table.name') }}</th>
             <th width="180px;">{{ __('lms.page.teacher.table.email') }}</th>
-            <th width="100px;">Phone</th>
+            <th width="100px;">Teléfono</th>
             <th width="200px;">{{ __('lms.page.teacher.table.university') }}</th>
-            <th width="120px;">Profession</th>
+            <th width="120px;">Info Institución</th>
             <th>{{ __('lms.page.teacher.table.location') }}</th>
-            <th width="140px">Course Info</th>
+            <th width="140px">Info de cursos</th>
             <th width="150px" class="text-right">{{ __('lms.page.teacher.table.action') }}</th>
         </tr>
     </thead>
@@ -39,7 +39,7 @@
                     <span class="text-muted">{{ $teacher->district }}</span>
                 </td>
                 <td>
-                    Registrations: <span class="badge">{{ $teacher->registrations->count() }}</span>
+                    Registros: <span class="badge">{{ $teacher->registrations->count() }}</span>
                 </td>
                 <td class="text-right">
                     @include('lms.admin.teacher.action')

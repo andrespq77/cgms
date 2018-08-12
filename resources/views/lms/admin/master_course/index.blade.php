@@ -3,10 +3,10 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1>Master course</h1>
+    <h1>{{ __('lms.page.master_course.index.header') }}</h1>
     @component('lms.admin.components.bootstrap.breadcrumb')
-        <li class=""><i class="fa fa-book"></i> Course</li>
-        <li class="active"><i class="fa fa-list"></i> Master Course</li>
+        <li class=""><i class="fa fa-book"></i> Curso</li>
+        <li class="active"><i class="fa fa-list"></i> {{ __('lms.page.master_course.index.subheader') }}</li>
         <li class="">
             <a href="{{ url('/admin/master-course/create') }}"><i class="fa fa-plus"></i> {{ __('lms.elements.button.create') }}</a>
         </li>
@@ -22,12 +22,12 @@
             @component('lms.admin.components.bootstrap.box', [ 'box_body_class' => 'table-responsive' ])
 
                 @slot('box_title')
-                    All Master Course
+                    {{ __('lms.page.master_course.index.all_master_course') }}
                 @endslot
 
                 @slot('box_tools')
                     {{--<div class="input-group input-group-sm" style="width: 150px;">--}}
-                        {{--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">--}}
+                        {{--<input type="text" name="table_search" class="form-control pull-right" placeholder="{{ __('lms.words.search') }}">--}}
 
                         {{--<div class="input-group-btn">--}}
                         {{--<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>--}}
@@ -40,13 +40,13 @@
 
                     <thead>
                         <tr>
-                            <th width="20px">ID</th>
-                            <th width="100px">Code</th>
+                            <th width="20px">Id</th>
+                            <th width="100px">{{ __('lms.form.code') }}</th>
                             <th width="350px">{{ __('lms.form.title') }}</th>
-                            <th width="350px">Subject</th>
-                            <th width="100px">Child Courses</th>
-                            <th width="100px">Updated By</th>
-                            <th width="120px">Updated at</th>
+                            <th width="350px">{{ __('lms.page.master_course.table.subject') }}</th>
+                            <th width="100px">{{ __('lms.page.master_course.table.child_courses') }}</th>
+                            <th width="100px">{{ __('lms.form.updated_by') }}</th>
+                            <th width="120px">{{ __('lms.form.updated_at') }}</th>
                             <th width="150px">{{ __('lms.form.action') }}</th>
                         </tr>
                     </thead>
@@ -60,7 +60,7 @@
                             <td><code>{{ $course->course_code }}</code></td>
                             <td>{{ $course->name }}</td>
                             <td>{{ @$course->subject->title }}</td>
-                            <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;courses</td>
+                            <td><span class="badge badge-success">{{ $course->courses->count() }}</span>&nbsp;{{ __('lms.page.master_course.table.courses') }}</td>
                             <td>{{ $course->updatedBy->name }}</td>
                             <td>{{ $course->updated_at->diffForHumans() }}</td>
                             <td>

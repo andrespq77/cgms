@@ -90,8 +90,6 @@
                     'action'            => 'Acción'
                 ]
             ]
-
-
         ],
         'page' => [
             'teacher' => [
@@ -123,14 +121,12 @@
                     'approved'          => 'Aprobado',
                     'certificate'       => 'Cert. de Inscripción',
                     'diploma'           => 'Certificado',
-
                     'action'            => 'Acción',
                 ],
                 'form' => [
                     'edit_title'        => 'Editar Docente',
                     'add_title'         => 'Agregar nuevo Docente',
                 ]
-
             ],
             'teacher_profile' => [
                 'index' => [
@@ -158,13 +154,15 @@
                     'id'                => 'Id',
                     'master_course'     => 'Curso Maestro',
                     'course_id'         => 'Id de Curso',
+                    'course_name'         => 'Nombre del Curso',
                     'short_name'        => 'Nombre corto',
+                    'modality'          => 'Modalidad',
                     'hours'             => 'Horas',
                     'start_date'        => 'Fecha Inicial',
                     'end_date'          => 'Fecha Final',
                     'grade_entry_start_date'  => 'Ficha inicial ingreso de Notas',
                     'grade_entry_end_date'    => 'Ficha final ingreso de Notas',
-                    'Year'              => 'Año',
+                    'year'              => 'Año',
                     'quota'             => 'Cuota',
                     'comment'           => 'Commentario',
                     'state'             => 'Estado',
@@ -205,6 +203,23 @@
                     'inspection_file_message' => 'Despues de crear el curso, usted puede subit el archivo de inspección.'
                 ],
             ],
+            'master_course' =>[
+              'index' => [
+                'header' => 'Curso Maestro',
+                'subheader' => 'Curso Maestro',
+                'all_master_course' => 'Todos los Cursos Maestros',
+                'create_new_course_type' => 'Crear nuevo tipo de curso',
+                'master_course_info' => 'Info de Curso Maestro',
+              ],
+              'table' => [
+                'course' => 'Curso',
+                'courses' => 'Cursos',
+                'subject' => 'Materia',
+                'child_courses' => 'Cursos Hijos',
+                'course_title' => 'Título del Curso',
+                'course_code' => 'Título del Curso',
+              ]
+            ],
             'upcoming' => [
                 'index' => [
                     'page_header'=> 'Próximo curso',
@@ -219,9 +234,10 @@
                     'start_date'        => 'Fecha Inicial',
                     'end_date'          => 'Fecha Final',
                     'hours'             => 'Horas',
-                    'action'            => 'Registrar'
+                    'action'            => 'Registrar',
+                    'stage'             => 'Etapa',
+                    'status'            => 'Estado',
                 ]
-
             ],
             'register' => [
                 'index' => [
@@ -254,7 +270,6 @@
                     'index' => [
                         'page_header'=> 'Buscar curso',
                         'table_header' => 'Registros pendientes',
-
                     ],
                     'table' => [
                         'course_code'       => 'Código de curso',
@@ -307,7 +322,6 @@
                 'view' => [
                     'table_header'      => 'Lista de cursos'
                 ]
-
             ],
             'user' => [
                 'index' => [
@@ -334,7 +348,6 @@
                     'role'              => 'Rol',
                     'status'            => 'Estado',
                 ]
-
             ],
             'category' => [
               'titles'=> [
@@ -356,25 +369,20 @@
                         'action'            => 'Acción',
                         'edit'            => 'Editar',
                         'remove'            => 'Borrar',
-
                     ],
-
                     'form'  =>[
                         'edit_title'        => 'Editar título de Categoría',
                         'add_title'         => 'Add Category Title spanish',
                         'remove_title'      => 'Remove Category Title spanish',
                         'title'             => 'Title spanish',
                     ]
-
                 ]
-
             ]
-
-
         ],
         'elements' => [
             'button' => [
-                'add'      => 'Agregar',
+                'add'       => 'Agregar',
+                'add_new'   => 'Agregar Nuevo',
                 'edit'      => 'Editar',
                 'create'    => 'Crear',
                 'delete'    => 'Eiminar',
@@ -386,7 +394,9 @@
                 'import'    =>  'Importar',
                 'upload'    =>  'Subir',
                 'finish'    =>  'Finalizar',
-                'upload_diploma' => 'Diploma',
+                'update'    =>  'Actualizar',
+                'change'    =>  'Cambiar',
+                'upload_diploma' => 'Subir Certificado',
                 'upload_course_request' => 'Cargar solicitud de curso', // in course list page
                 'new_course_upload' => 'Cargar un nuevo curso' // in course list page
             ],
@@ -416,12 +426,12 @@
             'telephone' => 'Teléfono',
             'social_id' => 'Cédula',
             'course'    => 'Curso',
-            'course_modality' => 'Course Modality',
+            'course_modality' => 'Modalidad del curso',
             'diploma' => 'Certificado',
             'grade' => 'Nota',
             'zone'  => 'Zona',
             'last_updated' => 'Última actualización',
-            'add_grade'             => 'Add Grade',
+            'add_grade'  => 'Agragar Nota',
             'by' => 'por',
             'university' => 'Institución Superior',
             'male' => 'Masculino',
@@ -431,7 +441,14 @@
             'published' => 'Publicado',
             'no' => 'No',
             'yes' => 'Si',
-            'approved' => 'Aprobado'
+            'approved' => 'Aprobado',
+            'not_approved' => 'Reprobado',
+            'search' => 'Buscar',
+            'search_by' =>'Buscar por',
+            'search_term' =>'Buscar',
+            'all_fields' => 'Todos los campos',
+            'download' => 'Descargar',
+            'pending' => 'Pendiente',
         ],
         'form' => [
           'name' => 'Nombre',
@@ -440,7 +457,12 @@
           'title' => 'Título',
           'action' => 'Acción',
           'active' => 'Activo',
-          'inactive' => 'Inactivo'
+          'inactive' => 'Inactivo',
+          'code' => 'Código',
+          'updated_by' => 'Actualizado por',
+          'updated_at' => 'Actualizado el',
+          'select_option' => 'Escoja Opción',
+          'delete_item' => 'Borrar Item',
         ],
         'upload_form' => [
           'select_files' => 'Escoja archivos',
@@ -450,9 +472,17 @@
           'update_files' => 'Actualizar Archivos',
           'show_form' => 'Mostrar Forma',
         ],
+        'profile' => [
+          'profile' => 'Perfil',
+          'update_account' => 'Actualizar Cuenta',
+          'login_user_name' => 'Nombre de usuario de ingreso',
+          'change_email' => 'Cambiar email',
+        ],
         'messages' => [
             'create_course' => 'Crear curso',
             'change_pword' => 'Cambiar Contraseña',
+            'confirm_pword' => 'Confirmar Contraseña',
+            'new_pword' => 'Nueva Contraseña',
             'logged_in' => 'Usted Ingreso!',
             'grade_approved_by' => 'Nota aprobada por',
             'upload_terms_cond' => 'Subir Terminos y Condiciones',

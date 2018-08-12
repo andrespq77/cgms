@@ -95,7 +95,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="js-edit-university-login_password"
-                                       class="col-md-3 col-lg-3 control-label">Password</label>
+                                       class="col-md-3 col-lg-3 control-label">Contraseña</label>
                                 <div class="col-md-9 col-lg-9">
                                     <input id="js-edit-university-login_password" type="password" maxlength="100"
                                            class="js-edit-university-login_password form-control" placeholder="">
@@ -103,7 +103,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="js-edit-university-login_confirm_password"
-                                       class="col-md-3 col-lg-3 control-label">Confirm Password</label>
+                                       class="col-md-3 col-lg-3 control-label">{{ __('lms.messages.confirm_pword') }}</label>
                                 <div class="col-md-9 col-lg-9">
                                     <input id="js-edit-university-login_confirm_password" type="password" maxlength="100"
                                            class="js-edit-university-login_confirm_password form-control" placeholder="">
@@ -123,7 +123,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-edit-university" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i>{{ __('lms.elements.button.update') }}</button>
                 </div>
             </form>
         </div>

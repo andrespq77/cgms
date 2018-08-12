@@ -34,10 +34,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="province" class="col-md-2 control-label">Gender</label>
+                                <label for="province" class="col-md-2 control-label">{{ __('lms.form.gender') }}</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
-                                           value="" required placeholder="Gender" maxlength="100">
+                                           value="" required placeholder="Género" maxlength="100">
                                 </div>
 
                                 <label for="js-edit-canton-name" class="col-md-2 control-label">{{ __('lms.words.date_of_birth') }}</label>
@@ -96,7 +96,7 @@
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="{{ __('lms.words.university') }}" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Fecha de Ingreso</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Join Date" maxlength="100">
@@ -110,7 +110,7 @@
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="{{ __('lms.words.university') }}" maxlength="100">
                                 </div>
-                                <label for="js-edit-canton-name" class="col-md-2 control-label">Join Date</label>
+                                <label for="js-edit-canton-name" class="col-md-2 control-label">Fecha de Ingreso</label>
                                 <div class="col-md-4">
                                     <input id="js-edit-canton-name" type="text" class="js-edit-canton-name form-control" name="canton_name"
                                            value="" required placeholder="Join Date" maxlength="100">
@@ -120,13 +120,13 @@
 
 
                             <div class="form-group">
-                                <label for="dist_code" class="col-md-2 control-label">Code</label>
+                                <label for="dist_code" class="col-md-2 control-label">{{ __('lms.form.code') }}</label>
                                 <div class="col-md-4">
                                     <input id="dist_code" type="text" class="js-edit-canton-dist_code form-control" name="dist_code"
                                            value="" required placeholder="Code" maxlength="10">
                                 </div>
 
-                                <label for="zone" class="col-md-2 control-label">Zone</label>
+                                <label for="zone" class="col-md-2 control-label">Zona</label>
                                 <div class="col-md-4">
 
                                 </div>
@@ -146,7 +146,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('lms.elements.button.close') }}</button>
                     <button type="button" id="btn-store-teacher" data-id="" class="btn btn-primary" data-type="update">
-                        <i class="fa fa-plus"></i> Update</button>
+                        <i class="fa fa-plus"></i>{{ __('lms.elements.button.update') }}</button>
                 </div>
             </form>
         </div>

@@ -3,7 +3,7 @@
 @include('lms.admin.parts.title')
 
 @section('content_header')
-    <h1> <i class="fa fa-unlock"></i>Profile</h1>
+    <h1> <i class="fa fa-unlock"></i>{{ __('lms.profile.profile') }}</h1>
 
 @stop
 
@@ -19,7 +19,7 @@
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <div class="box-title">Update Account</div>
+                        <div class="box-title">{{ __('lms.profile.update_account') }}</div>
                     </div>
                     <div class="box-body">
 
@@ -36,7 +36,7 @@
                         @endif
 
                         <div class="control-group">
-                            <label for="new_password" class="control-label">Login User Name</label>
+                            <label for="new_password" class="control-label">{{ __('lms.profile.login_user_name') }}</label>
                             <div class="controls">
                                 <input type="text" class="form-control" value="{{ Auth::user()->name }}"
                                        name="name" maxlength="100" />
@@ -54,7 +54,7 @@
                     </div>
                     <div class="box-footer text-right">
                         <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{ __('lms.elements.button.close') }}</button>
-                        <button href="#" class="btn btn-primary" >Update</button>
+                        <button href="#" class="btn btn-primary" >{{ __('lms.elements.button.update') }}</button>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@
                 <div class="box box-danger">
 
                     <div class="box-header">
-                        <div class="box-title">Change Email</div>
+                        <div class="box-title">{{ __('lms.profile.change_email') }}</div>
                     </div>
                     <div class="box-body">
 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="box-footer text-right">
                         <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{ __('lms.elements.button.close') }}</button>
-                        <button href="#" class="btn btn-primary" >Change</button>
+                        <button href="#" class="btn btn-primary" >{{ __('lms.elements.button.change') }}</button>
                     </div>
                 </div>
 

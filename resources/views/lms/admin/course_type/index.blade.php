@@ -37,9 +37,9 @@
                             <th width="30px">Sort</th>
                             <th width="350px">{{ __('lms.form.title') }}</th>
                             {{--<th width="350px">Modality</th>--}}
-                            <th width=100px">Is Active</th>
-                            <th width="100px">Updated By</th>
-                            <th width="120px">Updated at</th>
+                            <th width="100px">Esta Activo</th>
+                            <th width="100px">{{ __('lms.form.updated_by') }}</th>
+                            <th width="120px">{{ __('lms.form.updated_at') }}</th>
                             <th width="150px">{{ __('lms.form.action') }}</th>
                         </tr>
                     </thead>

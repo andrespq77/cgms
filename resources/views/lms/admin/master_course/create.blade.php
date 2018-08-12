@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    <h1>{{ $title }} <small>Create new Course Type </small></h1>
+    <h1>{{ $title }} <small> {{ __('lms.page.master_course.index.create_new_course_type') }}</small></h1>
 
 @stop
 

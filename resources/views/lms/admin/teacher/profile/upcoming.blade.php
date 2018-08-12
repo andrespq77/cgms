@@ -3,7 +3,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Pending Inspection Requests</h3>
+                <h3 class="box-title">Solicitudes de Inspección Pendientes</h3>
             </div>
             <div class="box-body no-padding">
                 @include('lms.admin.teacher.profile.upcoming-table')
@@ -14,7 +14,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Historic Inspection Requests</h3>
+                <h3 class="box-title">Solicitudes de Inspección Históricas</h3>
             </div>
             <div class="box-body no-padding">
                 @include('lms.admin.teacher.profile.historical-upcoming-table')

@@ -79,10 +79,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password_confirm" class="col-md-4 control-label">Confirm Password</label>
+                                <label for="password_confirm" class="col-md-4 control-label">{{ __('lms.messages.confirm_pword') }}</label>
                                 <div class="col-md-8">
                                     <input id="js-teacher-password_confirm" type="password" class="js-edit-canton-dist_code form-control" name="dist_code"
-                                           value="" required placeholder="Confirm Password" maxlength="10">
+                                           value="" required placeholder="{{ __('lms.messages.confirm_pword') }}" maxlength="10">
                                 </div>
                             </div>
 

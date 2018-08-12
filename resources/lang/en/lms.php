@@ -90,8 +90,6 @@
                     'action'            => 'Action'
                 ]
             ]
-
-
         ],
         'page' => [
             'teacher' => [
@@ -119,17 +117,16 @@
                     'hours'             => 'Hours',
                     'start_date'        => 'Start Date',
                     'end_date'          => 'End Date',
+                    'year'              => 'Year',
                     'approved'          => 'Approved',
                     'certificate'       => 'Certificate',
                     'diploma'           => 'Diploma',
-
                     'action'            => 'Action',
                 ],
                 'form' => [
                     'edit_title'        => 'Edit Teacher',
                     'add_title'         => 'Add New Teacher',
                 ]
-
             ],
             'teacher_profile' => [
                 'index' => [
@@ -157,6 +154,7 @@
                     'id'                => 'Id',
                     'master_course'     => 'Master Course',
                     'course_id'         => 'Course Id',
+                    'course_name'         => 'Course Name',
                     'short_name'        => 'Short Name',
                     'modality'          => 'Modality',
                     'hours'             => 'Hours',
@@ -203,8 +201,24 @@
                     'data_update_instructions'       => 'Instructions',
                     'registrations'     => 'Registrations',
                     'inspection_file_message' => 'After creating the course, you can upload inspection file.'
-
                 ],
+            ],
+            'master_course' =>[
+              'index' => [
+                'header' => 'Master Course',
+                'subheader' => 'Master Course',
+                'all_master_course' => 'All Master Course',
+                'create_new_course_type' => 'Create new Course Type',
+                'master_course_info' => 'Master Course Info',
+              ],
+              'table' => [
+                'course' => 'Course',
+                'courses' => 'Courses',
+                'subject' => 'Subject',
+                'child_courses' => 'Child Courses',
+                'course_title' => 'Course Title',
+                'course_code' => 'Course Code',
+              ]
             ],
             'upcoming' => [
                 'index' => [
@@ -224,7 +238,6 @@
                     'stage'             => 'Stage',
                     'status'            => 'Status',
                 ]
-
             ],
             'register' => [
                 'index' => [
@@ -257,7 +270,6 @@
                     'index' => [
                         'page_header'=> 'Search Course',
                         'table_header' => 'Pending Registrations',
-
                     ],
                     'table' => [
                         'course_code'       => 'Course Code',
@@ -310,7 +322,6 @@
                 'view' => [
                     'table_header'      => 'Course list'
                 ]
-
             ],
             'user' => [
                 'index' => [
@@ -337,7 +348,6 @@
                     'role'              => 'Role',
                     'status'            => 'Status',
                 ]
-
             ],
             'category' => [
                 'titles'=> [
@@ -359,24 +369,20 @@
                         'action'            => 'Action',
                         'edit'            => 'Edit',
                         'remove'            => 'Remove',
-
                     ],
-
                     'form'  =>[
                         'edit_title'        => 'Edit Category Title',
                         'add_title'         => 'Add Category Title',
                         'remove_title'      => 'Remove Category Title',
                         'title'             => 'Title',
                     ]
-
                 ]
-
-                ]
-
+            ]
         ],
         'elements' => [
             'button' => [
-                'add'      => 'Add',
+                'add'       => 'Add',
+                'add_new'   => 'Add New',
                 'edit'      => 'Edit',
                 'create'    => 'Create',
                 'delete'    => 'Delete',
@@ -388,6 +394,8 @@
                 'import'    =>  'Import',
                 'upload'    =>  'Upload',
                 'finish'    =>  'Finish',
+                'update'    =>  'Update',
+                'change'    =>  'Change',
                 'upload_diploma' => 'Diploma',
                 'upload_course_request' => 'Upload Course Request', // in course list page
                 'new_course_upload' => 'Upload New Course' // in course list page
@@ -433,7 +441,14 @@
             'published' => 'published',
             'no' => 'No',
             'yes' => 'Yes',
-            'approved' => 'Approved'
+            'approved' => 'Approved',
+            'not_approved' => 'Not approved',
+            'search' => 'Search',
+            'search_by' =>'Search by',
+            'search_term' =>'Search term',
+            'all_fields' => 'All Fields',
+            'download' => 'Download',
+            'pending' => 'Pending',
         ],
         'form' => [
           'name' => ' Nombre',
@@ -442,7 +457,12 @@
           'title' => 'Title',
           'action' => 'Action',
           'active' => 'Active',
-          'inactive' => 'Inactive'
+          'inactive' => 'Inactive',
+          'code' => 'Code',
+          'updated_by' => 'Updated By',
+          'updated_at' => 'Updated at',
+          'select_option' => 'Select Option',
+          'delete_item' => 'Delete Item',
         ],
         'upload_form' => [
           'select_files' => 'Select files',
@@ -452,9 +472,17 @@
           'update_files' => ' Update Files',
           'show_form' => 'Show Form',
         ],
+        'profile' => [
+          'profile' => 'Perfil',
+          'update_account' => 'Actualizar Cuenta',
+          'login_user_name' => 'Nombre de usuario de ingreso',
+          'change_email' => 'Cambiar Email',
+        ],
         'messages' => [
             'create_course' => 'Create Course',
-			      'change_pword' => 'Change Password',
+            'change_pword' => 'Change Password',
+            'confirm_pword' => 'Confirm Password',
+			      'new_pword' => 'Change Password',
             'logged_in' => 'You are logged in!',
             'grade_approved_by' => 'Grade Approved By',
             'upload_terms_cond' => 'Upload terms & Conditions',

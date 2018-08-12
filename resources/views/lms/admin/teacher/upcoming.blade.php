@@ -23,11 +23,11 @@
 
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">About Me</h3>
+                            <h3 class="box-title">Acerca de mi</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <strong><i class="fa fa-man margin-r-5"></i> Name</strong>
+                            <strong><i class="fa fa-man margin-r-5"></i> Nombre</strong>
 
                             <p class="">{{ Auth::user()->name }}</p>
 

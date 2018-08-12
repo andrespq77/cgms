@@ -18,10 +18,10 @@
                                 <span id="search_concept">{{  ucfirst(str_replace('_', ' ', app('request')->input('search_param')))   }}</span> <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#all">All Fields</a></li>
+                                <li><a href="#all">{{ __('lms.words.all_fields') }}</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#course_code">Course Code</a></li>
-                                <li><a href="#course_name">Course Name</a></li>
+                                <li><a href="#course_code">{{ __('lms.page.course.form.course_id') }}</a></li>
+                                <li><a href="#course_name">{{ __('lms.page.course.table.course_name') }}</a></li>
                                 <li><a href="#social_id">{{ __('lms.words.social_id') }}</a></li>
                             </ul>
 
@@ -29,19 +29,19 @@
 
                         <input type="hidden" name="search_param" id="search_param" style="width: 100%;"
                                value="{{ app('request')->input('search_param') }}">
-                        <input type="text" class="form-control" name="x" placeholder="Search term..." value="{{ app('request')->input('x') }}">
+                        <input type="text" class="form-control" name="x" placeholder="{{ __('lms.words.search_term') }}..." value="{{ app('request')->input('x') }}">
                     </div>
                 </div>
                 <div class="col-xs-3 col-lg-2">
                     <div class="form-group" >
                         <select class="form-control" id="registration" name="registration">
-                            <option disabled="">Select Approved Type</option>
+                            <option disabled="">Escoja tipo de aprobado</option>
                             <option {{ app('request')->input('registration') == 1 ? 'selected' : '' }}
                                     value="1">{{ __('lms.page.teacher.table.approved') }}</option>
                             <option {{ app('request')->input('registration') == 0 ? 'selected' : '' }}
-                                    value="0">Not Approved</option>
+                                    value="0">{{ __('lms.words.not_approved') }}</option>
                             <option {{ app('request')->input('registration') == 3 ? 'selected' : '' }}
-                                    value="3">All Registrations</option>
+                                    value="3">Todos los registros</option>
                         </select>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                                 type="submit"><i class="fa fa-search"></i> Filtrar</button>
                         {{--<button class="btn btn-success btn-download btn-flat"--}}
                                 {{--formaction="{{ url("/admin/portfolio/download") }}" formtarget="_blank"--}}
-                                {{--type="submit"><i class="fa fa-cloud-download"></i> Download</button>--}}
+                                {{--type="submit"><i class="fa fa-cloud-download"></i> {{ __('lms.words.download') }}</button>--}}
 
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                     <div class="btn-group-sm">
                                         <img style="display:none; padding-left:30px" src="https://media1.tenor.com/images/8ac12962c05648c55ca85771f4a69b2d/tenor.gif?itemid=9212724" height="50px" id="reg_loading_img">
 
-                                        <a class="inline btn btn-success btn-flat " id="approve-all"><i class="fa fa-check"></i> Approve Selected</a>
+                                        <a class="inline btn btn-success btn-flat " id="approve-all"><i class="fa fa-check"></i> Aprobar Escojido</a>
                                     </div>
 
                                 </div>
@@ -134,14 +134,14 @@
                                                         {{--<div class="checked">--}}
                                                             {{--<label>--}}
                                                                 {{--<input type="checkbox"--}}
-                                                                       {{--class="js-approve-check-{{ $registration->id }}" /> Approve--}}
+                                                                       {{--class="js-approve-check-{{ $registration->id }}" /> Aprobar--}}
                                                             {{--</label>--}}
                                                         {{--</div>--}}
                                                         {{--<button class="btn btn-xs btn-primary btn-flat btn-approve-confirm"--}}
-                                                        {{--data-id="{{ $registration->id }}">Confirm</button>--}}
+                                                        {{--data-id="{{ $registration->id }}">Confirmar</button>--}}
                                                     {{--</div>--}}
                                                 {{--@else--}}
-                                                    {{--<i class="fa fa-check"></i> Yes <br/>--}}
+                                                    {{--<i class="fa fa-check"></i> Si <br/>--}}
                                                     {{--<small><i class="fa fa-clock-o"></i>--}}
                                                         {{--{{ date('d M, Y - h:i a', strtotime($registration->approval_time)) }}</small>--}}
                                                 {{--@endif--}}

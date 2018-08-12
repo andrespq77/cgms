@@ -16,7 +16,7 @@
 
         <div class="register-box-body">
 
-            <p class="login-box-msg">Reset Password</p>
+            <p class="login-box-msg">Reset Contraseña</p>
 
             <form action="{{ url(config('adminlte.register_url', 'register')) }}" method="post" class="form-horizontal">
                 {!! csrf_field() !!}
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="form-group has-feedback {{ $errors->has('canton') ? 'has-error' : '' }}">
-                    <label for="js-edit-canton-district" class="col-sm-3 control-label">Canton</label>
+                    <label for="js-edit-canton-district" class="col-sm-3 control-label">Cantón</label>
                     <div class="col-sm-9">
                         <input id="js-edit-canton-district" type="text" class="js-edit-canton-district form-control" name="canton"
                                value="{{ old('canton') }}" required placeholder="Canton" maxlength="100">
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="form-group has-feedback {{ $errors->has('work_area') ? 'has-error' : '' }}">
-                    <label for="js-workarea" class="col-sm-3 control-label">Work area</label>
+                    <label for="js-workarea" class="col-sm-3 control-label">Regimen Laboral</label>
                     <div class="col-sm-9">
                         <input id="js-workarea" type="text" class="form-control" name="work_area"
                                value="{{ old('work_area') }}" required placeholder="Work Area" maxlength="50">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <label for="password" class="col-md-3 control-label">Password</label>
+                    <label for="password" class="col-md-3 control-label">Contraseña</label>
                     <div class="col-md-9">
                         <input id="password" type="password" class="form-control" name="password"
                                value="" required placeholder="Password" maxlength="10">
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="form-group has-feedback {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                    <label for="password_confirm" class="col-md-3 control-label">Confirm Password</label>
+                    <label for="password_confirm" class="col-md-3 control-label">Confirmar Contraseña</label>
                     <div class="col-md-9">
                         <input id="password_confirm" type="password"
                                class="form-control" name="password_confirmation"
@@ -121,7 +121,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block btn-flat"
-                    >Change Password</button>
+                    >Cambiar Contraseña</button>
             </form>
             <div class="auth-links">
                 <a href="{{ url(config('adminlte.login_url', 'login')) }}"
