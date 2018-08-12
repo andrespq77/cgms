@@ -160,8 +160,6 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Chumper\Zipper\ZipperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
-		Adldap\Laravel\AdldapServiceProvider::class,
-		Adldap\Laravel\AdldapAuthServiceProvider::class,
         /*
          * Application Service Providers...
          */

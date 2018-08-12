@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Adldap\AdldapInterface;
+//use Adldap\AdldapInterface;
 
 use App\User;
 
@@ -16,14 +16,6 @@ class HomeController extends Controller
      *
      */
     protected $ldap;
-
-    public function __construct(AdldapInterface $ldap)
-    {
-        $this->middleware('ldapauth');
-		$this->ldap = $ldap;
-        App::setLocale(env('LANGUAGE', 'en'));
-
-    }
 
     /**
      * Show the application dashboard.

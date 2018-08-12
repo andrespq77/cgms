@@ -11,7 +11,7 @@ use Illuminate\Contracts\Auth\Guard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Adldap\Laravel\Facades\Adldap;
+//use Adldap\Laravel\Facades\Adldap;
 
 class LdapAccessController extends Controller
 {
@@ -35,7 +35,7 @@ class LdapAccessController extends Controller
 
 		try {
 
-			Adldap::connect();
+//			Adldap::connect();
 
 		} catch (\Exception $e) {
             session()->flash('app_error', 'Can\'t contact to LDAP server.');
