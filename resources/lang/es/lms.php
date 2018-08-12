@@ -449,6 +449,7 @@
             'all_fields' => 'Todos los campos',
             'download' => 'Descargar',
             'pending' => 'Pendiente',
+            'sign_in' => 'Ingresar',
         ],
         'form' => [
           'name' => 'Nombre',
