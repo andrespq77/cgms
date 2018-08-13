@@ -160,7 +160,7 @@
                                 {{ csrf_field() }}
                             <a class="btn btn-link" href="javascript:void(0)" title="Grade Template Guideline" data-trigger="hover"
                                data-content="Enter a numeric grade on [grade] column and add `1` in [grade_approved] column for mark as approved"
-                               data-placement="top" title="Instruction" data-toggle="popover"><i class="fa fa-info"></i>
+                               data-placement="top" data-toggle="popover"><i class="fa fa-info"></i>
                             </a>
                             <button class="btn btn-sm btn-warning" id="btn-create-university" type="submit">
                                 <i class="fa fa-cloud-download"></i> {{ __('lms.messages.download_grade_template') }}</button>

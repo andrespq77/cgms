@@ -181,10 +181,12 @@ class CourseRepository
                         ->first();
 
         if ($registration){
-            $registration->mark = $grade;
+
+            //if the grade data is approve is zeror then reset all these fields if one then upgrade
+            $registration->mark = $approved==0 ? null : $grade;
             $registration->mark_approved = $approved;
-            $registration->mark_approved_by = $user->id;
-            $registration->mark_upload_time = Carbon::now();
+            $registration->mark_approved_by = $approved==0 ? null : $user->id;
+            $registration->mark_upload_time = $approved==0 ? null : Carbon::now();
             $registration->save();
 
             return $registration;

@@ -9,6 +9,7 @@ if (grade_page > 0){
     var courseId = null;
 
     showAddMark();
+
     function showAddMark() {
 
         $('.btn-upload-grade').click(function () {
@@ -38,8 +39,8 @@ if (grade_page > 0){
 
             },
             onComplete: function (id, name, response, xhr ) {
-
-
+                toastr.success("Grade updated successfully.", "Info");
+                window.setTimeout(function(){location.reload()}, 3000);
             },
             onStatusChange: function (id, oldStatus, newStatus) {
 

@@ -603,7 +603,6 @@ class CourseController extends Controller
                         $courseId = (string)$row['system_id'];
                         $getCourse = $this->repo->findById($courseId);
 
-
                         // if the course id received from the file has permission for this user to update mark
                         if ($user->can('update_grade', $getCourse)){
 

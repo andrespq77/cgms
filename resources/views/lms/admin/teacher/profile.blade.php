@@ -43,7 +43,8 @@
                         <tbody>
                         @foreach($teacher->registrations->sortByDesc('approval_time') as $registration)
 
-                            <tr class="{{ $registration->course->status == 0 ? 'disabled' : '' }}">
+                            @if($registration->mark_approved == REGISTRATION_MARK_APPROVED)
+                                <tr class="{{ $registration->course->status == 0 ? 'disabled' : '' }}">
                                 <td>{{ @$registration->course->masterCourse->type->title }}</td>
 
                                 <td>{{ $registration->course->short_name }}<br/>
@@ -73,6 +74,7 @@
                                 @include('lms.admin.registration.parts.table.td.diploma')
                                 @include('lms.admin.registration.parts.table.td.mark_approved')
                             </tr>
+                            @endif
 
                         @endforeach
                         </tbody>
