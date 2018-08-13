@@ -163,8 +163,8 @@
                         @endcomponent
 
                         @component('lms.admin.components.form-group', [   'name' => 'course_video', 'grid' => 10,
-                            'title' => __('lms.page.course.form.video_type')])
-                                <textarea id="js-edit-course-video"
+                            'title' => ''])
+                                <textarea style="display: none" id="js-edit-course-video"
                                           class="js-edit-course-video form-control" name="course_video"
                                           placeholder="{{ __('lms.page.course.form.video') }}" ></textarea>
                         @endcomponent
