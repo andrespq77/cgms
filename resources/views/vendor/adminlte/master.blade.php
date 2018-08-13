@@ -48,7 +48,7 @@
 
 @yield('body')
 
-<input id="app_url" type="hidden" value="{{ env('APP_URL') }}"/>
+<input id="app_url" type="hidden" value="http://10.200.10.188/sga"/>
 <script type="text/javascript" src="{{ url(mix('/admin/js/app.js')) }}"></script>
 
 <script src="{{asset('/vendor/adminlte/vendor/jquery/dist/jquery.js')}}"></script>

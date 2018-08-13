@@ -6,6 +6,7 @@ $(document).ready(function () {
     var pageCourseLength = $('#page_course').length;
     var app_url = $('#app_url').val();
 
+
     if(pageCourseLength > 0) {
 
         var modal = $('#edit-course-modal');
