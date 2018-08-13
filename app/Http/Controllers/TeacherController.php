@@ -292,7 +292,7 @@ class TeacherController extends Controller
 
 
                 foreach ($reader->toArray() as $row) {
-                    
+
 
                     $teacher['first_name'] = $row['nombres'];
                     $teacher['last_name'] = "";
@@ -336,7 +336,7 @@ class TeacherController extends Controller
                      * -> create a user with the name, inst_email + add teacher data
                      */
 
-                    $is_teacher_exist = $teacherRepo->isTeacherExistWithSocialId($row['cedula']);
+                    $is_teacher_exist = $teacherRepo->isTeacherExist($row['cedula'] ,$row['correo_electronico']);
 
                     if ($is_teacher_exist==false){
 
