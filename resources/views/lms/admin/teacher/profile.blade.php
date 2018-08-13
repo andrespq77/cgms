@@ -24,7 +24,7 @@
                         <tr>
                             <th>{{ __('lms.page.teacher.table.course_type') }}</th>
                             <th>{{ __('lms.page.teacher.table.course_name') }}</th>
-                            <th>{{ __('lms.page.teacher.table.university') }}</th>
+                            <th>{{ __('lms.words.university') }}</th>
                             <th>{{ __('lms.page.teacher.table.province') }}</th>
                             <th>{{ __('lms.page.teacher.table.edition') }}</th>
                             <th>{{ __('lms.page.course.table.modality') }}</th>
@@ -32,10 +32,8 @@
                             <th>{{ __('lms.page.teacher.table.start_date') }}</th>
                             <th>{{ __('lms.page.teacher.table.end_date') }}</th>
                             <th>{{ __('lms.page.course.table.year') }}</th>
-                            <th>{{ __('lms.page.teacher.table.approved') }}</th>
+                            <th>{{ __('lms.page.course.table.status') }}</th>
                             <th>{{ __('lms.page.teacher.table.diploma') }}</th>
-                            <th>{{ __('lms.words.grade') }}</th>
-                            <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
 
                         </tr>
                         </thead>
@@ -61,18 +59,13 @@
 
                                 <td class="js-td-is-approved">
                                     @if($registration->is_approved == REGISTRATION_IS_NOT_APPROVED)
-                                        <span class="label label-warning">{{ __('lms.words.pending') }}</span>
+                                        <span class="label label-warning">{{ __('lms.words.not_approved') }}</span>
                                     @else
-                                        <span class="label label-success"><i class="fa fa-check"></i> {{ __('lms.words.yes') }}</span>
-                                        <small><i class="fa fa-clock-o"></i>
-                                            {{ date('h:i a', strtotime($registration->approval_time)) }}<br/>
-                                            {{ date('d M, Y', strtotime($registration->approval_time)) }}
-                                        </small>
+                                        <span class="label label-success"><i class="fa fa-check"></i> {{ __('lms.words.approved') }}</span>
                                     @endif
                                 </td>
 
                                 @include('lms.admin.registration.parts.table.td.diploma')
-                                @include('lms.admin.registration.parts.table.td.mark_approved')
                             </tr>
                             @endif
 
