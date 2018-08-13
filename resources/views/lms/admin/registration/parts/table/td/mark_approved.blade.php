@@ -1,4 +1,4 @@
-<td class="js-mark">{{ $registration->mark == null ? '' : $registration->mark }} / 100</td>
+<td class="js-mark">{{ $registration->mark == null ? '' : $registration->mark }}</td>
 <td class="js-mark-approved">
     @if($registration->mark_approved == REGISTRATION_MARK_APPROVED)
         <span class="label label-success">{{ __('lms.words.yes') }}</span>
