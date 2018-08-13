@@ -10,7 +10,8 @@ $(document).ready(function () {
     if(pageLength > 0) {
 
         console.log('University');
-
+        console.log(app_url);
+        alert(app_url);
         /**
          * Datepicker
          */
