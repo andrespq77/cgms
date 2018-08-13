@@ -34,6 +34,8 @@
                             <th>{{ __('lms.page.course.table.year') }}</th>
                             <th>{{ __('lms.page.teacher.table.approved') }}</th>
                             <th>{{ __('lms.page.teacher.table.diploma') }}</th>
+                            <th>{{ __('lms.words.grade') }}</th>
+                            <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
 
                         </tr>
                         </thead>
@@ -69,6 +71,7 @@
                                 </td>
 
                                 @include('lms.admin.registration.parts.table.td.diploma')
+                                @include('lms.admin.registration.parts.table.td.mark_approved')
                             </tr>
 
                         @endforeach
