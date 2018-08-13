@@ -82,6 +82,7 @@ class CourseController extends Controller
 
     public function getSearch(Request $request)
     {
+        $this->repo->flushCache();
 
         $user = Auth::user();
 
@@ -89,10 +90,11 @@ class CourseController extends Controller
 
             $posts = $request->query();
             $page = isset($posts['page']) ? $posts['page'] : 1;
+            $search = isset($posts['search']) ? $posts['search'] : '';
 
-            $title = 'Course Search Result for ['.$posts['search'].'] - '.env('APP_NAME') ;
+            $title = 'Course Search Result for ['.$search.'] - '.env('APP_NAME') ;
 
-            $courses = $this->repo->search($page, $posts['search']);
+            $courses = $this->repo->search($page, $search);
 
             return view('lms.admin.course.index', ['title'=> $title, 'courses' => $courses]);
 
