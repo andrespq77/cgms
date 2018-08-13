@@ -55478,7 +55478,7 @@ $(document).ready(function () {
             },
             columns: [{ data: 'id', name: 'universities.id', searchable: true }, { data: 'name', name: 'name', searchable: true, render: function render(item, type, data) {
                     return '<a href="' + app_url + '/admin/university/' + data.id + '">' + item + '</a>';
-                } }, { data: 'email', name: 'email', searchable: true }, { data: 'phone', name: 'phone', searchable: true }, { data: 'website', name: 'website', searchable: true }, { data: 'login_user_name', name: 'login_user_name', searchable: true }, { data: 'login_email', name: 'login_email', searchable: true }, { data: 'created_by_name', name: 'users.created_by_name', searchable: true }, { data: 'created_at', name: 'universities.created_by', searchable: true }, { data: 'action', searchable: false, orderable: false }],
+                } }, { data: 'email', name: 'email', searchable: true }, { data: 'phone', name: 'phone', searchable: true }, { data: 'website', name: 'website', searchable: true }, { data: 'login_user_name', name: 'login_user_name', searchable: true }, { data: 'login_email', name: 'login_email', searchable: true }, { data: 'created_by_name', name: 'users.created_by_name', searchable: false }, { data: 'created_at', name: 'universities.created_by', searchable: true }, { data: 'action', searchable: false, orderable: false }],
             initComplete: function initComplete() {
                 this.api().columns().every(function () {
                     var column = this;
