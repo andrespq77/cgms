@@ -35,7 +35,7 @@
 
                             <strong><i class="fa fa-map-marker margin-r-5"></i> {{ __('lms.words.social_id') }}</strong>
 
-                            <p class="">{{ Auth::user()->id }}</p>
+                            <p class="">{{ @$teacher->social_id}}</p>
 
 
                         </div>
