@@ -52,6 +52,6 @@ class CreateTeacherUser
 
         $event->teacher->user_id = $user->id;
         $event->teacher->save();
-        
+
     }
 }
