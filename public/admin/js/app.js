@@ -55466,7 +55466,6 @@ $(document).ready(function () {
 
         console.log('University');
         console.log(app_url);
-        alert(app_url);
         /**
          * Datepicker
          */
