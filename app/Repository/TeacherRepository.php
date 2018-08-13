@@ -12,6 +12,7 @@ namespace App\Repository;
 use App\Events\TeacherCreated;
 use App\Registration;
 use App\Teacher;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 

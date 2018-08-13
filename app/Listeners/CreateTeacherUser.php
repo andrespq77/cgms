@@ -32,12 +32,17 @@ class CreateTeacherUser
      */
     public function handle(TeacherCreated $event)
     {
-        //@todo add new teacher user;
 
-        $user = new User();
+        $user = User::where('email' , $event->teacher->email)->first();
+
+        if(!$user){
+            $user = new User();
+            $user->password = bcrypt($event->teacher->email);
+        }
+
         $user->name = $event->teacher->first_name . ' '.$event->teacher->last_name ;
         $user->email = $event->teacher->email;
-        $user->password = bcrypt($event->teacher->email);
+
         $user->role = USER_ROLE_STUDENT;
         $user->status = USER_STATUS_ACTIVE;
         $user->creation_type = $event->creation_type;
@@ -47,7 +52,6 @@ class CreateTeacherUser
 
         $event->teacher->user_id = $user->id;
         $event->teacher->save();
-
-
+        
     }
 }
