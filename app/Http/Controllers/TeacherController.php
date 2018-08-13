@@ -295,7 +295,7 @@ class TeacherController extends Controller
 
 
                     $teacher['first_name'] = $row['nombres'];
-                    $teacher['last_name'] = "";
+                    $teacher['last_name'] = $row['apellidos'];
                     $teacher['gender'] = ucfirst($row['genero']);
                     $teacher['social_id'] = $row['cedula'];
 
