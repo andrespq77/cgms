@@ -24,6 +24,7 @@ class TeacherRepository
 {
 
     public $registrationRepo ;
+
     public function __construct()
     {
         $this->registrationRepo = new RegistrationRepository();
@@ -130,6 +131,7 @@ class TeacherRepository
 
 
         $this->flushCache();
+
 //        add user of the teacher
         event(new TeacherCreated($newTeacher, $creation_type));
 
@@ -138,7 +140,6 @@ class TeacherRepository
     }
 
     public function update($teacher, $id){
-
 
         $newTeacher = $this->findById($id);
 

@@ -35,7 +35,7 @@ class CreateTeacherUser
         //@todo add new teacher user;
 
         $user = new User();
-        $user->name = $event->teacher->first_name . ' '.$event->teacher->first_name ;
+        $user->name = $event->teacher->first_name . ' '.$event->teacher->last_name ;
         $user->email = $event->teacher->email;
         $user->password = bcrypt($event->teacher->email);
         $user->role = USER_ROLE_STUDENT;
