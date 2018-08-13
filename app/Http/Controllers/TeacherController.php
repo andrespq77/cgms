@@ -282,15 +282,17 @@ class TeacherController extends Controller
 
         $path = storage_path('app/'.$path);
 
-        $teacherRepo = new TeacherRepository();
+        $teacherRepo = $this->repo;
 
         try {
+
             $rows = [];
 
              Excel::load($path, function ($reader) use(&$rows, $teacherRepo){
 
-                foreach ($reader->toArray() as $row) {
 
+                foreach ($reader->toArray() as $row) {
+                    
 
                     $teacher['first_name'] = $row['nombres'];
                     $teacher['last_name'] = "";
@@ -325,6 +327,7 @@ class TeacherController extends Controller
                     $teacher['district'] = $row['distrito'];
                     $teacher['dist_code'] = $row['cod_distrito'];
                     $teacher['zone'] = $row['zona'];
+                    $teacher['work_hours'] = '';
 
                     /**
                      * if social_id + inst_email found in teacher table
@@ -332,14 +335,23 @@ class TeacherController extends Controller
                      * else
                      * -> create a user with the name, inst_email + add teacher data
                      */
-                    $is_teacher_exist = $teacherRepo->isTeacherExist($teacher['social_id'], $teacher['inst_email']);
 
-                    if ($is_teacher_exist == false){
+                    $is_teacher_exist = $teacherRepo->isTeacherExistWithSocialId($row['cedula']);
+
+                    if ($is_teacher_exist==false){
 
                         $teacherRepo->insert($teacher, USER_CREATION_TYPE_IMPORT);
                         array_push($rows, $teacher);
+
                     }
-//                    @todo update the data on else
+                    else
+                    {
+
+                        $find_teacher = Teacher::where('social_id', $row['cedula'])->first();
+                        $teacherRepo->update($teacher, $find_teacher->id);
+                        array_push($rows, $teacher);
+
+                    }
 
                     $this->repo->flushCache();
 
@@ -349,7 +361,8 @@ class TeacherController extends Controller
 
             return response()->json(['rows' => $rows, 'success' => true] );
 
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
 
             return response()->json(['error' => $e->getMessage(), 'file' => $path]);
         }
