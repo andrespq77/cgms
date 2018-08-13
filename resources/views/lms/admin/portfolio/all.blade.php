@@ -86,7 +86,7 @@
                                 <th width="18%">{{ __('lms.page.teacher.table.name') }}</th>
                                 <th>{{ __('lms.page.teacher.table.course_type') }}</th>
                                 <th>{{ __('lms.page.teacher.table.course_name') }}</th>
-                                <th>{{ __('lms.page.teacher.table.university') }}</th>
+                                <th>{{ __('lms.words.university') }}</th>
                                 <th>{{ __('lms.page.teacher.table.province') }}</th>
                                 <th>{{ __('lms.page.teacher.table.edition') }}</th>
                                 <th>{{ __('lms.page.course.table.modality') }}</th>
@@ -94,7 +94,7 @@
                                 <th>{{ __('lms.page.teacher.table.start_date') }}</th>
                                 <th>{{ __('lms.page.teacher.table.end_date') }}</th>
                                 <th>{{ __('lms.page.course.table.year') }}</th>
-                                <th>{{ __('lms.page.teacher.table.approved') }}</th>
+                                <th>{{ __('lms.page.course.table.status') }}</th>
                                 <th>{{ __('lms.page.teacher.table.diploma') }}</th>
                                 <th>{{ __('lms.words.grade') }}</th>
                                 <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>

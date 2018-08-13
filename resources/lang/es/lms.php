@@ -217,7 +217,7 @@
                 'subject' => 'Materia',
                 'child_courses' => 'Cursos Hijos',
                 'course_title' => 'Título del Curso',
-                'course_code' => 'Título del Curso',
+                'course_code' => 'Código del Curso',
               ]
             ],
             'upcoming' => [
@@ -282,7 +282,7 @@
                         'email'             => 'Email',
                         'terms_condition'   => 'Términos & Condiciones',
                         'record_uploaded'   => 'Registro subido',
-                        'is_approved'       => 'Aprobado',
+                        'is_approved'       => 'inscripcion completa',
                         'approved_by'       => 'Aprobado por',
                         'by'                => 'por',
                         'action'            => 'Acción'
@@ -493,7 +493,7 @@
             'upload_new_course' => 'Cargar un nuevo curso',
             'download_sample_file' => 'Descargar archivo de muestra',
             'upload_diploma_zip_file' => 'Upload Diploma Zip File',
-            'course_request_list_modal' => 'Course Request List Modal',
+            'course_request_list_modal' => 'Lista de Solicitudes de curso',
             'diploma_upload_message' => 'La carga del diploma se habilitará desde la fecha de inicio de ingreso de notas',
             'master_course_confirm_message' => '¿Quieres borrar esto? Puede ser que tenga algún curso hijo.',
             'm_ad_user_login' => 'Ingresar con usuario Active Directory',
