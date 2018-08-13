@@ -232,8 +232,10 @@ Route::middleware(['ldapauth'])->group(function (){
 
         });
 
-        Route::prefix('location')->group(function(){
 
+//        its completely commented from the left menu
+
+        Route::prefix('location')->group(function(){
 
             /**
              * Province

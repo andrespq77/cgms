@@ -222,26 +222,26 @@ return [
             'url'   => 'admin/users',
             'can'       => 'admin-only',
         ],
-        [
-            'text'    => 'lms.menu.settings.location.title',
-            'icon'      => 'map',
-            'can'           => 'admin-only',
-            'url'     => '#',
-            'submenu' => [
-                [
-                    'text' => 'lms.menu.settings.location.province',
-                    'url'  => '/admin/location/province',
-                ],
-                [
-                    'text'    => 'lms.menu.settings.location.canton',
-                    'url'     => '/admin/location/canton',
-                ],
-                [
-                    'text'    => 'lms.menu.settings.location.parroquia',
-                    'url'     => '/admin/location/parroquia',
-                ],
-            ],
-        ],
+//        [
+//            'text'    => 'lms.menu.settings.location.title',
+//            'icon'      => 'map',
+//            'can'           => 'admin-only',
+//            'url'     => '#',
+//            'submenu' => [
+//                [
+//                    'text' => 'lms.menu.settings.location.province',
+//                    'url'  => '/admin/location/province',
+//                ],
+//                [
+//                    'text'    => 'lms.menu.settings.location.canton',
+//                    'url'     => '/admin/location/canton',
+//                ],
+//                [
+//                    'text'    => 'lms.menu.settings.location.parroquia',
+//                    'url'     => '/admin/location/parroquia',
+//                ],
+//            ],
+//        ],
         'lms.menu.account_settings',
         [
             'text' => 'lms.menu.profile',
