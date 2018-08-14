@@ -129,13 +129,13 @@ return [
                 ],
                 [
                     'text'      => 'lms.menu.teachers.portfolio',
-                    'url'           => 'admin/portfolio?search_param=all&registration=3',
+                    'url'           => 'admin/portfolio?search_param=all&registration=1',
                     'can'           => 'admin-only',
                     'icon'          => 'folder-open'
                 ],
                 [
                     'text'      => 'lms.menu.teachers.registration_inspection',
-                    'url'           => 'admin/registration/pending?search_param=all&registration=3',
+                    'url'           => 'admin/registration/pending?search_param=all&registration=1',
                     'can'           => 'admin-only',
                     'icon'          => 'check-square'
                 ],
