@@ -193,14 +193,16 @@
 
             $ldap_password = $pword;
             $ldap_dn = 'educacion' . '\\' . $user;
-            $ldap_con = ldap_connect("ldap://10.200.6.103");
+            $ldap_con = ldap_connect(env('ADLDAP_CONTROLLERS'));
 
-            ldap_set_option($ldap_con, LDAP_OPT_PROTOCOL_VERSION, 3);
+            ldap_set_option($ldap_con, LDAP_OPT_PROTOCOL_VERSION, env('ADLDAP_NEWVAL'));
 
             if(ldap_bind($ldap_con, $ldap_dn, $ldap_password)) {
 
-                $filter = "(samaccountname=$user)";
-                $result =ldap_search($ldap_con,"OU=Docentes,OU=Usuarios,dc=educacion,dc=local",$filter);
+                $attribute = env('ADLDAP_USER_ATTRIBUTE');
+
+                $filter = "($attribute=$user)";
+                $result =ldap_search($ldap_con,env('ADLDAP_BASEDN'),$filter);
 
                 $ldap_user = ldap_get_entries($ldap_con, $result);
 
