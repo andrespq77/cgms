@@ -41,7 +41,7 @@
                         <tbody>
                         @foreach($teacher->registrations->sortByDesc('approval_time') as $registration)
 
-                            @if($registration->mark_approved == REGISTRATION_MARK_APPROVED)
+                            @if($registration->mark != null)
                                 <tr class="{{ $registration->course->status == 0 ? 'disabled' : '' }}">
                                 <td>{{ @$registration->course->masterCourse->type->title }}</td>
 
