@@ -127,7 +127,7 @@
                         // if not all == 3 , then search registration with id
                         if($registration !== 3){
                             if ($registration == 1 || $registration == 0){
-                                $query->where('mark_approved',$registration);
+                                $query->where('is_approved',$registration);
                             }
                         }
                     }
