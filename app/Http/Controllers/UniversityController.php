@@ -19,7 +19,7 @@ class UniversityController extends Controller
 {
     public function index(){
 
-        dd(env('ADLDAP_CONTROLLERS') , env('ADLDAP_NEWVAL') ,env('ADLDAP_USER_ATTRIBUTE') ,env('ADLDAP_BASEDN'));
+        dd(env('ADLDAP_CONTROLLERS_NEW') , env('ADLDAP_NEWVAL_NEW') ,env('ADLDAP_USER_ATTRIBUTE_NEW') ,env('ADLDAP_BASEDN_NEW'));
 
         $title = 'University Management - '.env('APP_NAME') ;
         return view('lms.admin.university.index', ['title'=> $title]);
