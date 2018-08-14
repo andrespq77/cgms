@@ -53761,10 +53761,15 @@ if (grade_page > 0) {
         callbacks: {
             onSubmit: function onSubmit(id, name) {},
             onComplete: function onComplete(id, name, response, xhr) {
-                toastr.success("Grade updated successfully.", "Info");
-                window.setTimeout(function () {
-                    location.reload();
-                }, 3000);
+
+                if (response.success) {
+                    toastr.success("Grade updated successfully.", "Info");
+                    window.setTimeout(function () {
+                        location.reload();
+                    }, 3000);
+                } else {
+                    toastr.error(response.error, "Error");
+                }
             },
             onStatusChange: function onStatusChange(id, oldStatus, newStatus) {},
             onCancel: function onCancel(id, name) {}

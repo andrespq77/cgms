@@ -39,8 +39,15 @@ if (grade_page > 0){
 
             },
             onComplete: function (id, name, response, xhr ) {
-                toastr.success("Grade updated successfully.", "Info");
-                window.setTimeout(function(){location.reload()}, 3000);
+
+                if(response.success){
+                    toastr.success("Grade updated successfully.", "Info");
+                    window.setTimeout(function(){location.reload()}, 3000);
+                }
+                else{
+                    toastr.error(response.error, "Error");
+                }
+
             },
             onStatusChange: function (id, oldStatus, newStatus) {
 
