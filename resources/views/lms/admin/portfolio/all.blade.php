@@ -103,8 +103,7 @@
                         </thead>
                         <tbody>
                             @foreach($registrations as $registration)
-                                @if($registration->mark_approved == REGISTRATION_IS_APPROVED)
-                                    <tr>
+                                <tr>
 
                                     <td>{{ $registration->student->social_id }}</td>
                                     <td>{{ $registration->user_first_name}} &nbsp;
@@ -124,7 +123,11 @@
                                     <td>{{ $registration->course->year}}</td>
 
                                     <td class="js-td-is-approved">
+                                        @if($registration->mark_approved == REGISTRATION_IS_NOT_APPROVED)
+                                            <span class="label label-warning"><i class="fa fa-remove"></i>{{ __('lms.words.not_approved') }}</span>
+                                        @else
                                             <span class="label label-success"><i class="fa fa-check"></i> {{ __('lms.words.approved') }}</span>
+                                        @endif
                                     </td>
 
                                     @include('lms.admin.registration.parts.table.td.diploma')
@@ -145,7 +148,6 @@
                                     {{--@include('lms.admin.registration.parts.table.td.certificate')--}}
 
                                 </tr>
-                                @endif
                             @endforeach
 
                         </tbody>
