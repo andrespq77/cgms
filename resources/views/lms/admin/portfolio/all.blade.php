@@ -103,7 +103,8 @@
                         </thead>
                         <tbody>
                             @foreach($registrations as $registration)
-                                <tr>
+                                @if($registration->mark != null)
+                                    <tr>
 
                                     <td>{{ $registration->student->social_id }}</td>
                                     <td>{{ $registration->user_first_name}} &nbsp;
@@ -148,6 +149,7 @@
                                     {{--@include('lms.admin.registration.parts.table.td.certificate')--}}
 
                                 </tr>
+                                @endif
                             @endforeach
 
                         </tbody>
