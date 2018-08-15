@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'Asia/Kuala_Lumpur',
+    'timezone' => 'America/Guayaquil',
 
     /*
     |--------------------------------------------------------------------------
