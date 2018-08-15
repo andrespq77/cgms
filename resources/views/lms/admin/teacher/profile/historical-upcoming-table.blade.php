@@ -23,7 +23,7 @@
         @foreach($teacher->allUpcomingCourses as $course)
             @if($course->quota < $course->registrations->count() ||
             Carbon\Carbon::now()->gt(Carbon\Carbon::parse($course->start_date)) ||
-            @$registration->is_approved != 0
+            @$registration->is_approved == 1 || @$registration->is_approved == 2
             )
 
                 <tr class="{{ $course->status == 0 ? '' : '' }}">
