@@ -78,7 +78,7 @@
                                         </button>
 
                                         @else
-                                        <a href="/admin/upcoming-courses" class="btn btn-flat btn-xs btn-info">registrado</a>
+                                        <a href="admin/upcoming-courses" class="btn btn-flat btn-xs btn-info">registrado</a>
                                      @endif
 
                                 @endif
