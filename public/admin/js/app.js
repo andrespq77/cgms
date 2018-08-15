@@ -54821,11 +54821,11 @@ $(document).ready(function () {
                     if (xhr.status === 200) {
 
                         // open new window with url
-                        window.open('https://mecapacito.educacion.gob.ec/', '_blank');
+                        // window.open('https://mecapacito.educacion.gob.ec/', '_blank');
 
                         $(this).removeClass('btn-info');
                         $(this).addClass('btn-success');
-                        $(this).text('Complete');
+                        $(this).text('registrado');
                     }
                 }).fail(function (errors, textStatus, errorThrown) {
 
