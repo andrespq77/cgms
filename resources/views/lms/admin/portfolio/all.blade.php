@@ -96,8 +96,8 @@
                                 <th>{{ __('lms.page.course.table.year') }}</th>
                                 <th>{{ __('lms.page.course.table.status') }}</th>
                                 <th>{{ __('lms.page.teacher.table.diploma') }}</th>
-                                <th>{{ __('lms.words.grade') }}</th>
-                                <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>
+                                {{--<th>{{ __('lms.words.grade') }}</th>--}}
+{{--                                <th>{{ __('lms.page.registration.pending.table.record_uploaded') }}</th>--}}
                                 {{--<th>{{ __('lms.page.teacher.table.certificate') }}</th>--}}
                             </tr>
                         </thead>
@@ -132,7 +132,7 @@
                                     </td>
 
                                     @include('lms.admin.registration.parts.table.td.diploma')
-                                    @include('lms.admin.registration.parts.table.td.mark_approved')
+{{--                                    @include('lms.admin.registration.parts.table.td.mark_approved')--}}
 
                                     {{--@include('lms.admin.registration.parts.table.td.student_inspection_form')--}}
                                     {{--<td class="js-td-is-approved">--}}
