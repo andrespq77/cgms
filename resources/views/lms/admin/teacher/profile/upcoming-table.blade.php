@@ -26,7 +26,8 @@
         @if(
         $course->status == '1' &&
         $course->quota >= $course->registrations->count() &&
-        Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date))
+        Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) &&
+        (isset($registration->is_approved) || !$registration->is_approved )
         )
 
             <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
