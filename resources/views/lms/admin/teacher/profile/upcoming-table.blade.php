@@ -23,7 +23,12 @@
     @foreach($teacher->allUpcomingCourses as $course)
         @foreach($teacher->courseRegistration($course) as $registration)@endforeach
 
-        @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
+        @if(
+        $course->status == '1' &&
+        $course->quota >= $course->registrations->count() &&
+        Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) &&
+        isset($registration->is_approved) && !$registration->is_approved
+        )
 
             <tr class="{{ $course->status == 0 ? 'disabled' : '' }}">
 {{--            <td>{{ $course->university->name }}</td>--}}
@@ -53,20 +58,11 @@
                             @if( Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)) )
 
                                 @if($course->has_disclaimer == 1)
-                                    @if(isset($registration->is_approved) && $registration->is_approved)
 
-                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-link"><i class="fa fa-pencil"></i> Editar </button>
-                                        </form>
-
-                                    @else
-
-                                        <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Registrar</button>
-                                        </form>
-                                    @endif
+                                    <form method="post" action="{{ url('/admin/course/register/'.$course->id) }}">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-link"><i class="fa fa-user-plus"></i> Registrar</button>
+                                    </form>
 
                                 @else
 
