@@ -60,36 +60,23 @@ class Teacher extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
+    public function allUpcomingCourses(){
 
-//    public function allUpcomingCourses(){
-//
-//        return $this->belongsToMany(Course::class, 'course_requests',
-//            'teacher_id', 'course_id')
-//            ->where('course_requests.status', 1)
-//            ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
-//            ->as('allUpcomingCourses')
-//            ->withTimestamps();
-//
-//    }
+        return $this->belongsToMany(Course::class, 'course_requests',
+            'teacher_id', 'course_id')
+            ->where('course_requests.status', '!=', 0)
+            ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
+            ->as('allUpcomingCourses')
+            ->withTimestamps();
+
+    }
 
     public function pendingUpcomingCourses(){
 
-        return $this->belongsToMany(Course::class, 'course_requests',
-            'teacher_id', 'course_id')
-            ->where('course_requests.status', 1)
-            ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
-            ->as('allUpcomingCourses')
-            ->withTimestamps();
     }
 
+    public function approvedUpcomingCourses(){
 
-    public function historicalUpcomingCourses(){
-
-        return $this->belongsToMany(Course::class, 'course_requests',
-            'teacher_id', 'course_id')
-            ->withPivot('teacher_id', 'course_id', 'course_code', 'teacher_social_id', 'status')
-            ->as('allUpcomingCourses')
-            ->withTimestamps();
 
     }
 
