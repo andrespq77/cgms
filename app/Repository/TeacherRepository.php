@@ -332,9 +332,9 @@ class TeacherRepository
 
             return Teacher::with(['registrations', 'registrations.course', 'registrations.markApprovedBy',
                 'registrations.approvedBy', 'registrations.student', 'registrations.course.university',
-                'allUpcomingCourses', 'updatedBy', 'createdBy', 'user'])->find($id);
+                'pendingUpcomingCourses', 'updatedBy', 'createdBy', 'user'])->find($id);
 
-        }) ;
+        });
 
 
         return $teacher;
