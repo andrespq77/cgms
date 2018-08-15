@@ -20,7 +20,7 @@
     <tbody>
 
     @isset($teacher)
-    @foreach($teacher->allUpcomingCourses as $course)
+    @foreach($teacher->pendingUpcomingCourses as $course)
         @foreach($teacher->courseRegistration($course) as $registration)@endforeach
 
         @if($course->status == '1' && $course->quota >= $course->registrations->count() && Carbon\Carbon::now()->lt(Carbon\Carbon::parse($course->start_date)))
