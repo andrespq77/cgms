@@ -73,24 +73,34 @@ class UpcomingController extends Controller
                     if (strlen($row['teacher_social_id']) > 0 && strlen($row['course_code']) >0){
 
                         $teacher['course_id']       = $this->getCourseId($row['course_code']);
+
                         $teacher['course_code']     = $row['course_code'];
                         $teacher['teacher_id']      = $this->getTeacherId($row['teacher_social_id']);
                         $teacher['teacher_social_id'] = $row['teacher_social_id'];
+
                         $teacher['created_by']      = Auth::user()->id;
                         $teacher['status']          = $row['status'];
 
-                        $row = CourseRequest::updateOrCreate($teacher,['course_code' => $teacher['course_code'], 'teacher_id'=>$teacher['teacher_id']]);
+                        if(!is_null($teacher['course_id'])){
+                            $new_request = CourseRequest::firstOrNew(['course_code' => $teacher['course_code'], 'teacher_social_id'=>$teacher['teacher_social_id']]);
+                            $new_request->course_id = $teacher['course_id'];
+                            $new_request->teacher_id = $teacher['teacher_id'];
+                            $new_request->created_by = $teacher['created_by'];
+                            $new_request->status = $teacher['status'];
+                            $new_request->save();
 
+                            $rows = $new_request;
+                        }
+
+                        //todo check why its not working
+                        //$row = CourseRequest::updateOrCreate();
                     }
 
                 }
 
             });
 
-            // batch insert
-//            DB::table('course_requests')->insert($rows);
 
-            // @todo after adding all items into an array, add the array to database in batch
             return response()->json(['rows' => $rows, 'success' => true] );
 
         } catch (\Exception $e) {
@@ -123,7 +133,10 @@ class UpcomingController extends Controller
 
         $course =  Course::where('course_code', $course_code)->first();
 
-        return $course->id;
+        if($course)
+            return $course->id;
+        else
+            return null;
 
     }
 
