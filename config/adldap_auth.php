@@ -266,7 +266,7 @@ return [
 
         'first_name' => 'cn',
         'last_name' => 'c',
-        'social_id' => 'usnchanged',
+        'social_id' => 'postalcode',
 
     ],
 

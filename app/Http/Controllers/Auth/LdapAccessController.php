@@ -58,7 +58,7 @@ class LdapAccessController extends Controller
 
                 $first_name = isset($ldap_user[0]['givenname'][0]) ? $ldap_user[0]['givenname'][0] : $username;
                 $last_name = isset($ldap_user[0]['sn'][0]) ? $ldap_user[0]['sn'][0] : $username;
-                $social_id = isset($ldap_user[0]['usnchanged'][0]) ? $ldap_user[0]['usnchanged'][0] : $username;
+                $social_id = isset($ldap_user[0]['postalcode'][0]) ? $ldap_user[0]['postalcode'][0] : $username;
 
                 if (!isset($ldap_user[0]['usnchanged'][0])) {
                     $this->sendMissingSocialIdEmail($name, $email);
