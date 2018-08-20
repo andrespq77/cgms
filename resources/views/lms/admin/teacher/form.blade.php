@@ -167,12 +167,12 @@
                                     <label class="col-md-3 control-label" for="Gender">{{ __('lms.words.gender') }}</label>
                                     <div class="col-md-9">
                                         <label class="radio-inline" for="Gender-0">
-                                            <input type="radio" name="gender" id="Gender-0" value="m"
+                                            <input type="radio" name="gender" id="Gender-0" value="m" class="teacher_gender"
                                                     {{ isset($teacher) ? $teacher->gender == 'M' ? 'checked' : '' : '' }}>
                                             {{ __('lms.words.male') }}
                                         </label>
                                         <label class="radio-inline" for="Gender-1">
-                                            <input type="radio" name="gender" id="Gender-1" value="f"
+                                            <input type="radio" name="gender" id="Gender-1" value="f" class="teacher_gender"
                                                     {{ isset($teacher) ? $teacher->gender == 'F' ? 'checked' : '' : '' }}
                                             >
                                             {{ __('lms.words.female') }}

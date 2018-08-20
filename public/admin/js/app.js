@@ -55016,6 +55016,7 @@ $(document).ready(function () {
                 var jsErrorBlock = $('.js-error-block');
 
                 jsErrorBlock.find('.help-block').html("");
+
                 jsErrorBlock.removeClass('has-error');
 
                 var type = btnSubmit.attr('data-type');
@@ -55023,7 +55024,9 @@ $(document).ready(function () {
                 var form = $('.teacher-form');
 
                 form.find('input, select').attr('disabled', true);
+
                 $(this).attr('disabled', true);
+                var teacher_gendor_update = $(".teacher_gender:checked").val();
 
                 var data = {
 
@@ -55034,7 +55037,7 @@ $(document).ready(function () {
                     email: form.find('input[name=email]').val(),
                     telephone: form.find('input[name=telephone]').val(),
                     mobile: form.find('input[name=mobile]').val(),
-                    gender: form.find('input[name=gender]').val(),
+                    gender: teacher_gendor_update,
                     date_of_birth: form.find('input[name=date_of_birth]').val(),
 
                     university: form.find('input[name=university]').val(),
@@ -55081,8 +55084,7 @@ $(document).ready(function () {
                     if (xhr.status === 201) {
                         redirect(app_url + '/admin/teachers');
                     } else if (xhr.status === 200) {
-                        var alert = '<div class="alert alert-success alert-dismissible">' + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + 'Record updated successfully</div>';
-                        form.find('.js-message').html(alert);
+                        toastr.success("Teacher Record updated successfully.", "Info");
                     }
                 }).fail(function (xhr, textStatus, errorThrown) {
 
