@@ -26,7 +26,7 @@
                     <br/> <span class="teacher-id">{{ $registration->student->social_id }}</span></p>
                 <p class="text-justify">El Ministerio de Educación tiene el agrado de comunicarle que usted ha realizado su inscripción de
                     manera exitosa para participar en el Curso de Capacitación de <span class="course-name">{{ $registration->course->short_name }}</span>,
-                    con beca del Ministerio de Educación, a través la <span class="university-name">{{ $registration->course->university->name }}</span> y ALATA.
+                    con beca del Ministerio de Educación, a través de <span class="university-name">{{ $registration->course->university->name }}</span>.
                 </p>
                 <br/>
                 <p class="text-justify">Estamos seguros que la actualización de sus conocimientos pedagógicos contribuirá a su mejoramiento

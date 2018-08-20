@@ -174,7 +174,7 @@
                 ],
                 'form'  =>[
                     'edit_title'        => 'Editar Curso',
-                    'add_title'         => 'Agragar Nuevo Curso',
+                    'add_title'         => 'Agregar Nuevo Curso',
                     'course_id'         => 'Código de Curso',
                     'course_type'       => 'Tipo de Curso',
                     'course_modality'   => 'Modalidad',
@@ -431,7 +431,7 @@
             'grade' => 'Nota',
             'zone'  => 'Zona',
             'last_updated' => 'Última actualización',
-            'add_grade'  => 'Agragar Nota',
+            'add_grade'  => 'Agregar Nota',
             'by' => 'por',
             'university' => 'Institución Superior',
             'male' => 'Masculino',
