@@ -460,6 +460,10 @@
                                                     value="Zona 6">{{ __('lms.words.zone') }} 6</option>
                                             <option {{ isset($teacher) ? $teacher->zone =='Zona 7' ? 'SELECTED' : '' : '' }}
                                                     value="Zona 7">{{ __('lms.words.zone') }} 7</option>
+                                            <option {{ isset($teacher) ? $teacher->zone =='Zona 8' ? 'SELECTED' : '' : '' }}
+                                                    value="Zona 8">{{ __('lms.words.zone') }} 8</option>
+                                            <option {{ isset($teacher) ? $teacher->zone =='Zona 9' ? 'SELECTED' : '' : '' }}
+                                                    value="Zona 9">{{ __('lms.words.zone') }} 9</option>
 
                                         </select>
                                         <div class="help-block"></div>
