@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
+use Maatwebsite\Excel\Facades\Excel;
 use App\University;
 use App\Events\UniversityCreated;
 
@@ -14,6 +15,27 @@ class UniversityTableSeeder extends Seeder
      */
     public function run()
     {
+      $path = storage_path() . "/assets/Universidades.xlsx";
+
+       Excel::load($path, function ($reader){
+
+          foreach ($reader->toArray() as $row) {
+
+              $this->command->getOutput()->writeln('Agregando Universidad: '.$row['nombre']);
+
+              $university = new University();
+              $user = User::find(1);
+              $university->name = $row['nombre'];
+              $university->email = $row['correo'];
+              $university->login_user_name = $row['nombre'];
+              $university->login_email = $row['correo'];
+              $university->created_by = 1;
+              $university->updated_by = 1;
+              $university->save();
+              event(new UniversityCreated($university, $university->login_email, $user));
+          }
+
+      });
 //
 //        $user = User::find(1);
 //
