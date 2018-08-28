@@ -21,7 +21,7 @@ class CategoryTableSeeder extends Seeder
                         'title' => 'Educación Inicial',
                         'subLabels' => [
                             [
-                                'title' => 'Incial I',
+                                'title' => 'Inicial I',
                                 'knowledges' => [
                                     [
                                         'title' => 'Educación Inicial',
@@ -34,7 +34,7 @@ class CategoryTableSeeder extends Seeder
                                 ]
                             ],
                             [
-                                'title' => 'Incial 2',
+                                'title' => 'Inicial II',
                                 'knowledges' => [
                                     [
                                         'title' => 'Educación Inicial',
@@ -155,13 +155,13 @@ class CategoryTableSeeder extends Seeder
                                                 'title' => 'Ciencias Naturales'
                                             ],
                                             [
-                                                'title' => 'Biologia'
+                                                'title' => 'Biología'
                                             ],
                                             [
-                                                'title' => 'Fisica'
+                                                'title' => 'Física'
                                             ],
                                             [
-                                                'title' => 'Quimica'
+                                                'title' => 'Química'
                                             ]
                                         ]
                                     ],

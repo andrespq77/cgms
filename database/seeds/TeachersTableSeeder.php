@@ -56,8 +56,8 @@ class TeachersTableSeeder extends Seeder
                 $teacher->action_type = $row['tipo_accion'];
                 $teacher->action_description = $row['explicacion_accion'];
                 $teacher->speciality = $row['especialidad'];
-                $teacher->join_date = ($row['fecha_inicio'] != 'S/D') ? date('Y-m-d', strtotime(substr($row['fecha_nacimiento'], -4)."/".substr($row['fecha_nacimiento'], -7,2)."/".substr($row['fecha_nacimiento'], 0, 2))): null;
-                $teacher->end_date = ($row['fecha_fin'] != 'S/D') ? date('Y-m-d', strtotime(substr($row['fecha_nacimiento'], -4)."/".substr($row['fecha_nacimiento'], -7,2)."/".substr($row['fecha_nacimiento'], 0, 2))) : null;
+                $teacher->join_date = ($row['fecha_inicio'] != 'S/D') ? date('Y-m-d', strtotime(substr($row['fecha_inicio'], -4)."/".substr($row['fecha_inicio'], -7,2)."/".substr($row['fecha_inicio'], 0, 2))): null;
+                $teacher->end_date = ($row['fecha_fin'] != 'S/D') ? date('Y-m-d', strtotime(substr($row['fecha_fin'], -4)."/".substr($row['fecha_fin'], -7,2)."/".substr($row['fecha_fin'], 0, 2))) : null;
                 $teacher->amie = $row['amie'];
                 $teacher->disability = $row['discapacidad'];
                 $teacher->ethnic_group = $row['etnia'];
