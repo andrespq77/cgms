@@ -25,10 +25,7 @@ class UserController extends Controller
 
 
     public function getTableData(){
-
-        $users = User::latest()->get();
-
-        return Datatables::of($users)
+        return Datatables::of(User::query())
             ->editColumn('action', 'lms.admin.user.action')
             ->setRowId(function ($users){
                 return 'user_id_'.$users->id;

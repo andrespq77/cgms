@@ -17,10 +17,9 @@ class DatabaseSeeder extends Seeder
              UniversityTableSeeder::class,
              CategoryTableSeeder::class,
              CoursetypeTableSeeder::class,
-             TeachersTableSeeder::class,
-             MasterCourseTableSeeder::class
-             //,
-             //CourseTableSeeder::class
+             MasterCourseTableSeeder::class,
+             CourseTableSeeder::class
+             //TeachersTableSeeder::class,
          ]);
     }
 }
