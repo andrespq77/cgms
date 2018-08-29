@@ -39,6 +39,9 @@ class RegistrationTableSeeder extends Seeder
                 $registration->user_last_name = $teacher->last_name;
                 $registration->email = $teacher->email;
                 $registration->cell_phone = $teacher->mobile;
+                $registration->is_approved = true;
+                $registration->approval_time = now();
+                $registration->approved_by = 1;
                 $registration->mark = ($row['estado'] == 1) ? 10 : 5;
                 $registration->mark_approved = ($row['estado'] == 1) ? true : false;
                 $registration->mark_approved_by = 1;

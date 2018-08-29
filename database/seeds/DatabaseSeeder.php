@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
              CategoryTableSeeder::class,
              CoursetypeTableSeeder::class,
              MasterCourseTableSeeder::class,
-             CourseTableSeeder::class
-             //TeachersTableSeeder::class,
+             CourseTableSeeder::class,
+             TeachersTableSeeder::class
          ]);
     }
 }

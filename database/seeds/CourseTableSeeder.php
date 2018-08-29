@@ -34,6 +34,8 @@ class CourseTableSeeder extends Seeder
               $Course->cost = $row['costo'];
               $Course->finance_type = $row['financiamiento'];
               $Course->inspection_form_generated = false;
+              $Course->grade_upload_start_date = now();
+              $Course->grade_upload_end_date = date('Y-m-d',strtotime('2018/10/01'));
               $university = University::where('email',$row['universidad'])->first();
               $Course->university_id = $university->id;
               $mastercourse = App\MasterCourse::where('course_code',$row['codigo_padre'])->first();
