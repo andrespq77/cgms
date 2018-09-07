@@ -30,19 +30,22 @@
          * @param $path
          * @return null
          */
-        public function updateDiplomaFile($courseId, $studentSocialSecurityId, $path){
+        public function updateDiplomaFile($courseId, $studentSocialSecurityId, $path, $diploma_path){
 
             $registration = Registration::where('course_id', $courseId)
                             ->where('user_social_id', $studentSocialSecurityId)
                             ->first();
             if ($registration){
-
-                $registration->diploma_path = $path;
+                rename(storage_path($path), storage_path($diploma_path));
+                //Storage::move($path, $diploma_path);
+                Log::info('File moved from '.$path.' to '.$diploma_path);
+                $registration->diploma_path = storage_path($diploma_path);
                 $registration->save();
 
                 return $registration;
             } else{
-                Log::error('No Registration found for security id '.$studentSocialSecurityId);
+                unlink(storage_path($path));
+                Log::error('No Registration found for security id '.$studentSocialSecurityId. 'File removed');
                 return null;
             }
 

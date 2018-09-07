@@ -43,10 +43,11 @@ class ExtractDiplomaFile
     {
 
         // extract the file here and update registration file
+        Storage::makeDirectory('app/'.$diploma->path.'/zip');
 
         $zip = new Zipper;
         $zip->make(storage_path('app/'.$diploma->filePath))
-            ->extractTo(storage_path('app/'.$diploma->path));
+            ->extractTo(storage_path('app/'.$diploma->path.'/zip'));
 
 //        @todo after updating files, add a diploma Uploaded flat in course record
         if(Storage::exists($diploma->path.'/zip')) {
@@ -67,14 +68,16 @@ class ExtractDiplomaFile
 //            $socialId = pathinfo(basename(basename($file)), PATHINFO_FILENAME);;
             $socialId = pathinfo($file, PATHINFO_FILENAME);
 
-            $fullPath = storage_path('app/'.$file);
-            $registrationRepo->updateDiplomaFile($diploma->courseId, $socialId, $fullPath);
+            $fullPath = 'app/'.$file;
+            $fullPathDiploma = 'app/'.$diploma->path .'/' . $socialId . '.pdf';
             Log::info('File data', ['socialId' => $socialId, 'full path: '=> $fullPath]);
+            $registrationRepo->updateDiplomaFile($diploma->courseId, $socialId, $fullPath,$fullPathDiploma);
 
             $diploma_upload = true;
 
         }
 
+        exec('rm -r ' . storage_path() . '/' . 'app/'.$diploma->path.'/zip');
 
         if ($diploma_upload == true){
 
