@@ -296,7 +296,7 @@ class TeacherController extends Controller
 
                     $teacher['first_name'] = $row['nombres'];
                     $teacher['last_name'] = $row['apellidos'];
-                    $teacher['gender'] = ucfirst($row['genero']);
+                    $teacher['gender'] = ucfirst(substr($row['genero'], 0, 1));
                     $teacher['social_id'] = $row['cedula'];
 
                     $teacher['cc'] = $row['c_c'];
@@ -306,7 +306,6 @@ class TeacherController extends Controller
                     $teacher['mobile'] = $row['celular'];
                     $teacher['moodle_id'] = '';
                     $teacher['inst_email'] = $row['correo_electronico'];
-                    $teacher['email'] = $row['correo_electronico'];
                     $teacher['university_name'] = $row['institucion_educativa'];
                     $teacher['function'] = $row['funcion'];
                     $teacher['work_area'] = $row['regimen_laboral'];
@@ -324,7 +323,7 @@ class TeacherController extends Controller
                     $teacher['province'] = $row['provincia'];
                     $teacher['canton'] = $row['canton'];
                     $teacher['parroquia'] = $row['parroquia'];
-                    $teacher['district'] = $row['distrito'];
+                    $teacher['district'] = substr($row['distrito'], 0, 100);
                     $teacher['dist_code'] = $row['cod_distrito'];
                     $teacher['zone'] = $row['zona'];
                     $teacher['work_hours'] = '';
@@ -336,16 +335,15 @@ class TeacherController extends Controller
                      * -> create a user with the name, inst_email + add teacher data
                      */
 
-                    $is_teacher_exist = $teacherRepo->isTeacherExist($row['cedula'] ,$row['correo_electronico']);
+                    $is_teacher_exist = $teacherRepo->isTeacherExist($row['cedula']);
 
                     if ($is_teacher_exist==false){
 
+                        $teacher['email'] = $row['correo_electronico'];
                         $teacherRepo->insert($teacher, USER_CREATION_TYPE_IMPORT);
                         array_push($rows, $teacher);
 
-                    }
-                    else
-                    {
+                    } else {
 
                         $find_teacher = Teacher::where('social_id', $row['cedula'])->first();
                         $teacherRepo->update($teacher, $find_teacher->id);
